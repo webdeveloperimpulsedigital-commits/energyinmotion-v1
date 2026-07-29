@@ -7582,3 +7582,264 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   color: #475569;
   margin-bottom: 0;
 }
+
+/* ==========================================================================
+   21st.dev Style Company Governance Section
+   ========================================================================== */
+
+.company-governance-section {
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.governance-bento-grid {
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+}
+
+@media (max-width: 991px) {
+  .governance-bento-grid {
+    flex-direction: column;
+  }
+}
+
+.gov-bento-card {
+  flex: 1 1 50%;
+  max-width: 50%;
+  border-radius: 24px;
+  padding: 36px 32px;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (max-width: 991px) {
+  .gov-bento-card {
+    max-width: 100%;
+    width: 100%;
+    padding: 28px 20px;
+  }
+}
+
+.gov-directors-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.gov-directors-card:hover {
+  border-color: #49C1AC;
+  box-shadow: 0 12px 30px rgba(73, 193, 172, 0.14);
+}
+
+.gov-committees-card {
+  background: linear-gradient(145deg, #01363F, #00272e);
+  border: 1px solid rgba(73, 193, 172, 0.4);
+  box-shadow: 0 10px 30px rgba(1, 54, 63, 0.2);
+}
+
+.gov-committees-card:hover {
+  border-color: #49C1AC;
+  box-shadow: 0 16px 36px rgba(73, 193, 172, 0.25);
+}
+
+.gov-card-header {
+  margin-bottom: 28px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 18px;
+}
+
+.gov-committees-card .gov-card-header {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.gov-badge-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.badge-teal {
+  background: rgba(73, 193, 172, 0.15);
+  color: #01363F;
+  border: 1px solid rgba(73, 193, 172, 0.3);
+}
+
+.badge-gold {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.gov-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #01363F;
+  margin: 0;
+}
+
+.text-teal {
+  color: #49C1AC !important;
+}
+
+/* Directors List */
+.directors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gov-person-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 14px 18px;
+  transition: all 0.25s ease;
+}
+
+.gov-person-item:hover {
+  border-color: #49C1AC;
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(73, 193, 172, 0.12);
+}
+
+.person-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(73, 193, 172, 0.15);
+  color: #01363F;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+.person-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.person-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #01363F;
+  margin: 0 0 3px 0;
+}
+
+.person-role {
+  font-size: 0.84rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.role-kmp {
+  color: #0d9488;
+  font-weight: 600;
+}
+
+/* Committees List */
+.committees-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.committee-subcard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(73, 193, 172, 0.25);
+  border-radius: 18px;
+  padding: 22px;
+  transition: all 0.3s ease;
+}
+
+.committee-subcard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #49C1AC;
+}
+
+.committee-subcard-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.committee-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(73, 193, 172, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.committee-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.committee-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.committee-members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.committee-member-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.member-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.member-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 14px;
+}
+
+.badge-chairman {
+  background: rgba(245, 158, 11, 0.25);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.badge-member {
+  background: rgba(73, 193, 172, 0.2);
+  color: #49C1AC;
+  border: 1px solid rgba(73, 193, 172, 0.3);
+}
