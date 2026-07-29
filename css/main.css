@@ -401,13 +401,14 @@ p.border-line {
 }
 
 h2.main-title {
+  font-family: 'PP Neue Montreal', sans-serif;
   font-size: 40px;
   font-weight: 500;
   line-height: 50px;
   letter-spacing: 0.06em;
   text-transform: capitalize;
   color: var(--accent-color);
-  margin: 0 0 15px 0
+  margin: 0 0 15px 0;
 }
 
 .big-txt {
