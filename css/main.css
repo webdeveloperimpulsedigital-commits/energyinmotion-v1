@@ -343,7 +343,7 @@ ul.icon-list li.line-ht { min-height: 75px; align-items: flex-start; margin:0 0 
 /* Offerings Redesigned Grid */
 .offerings-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin-top: 40px;
   width: 100%;
@@ -352,7 +352,7 @@ ul.icon-list li.line-ht { min-height: 75px; align-items: flex-start; margin:0 0 
 .offering-card {
   position: relative;
   height: 380px;
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 27, 30, 0.1);
   display: flex;
