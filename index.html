@@ -164,6 +164,19 @@
 					panel.classList.add('active');
 				});
 			});
+
+			const rows = document.querySelectorAll('.deck-row');
+
+			rows.forEach(row => {
+				row.addEventListener('mouseenter', () => {
+					rows.forEach(r => r.classList.remove('active'));
+					row.classList.add('active');
+				});
+				row.addEventListener('click', () => {
+					rows.forEach(r => r.classList.remove('active'));
+					row.classList.add('active');
+				});
+			});
 		});
 		</script>
 		<section id="solutions" class="solution section bg-light1">
@@ -172,7 +185,7 @@
 				
 				<div class="solutions-deck">
 					<!-- Row 1: Capital Investment -->
-					<div class="deck-row" data-aos="fade-up" data-aos-delay="100">
+					<div class="deck-row active" data-aos="fade-up" data-aos-delay="100">
 						<!-- Big Index Number -->
 						<div class="deck-num-col">
 							<span class="deck-num">01</span>
@@ -260,55 +273,74 @@
 <section id="offerings" class="offerings section">
 			<div class="container">
 				<h2 class="main-title text-center mb35" data-aos="fade-up">Offerings</h2>
-				<div class="offer-row">
-					<div class="offer-col" data-aos="fade-up" data-aos-delay="100">
-						<div class="offer-img"><img src="images/eim-offering-img1.jpg" alt=""></div>
-						<ul data-aos="fade-up" class="icon-list aos-init aos-animate">
-							<li>
-								<div class="list-icon"><img src="images/icon-customer-buys.svg" alt=""></div>
-								<div class="list-txt">State-of-the-Art 2<sup>nd</sup> generation Intelligent E-Tractor
-								</div>
-							</li>
-							<li class="line-ht">
-								<div class="list-icon"><img src="images/icon-battery-cost.svg" alt=""></div>
-								<div class="list-txt">Battery pack on pay per-use / fixed-cost plans with lifetime
-									warranty</div>
-							</li>
-						</ul>
-
+				
+				<div class="offerings-grid">
+					<!-- Item 1: Next-Generation Electric Tractor -->
+					<div class="offering-card" data-aos="fade-up" data-aos-delay="100">
+						<div class="offering-card-bg" style="background-image: url('images/offering_grid_1.png');"></div>
+						<div class="offering-card-overlay"></div>
+						<div class="offering-card-arrow">→</div>
+						<div class="offering-card-content">
+							<h3>Next-Generation Electric Tractor</h3>
+							<p>Engineered for high-performance heavy-duty freight.</p>
+						</div>
 					</div>
-					<div class="offer-col" data-aos="fade-up" data-aos-delay="300">
-						<div class="offer-img"><img src="images/eim-offering-img2.jpg" alt=""></div>
-						<ul data-aos="fade-up" class="icon-list aos-init aos-animate">
-							<li>
-								<div class="list-icon"><img src="images/icon-infrastructure.svg" alt=""></div>
-								<div class="list-txt">Convenient Swapping cum Charging infrastructure</div>
-							</li>
-							<li class="line-ht">
-								<div class="list-icon"><img src="images/icon-fast-charging.svg" alt=""></div>
-								<div class="list-txt">Smart Swapping/Charging scheduling services for zero waiting time
-								</div>
-							</li>
-						</ul>
 
+					<!-- Item 2: Integrated Battery Swapping & Charging Network -->
+					<div class="offering-card" data-aos="fade-up" data-aos-delay="200">
+						<div class="offering-card-bg" style="background-image: url('images/offering_grid_2.png');"></div>
+						<div class="offering-card-overlay"></div>
+						<div class="offering-card-arrow">→</div>
+						<div class="offering-card-content">
+							<h3>Integrated Battery Swapping & Charging Network</h3>
+							<p>Reliable energy infrastructure designed for uninterrupted operations.</p>
+						</div>
 					</div>
-					<div class="offer-col" data-aos="fade-up" data-aos-delay="500">
-						<div class="offer-img"><img src="images/eim-offering-img3.jpg" alt=""></div>
-						<ul data-aos="fade-up" class="icon-list aos-init aos-animate">
-							<li>
-								<div class="list-icon"><img src="images/icon-automated-battery.svg" alt=""></div>
-								<div class="list-txt">Automated battery pack swap in 5 minutes</div>
-							</li>
-							<li>
-								<div class="list-icon"><img src="images/green-energy.svg" alt=""></div>
-								<div class="list-txt">100% Green Energy to ensure truly sustainable fleet operations
-								</div>
-							</li>
-						</ul>
+
+					<!-- Item 3: Rapid Automated Battery Swapping -->
+					<div class="offering-card" data-aos="fade-up" data-aos-delay="300">
+						<div class="offering-card-bg" style="background-image: url('images/offering_grid_3.png');"></div>
+						<div class="offering-card-overlay"></div>
+						<div class="offering-card-arrow">→</div>
+						<div class="offering-card-content">
+							<h3>Rapid Automated Battery Swapping</h3>
+							<p>Automated battery exchange in minutes to maximize fleet uptime.</p>
+						</div>
+					</div>
+
+					<!-- Item 4: Battery-as-a-Service -->
+					<div class="offering-card" data-aos="fade-up" data-aos-delay="100">
+						<div class="offering-card-bg" style="background-image: url('images/offering_grid_4.png');"></div>
+						<div class="offering-card-overlay"></div>
+						<div class="offering-card-arrow">→</div>
+						<div class="offering-card-content">
+							<h3>Battery-as-a-Service</h3>
+							<p>Flexible subscription model that lowers upfront investment and simplifies ownership.</p>
+						</div>
+					</div>
+
+					<!-- Item 5: Intelligent Energy Management -->
+					<div class="offering-card" data-aos="fade-up" data-aos-delay="200">
+						<div class="offering-card-bg" style="background-image: url('images/offering_grid_5.png');"></div>
+						<div class="offering-card-overlay"></div>
+						<div class="offering-card-arrow">→</div>
+						<div class="offering-card-content">
+							<h3>Intelligent Energy Management</h3>
+							<p>Smart software optimizes battery allocation, charging, and fleet scheduling for greater operational efficiency.</p>
+						</div>
+					</div>
+
+					<!-- Item 6: Powered by Renewable Energy -->
+					<div class="offering-card" data-aos="fade-up" data-aos-delay="300">
+						<div class="offering-card-bg" style="background-image: url('images/offering_grid_6.png');"></div>
+						<div class="offering-card-overlay"></div>
+						<div class="offering-card-arrow">→</div>
+						<div class="offering-card-content">
+							<h3>Powered by Renewable Energy</h3>
+							<p>Supporting cleaner, lower-carbon logistics through sustainable energy infrastructure.</p>
+						</div>
 					</div>
 				</div>
-
-
 			</div>
 		</section>
 		<section id="services" class="swapping section pt-0 pb-0">
