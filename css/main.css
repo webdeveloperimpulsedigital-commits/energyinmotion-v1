@@ -305,8 +305,8 @@ h2.tem-title { font-size: 20px; font-weight: 500; line-height: 24px;color:#001A1
 .transform-none {text-transform:none !important}
 .swapping-img {width:55%; position:absolute; min-height:567px; top:0}
 .swapping-img img {position:absolute; top:0; right:0}
-.e-text-cont { width: 33%; max-width:33%; padding: 65px 0 0 0; }
-.swapping {min-height:667px; padding:64px 0 !important;position:relative;background:#ffffff}
+.e-text-cont { width: 42%; max-width:42%; padding: 65px 0 0 0; }
+.swapping {min-height:760px; padding:64px 0 !important;position:relative;background:#ffffff}
 .swapping.pt-0 {padding-top:0 !important}
 section#contact { background: #ffffff; }
 section#copyright { background: #F1F6F6; }
@@ -833,7 +833,7 @@ section,.section {  padding:97px 0;  scroll-margin-top:102px;}
 .fancybox-button svg {display:none !important}
 .fancybox-slide--iframe .fancybox-content, .fancybox-slide--map .fancybox-content, .fancybox-slide--video .fancybox-content {border-radius: 10px; overflow: hidden;}
 .mt102 {margin-top:102px}
-.e-img {width:64%;    position: relative;}
+.e-img {width:54%;    position: relative;}
 .e-img img {position:absolute; right:0; top:0; width:auto; height:567px}
 input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #000;
