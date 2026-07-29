@@ -816,20 +816,21 @@ h2.tem-title {
 }
 
 .e-text-cont {
-  width: 33%;
-  max-width: 33%;
-  padding: 65px 0 0 0;
+  width: 38%;
+  max-width: 38%;
+  padding: 10px 0 0 0;
 }
 
 .swapping {
-  min-height: 667px;
-  padding: 64px 0 !important;
+  min-height: 720px;
+  padding-top: 80px !important;
+  padding-bottom: 220px !important;
   position: relative;
-  background: #E7F1F1
+  background: #E7F1F1;
 }
 
 .swapping.pt-0 {
-  padding-top: 0 !important
+  padding-top: 0 !important;
 }
 
 section#contact,
@@ -838,25 +839,25 @@ section#copyright {
 }
 
 .milestones ul.icon-list li:first-child {
-  align-items: flex-start
+  align-items: flex-start;
 }
 
 .swapping-img img.path1 {
   position: absolute;
   top: 79px;
   left: 212px;
-  right: auto
+  right: auto;
 }
 
 .swapping-img img.path2 {
   position: absolute;
   top: 303px;
   left: 506px;
-  right: auto
+  right: auto;
 }
 
 .etext-col {
-  margin: 0 0 75px 0
+  margin: 0 0 45px 0;
 }
 
 h2.font26 {
