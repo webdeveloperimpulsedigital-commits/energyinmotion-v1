@@ -1233,3 +1233,273 @@ h2.main-title { font-size: 29px; line-height: 34px; }
     margin-bottom: 25px;
   }
 }
+/* ==========================================================================
+   Modern Facelift Styles - Energy In Motion
+   ========================================================================== */
+
+.sub-heading-txt {
+  font-size: 1.1rem;
+  color: #a0aec0 !important;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.big-overview-text {
+  font-size: 1.18rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+  font-weight: 400;
+}
+
+/* Solutions Grid Modern Layout */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+.solution-card-item {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(73, 193, 172, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.solution-card-item:hover {
+  transform: translateY(-8px);
+  border-color: rgba(73, 193, 172, 0.6);
+  box-shadow: 0 20px 40px -15px rgba(73, 193, 172, 0.25);
+}
+
+.challenge-side, .solution-side {
+  padding: 12px 0;
+}
+
+.arrow-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0;
+  position: relative;
+}
+
+.arrow-divider::before, .arrow-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(73, 193, 172, 0.3), transparent);
+}
+
+.badge-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.badge-challenge {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-solution {
+  background: rgba(73, 193, 172, 0.15);
+  color: #49C1AC;
+  border: 1px solid rgba(73, 193, 172, 0.3);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 0;
+}
+
+/* Offerings 6 Grid Layout */
+.offerings-grid-6 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+}
+
+.offering-card-modern {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 32px 24px;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.offering-card-modern:hover {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: #49C1AC;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px -10px rgba(73, 193, 172, 0.2);
+}
+
+.offering-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(73, 193, 172, 0.25), rgba(1, 54, 63, 0.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 1px solid rgba(73, 193, 172, 0.3);
+}
+
+.offering-icon-wrap img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.offering-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.offering-card-text {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* J M Baxi Group Legacy Card */
+.jmbaxi-legacy-card {
+  background: linear-gradient(145deg, #012b32, #001e23);
+  border: 1px solid rgba(73, 193, 172, 0.35);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+.legacy-badge {
+  display: inline-block;
+  background: rgba(73, 193, 172, 0.2);
+  color: #49C1AC;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.legacy-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #49C1AC;
+}
+
+.legacy-text {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+}
+
+.bold-summary {
+  font-weight: 600;
+  color: #ffffff;
+  border-left: 3px solid #49C1AC;
+  padding-left: 14px;
+}
+
+/* Customer Testimonials Section */
+.testimonials-section {
+  background: #06181c !important;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(73, 193, 172, 0.25);
+  border-radius: 18px;
+  padding: 36px 28px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.testimonial-card:hover {
+  border-color: #49C1AC;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(73, 193, 172, 0.15);
+}
+
+.quote-icon {
+  font-size: 4rem;
+  line-height: 1;
+  font-family: Georgia, serif;
+  color: #49C1AC;
+  opacity: 0.4;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  pointer-events: none;
+}
+
+.quote-body {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #e2e8f0;
+  margin-top: 20px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-body strong {
+  color: #49C1AC;
+}
+
+.author-info {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 16px;
+}
+
+.author-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.author-role {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 0;
+}
