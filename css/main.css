@@ -7108,6 +7108,7 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 .shareholders-section-modern {
   background: #ffffff !important;
   position: relative;
+  background-color: #ffffff !important;
   overflow: hidden;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -7130,6 +7131,10 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
     display: flex;
     align-self: stretch;
   }
+}
+
+.shareholders-section-modern .main-title {
+  color: #01363F !important;
 }
 
 .shareholder-top-badge {
@@ -7227,28 +7232,28 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   align-items: center;
   gap: 12px;
   background: #ffffff;
-  padding: 12px 14px;
-  border-radius: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
   border: 1px solid #e2e8f0;
   transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 .bento-feature-item:hover {
-  background: #f1f5f9;
-  border-color: rgba(73, 193, 172, 0.4);
+  background: #ffffff;
+  border-color: #49C1AC;
+  box-shadow: 0 4px 14px rgba(73, 193, 172, 0.15);
 }
 
 .bento-icon-box {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
   background: rgba(73, 193, 172, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  will-change: background;
-  transition: background 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .bento-icon-box img {
@@ -7258,7 +7263,7 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 }
 
 .bento-feature-text {
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   font-weight: 600;
   color: #1e293b;
   line-height: 1.4;
@@ -7333,6 +7338,13 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   border: 1px solid rgba(73, 193, 172, 0.35);
 }
 
+.bento-logo-img {
+  max-height: 32px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  object-fit: contain;
+}
+
 .bento-tile-img {
   width: 100%;
   height: 100%;
@@ -7373,37 +7385,6 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   color: #49C1AC;
   border: 1px solid rgba(73, 193, 172, 0.4);
   letter-spacing: 0.03em;
-}
-
-.bento-tagline-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(73, 193, 172, 0.15);
-  border: 1px solid rgba(73, 193, 172, 0.35);
-  color: #49C1AC;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.pulse-dot {
-  width: 7px;
-  height: 7px;
-  background-color: #49C1AC;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #49C1AC;
-}
-
-.bento-logo-img {
-  max-height: 40px;
-  width: auto;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
 }
 
 /* Responsive breakpoint for bento graphic */
