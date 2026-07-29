@@ -306,9 +306,10 @@ h2.tem-title { font-size: 20px; font-weight: 500; line-height: 24px;color:#001A1
 .swapping-img {width:55%; position:absolute; min-height:567px; top:0}
 .swapping-img img {position:absolute; top:0; right:0}
 .e-text-cont { width: 33%; max-width:33%; padding: 65px 0 0 0; }
-.swapping {min-height:667px; padding:64px 0 !important;position:relative;background:#E7F1F1}
+.swapping {min-height:667px; padding:64px 0 !important;position:relative;background:#ffffff}
 .swapping.pt-0 {padding-top:0 !important}
-section#contact,section#copyright{ background: #F1F6F6; }
+section#contact { background: #ffffff; }
+section#copyright { background: #F1F6F6; }
 .milestones ul.icon-list li:first-child {align-items:flex-start}
 .swapping-img img.path1 {position:absolute; top:79px; left:212px; right:auto}
 .swapping-img img.path2 {position:absolute; top:303px; left:506px; right:auto}
