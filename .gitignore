@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Archives & Large files
+*.zip
+
+# Backup directories
+backup/
+bkp/
+
+# OS metadata
+.DS_Store
+Thumbs.db
