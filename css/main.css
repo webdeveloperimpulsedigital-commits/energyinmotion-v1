@@ -7133,10 +7133,6 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   }
 }
 
-.shareholders-section-modern .main-title {
-  color: #01363F !important;
-}
-
 .shareholder-top-badge {
   display: inline-block;
   font-size: 0.75rem;
