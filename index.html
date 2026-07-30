@@ -178,98 +178,181 @@
 			});
 		});
 		</script>
-		<section id="solutions" class="solution section">
+		<section id="solutions" class="solution section bg-light1 py-5">
 			<div class="container">
-				<h2 class="main-title text-center mb55 transform-none" data-aos="fade-up">Barriers & Solutions to Truck Electrification</h2>
-				
-				<div class="solutions-deck">
-					<!-- Row 1: Capital Investment -->
-					<div class="deck-row active" data-aos="fade-up" data-aos-delay="100">
-						<!-- Big Index Number -->
-						<div class="deck-num-col">
-							<span class="deck-num">01</span>
-						</div>
-						
-						<!-- Split Columns Content -->
-						<div class="deck-content-col">
-							<!-- Challenge Side -->
-							<div class="deck-side challenge-side-col">
-								<span class="deck-tag tag-red">The Challenge</span>
-								<h3>Reduce Capital Investment</h3>
-								<p>Electric trucks often require substantially higher upfront investment than conventional diesel vehicles.</p>
-							</div>
-							
-							<!-- Vertical Laser Line -->
-							<div class="deck-divider"></div>
-							
-							<!-- EIM Solution Side -->
-							<div class="deck-side sol-side">
-								<span class="deck-tag tag-teal">EIM Solution</span>
-								<h3>Battery-as-a-Service</h3>
-								<p>Lower acquisition costs by separating battery ownership from the vehicle.</p>
-							</div>
-						</div>
+				<h2 class="main-title text-center mb55 transform-none" data-aos="fade-up">Barriers & Solutions to Truck
+					Electrification</h2>
+
+				<!-- Immersive Telemetry Terminal -->
+				<div class="telemetry-terminal" data-aos="fade-up" data-aos-delay="200">
+					<!-- Tab Nav Bar -->
+					<div class="terminal-nav">
+						<button class="terminal-tab active" data-slide="0">
+							<span class="tab-num">01</span>
+							<span class="tab-name">Capital Investment</span>
+						</button>
+						<button class="terminal-tab" data-slide="1">
+							<span class="tab-num">02</span>
+							<span class="tab-name">Charging Downtime</span>
+						</button>
+						<button class="terminal-tab" data-slide="2">
+							<span class="tab-num">03</span>
+							<span class="tab-name">Route Reliability</span>
+						</button>
+						<!-- Active Line Tracker -->
+						<div class="tab-indicator"></div>
 					</div>
 
-					<!-- Row 2: Charging Downtime -->
-					<div class="deck-row" data-aos="fade-up" data-aos-delay="200">
-						<!-- Big Index Number -->
-						<div class="deck-num-col">
-							<span class="deck-num">02</span>
-						</div>
-						
-						<!-- Split Columns Content -->
-						<div class="deck-content-col">
-							<!-- Challenge Side -->
-							<div class="deck-side challenge-side-col">
-								<span class="deck-tag tag-red">The Challenge</span>
-								<h3>Charging Downtime</h3>
-								<p>Evs have 6X higher refuelling down-time compared to diesel truck</p>
-							</div>
-							
-							<!-- Vertical Laser Line -->
-							<div class="deck-divider"></div>
-							
-							<!-- EIM Solution Side -->
-							<div class="deck-side sol-side">
-								<span class="deck-tag tag-teal">EIM Solution</span>
-								<h3>Battery Swapping</h3>
-								<p>Automated Battery Swapping gets trucks back on the road in minutes, maximizing fleet productivity.</p>
-							</div>
-						</div>
-					</div>
+					<!-- Screen Content -->
+					<div class="terminal-screen">
+						<!-- Pane 1 -->
+						<div class="terminal-pane active" id="pane-0" style="opacity: 1;">
+							<div class="pane-split">
+								<!-- Challenge Block -->
+								<div class="pane-side challenge-side">
+									<div class="side-header">
+										<span class="status-indicator challenge-indicator"></span>
+										<span class="side-label">The Challenge</span>
+									</div>
+									<h3>Reduce Capital Investment</h3>
+									<p class="side-desc">Electric trucks often require substantially higher upfront
+										investment than conventional diesel vehicles.</p>
+								</div>
 
-					<!-- Row 3: Route Reliability -->
-					<div class="deck-row" data-aos="fade-up" data-aos-delay="300">
-						<!-- Big Index Number -->
-						<div class="deck-num-col">
-							<span class="deck-num">03</span>
-						</div>
-						
-						<!-- Split Columns Content -->
-						<div class="deck-content-col">
-							<!-- Challenge Side -->
-							<div class="deck-side challenge-side-col">
-								<span class="deck-tag tag-red">The Challenge</span>
-								<h3>Route Reliability</h3>
-								<p>Limited charging infrastructure and extended charging times can disrupt fleet operations and constrain business growth.</p>
+								<!-- Center Divider Line -->
+								<div class="pane-divider">
+									<div class="divider-glow"></div>
+								</div>
+
+								<!-- Solution Block -->
+								<div class="pane-side solution-side">
+									<div class="side-header">
+										<span class="status-indicator solution-indicator pulsing"></span>
+										<span class="side-label text-teal">EIM Solution</span>
+									</div>
+									<h3>Battery-as-a-Service</h3>
+									<p class="side-desc desc-white">Lower acquisition costs by separating battery
+										ownership from the vehicle.</p>
+								</div>
 							</div>
-							
-							<!-- Vertical Laser Line -->
-							<div class="deck-divider"></div>
-							
-							<!-- EIM Solution Side -->
-							<div class="deck-side sol-side">
-								<span class="deck-tag tag-teal">EIM Solution</span>
-								<h3>Smart Energy Management</h3>
-								<p>Intelligently coordinates battery swapping, charging, and fleet deployment to maximize uptime, optimize energy availability, and keep freight moving with confidence.</p>
+						</div>
+
+						<!-- Pane 2 -->
+						<div class="terminal-pane" id="pane-1">
+							<div class="pane-split">
+								<!-- Challenge Block -->
+								<div class="pane-side challenge-side">
+									<div class="side-header">
+										<span class="status-indicator challenge-indicator"></span>
+										<span class="side-label">The Challenge</span>
+									</div>
+									<h3>Charging Downtime</h3>
+									<p class="side-desc">Evs have 6X higher refuelling down-time compared to diesel
+										truck</p>
+								</div>
+
+								<!-- Center Divider Line -->
+								<div class="pane-divider">
+									<div class="divider-glow"></div>
+								</div>
+
+								<!-- Solution Block -->
+								<div class="pane-side solution-side">
+									<div class="side-header">
+										<span class="status-indicator solution-indicator pulsing"></span>
+										<span class="side-label text-teal">EIM Solution</span>
+									</div>
+									<h3>Battery Swapping</h3>
+									<p class="side-desc desc-white">Automated Battery Swapping gets trucks back on the
+										road in minutes, maximizing fleet productivity.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Pane 3 -->
+						<div class="terminal-pane" id="pane-2">
+							<div class="pane-split">
+								<!-- Challenge Block -->
+								<div class="pane-side challenge-side">
+									<div class="side-header">
+										<span class="status-indicator challenge-indicator"></span>
+										<span class="side-label">The Challenge</span>
+									</div>
+									<h3>Route Reliability</h3>
+									<p class="side-desc">Limited charging infrastructure and extended charging times can
+										disrupt fleet operations and constrain business growth.</p>
+								</div>
+
+								<!-- Center Divider Line -->
+								<div class="pane-divider">
+									<div class="divider-glow"></div>
+								</div>
+
+								<!-- Solution Block -->
+								<div class="pane-side solution-side">
+									<div class="side-header">
+										<span class="status-indicator solution-indicator pulsing"></span>
+										<span class="side-label text-teal">EIM Solution</span>
+									</div>
+									<h3>Smart Energy Management</h3>
+									<p class="side-desc desc-white">Intelligently coordinates battery swapping,
+										charging, and fleet deployment to maximize uptime, optimize energy availability,
+										and keep freight moving with confidence.</p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-<section id="offerings" class="offerings section bg-light1">
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const tabs = document.querySelectorAll('.terminal-tab');
+				const panes = document.querySelectorAll('.terminal-pane');
+				const indicator = document.querySelector('.tab-indicator');
+
+				function updateIndicator(tab) {
+					const rect = tab.getBoundingClientRect();
+					const parentRect = tab.parentElement.getBoundingClientRect();
+					indicator.style.width = `${rect.width}px`;
+					indicator.style.left = `${rect.left - parentRect.left}px`;
+				}
+
+				// Initialize
+				if (tabs.length > 0) {
+					setTimeout(() => updateIndicator(tabs[0]), 200);
+				}
+
+				tabs.forEach((tab, index) => {
+					tab.addEventListener('click', () => {
+						tabs.forEach(t => t.classList.remove('active'));
+						tab.classList.add('active');
+						updateIndicator(tab);
+
+						panes.forEach(p => {
+							p.classList.remove('active');
+							p.style.opacity = '0';
+						});
+
+						const targetPane = document.getElementById(`pane-${index}`);
+						if (targetPane) {
+							targetPane.classList.add('active');
+							targetPane.offsetHeight; // trigger reflow
+							targetPane.style.opacity = '1';
+						}
+					});
+				});
+
+				window.addEventListener('resize', () => {
+					const activeTab = document.querySelector('.terminal-tab.active');
+					if (activeTab) {
+						updateIndicator(activeTab);
+					}
+				});
+			});
+		</script>
+		<section id="offerings" class="offerings section bg-light1">
 			<div class="container">
 				<h2 class="main-title text-center mb50" data-aos="fade-up">Offerings</h2>
 				
@@ -375,27 +458,55 @@
 			}
 		});
 		</script>
-		<section id="services" class="swapping section pt-0 pb-0">
-			<!--div class="swapping-img">
-	
-	<img src="images/epath1.svg" alt="" class="path1" data-aos="fade" data-aos-delay="300">
-	<img src="images/epath2.svg" alt="" class="path2" data-aos="fade" data-aos-delay="700">
-	</div-->
-			<div class="container d-flex justify-content-between">
-				<div class="e-img"><img src="images/e-tractors.png" class="hide-mob" alt="" data-aos="fade-right"
-						data-aos-delay="100"><img src="images/e-tractors-mob.png" class="hide-desk" alt=""
-						data-aos="fade-right" data-aos-delay="100"></div>
-				<div class="e-text-cont">
-					<div class="etext-col" data-aos="fade-up" data-aos-delay="500">
-						<h2 class="font26">Automated Battery Swapping & Charging Hub</h2>
-						<p>A fully automated energy hub that enables rapid battery swapping while simultaneously charging multiple battery packs and electric vehicle.</p>
+		<section id="services" class="services-21st-section py-5">
+			<div class="container">
+				<h2 class="main-title text-center mb35" data-aos="fade-up">Services & E-Tractors</h2>
+				<p class="sub-heading-txt text-center mb-5" data-aos="fade-up" data-aos-delay="100">Integrated
+					zero-emission heavy transport solutions engineered for maximum fleet efficiency.</p>
+
+				<!-- 21st.dev Bento Feature Grid -->
+				<div class="services-bento-grid">
+					<!-- Hero Graphic Box (Left Side Image Container) -->
+					<div class="services-graphic-card" data-aos="fade-right" data-aos-delay="150">
+						<div class="services-image-wrapper">
+							<img src="images/e-tractors.png" alt="Services & E-Tractors"
+								class="services-main-img hide-mob">
+							<img src="images/e-tractors-mob.png" alt="Services & E-Tractors"
+								class="services-main-img hide-desk">
+						</div>
 					</div>
-					<div class="etext-col" data-aos="fade-up" data-aos-delay="900">
-						<h2 class="font26">Next-Generation Electric Tractor</h2>
-						<p>Purpose-built for heavy-duty commercial applications, the EIM electric tractor features an advanced swappable battery platform that delivers faster turnaround, greater operational flexibility, and seamless integration with EIM's energy ecosystem.</p>
+
+					<!-- Right Side Cards Container -->
+					<div class="services-cards-col">
+						<!-- Service Card 1 -->
+						<div class="service-feature-card" data-aos="fade-up" data-aos-delay="250">
+							<div class="service-card-header">
+								<div class="service-icon-pill">
+									<img src="images/icon-infrastructure.svg" alt="Swapping Hub Icon">
+								</div>
+								<span class="service-badge-teal">Swapping Infrastructure</span>
+							</div>
+							<h3 class="service-card-h3">Automated Battery Swapping & Charging Hub</h3>
+							<p class="service-card-p">A fully automated energy hub that enables rapid battery swapping
+								while simultaneously charging multiple battery packs and electric vehicles.</p>
+						</div>
+
+						<!-- Service Card 2 -->
+						<div class="service-feature-card" data-aos="fade-up" data-aos-delay="350">
+							<div class="service-card-header">
+								<div class="service-icon-pill">
+									<img src="images/icon-customer-buys.svg" alt="Electric Tractor Icon">
+								</div>
+								<span class="service-badge-teal">Commercial E-Mobility</span>
+							</div>
+							<h3 class="service-card-h3">Next-Generation Electric Tractor</h3>
+							<p class="service-card-p">Purpose-built for heavy-duty commercial applications, the EIM
+								electric tractor features an advanced swappable battery platform that delivers faster
+								turnaround, greater operational flexibility, and seamless integration with EIM's energy
+								ecosystem.</p>
+						</div>
 					</div>
 				</div>
-				<div class="service-title" data-aos="fade-up" data-aos-delay="300">Services and <br> E-tractors</div>
 			</div>
 		</section>
 		<section id="networks" class="networks bg-dark section ptpb85">
@@ -567,209 +678,261 @@
 		});
 		</script>
 
-		<section class="company-leadership-section">
+		<section id="company" class="company-governance-section py-5">
 			<div class="container">
+				<!-- Section Title matching all other sections -->
+				<h2 class="main-title text-center mb35" data-aos="fade-up">Company Leadership</h2>
+				<p class="sub-heading-txt text-center mb-5" data-aos="fade-up" data-aos-delay="100">Steered by
+					experienced industry leaders committed to corporate governance, sustainability, and operational
+					excellence.</p>
 
-				<!-- Section Header -->
-				<div class="section-header">
-					<h2 class="section-title pb-0 text-center">Company</h2>
-				</div>
-
-				<!-- Two Column Layout -->
-				<div class="leadership-grid">
-
-					<div class="card left-card">
-						<!-- Board of Directors -->
-						<h3 class="subsection-title">Board of Directors & Key Managerial Personnel</h3>
-
-						<div class="person-item">
-							<span class="icon"></span>
-							<div>
-								<h4>Mr. Narendra Murkumbi</h4>
-								<p class="designation">Managing Director (Key Managerial Personnel)</p>
+				<!-- 21st.dev Bento Split Layout -->
+				<div class="governance-bento-grid">
+					<!-- Left Column: Board of Directors & KMP -->
+					<div class="gov-bento-card gov-directors-card" data-aos="fade-right" data-aos-delay="200">
+						<div class="gov-card-header">
+							<div class="gov-header-title-wrap">
+								<span class="gov-badge-pill badge-teal">Leadership</span>
+								<h3 class="gov-card-title">Board of Directors & KMP</h3>
 							</div>
 						</div>
 
-						<div class="person-item">
-							<span class="icon"></span>
-							<div>
-								<h4>Mr. Surender Kumar Tuteja</h4>
-								<p class="designation">Independent Director</p>
+						<div class="directors-list">
+							<!-- Member 1 -->
+							<div class="gov-person-item">
+								<div class="person-avatar">NM</div>
+								<div class="person-details">
+									<h4 class="person-name">Mr. Narendra Murkumbi</h4>
+									<span class="person-role role-kmp">Managing Director (Key Managerial
+										Personnel)</span>
+								</div>
+							</div>
+
+							<!-- Member 2 -->
+							<div class="gov-person-item">
+								<div class="person-avatar">ST</div>
+								<div class="person-details">
+									<h4 class="person-name">Mr. Surender Kumar Tuteja</h4>
+									<span class="person-role">Independent Director</span>
+								</div>
+							</div>
+
+							<!-- Member 3 -->
+							<div class="gov-person-item">
+								<div class="person-avatar">RK</div>
+								<div class="person-details">
+									<h4 class="person-name">Ms. Ratna Prabha Kathi</h4>
+									<span class="person-role">Independent Director</span>
+								</div>
+							</div>
+
+							<!-- Member 4 -->
+							<div class="gov-person-item">
+								<div class="person-avatar">DK</div>
+								<div class="person-details">
+									<h4 class="person-name">Mr. Dhruv Kotak</h4>
+									<span class="person-role">Director</span>
+								</div>
+							</div>
+
+							<!-- Member 5 -->
+							<div class="gov-person-item">
+								<div class="person-avatar">NY</div>
+								<div class="person-details">
+									<h4 class="person-name">Mr. Nandan Yalgi</h4>
+									<span class="person-role">Director</span>
+								</div>
+							</div>
+
+							<!-- Member 6 -->
+							<div class="gov-person-item">
+								<div class="person-avatar">PS</div>
+								<div class="person-details">
+									<h4 class="person-name">Mr. Pankil Shah</h4>
+									<span class="person-role role-kmp">Chief Financial Officer (Key Managerial
+										Personnel)</span>
+								</div>
+							</div>
+
+							<!-- Member 7 -->
+							<div class="gov-person-item">
+								<div class="person-avatar">OM</div>
+								<div class="person-details">
+									<h4 class="person-name">Mr. Omkar Mardolkar</h4>
+									<span class="person-role role-kmp">Company Secretary & Compliance Officer (Key
+										Managerial Personnel)</span>
+								</div>
 							</div>
 						</div>
-
-						<div class="person-item">
-							<span class="icon"></span>
-							<div>
-								<h4>Ms. Ratna Prabha Kathi</h4>
-								<p class="designation">Independent Director</p>
-							</div>
-						</div>
-
-						<div class="person-item">
-							<span class="icon"></span>
-							<div>
-								<h4>Mr. Dhruv Kotak</h4>
-								<p class="designation">Director</p>
-							</div>
-						</div>
-
-						<div class="person-item">
-							<span class="icon"></span>
-							<div>
-								<h4>Mr. Nandan Yalgi</h4>
-								<p class="designation">Director</p>
-							</div>
-						</div>
-
-						<div class="person-item">
-							<span class="icon"></span>
-							<div>
-								<h4>Mr. Pankil Shah </h4>
-								<p class="designation">Chief Financial Officer (Key Managerial Personnel)</p>
-							</div>
-						</div>
-
-						<div class="person-item">
-							<span class="icon"></span>
-							<div>
-								<h4>Mr. Omkar Mardolkar</h4>
-								<p class="designation">Company Secretary & Compliance Officer <br>(Key Managerial
-									Personnel)</p>
-							</div>
-						</div>
-
 					</div>
 
+					<!-- Right Column: Committees of the Board -->
+					<div class="gov-bento-card gov-committees-card" data-aos="fade-left" data-aos-delay="300">
+						<div class="gov-card-header">
+							<div class="gov-header-title-wrap">
+								<span class="gov-badge-pill badge-gold">Board Committees</span>
+								<h3 class="gov-card-title text-teal">Committees of the Board</h3>
+							</div>
+						</div>
 
-					<div class="card right-card">
-						<h3 class="subsection-title">Committees of the Board</h3>
-
-						<div class="committee-grid">
-							<div class="committee-card">
-								<h3>Audit Committee</h3>
-
-								<div class="person-item">
-									<span class="icon"></span>
-									<div>
-										<h4>Mr. Surender Kumar Tuteja</h4>
-										<p class="designation">Chairman</p>
+						<div class="committees-wrapper">
+							<!-- Committee 1: Audit Committee -->
+							<div class="committee-subcard">
+								<div class="committee-subcard-header">
+									<div class="committee-icon">
+										<img src="images/icon-star.svg" alt="Audit Committee">
 									</div>
+									<h4 class="committee-name">Audit Committee</h4>
 								</div>
-
-								<div class="person-item">
-									<span class="icon"></span>
-									<div>
-										<h4>Ms. Ratna Prabha Kathi</h4>
-										<p class="designation">Member</p>
+								<div class="committee-members-list">
+									<div class="committee-member-row">
+										<span class="member-name">Mr. Surender Kumar Tuteja</span>
+										<span class="member-badge badge-chairman">Chairman</span>
 									</div>
-								</div>
-
-								<div class="person-item">
-									<span class="icon"></span>
-									<div>
-										<h4>Mr. Nandan Yalgi</h4>
-										<p class="designation">Member</p>
+									<div class="committee-member-row">
+										<span class="member-name">Ms. Ratna Prabha Kathi</span>
+										<span class="member-badge badge-member">Member</span>
+									</div>
+									<div class="committee-member-row">
+										<span class="member-name">Mr. Nandan Yalgi</span>
+										<span class="member-badge badge-member">Member</span>
 									</div>
 								</div>
 							</div>
 
-							<div class="committee-card">
-								<h3>Nomination &amp; Remuneration Committee</h3>
-
-								<div class="person-item">
-									<span class="icon"></span>
-									<div>
-										<h4>Mr. Surender Kumar Tuteja</h4>
-										<p class="designation">Chairman</p>
+							<!-- Committee 2: Nomination & Remuneration Committee -->
+							<div class="committee-subcard">
+								<div class="committee-subcard-header">
+									<div class="committee-icon">
+										<img src="images/icon-reliable-energy.svg" alt="Nomination Committee">
+									</div>
+									<h4 class="committee-name">Nomination & Remuneration Committee</h4>
+								</div>
+								<div class="committee-members-list">
+									<div class="committee-member-row">
+										<span class="member-name">Mr. Surender Kumar Tuteja</span>
+										<span class="member-badge badge-chairman">Chairman</span>
+									</div>
+									<div class="committee-member-row">
+										<span class="member-name">Ms. Ratna Prabha Kathi</span>
+										<span class="member-badge badge-member">Member</span>
+									</div>
+									<div class="committee-member-row">
+										<span class="member-name">Mr. Dhruv Kotak</span>
+										<span class="member-badge badge-member">Member</span>
 									</div>
 								</div>
-
-								<div class="person-item">
-									<span class="icon"></span>
-									<div>
-										<h4>Ms. Ratna Prabha Kathi</h4>
-										<p class="designation">Member</p>
-									</div>
-								</div>
-
-								<div class="person-item">
-									<span class="icon"></span>
-									<div>
-										<h4>Mr. Dhruv Kotak</h4>
-										<p class="designation">Member</p>
-									</div>
-								</div>
-
 							</div>
-						</div>
-
-					</div>
-
-
-				</div>
-			</div>
-		</section>
-
-
-
-		<section id="company" class="company section bg-light1">
-			<div class="container d-flex justify-content-between">
-
-
-				<div class="company-left">
-					<p class="big-txt mb35" data-aos="fade-up">Shareholders</p>
-					<p class="border-line" data-aos="fade-up">We are a 50% subsidiary of Ravindra Energy Limited, which
-						is a listed company in the business of building and operating renewable energy projects. We also
-						have a prominent player from the ports & logistics sector as a shareholder.</p>
-					<div class="logo-cont" data-aos="fade-up"><a href="https://www.ravindraenergy.com/"
-							target="_blank"><img src="images/logo-ravindra-energy.svg" alt=""></a></div>
-					<ul data-aos="fade-up" class="icon-list">
-						<li>
-							<div class="list-icon"><img src="images/icon-reliable-energy.svg" alt=""></div>
-							<div class="list-txt">Reliable Green Energy Provider to corporates</div>
-						</li>
-						<li>
-							<div class="list-icon"><img src="images/icon-energy-trading.svg" alt=""></div>
-							<div class="list-txt">Energy Trading – On power exchange & bilateral contracts</div>
-						</li>
-						<li>
-							<div class="list-icon"><img src="images/icon-renewable-energy.svg" alt=""></div>
-							<div class="list-txt">Round-the-clock renewable energy solutions; Solar PV, Wind energy and
-								BESS (Battery Energy Storage System)</div>
-						</li>
-						<li>
-							<div class="list-icon"><img src="images/icon-solar-projects.svg" alt=""></div>
-							<div class="list-txt">Solar PV based irrigation solutions</div>
-						</li>
-
-
-						<ul>
-				</div>
-				<div class="company-right">
-					<div class="side-img">
-						<div class="side-col col1">
-							<img src="images/side-block1.png" alt="" data-aos="fade">
-							<img src="images/side-block2.png" alt="" data-aos="fade-up">
-						</div>
-						<div class="side-col col2">
-							<img src="images/side-block3.png" alt="" data-aos="flip-left">
-							<img src="images/side-block4.png" alt="" data-aos="fade">
-							<img src="images/side-block5.png" alt="" data-aos="flip-right">
-						</div>
-						<div class="side-col col3">
-							<img src="images/side-block6.png" alt="" data-aos="flip-right">
-							<img src="images/side-block7.png" alt="" data-aos="flip-left">
-						</div>
-						<div class="side-col col4">
-							<img src="images/side-block8.png" alt="" data-aos="fade">
-							<img src="images/side-block9.png" alt="" data-aos="fade">
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
+
+
+		<section id="company" class="company section shareholders-section-modern py-5">
+			<div class="container">
+				<h2 class="main-title text-center mb35" data-aos="fade-up">Shareholders</h2>
+				<p class="sub-heading-txt text-center mb-5" data-aos="fade-up" data-aos-delay="100"></p>
+
+				<div class="shareholders-bento-main d-flex flex-column flex-lg-row gap-4 align-items-stretch">
+					<!-- Left Side: Dual Shareholder Bento Cards -->
+					<div class="shareholders-left-col d-flex flex-column gap-4 flex-grow-1">
+						<!-- Card 1: Ravindra Energy Limited -->
+						<div class="bento-shareholder-card p-4 rounded-4" data-aos="fade-up" data-aos-delay="100">
+							<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+								<div class="logo-cont mb-0"><a href="https://www.ravindraenergy.com/"
+										target="_blank"><img src="images/logo-ravindra-energy.svg"
+											alt="Ravindra Energy Limited" class="shareholder-logo-img"></a></div>
+								<span class="shareholder-status-pill">50% Subsidiary Owner</span>
+							</div>
+							<p class="shareholder-intro-text mb-4">Ravindra Energy Limited, which is a listed company in
+								the business of building and operating renewable energy projects. We also have a
+								prominent player from the ports & logistics sector as a shareholder.</p>
+							<div class="shareholder-features-grid">
+								<div class="bento-feature-item">
+									<div class="bento-icon-box"><img src="images/icon-reliable-energy.svg"
+											alt="Green Energy"></div>
+									<div class="bento-feature-text">Reliable Green Energy Provider to corporates</div>
+								</div>
+								<div class="bento-feature-item">
+									<div class="bento-icon-box"><img src="images/icon-energy-trading.svg"
+											alt="Energy Trading"></div>
+									<div class="bento-feature-text">Energy Trading – Power exchange & bilateral
+										contracts</div>
+								</div>
+								<div class="bento-feature-item">
+									<div class="bento-icon-box"><img src="images/icon-renewable-energy.svg"
+											alt="RTC Renewable"></div>
+									<div class="bento-feature-text">Round-the-clock RTC Renewable (Solar PV, Wind, BESS)
+									</div>
+								</div>
+								<div class="bento-feature-item">
+									<div class="bento-icon-box"><img src="images/icon-solar-projects.svg"
+											alt="Solar Irrigation"></div>
+									<div class="bento-feature-text">Solar PV based agricultural irrigation solutions
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Card 2: J M Baxi Group -->
+						<div class="bento-shareholder-card jmbaxi-bento-card p-4 rounded-4" data-aos="fade-up"
+							data-aos-delay="200">
+							<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+								<h3 class="jmbaxi-card-title text-accent mb-0 font-weight-bold">J M Baxi Group</h3>
+								<span class="legacy-badge-gold">More than 100-Year Legacy</span>
+							</div>
+							<p class="shareholder-intro-text mb-3">Founded in 1916, J M Baxi Group has spent more than a
+								century at the heart of India’s maritime and trade landscape. What began on the
+								waterfront has grown into a unified platform spanning ports, logistics, marine services,
+								and supporting supply-chain infrastructure – all built on deep maritime expertise.</p>
+							<p class="shareholder-intro-text highlight-quote mb-0">Across the port-centric ecosystem,
+								our focus remains the same: help India move cargo, commerce, and communities forward.
+							</p>
+						</div>
+					</div>
+
+					<!-- Right Side: Graphic Bento Grid Showcase -->
+					<div class="shareholders-right-bento flex-grow-1" data-aos="fade-left" data-aos-delay="300">
+						<div class="bento-graphic-grid">
+							<!-- Top Featured Card: Port Operations & EV Container Transit -->
+							<div class="bento-tile tile-image tile-img-featured">
+								<img src="images/eim-offering-img3.jpg" alt="Port EV Container Logistics"
+									class="bento-tile-img">
+								<div class="tile-overlay-caption">
+									<div class="d-flex align-items-center justify-content-between">
+										<span class="tile-title">Port EV Container Transit</span>
+										<span class="tile-badge">Port Ecosystem</span>
+									</div>
+								</div>
+							</div>
+							<!-- Bottom Left Card: EV Fleet -->
+							<div class="bento-tile tile-image tile-img-fleet">
+								<img src="images/eim-offering-img1.jpg" alt="Heavy-Duty EV Fleet"
+									class="bento-tile-img">
+								<div class="tile-overlay-caption">
+									<span class="tile-title">Heavy-Duty EV Fleet</span>
+								</div>
+							</div>
+							<!-- Bottom Right Card: Battery Swapping Hub -->
+							<div class="bento-tile tile-image tile-img-swapping">
+								<img src="images/eim-offering-img2.jpg" alt="Automated Swapping Hub"
+									class="bento-tile-img">
+								<div class="tile-overlay-caption">
+									<span class="tile-title">Port Swapping Hub</span>
+								</div>
+							</div>
+							<!-- Bottom Brand Bar -->
+							<div class="bento-tile tile-brand-bar">
+								<img src="images/energy-in-motion.svg" alt="Energy In Motion" class="bento-logo-img">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<section id="contact" class="contactus section pb-0">
 			<div class="container d-flex justify-content-between">
@@ -831,18 +994,109 @@
 					</div>
 				</div>
 			</div>
-
-			</div>
 		</section>
 		<section id="copyright" class="copyright section  pt-0 pb-0">
 			<div class="container d-flex justify-content-between">
 				<div class="copy-txt">
-					© Copyright 2024 Energy In Motion Pvt. Ltd. All rights reserved. <br>Web Design by Image Online Pvt.
+					© Copyright 2024 Energy In Motion Ltd. All rights reserved. <br>Web Design by Image Online Pvt.
 					Ltd.
 				</div>
 				<div class="copy-img"><img src="images/footer-truck.png" alt=""></div>
 			</div>
 		</section>
+		<div style="display: none;" id="narendra" class="fancy-popup">
+			<div class="fancy-cont">
+				<div class="fancy-img"> <img src="images/narendra-murkumbi.jpg" alt=""></div>
+				<div class="fancy-txt">
+					<h2 class="main-title mb-1"> Narendra Murkumbi</h2>
+					<p class="designation mb-3">Managing Director & CEO</p>
+					<p>He is an accomplished Electronics Engineer from Karnataka University and holds an MBA from the
+						Indian Institute of Management, Ahmedabad (1994). He co-founded Shree Renuka Sugars Ltd. in
+						1998, which has grown to become one of the largest sugar manufacturers globally. Currently, he
+						serves as the Founder and Vice Chairman of Ravindra Energy Limited, a well-known provider of
+						solar energy solutions.</p>
+					<p>He has held several notable positions, including Independent Director at ICICI Bank Ltd.
+						(2006-2010) and Board Member of the National Commodity and Derivatives Exchange Limited (NCDEX)
+						(2010-2014). He also served as the President of the Indian Sugar Mills Association during
+						2010-2011.</p>
+					<p>His contributions to the agri-business sector have been widely recognized, earning him several
+						accolades, including 'The Entrepreneur of the Year' award at the Economic Times Awards in 2010.
+						Through the Shree Renuka Development Foundation, which he founded, he has established three
+						CBSE-affiliated schools and two ITI colleges in rural Karnataka, India, demonstrating his
+						commitment to education and community development.</p>
+				</div>
+			</div>
+		</div>
+		<!-- <div style="display: none;" id="rajiv" class="fancy-popup">
+		<div class="fancy-cont">
+			<div class="fancy-img"> <img src="images/rajiv-singh.jpg" alt=""></div>
+			<div class="fancy-txt">
+			<h2 class="main-title mb-1"> Rajiv Singh</h2>
+			<p class="designation mb-3">President - Sales & Charging Network</p>
+			<p>He has built a career by scaling entrepreneurial ventures alongside their founders, specializing in driving growth and executing innovative strategies that position companies for long-term success. Combining high-level strategic vision with hands-on immersion, he has consistently delivered impactful results across various sectors, including Telecom, E- commerce, Electric Vehicles (EV), and Education Technology (EdTech).</p>
+<p>Notable achievements in his career include:</p>
+<p>Developing omni-channel strategies, notably enhancing upGrad’s multi-channel presence and establishing Ola Electric’s COCO stores distribution network.</p>
+<p>Designing and launching the classifieds and auction platforms at CarTrade.com, significantly contributing to the company’s industry presence and customer reach.</p>
+<p>Overseeing investments in franchising ventures as a venture capital manager, leveraging his market trend insights to support sustainable business models.</p>
+
+<p>Launching and exiting multiple ventures, including a DTP publishing venture with REPRO, a Telecom initiative with Airtel, and a beauty upskilling platform with Spykar.</p>
+<p>His experience reflects a deep commitment to innovation, growth, and partnership, consistently aiming to create meaningful market impact.</p>
+			</div>
+		</div>
+	</div> -->
+		<div style="display: none;" id="devdatta" class="fancy-popup">
+			<div class="fancy-cont">
+				<div class="fancy-img"> <img src="images/devdatta-deshmukh.png" alt=""></div>
+				<div class="fancy-txt">
+					<h2 class="main-title mb-1"> Devdatta Deshmukh</h2>
+					<p class="designation mb-3">Manager - Strategy</p>
+					<p>He is a strategic management professional with a solid background in finance, marketing, and
+						mechanical engineering. Currently serving as Manager - Strategy at Energy in Motion Private
+						Limited, he brings extensive experience from leading organizations such as Kalyani Powertrain
+						Ltd (Bharat Forge), John Deere Technological Centre India, and Tata Consultancy Services.</p>
+					<p>He specializes in strategic planning, program management, business analytics, and e- mobility,
+						having led high-impact projects in the automotive and commercial vehicle sectors. He holds an
+						MBA in Finance and Marketing from COEP Technological University, and a bachelor's degree in
+						mechanical engineering from Datta Meghe College of Engineering. His technical proficiency
+						includes tools such as Power BI, MS Excel, SQL, SAP MM, and Tableau.</p>
+					<p>He has a proven track record of driving innovation and commercial growth, aligning with top
+						management to implement strategic roadmaps, manage joint ventures, optimize production
+						strategies, and conduct data-driven market research. His efforts have resulted in significant
+						achievements, including boosting sales targets and operational efficiency.</p>
+					<p>In addition to his professional accomplishments, he is recognized for his extracurricular
+						achievements, including awards in national-level automotive competitions and presentations at
+						international conferences.</p>
+				</div>
+			</div>
+		</div>
+		<div style="display: none;" id="munjal" class="fancy-popup">
+			<div class="fancy-cont">
+				<div class="fancy-img"> <img src="images/munjal-savla.png" alt=""></div>
+				<div class="fancy-txt">
+					<h2 class="main-title mb-1"> Munjal Savla</h2>
+					<p class="designation mb-3">General Manager - Technology</p>
+					<p>He is a seasoned engineer and entrepreneur with a rich background in the energy sector,
+						complemented by an impressive track record in professional racing. He graduated with a degree in
+						Mechanical Engineering from Mumbai University and went on to earn a Master of Science in
+						Management of Technology from Delft University of Technology in the Netherlands.</p>
+					<p>With over 8 years of experience in renewable energy, he co-founded Orgro Energy LLP, specializing
+						in Lender’s Independent Engineer services for non-banking financial companies (NBFCs) involved
+						in solar PV project financing. His technical expertise spans system design, process
+						optimization, and comprehensive project management. His notable achievements include overseeing
+						the installation of over 10,000 solar-powered water pumping systems and leading a team to design
+						and execute over 20 MW of ground-mounted solar installations for Ravindra Energy Ltd. In recent
+						years, his focus has expanded to pioneering research and design in grid-scale energy storage
+						solutions, reflecting his commitment to advancing sustainable energy technologies.</p>
+					<p>Outside his professional realm, he is a dedicated racing driver with numerous international
+						victories. He currently holds the title of Master Champion in the prestigious Polo Cup 2024
+						series within the Indian National Racing Championship. Additionally, he is a certified
+						instructor in performance and race driving, collaborating with renowned automotive brands such
+						as Jaguar Land Rover, Jeep, and the Volkswagen Group.</p>
+					<p>His unique blend of technical expertise and competitive drive positions him as a dynamic force in
+						both his professional and personal pursuits.</p>
+				</div>
+			</div>
+		</div>
 
 		<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
 				class="bi bi-arrow-up-short"></i></a>
@@ -860,6 +1114,7 @@
 		<script src="https://www.google.com/recaptcha/api.js"></script>
 		<script src="js/main.js"></script>
 
+	</main>
 </body>
 
 </html>
