@@ -39,15 +39,33 @@
   }
 
   /**
-   * Hide mobile nav on same-page/hash links
+   * Smooth scroll to same-page/hash links and hide hash from the URL
    */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          
+          // Close mobile menu if active
+          if (document.querySelector('.mobile-nav-active')) {
+            mobileNavToogle();
+          }
+
+          // Calculate correct scroll position taking header offset into account
+          const headerOffset = 90; // Header height
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
       }
     });
-
   });
 
   /**
@@ -254,6 +272,50 @@ window.addEventListener('load', () => {
     });
   }
 
+  // Initialize Swiper for "Testimonials"
+  if (document.querySelector('.testimonials-swiper')) {
+    new Swiper('.testimonials-swiper', {
+      slidesPerView: 1.1,
+      spaceBetween: 16,
+      loop: false,
+      pagination: {
+        el: '.testimonials-swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 32,
+          allowTouchMove: false,
+        }
+      }
+    });
+  }
+
+  // Initialize Swiper for "Careers / Current Openings"
+  if (document.querySelector('.careers-swiper')) {
+    new Swiper('.careers-swiper', {
+      slidesPerView: 1.1,
+      spaceBetween: 16,
+      loop: false,
+      pagination: {
+        el: '.careers-swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+          allowTouchMove: false,
+        }
+      }
+    });
+  }
+
   // Aceternity-Style Vertical Timeline Progress Line Handler
   const timelineWrapper = document.querySelector('.timeline-track-wrapper');
   const progressLine = document.querySelector('.timeline-active-progress-line');
@@ -293,5 +355,4 @@ window.addEventListener('load', () => {
     window.addEventListener('resize', handleTimelineScroll);
     handleTimelineScroll(); // Run once on load
   }
-
 })();
