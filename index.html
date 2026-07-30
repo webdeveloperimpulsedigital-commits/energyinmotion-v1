@@ -94,7 +94,7 @@
 			<div class="container">
 				<!-- Row 1: Header + Text -->
 				<div class="overview-header text-center" data-aos="fade-up">
-					<h2 class="main-title"><span class="title-dark">Over</span><span class="title-green">view</span></h2>
+					<h2 class="main-title">Overview</h2>
 					<p class="overview-lead-text">
 						We are building India's integrated electric freight ecosystem - combining advanced electric vehicles, battery swapping, charging infrastructure, and intelligent support services. Our solutions help enterprises transition to cleaner transport while improving operational efficiency, reducing total cost of ownership, and minimizing technology risk.
 					</p>
@@ -128,6 +128,19 @@
 				});
 			});
 
+			const servicesPanels = document.querySelectorAll('.services-panel');
+
+			servicesPanels.forEach(panel => {
+				panel.addEventListener('mouseenter', () => {
+					servicesPanels.forEach(p => p.classList.remove('active'));
+					panel.classList.add('active');
+				});
+				panel.addEventListener('click', () => {
+					servicesPanels.forEach(p => p.classList.remove('active'));
+					panel.classList.add('active');
+				});
+			});
+
 			const rows = document.querySelectorAll('.deck-row');
 
 			rows.forEach(row => {
@@ -144,7 +157,7 @@
 		</script>
 		<section id="solutions" class="solution section">
 			<div class="container">
-				<h2 class="main-title text-center mb55 transform-none" data-aos="fade-up"><span class="title-light">Barriers &</span> <span class="title-green">Solutions to Truck Electrification</span></h2>
+				<h2 class="main-title text-center mb55 transform-none" data-aos="fade-up">Barriers & Solutions to Truck Electrification</h2>
 				
 				<div class="solutions-deck">
 					<!-- Row 1: Capital Investment -->
@@ -231,7 +244,7 @@
 		</section>
 		<section id="offerings" class="offerings section bg-light1">
 			<div class="container">
-				<h2 class="main-title text-center mb50" data-aos="fade-up"><span class="title-dark">Our</span> <span class="title-green">Offerings</span></h2>
+				<h2 class="main-title text-center mb50" data-aos="fade-up">Offerings</h2>
 				
 				<div class="offerings-split-layout">
 					<!-- Left Column: Content Points Grouped in Pairs (3 groups of 2) -->
@@ -296,12 +309,12 @@
 					<!-- Right Column: Sticky Media Display -->
 					<div class="offerings-sticky-media-column" data-aos="fade-left">
 						<div class="offerings-image-display">
-							<div class="offering-display-img active" data-offering-img="1" style="background-image: url('images/offering_grid_1.png');"></div>
-							<div class="offering-display-img" data-offering-img="2" style="background-image: url('images/offering_grid_2.png');"></div>
-							<div class="offering-display-img" data-offering-img="3" style="background-image: url('images/offering_grid_3.png');"></div>
-							<div class="offering-display-img" data-offering-img="4" style="background-image: url('images/offering_grid_4.png');"></div>
-							<div class="offering-display-img" data-offering-img="5" style="background-image: url('images/offering_grid_5.png');"></div>
-							<div class="offering-display-img" data-offering-img="6" style="background-image: url('images/offering_grid_6.png');"></div>
+							<div class="offering-display-img active" data-offering-img="1" style="background-image: url('images/offering-1.png');"></div>
+							<div class="offering-display-img" data-offering-img="2" style="background-image: url('images/offering-2.png');"></div>
+							<div class="offering-display-img" data-offering-img="3" style="background-image: url('images/offering-3.png');"></div>
+							<div class="offering-display-img" data-offering-img="4" style="background-image: url('images/offering-1.png');"></div>
+							<div class="offering-display-img" data-offering-img="5" style="background-image: url('images/offering-2.png');"></div>
+							<div class="offering-display-img" data-offering-img="6" style="background-image: url('images/offering-3.png');"></div>
 						</div>
 					</div>
 				</div>
@@ -337,50 +350,27 @@
 		</script>
 		<section id="services" class="services-21st-section py-5">
 			<div class="container">
-				<h2 class="main-title text-center mb35" data-aos="fade-up"><span class="title-dark">Services &</span> <span class="title-green">E-Tractors</span></h2>
-				<p class="sub-heading-txt text-center mb-5" data-aos="fade-up" data-aos-delay="100">Integrated
-					zero-emission heavy transport solutions engineered for maximum fleet efficiency.</p>
+				<h2 class="main-title text-center mb50" data-aos="fade-up">Services & E-Tractors</h2>
 
-				<!-- 21st.dev Bento Feature Grid -->
-				<div class="services-bento-grid">
-					<!-- Hero Graphic Box (Left Side Image Container) -->
-					<div class="services-graphic-card" data-aos="fade-right" data-aos-delay="150">
-						<div class="services-image-wrapper">
-							<img src="images/e-tractors.png" alt="Services & E-Tractors"
-								class="services-main-img hide-mob">
-							<img src="images/e-tractors-mob.png" alt="Services & E-Tractors"
-								class="services-main-img hide-desk">
+				<!-- Services Accordion Grid -->
+				<div class="services-accordion-grid" data-aos="fade-up" data-aos-delay="200">
+					<!-- Panel 1: Swapping Infrastructure -->
+					<div class="services-panel active" style="background-image: url('images/overview-1.png');">
+						<div class="services-panel-overlay">
+							<div class="services-panel-body">
+								<h3 class="services-panel-h3">Automated Battery Swapping & Charging Hub</h3>
+								<p class="services-panel-p">A fully automated energy hub that enables rapid battery swapping while simultaneously charging multiple battery packs and electric vehicle.</p>
+							</div>
 						</div>
 					</div>
 
-					<!-- Right Side Cards Container -->
-					<div class="services-cards-col">
-						<!-- Service Card 1 -->
-						<div class="service-feature-card" data-aos="fade-up" data-aos-delay="250">
-							<div class="service-card-header">
-								<div class="service-icon-pill">
-									<img src="images/icon-infrastructure.svg" alt="Swapping Hub Icon">
-								</div>
-								<span class="service-badge-teal">Swapping Infrastructure</span>
+					<!-- Panel 2: E-Tractors -->
+					<div class="services-panel" style="background-image: url('images/overview-3.png');">
+						<div class="services-panel-overlay">
+							<div class="services-panel-body">
+								<h3 class="services-panel-h3">Next-Generation Electric Tractor</h3>
+								<p class="services-panel-p">Purpose-built for heavy-duty commercial applications, the EIM electric tractor features an advanced swappable battery platform that delivers faster turnaround, greater operational flexibility, and seamless integration with EIM's energy ecosystem.</p>
 							</div>
-							<h3 class="service-card-h3">Automated Battery Swapping & Charging Hub</h3>
-							<p class="service-card-p">A fully automated energy hub that enables rapid battery swapping
-								while simultaneously charging multiple battery packs and electric vehicles.</p>
-						</div>
-
-						<!-- Service Card 2 -->
-						<div class="service-feature-card" data-aos="fade-up" data-aos-delay="350">
-							<div class="service-card-header">
-								<div class="service-icon-pill">
-									<img src="images/icon-customer-buys.svg" alt="Electric Tractor Icon">
-								</div>
-								<span class="service-badge-teal">Commercial E-Mobility</span>
-							</div>
-							<h3 class="service-card-h3">Next-Generation Electric Tractor</h3>
-							<p class="service-card-p">Purpose-built for heavy-duty commercial applications, the EIM
-								electric tractor features an advanced swappable battery platform that delivers faster
-								turnaround, greater operational flexibility, and seamless integration with EIM's energy
-								ecosystem.</p>
 						</div>
 					</div>
 				</div>
@@ -389,7 +379,7 @@
 		<section id="networks" class="networks bg-dark section ptpb85">
 			<div class="container d-flex justify-content-between">
 				<div class="charge-left">
-					<h2 class="main-title" data-aos="fade-up"><span class="title-light">Charging</span> <span class="title-green">Network</span></h2>
+					<h2 class="main-title" data-aos="fade-up">Charging Network</h2>
 					<p class="big-txt1" data-aos="fade-up" data-aos-delay="100">Future Ready Charging Networks <br>
 						Deployment Roadmap</p>
 					<ul class="timeline">
@@ -415,7 +405,7 @@
 
 		<section id="milestones" class="milestone section bg-blue">
 			<div class="container">
-				<h2 class="main-title text-center mb50" data-aos="fade-up"><span class="title-dark">Our</span> <span class="title-green">Milestones</span></h2>
+				<h2 class="main-title text-center mb50" data-aos="fade-up">Milestones</h2>
 				
 				<div class="timeline-container" id="timeline-container">
 					<!-- Timeline Vertical Line -->
@@ -558,7 +548,7 @@
 		<section id="press" class="press-asymmetric-section">
 			<div class="container">
 				<!-- Section Title -->
-				<h2 class="main-title text-center mb35 transform-none" data-aos="fade-up"><span class="title-dark">Latest</span> <span class="title-green">News</span></h2>
+				<h2 class="main-title text-center mb35 transform-none" data-aos="fade-up">News</h2>
 				
 				<div class="press-asymmetric-container">
 
@@ -596,7 +586,7 @@
 		<section id="company" class="company-governance-section py-5">
 			<div class="container">
 				<!-- Section Title matching all other sections -->
-				<h2 class="main-title text-center mb35" data-aos="fade-up"><span class="title-dark">Company</span> <span class="title-green">Leadership</span></h2>
+				<h2 class="main-title text-center mb35" data-aos="fade-up">Company Leadership</h2>
 				<p class="sub-heading-txt text-center mb-5" data-aos="fade-up" data-aos-delay="100">Steered by
 					experienced industry leaders committed to corporate governance, sustainability, and operational
 					excellence.</p>
@@ -748,7 +738,7 @@
 
 		<section id="company" class="company section shareholders-section-modern py-5">
 			<div class="container">
-				<h2 class="main-title text-center transform-none mb-3"><span class="title-dark">Our</span> <span class="title-green">Shareholders</span></h2>
+				<h2 class="main-title text-center transform-none mb-3">Our Shareholders</h2>
 				<p class="sub-heading-txt text-center mb-5" data-aos="fade-up" data-aos-delay="100"></p>
 
 				<div class="shareholders-bento-main d-flex flex-column flex-lg-row gap-4 align-items-stretch">
@@ -852,7 +842,7 @@
 		<section id="contact" class="contactus section pb-0">
 			<div class="container d-flex justify-content-between">
 				<div class="contact-left">
-					<h2 class="main-title mb35" data-aos="fade-up"><span class="title-dark">Contact</span> <span class="title-green">Us</span></h2>
+					<h2 class="main-title mb35" data-aos="fade-up">Contact Us</h2>
 					<div class="logo-cont"><img src="images/energy-in-motion.svg" alt=""></div>
 					<p class="font20">B-3702, Kohinoor Square, <br>
 						N. C. Kelkar Marg,<br>
@@ -861,7 +851,7 @@
 					<p class="email-cont"><a href="mailto:powerup@energyinmotion.in">powerup@energyinmotion.in</a></p>
 				</div>
 				<div class="contact-right">
-					<h2 class="main-title mb35" data-aos="fade-up"><span class="title-dark">Get in</span> <span class="title-green">touch</span></h2>
+					<h2 class="main-title mb35" data-aos="fade-up">Get in touch</h2>
 					<div class="get-form">
 						<div class="contact-form">
 							<form class="contact-form" action="contact-mailto.php" enctype="multipart/form-data"

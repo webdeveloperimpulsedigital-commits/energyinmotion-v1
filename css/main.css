@@ -7489,145 +7489,94 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   padding-bottom: 80px;
 }
 
-.services-bento-grid {
+.services-accordion-grid {
   display: flex;
-  gap: 32px;
-  align-items: stretch;
+  width: 100%;
+  height: 520px;
+  gap: 20px;
+  margin-top: 40px;
+  overflow: hidden;
 }
 
-@media (max-width: 991px) {
-  .services-bento-grid {
-    flex-direction: column;
-  }
-}
-
-.services-graphic-card {
-  flex: 1 1 55%;
-  max-width: 55%;
+.services-panel {
+  flex: 1;
   position: relative;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
   border-radius: 24px;
+  cursor: pointer;
   overflow: hidden;
-  background: linear-gradient(145deg, #01363F, #002329);
-  border: 1px solid rgba(73, 193, 172, 0.3);
-  box-shadow: 0 12px 35px rgba(1, 54, 63, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
+  transition: flex 0.7s cubic-bezier(0.25, 1, 0.3, 1), transform 0.3s ease;
+  box-shadow: 0 15px 35px rgba(1, 54, 63, 0.08);
 }
 
-@media (max-width: 991px) {
-  .services-graphic-card {
-    max-width: 100%;
-    width: 100%;
-  }
+.services-panel.active {
+  flex: 3.5;
 }
 
-.services-image-wrapper {
-  position: relative;
+/* Glassmorphism text overlay */
+.services-panel-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
-  min-height: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.services-main-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  position: relative;
-  z-index: 2;
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.services-graphic-card:hover .services-main-img {
-  transform: scale(1.03);
-}
-
-.services-cards-col {
-  flex: 1 1 45%;
-  max-width: 45%;
+  background: linear-gradient(to top, rgba(1, 54, 63, 0.92) 0%, rgba(1, 54, 63, 0.65) 50%, rgba(1, 54, 63, 0) 100%);
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  justify-content: center;
+  justify-content: flex-end;
+  min-height: 50%;
+  transition: all 0.5s ease;
 }
 
-@media (max-width: 991px) {
-  .services-cards-col {
-    max-width: 100%;
-    width: 100%;
+
+
+.services-panel-h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  font-family: 'PP Neue Montreal', sans-serif;
+  line-height: 1.3;
+}
+
+.services-panel-p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease, margin-top 0.6s ease;
+}
+
+.services-panel.active .services-panel-p {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+/* Responsive Overrides */
+@media (max-width: 992px) {
+  .services-accordion-grid {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
   }
-}
-
-.service-feature-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 32px 28px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-  position: relative;
-}
-
-.service-feature-card:hover {
-  transform: translateY(-4px);
-  border-color: #49C1AC;
-  box-shadow: 0 12px 30px rgba(73, 193, 172, 0.16);
-}
-
-.service-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 18px;
-}
-
-.service-icon-pill {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(73, 193, 172, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.service-icon-pill img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-}
-
-.service-badge-teal {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 5px 14px;
-  border-radius: 20px;
-  background: rgba(73, 193, 172, 0.12);
-  color: #01363F;
-  border: 1px solid rgba(73, 193, 172, 0.3);
-}
-
-.service-card-h3 {
-  font-size: 1.28rem;
-  font-weight: 700;
-  color: #01363F;
-  margin-bottom: 12px;
-  line-height: 1.35;
-}
-
-.service-card-p {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: #475569;
-  margin-bottom: 0;
+  .services-panel {
+    flex: none !important;
+    height: 160px;
+    width: 100%;
+    transition: height 0.6s cubic-bezier(0.25, 1, 0.3, 1);
+  }
+  .services-panel.active {
+    height: 420px;
+  }
+  .services-panel-overlay {
+    padding: 24px;
+  }
 }
 
 /* ==========================================================================
@@ -8596,15 +8545,4 @@ html:not(.no-js) [data-aos="fade-left"] {
 html:not(.no-js) [data-aos="fade-left"].aos-animate {
   transform: translate3d(0, 0, 0) scale(1) !important;
   filter: blur(0);
-}
-
-/* Split Heading Colors */
-.title-dark {
-  color: #01363f !important; /* EIM brand dark slate for light backgrounds */
-}
-.title-light {
-  color: #ffffff !important; /* White for dark backgrounds */
-}
-.title-green {
-  color: var(--accent-color, #49c1ac) !important; /* EIM brand green/turquoise */
 }
