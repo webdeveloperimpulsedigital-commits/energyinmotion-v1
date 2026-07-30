@@ -1858,7 +1858,7 @@ section,
 
 .hero {
   width: 100%;
-  min-height: 885px;
+  height: 728px;
   position: relative;
   padding: 0;
   display: block;
@@ -2801,7 +2801,8 @@ ul.icon-list li img:active {
   }
 
   .hero {
-    min-height: 455px
+    height: 350px;
+    min-height: auto;
   }
 
   .navmenu a {
@@ -6489,7 +6490,8 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   }
 
   .hero {
-    min-height: 435px
+    height: 350px;
+    min-height: auto;
   }
 
   .navmenu a:hover::after,
@@ -6563,7 +6565,8 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   }
 
   .hero {
-    min-height: 402px;
+    height: 350px;
+    min-height: auto;
   }
 
   .animate-objects {
@@ -8546,4 +8549,21 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
     flex-direction: column;
     gap: 15px;
   }
+}
+
+/* Subtle, Smooth AOS Scroll Entrance Animation Overrides */
+html:not(.no-js) [data-aos^="fade"][data-aos^="fade"] {
+  transition-property: opacity, transform !important;
+}
+html:not(.no-js) [data-aos="fade-up"] {
+  transform: translate3d(0, 30px, 0) !important;
+}
+html:not(.no-js) [data-aos="fade-down"] {
+  transform: translate3d(0, -30px, 0) !important;
+}
+html:not(.no-js) [data-aos="fade-right"] {
+  transform: translate3d(-30px, 0, 0) !important;
+}
+html:not(.no-js) [data-aos="fade-left"] {
+  transform: translate3d(30px, 0, 0) !important;
 }
