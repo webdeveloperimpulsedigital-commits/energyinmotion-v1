@@ -8553,17 +8553,38 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 
 /* Subtle, Smooth AOS Scroll Entrance Animation Overrides */
 html:not(.no-js) [data-aos^="fade"][data-aos^="fade"] {
-  transition-property: opacity, transform !important;
+  transition-property: opacity, transform, filter !important;
+  will-change: opacity, transform, filter;
 }
 html:not(.no-js) [data-aos="fade-up"] {
-  transform: translate3d(0, 30px, 0) !important;
+  transform: translate3d(0, 45px, 0) scale(0.96) !important;
+  filter: blur(5px);
+}
+html:not(.no-js) [data-aos="fade-up"].aos-animate {
+  transform: translate3d(0, 0, 0) scale(1) !important;
+  filter: blur(0);
 }
 html:not(.no-js) [data-aos="fade-down"] {
-  transform: translate3d(0, -30px, 0) !important;
+  transform: translate3d(0, -45px, 0) scale(0.96) !important;
+  filter: blur(5px);
+}
+html:not(.no-js) [data-aos="fade-down"].aos-animate {
+  transform: translate3d(0, 0, 0) scale(1) !important;
+  filter: blur(0);
 }
 html:not(.no-js) [data-aos="fade-right"] {
-  transform: translate3d(-30px, 0, 0) !important;
+  transform: translate3d(-45px, 0, 0) scale(0.97) !important;
+  filter: blur(5px);
+}
+html:not(.no-js) [data-aos="fade-right"].aos-animate {
+  transform: translate3d(0, 0, 0) scale(1) !important;
+  filter: blur(0);
 }
 html:not(.no-js) [data-aos="fade-left"] {
-  transform: translate3d(30px, 0, 0) !important;
+  transform: translate3d(45px, 0, 0) scale(0.97) !important;
+  filter: blur(5px);
+}
+html:not(.no-js) [data-aos="fade-left"].aos-animate {
+  transform: translate3d(0, 0, 0) scale(1) !important;
+  filter: blur(0);
 }
