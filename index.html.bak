@@ -75,8 +75,8 @@
 						<li><a href="#networks">Network</a></li>
 						<li class="dropdown"><a href="#"><span>Company</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
 							<ul>
-								<li><a href="#shareholders">Shareholders</a></li>
 								<li><a href="#leadership">Leadership</a></li>
+								<li><a href="#shareholders">Shareholders</a></li>
 								<li><a href="#people-eim">People at EIM</a></li>
 								<li><a href="#awards">Awards & Recognition</a></li>
 							</ul>
@@ -203,73 +203,6 @@
 			});
 		});
 		</script>
-		<section id="shareholders" class="company section shareholders-section-modern py-5">
-			<div class="container">
-				<h2 class="main-title text-center transform-none mb-3">Our Shareholders</h2>
-				<p class="sub-heading-txt text-center mb-5" data-aos="fade-up" data-aos-delay="100">
-					EIM is a joint venture between <strong>Ravindra Energy Limited</strong>, a listed company in the business of renewable energy projects and <strong>JM Baxi Group</strong>, the 2nd largest company in the ports & logistics sector.
-				</p>
-
-				<div class="shareholders-bento-main d-flex flex-column flex-lg-row gap-4 align-items-stretch">
-					<!-- Left Side: Dual Shareholder Bento Cards -->
-					<div class="shareholders-left-col d-flex flex-column gap-4 flex-grow-1">
-						<!-- Card 1: Ravindra Energy Limited -->
-						<div class="bento-shareholder-card p-4 rounded-4" data-aos="fade-up" data-aos-delay="100">
-							<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
-								<div class="logo-cont mb-0"><a href="https://www.ravindraenergy.com/"
-										target="_blank"><img src="images/logo-ravindra-energy.svg"
-											alt="Ravindra Energy Limited" class="shareholder-logo-img"></a></div>
-							</div>
-							<ul class="shareholder-bullet-list">
-								<li>Reliable Green Energy Provider to corporates</li>
-								<li>Rural solar projects</li>
-								<li>Round the clock renewable energy solutions including solar, wind and BESS (Battery energy storage system)</li>
-								<li>Energy Trading – exchange + bilateral contracts</li>
-								<li>For more info: <a href="https://www.nseindia.com/get-quotes/equity?symbol=RELTD" target="_blank" class="shareholder-link">https://www.nseindia.com/get-quotes/equity?symbol=RELTD</a></li>
-							</ul>
-						</div>
-
-						<!-- Card 2: J M Baxi Group -->
-						<div class="bento-shareholder-card jmbaxi-bento-card p-4 rounded-4" data-aos="fade-up"
-							data-aos-delay="200">
-							<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
-								<div class="logo-cont mb-0"><a href="https://www.jmbaxi.com/"
-										target="_blank"><img src="images/jm-main-logo.svg"
-											alt="J M Baxi Group" class="shareholder-logo-img"></a></div>
-							</div>
-							<ul class="shareholder-bullet-list">
-								<li>108-year-old business conglomerate, in marine services, ports and logistics and technology</li>
-								<li>Operates container and multi-cargo terminals, CFS/ICDs, rail logistics and project cargo services</li>
-								<li>India's largest and most comprehensive port and inland location network</li>
-								<li>For more info: <a href="https://www.jmbaxi.com/" target="_blank" class="shareholder-link">https://www.jmbaxi.com/</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- Right Side: Graphic Bento Grid Showcase -->
-					<div class="shareholders-right-bento flex-grow-1" data-aos="fade-left" data-aos-delay="300">
-						<div class="bento-graphic-grid">
-							<!-- Top Featured Card: Port Operations & EV Container Transit -->
-							<div class="bento-tile tile-image tile-img-featured">
-								<img src="images/shareholder-2.JPG" alt="Port EV Container Logistics"
-									class="bento-tile-img" loading="lazy">
-							</div>
-							<!-- Bottom Left Card: EV Fleet -->
-							<div class="bento-tile tile-image tile-img-fleet">
-								<img src="images/shareholder-3.JPG" alt="Heavy-Duty EV Fleet"
-									class="bento-tile-img" loading="lazy">
-							</div>
-							<!-- Bottom Right Card: Battery Swapping Hub -->
-							<div class="bento-tile tile-image tile-img-swapping">
-								<img src="images/shareholder-1.jpg" alt="Automated Swapping Hub"
-									class="bento-tile-img" loading="lazy">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
 		<section id="solutions" class="solution section">
 			<div class="container">
 				<h2 class="main-title text-center mb55 transform-none" data-aos="fade-up">Barriers & Solutions to Truck Electrification</h2>
@@ -472,49 +405,6 @@
 			}
 		});
 		</script>
-
-		<section id="networks" class="networks-dashboard-section py-5">
-			<div class="container">
-				<!-- Section Title & Subtitle centered at the top -->
-				<div class="text-center mb-5" data-aos="fade-up">
-					<h2 class="main-title mb-1"><span class="title-dark">Charging</span> <span class="title-green">Network</span></h2>
-					<p class="section-subtitle">Future Ready Charging Networks <br> Deployment Roadmap</p>
-				</div>
-
-				<!-- Middle: Two Bento Boxes side-by-side -->
-				<div class="row g-4 mb-5">
-					<!-- Card 2025 -->
-					<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-						<div class="roadmap-bento-card h-100">
-							<div class="bento-badge badge-green">2025</div>
-							<p class="bento-desc" style="font-size: 16px; line-height: 1.8; margin-bottom: 0;">Introduce <strong>22 Swapping Stations</strong> at major logistics hubs throughout India, each capable of servicing 100 e-trucks per day.</p>
-						</div>
-					</div>
-
-					<!-- Card 2027 -->
-					<div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-						<div class="roadmap-bento-card h-100">
-							<div class="bento-badge badge-teal">2027</div>
-							<p class="bento-desc" style="font-size: 16px; line-height: 1.8; margin-bottom: 0;">Target the deployment of <strong>45 additional stations</strong> in sectors like cement, steel, and mining, enhancing the overall charging network for electric vehicles.</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Bottom: India Map Panel centered -->
-				<div class="row justify-content-center">
-					<div class="col-12" data-aos="fade-up" data-aos-delay="300">
-						<div class="network-map-dashboard" style="padding: 20px;">
-							<!-- Map Container -->
-							<div class="map-wrapper" style="min-height: auto;">
-								<div class="radial-spotlight"></div>
-								<img src="images/eim-network.svg" alt="India Charging Network Map" class="national-map-img" style="max-width: 70%; margin: 0 auto;">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
 		<section id="services" class="services-21st-section py-5">
 			<div class="container">
 				<h2 class="main-title text-center mb50" data-aos="fade-up">Services & E-Tractors</h2>
@@ -555,6 +445,641 @@
 			});
 		});
 		</script>
+
+		<section id="networks" class="networks bg-dark section ptpb85">
+			<div class="container d-flex justify-content-between align-items-center">
+				<div class="charge-left">
+					<h2 class="main-title" data-aos="fade-up">Charging Network</h2>
+					<p class="big-txt1" data-aos="fade-up" data-aos-delay="100">
+						Future Ready Charging Networks <br>
+						<span class="highlight-sub">Deployment Roadmap</span>
+					</p>
+					<ul class="timeline">
+						<li data-aos="fade-up" data-aos-delay="150">
+							<div class="year"><span>2025</span></div>
+							<div class="year-txt">Introduce <strong>22 Swapping Stations</strong> at major logistics hubs throughout India, each capable of servicing 100 e-trucks per day.</div>
+						</li>
+						<li data-aos="fade-up" data-aos-delay="250">
+							<div class="year"><span>2027</span></div>
+							<div class="year-txt">Target the deployment of <strong>45 additional stations</strong> in sectors like cement, steel, and mining, enhancing the overall charging network for electric vehicles.</div>
+						</li>
+					</ul>
+				</div>
+				<div class="charge-right">
+					<div class="map-cont" data-aos="fade-up">
+						<img src="images/eim-network.svg" alt="India Charging Network Map">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="events" class="event-section py-5 bg-blue">
+			<div class="container">
+				<!-- Section Title -->
+				<h2 class="main-title text-center mb50" data-aos="fade-up">Events</h2>
+
+				<!-- Event Tabs Switcher -->
+				<div class="event-tabs-nav" data-aos="fade-up" data-aos-delay="150">
+					<button class="event-tab-btn active" data-event-tab="event1">
+						<span class="event-date">August 2024</span>
+						<span class="event-title-sub">1st EV Fast Charger</span>
+					</button>
+					<button class="event-tab-btn" data-event-tab="event2">
+						<span class="event-date">September 2025</span>
+						<span class="event-title-sub">First EV Fleet Flag Off</span>
+					</button>
+					<button class="event-tab-btn" data-event-tab="event3">
+						<span class="event-date">October 2025</span>
+						<span class="event-title-sub">1st Public Swapping Station</span>
+					</button>
+					<button class="event-tab-btn" data-event-tab="event4">
+						<span class="event-date">May 2026</span>
+						<span class="event-title-sub">India's Largest Station</span>
+					</button>
+				</div>
+
+				<!-- Event Tab Content -->
+				<div class="event-tabs-content" data-aos="fade-up" data-aos-delay="200">
+					<!-- Event 1: August 2024 -->
+					<div class="event-tab-pane active" id="event-event1">
+						<div class="event-stacked-card">
+							<!-- Top Content: Info Header -->
+							<div class="event-info-header">
+								<div class="event-info-left">
+									<h3 class="event-heading">1st EV Fast Charger in JNPT</h3>
+									<div class="event-description">
+										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<p class="desc-text">Inauguration of India's first high-capacity EV Fast Charging infrastructure within the Jawaharlal Nehru Port (JNPT) premises to support heavy-duty fleet operations.</p>
+									</div>
+								</div>
+								<div class="event-info-right">
+									<ul class="event-meta-list">
+										<li>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Date</span>
+												<span class="meta-val">15th August 2024</span>
+											</div>
+										</li>
+										<li>
+											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Location</span>
+												<span class="meta-val">Jawaharlal Nehru Port, Mumbai</span>
+											</div>
+										</li>
+										<li>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Inaugurated By</span>
+												<span class="meta-val">Shri Unmesh Wagh, Chairman, Jawaharlal Nehru Port Authority</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<!-- Bottom Content: Widescreen Image -->
+							<div class="event-widescreen-photo">
+								<img src="images/JNPT-Charger.JPG" alt="1st EV Fast Charger in JNPT" loading="lazy">
+							</div>
+						</div>
+					</div>
+
+					<!-- Event 2: September 2025 -->
+					<div class="event-tab-pane" id="event-event2">
+						<div class="event-stacked-card">
+							<!-- Top Content: Info Header -->
+							<div class="event-info-header">
+								<div class="event-info-left">
+									<h3 class="event-heading">India’s First Fleet of EV Trucks Flagged Off</h3>
+									<div class="event-description">
+										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<p class="desc-text">Flagging off of India’s First Fleet of EV Trucks with Swappable Batteries at JNPA, enabling zero-emission container logistics.</p>
+									</div>
+								</div>
+								<div class="event-info-right">
+									<ul class="event-meta-list">
+										<li>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Date</span>
+												<span class="meta-val">25th September 2025</span>
+											</div>
+										</li>
+										<li>
+											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Location</span>
+												<span class="meta-val">Jawaharlal Nehru Port Authority (JNPA)</span>
+											</div>
+										</li>
+										<li>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Flagged Off By</span>
+												<span class="meta-val">Shri Sarbananda Sonowal, Hon'ble Union Minister</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<!-- Bottom Content: Widescreen Image -->
+							<div class="event-widescreen-photo">
+								<img src="images/sept-block3.png" alt="India’s First Fleet of EV Trucks Flagged Off" loading="lazy">
+							</div>
+						</div>
+					</div>
+
+					<!-- Event 3: October 2025 -->
+					<div class="event-tab-pane" id="event-event3">
+						<div class="event-stacked-card">
+							<!-- Top Content: Info Header -->
+							<div class="event-info-header">
+								<div class="event-info-left">
+									<h3 class="event-heading">India’s 1st Public Heavy Duty Swapping Station</h3>
+									<div class="event-description">
+										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<p class="desc-text">Inauguration of India’s 1st Public Heavy Duty Commercial E-Vehicle Battery Swapping Cum Charging Station, and Flagging Off of the EIM-Foton ASHWA Battery Swappable Heavy-Duty E-Tractor.</p>
+									</div>
+								</div>
+								<div class="event-info-right">
+									<ul class="event-meta-list">
+										<li>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Date</span>
+												<span class="meta-val">8th October 2025</span>
+											</div>
+										</li>
+										<li>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Inaugurated & Flagged Off</span>
+												<span class="meta-val"><strong>Inaugurated By</strong> Shri Nitin Gadkari, Hon'ble Union Minister of Road Transport & Highways<br>
+												<strong>Flagged Off By</strong> Shri H. D. Kumaraswamy, Hon’ble Union Minister of Heavy Industries</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<!-- Bottom Content: Widescreen Image -->
+							<div class="event-widescreen-photo">
+								<img src="images/milestone-block5.png" alt="India’s 1st Public Heavy Duty Swapping Station" loading="lazy">
+							</div>
+						</div>
+					</div>
+
+					<!-- Event 4: May 2026 -->
+					<div class="event-tab-pane" id="event-event4">
+						<div class="event-stacked-card">
+							<!-- Top Content: Info Header -->
+							<div class="event-info-header">
+								<div class="event-info-left">
+									<h3 class="event-heading">India's Largest Battery Swapping & Charging Station</h3>
+									<div class="event-description">
+										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<p class="desc-text">Inauguration of India's largest battery swapping and charging station terminal, enhancing green freight transit speed and infrastructure capacities.</p>
+									</div>
+								</div>
+								<div class="event-info-right">
+									<ul class="event-meta-list">
+										<li>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Date</span>
+												<span class="meta-val">2nd May 2026</span>
+											</div>
+										</li>
+										<li>
+											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Location</span>
+												<span class="meta-val">Jawaharlal Nehru Port, Mumbai</span>
+											</div>
+										</li>
+										<li>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Inaugurated By</span>
+												<span class="meta-val">Shri Gaurav Dayal, IAS, Chairperson, Jawaharlal Nehru Port Authority</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<!-- Bottom Content: Widescreen Image -->
+							<div class="event-widescreen-photo">
+								<img src="images/milestone-block6.png" alt="India's Largest Battery Swapping & Charging Station" loading="lazy">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const eventBtns = document.querySelectorAll('.event-tab-btn');
+			const eventPanes = document.querySelectorAll('.event-tab-pane');
+
+			eventBtns.forEach(btn => {
+				btn.addEventListener('click', () => {
+					eventBtns.forEach(b => b.classList.remove('active'));
+					eventPanes.forEach(p => p.classList.remove('active'));
+
+					btn.classList.add('active');
+					const targetPane = document.getElementById(`event-${btn.dataset.eventTab}`);
+					if (targetPane) {
+						targetPane.classList.add('active');
+					}
+				});
+			});
+		});
+		</script>
+
+		<section id="press" class="press-asymmetric-section">
+			<div class="container">
+				<!-- Section Title -->
+				<h2 class="main-title text-center mb35 transform-none" data-aos="fade-up">News</h2>
+				
+				<div class="press-asymmetric-container">
+
+					<!-- Left Column: Large Widescreen Photo Frame -->
+					<div class="press-asymmetric-image-wrapper" data-aos="fade-right">
+						<a href="documents/Press-Release.pdf" target="_blank" class="press-image-link">
+							<img src="images/Press-Release-img.png" alt="HPCL Partnership Signing Ceremony" loading="lazy">
+							<div class="press-image-glow-overlay"></div>
+						</a>
+					</div>
+
+					<!-- Right Column: Overlapping Frosted Glass Card -->
+					<div class="press-asymmetric-content-card" data-aos="fade-left" data-aos-delay="200">
+						<h3 class="press-asymmetric-heading">
+							Energy in Motion partners with HPCL to set-up charging and battery swapping infrastructure
+							at retail outlets across India for deployment of Electric Heavy Commercial Vehicles
+						</h3>
+
+						<div class="press-asymmetric-action">
+							<a href="documents/Press-Release.pdf" target="_blank" class="press-asymmetric-btn">
+								<span>Read Full Release</span>
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2.5"
+										stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<section id="leadership" class="company-governance-section py-5">
+			<div class="container">
+				<!-- Section Title matching all other sections -->
+				<h2 class="main-title text-center mb35" data-aos="fade-up">Company Leadership</h2>
+				<p class="sub-heading-txt text-center mb-5" data-aos="fade-up" data-aos-delay="100">Steered by
+					experienced industry leaders committed to corporate governance, sustainability, and operational
+					excellence.</p>
+
+				<!-- Tabs Navigation -->
+				<div class="gov-tabs-nav" data-aos="fade-up" data-aos-delay="150">
+					<button class="gov-tab-btn active" data-gov-tab="directors">Board of Directors & KMP</button>
+					<button class="gov-tab-btn" data-gov-tab="committees">Committees of the Board</button>
+				</div>
+
+				<!-- Tabs Content -->
+				<div class="gov-tabs-content" data-aos="fade-up" data-aos-delay="200">
+					<!-- Tab 1: Directors Grid -->
+					<div class="gov-tab-pane active" id="tab-directors">
+						<div class="directors-grid">
+							<!-- Member 1 -->
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Mr. Narendra Murkumbi</h4>
+									<span class="director-role role-kmp">Managing Director (Key Managerial Personnel)</span>
+								</div>
+							</div>
+
+							<!-- Member 2 -->
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Mr. Surender Kumar Tuteja</h4>
+									<span class="director-role">Independent Director</span>
+								</div>
+							</div>
+
+							<!-- Member 3 -->
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Ms. Ratna Prabha Kathi</h4>
+									<span class="director-role">Independent Director</span>
+								</div>
+							</div>
+
+							<!-- Member 4 -->
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Mr. Dhruv Kotak</h4>
+									<span class="director-role">Director</span>
+								</div>
+							</div>
+
+							<!-- Member 5 -->
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Mr. Nandan Yalgi</h4>
+									<span class="director-role">Director</span>
+								</div>
+							</div>
+
+							<!-- Member 6 -->
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Mr. Pankil Shah</h4>
+									<span class="director-role role-kmp">Chief Financial Officer (Key Managerial Personnel)</span>
+								</div>
+							</div>
+
+							<!-- Member 7 -->
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Mr. Omkar Mardolkar</h4>
+									<span class="director-role role-kmp">Company Secretary & Compliance Officer (Key Managerial Personnel)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Tab 2: Committees Grid -->
+					<div class="gov-tab-pane" id="tab-committees">
+						<div class="committees-grid">
+							<!-- Committee 1: Audit Committee -->
+							<div class="committee-card">
+								<div class="committee-card-header">
+									<div class="committee-card-icon">
+										<img src="images/icon-star.svg" alt="Audit Committee">
+									</div>
+									<h4 class="committee-card-title">Audit Committee</h4>
+								</div>
+								<div class="committee-members">
+									<div class="committee-member-item">
+										<span class="committee-member-name">Mr. Surender Kumar Tuteja</span>
+										<span class="committee-member-role role-chairman">Chairman</span>
+									</div>
+									<div class="committee-member-item">
+										<span class="committee-member-name">Ms. Ratna Prabha Kathi</span>
+										<span class="committee-member-role role-member">Member</span>
+									</div>
+									<div class="committee-member-item">
+										<span class="committee-member-name">Mr. Nandan Yalgi</span>
+										<span class="committee-member-role role-member">Member</span>
+									</div>
+								</div>
+							</div>
+
+							<!-- Committee 2: Nomination & Remuneration Committee -->
+							<div class="committee-card">
+								<div class="committee-card-header">
+									<div class="committee-card-icon">
+										<img src="images/icon-reliable-energy.svg" alt="Nomination Committee">
+									</div>
+									<h4 class="committee-card-title">Nomination & Remuneration Committee</h4>
+								</div>
+								<div class="committee-members">
+									<div class="committee-member-item">
+										<span class="committee-member-name">Mr. Surender Kumar Tuteja</span>
+										<span class="committee-member-role role-chairman">Chairman</span>
+									</div>
+									<div class="committee-member-item">
+										<span class="committee-member-name">Ms. Ratna Prabha Kathi</span>
+										<span class="committee-member-role role-member">Member</span>
+									</div>
+									<div class="committee-member-item">
+										<span class="committee-member-name">Mr. Dhruv Kotak</span>
+										<span class="committee-member-role role-member">Member</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					const tabBtns = document.querySelectorAll('.gov-tab-btn');
+					const tabPanes = document.querySelectorAll('.gov-tab-pane');
+
+					tabBtns.forEach(btn => {
+						btn.addEventListener('click', () => {
+							tabBtns.forEach(b => b.classList.remove('active'));
+							tabPanes.forEach(p => p.classList.remove('active'));
+
+							btn.classList.add('active');
+							const targetPane = document.getElementById(`tab-${btn.dataset.govTab}`);
+							if (targetPane) {
+								targetPane.classList.add('active');
+							}
+						});
+					});
+				});
+				</script>
+			</div>
+		</section>
+
+
+
+		<section id="shareholders" class="company section shareholders-section-modern py-5">
+			<div class="container">
+				<h2 class="main-title text-center transform-none mb-3">Our Shareholders</h2>
+				<p class="sub-heading-txt text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+					EIM is a joint venture between <strong>Ravindra Energy Limited</strong>, a listed company in the business of renewable energy projects and <strong>JM Baxi Group</strong>, the 2nd largest company in the ports & logistics sector.
+				</p>
+
+				<div class="shareholders-bento-main d-flex flex-column flex-lg-row gap-4 align-items-stretch">
+					<!-- Left Side: Dual Shareholder Bento Cards -->
+					<div class="shareholders-left-col d-flex flex-column gap-4 flex-grow-1">
+						<!-- Card 1: Ravindra Energy Limited -->
+						<div class="bento-shareholder-card p-4 rounded-4" data-aos="fade-up" data-aos-delay="100">
+							<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+								<div class="logo-cont mb-0"><a href="https://www.ravindraenergy.com/"
+										target="_blank"><img src="images/logo-ravindra-energy.svg"
+											alt="Ravindra Energy Limited" class="shareholder-logo-img"></a></div>
+							</div>
+							<ul class="shareholder-bullet-list">
+								<li>Reliable Green Energy Provider to corporates</li>
+								<li>Rural solar projects</li>
+								<li>Round the clock renewable energy solutions including solar, wind and BESS (Battery energy storage system)</li>
+								<li>Energy Trading – exchange + bilateral contracts</li>
+								<li>For more info: <a href="https://www.nseindia.com/get-quotes/equity?symbol=RELTD" target="_blank" class="shareholder-link">https://www.nseindia.com/get-quotes/equity?symbol=RELTD</a></li>
+							</ul>
+						</div>
+
+						<!-- Card 2: J M Baxi Group -->
+						<div class="bento-shareholder-card jmbaxi-bento-card p-4 rounded-4" data-aos="fade-up"
+							data-aos-delay="200">
+							<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+								<div class="logo-cont mb-0"><a href="https://www.jmbaxi.com/"
+										target="_blank"><img src="images/jm-main-logo.svg"
+											alt="J M Baxi Group" class="shareholder-logo-img"></a></div>
+							</div>
+							<ul class="shareholder-bullet-list">
+								<li>108-year-old business conglomerate, in marine services, ports and logistics and technology</li>
+								<li>Operates container and multi-cargo terminals, CFS/ICDs, rail logistics and project cargo services</li>
+								<li>India's largest and most comprehensive port and inland location network</li>
+								<li>For more info: <a href="https://www.jmbaxi.com/" target="_blank" class="shareholder-link">https://www.jmbaxi.com/</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Right Side: Graphic Bento Grid Showcase -->
+					<div class="shareholders-right-bento flex-grow-1" data-aos="fade-left" data-aos-delay="300">
+						<div class="bento-graphic-grid">
+							<!-- Top Featured Card: Port Operations & EV Container Transit -->
+							<div class="bento-tile tile-image tile-img-featured">
+								<img src="images/shareholder-2.JPG" alt="Port EV Container Logistics"
+									class="bento-tile-img" loading="lazy">
+							</div>
+							<!-- Bottom Left Card: EV Fleet -->
+							<div class="bento-tile tile-image tile-img-fleet">
+								<img src="images/shareholder-3.JPG" alt="Heavy-Duty EV Fleet"
+									class="bento-tile-img" loading="lazy">
+							</div>
+							<!-- Bottom Right Card: Battery Swapping Hub -->
+							<div class="bento-tile tile-image tile-img-swapping">
+								<img src="images/shareholder-1.jpg" alt="Automated Swapping Hub"
+									class="bento-tile-img" loading="lazy">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="people-eim" class="people-eim-section py-5 bg-white">
+			<div class="container position-relative">
+				<!-- Centered Section Header -->
+				<div class="text-center mb-4">
+					<h2 class="main-title mb-0"><span class="title-dark">People at</span> <span class="title-green">EIM</span></h2>
+				</div>
+				
+				<div class="swiper life-swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide life-swiper-slide">
+							<img src="images/life-1.png" alt="EIM Team Retreat Outdoor" loading="lazy">
+						</div>
+						<div class="swiper-slide life-swiper-slide">
+							<img src="images/life-2.png" alt="EIM Collaborative Team Office" loading="lazy">
+						</div>
+						<div class="swiper-slide life-swiper-slide">
+							<img src="images/life-3.png" alt="EIM Engineering Operations Station" loading="lazy">
+						</div>
+						<div class="swiper-slide life-swiper-slide">
+							<img src="images/life-4.png" alt="EIM Team Annual Celebration" loading="lazy">
+						</div>
+					</div>
+					<div class="life-swiper-pagination swiper-pagination position-relative mt-4"></div>
+				</div>
+
+				<!-- Job Openings Header -->
+				<div class="text-center mt-5 mb-4">
+					<h3 class="careers-sub-title">Current Openings</h3>
+				</div>
+				
+				<!-- Careers Grid -->
+				<div class="row g-4 careers-grid">
+					<!-- Card 1 -->
+					<div class="col-md-6 col-lg-4">
+						<div class="career-card" data-aos="fade-up" data-aos-delay="100">
+							<div class="career-card-badge">Operations</div>
+							<h4 class="career-title">EV Operations Manager</h4>
+							<div class="career-details">
+								<span><i class="bi bi-geo-alt"></i> Navi Mumbai (JNPT Hub)</span>
+								<span><i class="bi bi-briefcase"></i> 4+ Years Exp</span>
+							</div>
+							<p class="career-description">Oversee swap-cum-charging hub operations, manage e-tractor fleet staging, and lead localized technician teams to ensure maximum vehicle uptime.</p>
+							<a href="mailto:careers@energyinmotion.in?subject=Application for EV Operations Manager" class="career-apply-btn">
+								<span>Apply Now</span>
+								<i class="bi bi-arrow-right-short"></i>
+							</a>
+						</div>
+					</div>
+					<!-- Card 2 -->
+					<div class="col-md-6 col-lg-4">
+						<div class="career-card" data-aos="fade-up" data-aos-delay="200">
+							<div class="career-card-badge">Engineering</div>
+							<h4 class="career-title">Embedded IoT Systems Engineer</h4>
+							<div class="career-details">
+								<span><i class="bi bi-geo-alt"></i> Bengaluru Tech Center</span>
+								<span><i class="bi bi-briefcase"></i> 3+ Years Exp</span>
+							</div>
+							<p class="career-description">Develop and optimize IoT software modules for real-time telemetry on battery health, swapping station robotics, and remote charger diagnostics.</p>
+							<a href="mailto:careers@energyinmotion.in?subject=Application for Embedded IoT Systems Engineer" class="career-apply-btn">
+								<span>Apply Now</span>
+								<i class="bi bi-arrow-right-short"></i>
+							</a>
+						</div>
+					</div>
+					<!-- Card 3 -->
+					<div class="col-md-6 col-lg-4">
+						<div class="career-card" data-aos="fade-up" data-aos-delay="300">
+							<div class="career-card-badge">Business Development</div>
+							<h4 class="career-title">Head of Logistics Alliances</h4>
+							<div class="career-details">
+								<span><i class="bi bi-geo-alt"></i> Mumbai / Delhi NCR</span>
+								<span><i class="bi bi-briefcase"></i> 6+ Years Exp</span>
+							</div>
+							<p class="career-description">Partner with enterprise cement, steel, and chemical conglomerates to transition their bulk outbound transport chains to electric solutions.</p>
+							<a href="mailto:careers@energyinmotion.in?subject=Application for Head of Logistics Alliances" class="career-apply-btn">
+								<span>Apply Now</span>
+								<i class="bi bi-arrow-right-short"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+		</section>
+
+		<section id="awards" class="awards-section py-5 bg-light1">
+			<div class="container">
+				<!-- Centered Section Header -->
+				<div class="text-center mb-5">
+					<h2 class="main-title mb-0"><span class="title-dark">Awards &</span> <span class="title-green">Recognition</span></h2>
+				</div>
+				
+				<!-- Awards Grid -->
+				<div class="row g-4 justify-content-center">
+					<!-- Card 1 -->
+					<div class="col-md-6 col-lg-4">
+						<div class="award-card" data-aos="fade-up" data-aos-delay="100">
+							<div class="award-img-wrapper">
+								<img src="images/award-1.jpeg" alt="Award 1" loading="lazy">
+							</div>
+						</div>
+					</div>
+					<!-- Card 2 -->
+					<div class="col-md-6 col-lg-4">
+						<div class="award-card" data-aos="fade-up" data-aos-delay="200">
+							<div class="award-img-wrapper">
+								<img src="images/award-2.jpeg" alt="Award 2" loading="lazy">
+							</div>
+						</div>
+					</div>
+					<!-- Card 3 -->
+					<div class="col-md-6 col-lg-4">
+						<div class="award-card" data-aos="fade-up" data-aos-delay="300">
+							<div class="award-img-wrapper">
+								<img src="images/award-3.jpeg" alt="Award 3" loading="lazy">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<section id="journey" class="journey-timeline-section">
 			<div class="container timeline-container">
@@ -725,44 +1250,6 @@
 			</div>
 		</section>
 
-		<section id="press" class="press-asymmetric-section">
-			<div class="container">
-				<!-- Section Title -->
-				<h2 class="main-title text-center mb35 transform-none" data-aos="fade-up">News</h2>
-				
-				<div class="press-asymmetric-container">
-
-					<!-- Left Column: Large Widescreen Photo Frame -->
-					<div class="press-asymmetric-image-wrapper" data-aos="fade-right">
-						<a href="documents/Press-Release.pdf" target="_blank" class="press-image-link">
-							<img src="images/Press-Release-img.png" alt="HPCL Partnership Signing Ceremony" loading="lazy">
-							<div class="press-image-glow-overlay"></div>
-						</a>
-					</div>
-
-					<!-- Right Column: Overlapping Frosted Glass Card -->
-					<div class="press-asymmetric-content-card" data-aos="fade-left" data-aos-delay="200">
-						<h3 class="press-asymmetric-heading">
-							Energy in Motion partners with HPCL to set-up charging and battery swapping infrastructure
-							at retail outlets across India for deployment of Electric Heavy Commercial Vehicles
-						</h3>
-
-						<div class="press-asymmetric-action">
-							<a href="documents/Press-Release.pdf" target="_blank" class="press-asymmetric-btn">
-								<span>Read Full Release</span>
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2.5"
-										stroke-linecap="round" stroke-linejoin="round" />
-								</svg>
-							</a>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</section>
-
 		<section id="testimonials" class="testimonials-section py-5">
 			<div class="container">
 				<h2 class="main-title text-center mb50" data-aos="fade-up">Testimonials</h2>
@@ -814,519 +1301,6 @@
 							<div class="testimonial-avatar-wrap">
 								<div class="avatar-bg-block"></div>
 								<img src="images/vitthal.png" alt="Vitthal Wable" class="testimonial-avatar-img" loading="lazy">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section id="events" class="event-section py-5 bg-blue">
-			<div class="container">
-				<!-- Section Title -->
-				<h2 class="main-title text-center mb50" data-aos="fade-up">Events</h2>
-
-				<!-- Event Tabs Switcher -->
-				<div class="event-tabs-nav" data-aos="fade-up" data-aos-delay="150">
-					<button class="event-tab-btn active" data-event-tab="event1">
-						<span class="event-date">August 2024</span>
-						<span class="event-title-sub">1st EV Fast Charger</span>
-					</button>
-					<button class="event-tab-btn" data-event-tab="event2">
-						<span class="event-date">September 2025</span>
-						<span class="event-title-sub">First EV Fleet Flag Off</span>
-					</button>
-					<button class="event-tab-btn" data-event-tab="event3">
-						<span class="event-date">October 2025</span>
-						<span class="event-title-sub">1st Public Swapping Station</span>
-					</button>
-					<button class="event-tab-btn" data-event-tab="event4">
-						<span class="event-date">May 2026</span>
-						<span class="event-title-sub">India's Largest Station</span>
-					</button>
-				</div>
-
-				<!-- Event Tab Content -->
-				<div class="event-tabs-content" data-aos="fade-up" data-aos-delay="200">
-					<!-- Event 1: August 2024 -->
-					<div class="event-tab-pane active" id="event-event1">
-						<div class="event-stacked-card">
-							<!-- Top Content: Info Header -->
-							<div class="event-info-header">
-								<div class="event-info-left">
-									<h3 class="event-heading">1st EV Fast Charger in JNPT</h3>
-									<div class="event-description">
-										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
-										<p class="desc-text">Inauguration of India's first high-capacity EV Fast Charging infrastructure within the Jawaharlal Nehru Port (JNPT) premises to support heavy-duty fleet operations.</p>
-									</div>
-								</div>
-								<div class="event-info-right">
-									<ul class="event-meta-list">
-										<li>
-											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
-											<div class="meta-txt">
-												<span class="meta-label">Date</span>
-												<span class="meta-val">15th August 2024</span>
-											</div>
-										</li>
-										<li>
-											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
-											<div class="meta-txt">
-												<span class="meta-label">Location</span>
-												<span class="meta-val">Jawaharlal Nehru Port, Mumbai</span>
-											</div>
-										</li>
-										<li>
-											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
-											<div class="meta-txt">
-												<span class="meta-label">Inaugurated By</span>
-												<span class="meta-val">Shri Unmesh Wagh, Chairman, Jawaharlal Nehru Port Authority</span>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							
-							<!-- Bottom Content: Widescreen Image -->
-							<div class="event-widescreen-photo">
-								<img src="images/15-aug.jpeg" alt="1st EV Fast Charger in JNPT" loading="lazy">
-							</div>
-						</div>
-					</div>
-
-					<!-- Event 2: September 2025 -->
-					<div class="event-tab-pane" id="event-event2">
-						<div class="event-stacked-card">
-							<!-- Top Content: Info Header -->
-							<div class="event-info-header">
-								<div class="event-info-left">
-									<h3 class="event-heading">India’s First Fleet of EV Trucks Flagged Off</h3>
-									<div class="event-description">
-										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
-										<p class="desc-text">Flagging off of India’s First Fleet of EV Trucks with Swappable Batteries at JNPA, enabling zero-emission container logistics.</p>
-									</div>
-								</div>
-								<div class="event-info-right">
-									<ul class="event-meta-list">
-										<li>
-											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
-											<div class="meta-txt">
-												<span class="meta-label">Date</span>
-												<span class="meta-val">25th September 2025</span>
-											</div>
-										</li>
-										<li>
-											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
-											<div class="meta-txt">
-												<span class="meta-label">Location</span>
-												<span class="meta-val">Jawaharlal Nehru Port Authority (JNPA)</span>
-											</div>
-										</li>
-										<li>
-											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
-											<div class="meta-txt">
-												<span class="meta-label">Flagged Off By</span>
-												<span class="meta-val">Shri Sarbananda Sonowal, Hon'ble Union Minister</span>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							
-							<!-- Bottom Content: Widescreen Image -->
-							<div class="event-widescreen-photo">
-								<img src="images/25-sep.JPG" alt="India’s First Fleet of EV Trucks Flagged Off" loading="lazy">
-							</div>
-						</div>
-					</div>
-
-					<!-- Event 3: October 2025 -->
-					<div class="event-tab-pane" id="event-event3">
-						<div class="event-stacked-card">
-							<!-- Top Content: Info Header -->
-							<div class="event-info-header">
-								<div class="event-info-left">
-									<h3 class="event-heading">India’s 1st Public Heavy Duty Swapping Station</h3>
-									<div class="event-description">
-										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
-										<p class="desc-text">Inauguration of India’s 1st Public Heavy Duty Commercial E-Vehicle Battery Swapping Cum Charging Station, and Flagging Off of the EIM-Foton ASHWA Battery Swappable Heavy-Duty E-Tractor.</p>
-									</div>
-								</div>
-								<div class="event-info-right">
-									<ul class="event-meta-list">
-										<li>
-											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
-											<div class="meta-txt">
-												<span class="meta-label">Date</span>
-												<span class="meta-val">8th October 2025</span>
-											</div>
-										</li>
-										<li>
-											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
-											<div class="meta-txt">
-												<span class="meta-label">Inaugurated & Flagged Off</span>
-												<span class="meta-val"><strong>Inaugurated By</strong> Shri Nitin Gadkari, Hon'ble Union Minister of Road Transport & Highways<br>
-												<strong>Flagged Off By</strong> Shri H. D. Kumaraswamy, Hon’ble Union Minister of Heavy Industries</span>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							
-							<!-- Bottom Content: Widescreen Image -->
-							<div class="event-widescreen-photo">
-								<img src="images/8-oct.JPG" alt="India’s 1st Public Heavy Duty Swapping Station" loading="lazy">
-							</div>
-						</div>
-					</div>
-
-					<!-- Event 4: May 2026 -->
-					<div class="event-tab-pane" id="event-event4">
-						<div class="event-stacked-card">
-							<!-- Top Content: Info Header -->
-							<div class="event-info-header">
-								<div class="event-info-left">
-									<h3 class="event-heading">India's Largest Battery Swapping & Charging Station</h3>
-									<div class="event-description">
-										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
-										<p class="desc-text">Inauguration of India's largest battery swapping and charging station terminal, enhancing green freight transit speed and infrastructure capacities.</p>
-									</div>
-								</div>
-								<div class="event-info-right">
-									<ul class="event-meta-list">
-										<li>
-											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
-											<div class="meta-txt">
-												<span class="meta-label">Date</span>
-												<span class="meta-val">2nd May 2026</span>
-											</div>
-										</li>
-										<li>
-											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
-											<div class="meta-txt">
-												<span class="meta-label">Location</span>
-												<span class="meta-val">Jawaharlal Nehru Port, Mumbai</span>
-											</div>
-										</li>
-										<li>
-											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
-											<div class="meta-txt">
-												<span class="meta-label">Inaugurated By</span>
-												<span class="meta-val">Shri Gaurav Dayal, IAS, Chairperson, Jawaharlal Nehru Port Authority</span>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							
-							<!-- Bottom Content: Widescreen Image -->
-							<div class="event-widescreen-photo">
-								<img src="images/2-may.JPG" alt="India's Largest Battery Swapping & Charging Station" loading="lazy">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			const eventBtns = document.querySelectorAll('.event-tab-btn');
-			const eventPanes = document.querySelectorAll('.event-tab-pane');
-
-			eventBtns.forEach(btn => {
-				btn.addEventListener('click', () => {
-					eventBtns.forEach(b => b.classList.remove('active'));
-					eventPanes.forEach(p => p.classList.remove('active'));
-
-					btn.classList.add('active');
-					const targetPane = document.getElementById(`event-${btn.dataset.eventTab}`);
-					if (targetPane) {
-						targetPane.classList.add('active');
-					}
-				});
-			});
-		});
-		</script>
-
-		<section id="leadership" class="company-governance-section py-5">
-			<div class="container">
-				<!-- Section Title matching all other sections -->
-				<h2 class="main-title text-center mb35" data-aos="fade-up">Company Leadership</h2>
-				<p class="sub-heading-txt text-center mb-5" data-aos="fade-up" data-aos-delay="100">Steered by
-					experienced industry leaders committed to corporate governance, sustainability, and operational
-					excellence.</p>
-
-				<!-- Tabs Navigation -->
-				<div class="gov-tabs-nav" data-aos="fade-up" data-aos-delay="150">
-					<button class="gov-tab-btn active" data-gov-tab="directors">Board of Directors & KMP</button>
-					<button class="gov-tab-btn" data-gov-tab="committees">Committees of the Board</button>
-				</div>
-
-				<!-- Tabs Content -->
-				<div class="gov-tabs-content" data-aos="fade-up" data-aos-delay="200">
-					<!-- Tab 1: Directors Grid -->
-					<div class="gov-tab-pane active" id="tab-directors">
-						<div class="directors-grid">
-							<!-- Member 1 -->
-							<div class="director-card">
-								<div class="director-info">
-									<h4 class="director-name">Mr. Narendra Murkumbi</h4>
-									<span class="director-role role-kmp">Managing Director (Key Managerial Personnel)</span>
-								</div>
-							</div>
-
-							<!-- Member 2 -->
-							<div class="director-card">
-								<div class="director-info">
-									<h4 class="director-name">Mr. Surender Kumar Tuteja</h4>
-									<span class="director-role">Independent Director</span>
-								</div>
-							</div>
-
-							<!-- Member 3 -->
-							<div class="director-card">
-								<div class="director-info">
-									<h4 class="director-name">Ms. Ratna Prabha Kathi</h4>
-									<span class="director-role">Independent Director</span>
-								</div>
-							</div>
-
-							<!-- Member 4 -->
-							<div class="director-card">
-								<div class="director-info">
-									<h4 class="director-name">Mr. Dhruv Kotak</h4>
-									<span class="director-role">Director</span>
-								</div>
-							</div>
-
-							<!-- Member 5 -->
-							<div class="director-card">
-								<div class="director-info">
-									<h4 class="director-name">Mr. Nandan Yalgi</h4>
-									<span class="director-role">Director</span>
-								</div>
-							</div>
-
-							<!-- Member 6 -->
-							<div class="director-card">
-								<div class="director-info">
-									<h4 class="director-name">Mr. Pankil Shah</h4>
-									<span class="director-role role-kmp">Chief Financial Officer (Key Managerial Personnel)</span>
-								</div>
-							</div>
-
-							<!-- Member 7 -->
-							<div class="director-card">
-								<div class="director-info">
-									<h4 class="director-name">Mr. Omkar Mardolkar</h4>
-									<span class="director-role role-kmp">Company Secretary & Compliance Officer (Key Managerial Personnel)</span>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Tab 2: Committees Grid -->
-					<div class="gov-tab-pane" id="tab-committees">
-						<div class="committees-grid">
-							<!-- Committee 1: Audit Committee -->
-							<div class="committee-card">
-								<div class="committee-card-header">
-									<div class="committee-card-icon">
-										<img src="images/icon-star.svg" alt="Audit Committee">
-									</div>
-									<h4 class="committee-card-title">Audit Committee</h4>
-								</div>
-								<div class="committee-members">
-									<div class="committee-member-item">
-										<span class="committee-member-name">Mr. Surender Kumar Tuteja</span>
-										<span class="committee-member-role role-chairman">Chairman</span>
-									</div>
-									<div class="committee-member-item">
-										<span class="committee-member-name">Ms. Ratna Prabha Kathi</span>
-										<span class="committee-member-role role-member">Member</span>
-									</div>
-									<div class="committee-member-item">
-										<span class="committee-member-name">Mr. Nandan Yalgi</span>
-										<span class="committee-member-role role-member">Member</span>
-									</div>
-								</div>
-							</div>
-
-							<!-- Committee 2: Nomination & Remuneration Committee -->
-							<div class="committee-card">
-								<div class="committee-card-header">
-									<div class="committee-card-icon">
-										<img src="images/icon-reliable-energy.svg" alt="Nomination Committee">
-									</div>
-									<h4 class="committee-card-title">Nomination & Remuneration Committee</h4>
-								</div>
-								<div class="committee-members">
-									<div class="committee-member-item">
-										<span class="committee-member-name">Mr. Surender Kumar Tuteja</span>
-										<span class="committee-member-role role-chairman">Chairman</span>
-									</div>
-									<div class="committee-member-item">
-										<span class="committee-member-name">Ms. Ratna Prabha Kathi</span>
-										<span class="committee-member-role role-member">Member</span>
-									</div>
-									<div class="committee-member-item">
-										<span class="committee-member-name">Mr. Dhruv Kotak</span>
-										<span class="committee-member-role role-member">Member</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<script>
-				document.addEventListener('DOMContentLoaded', function() {
-					const tabBtns = document.querySelectorAll('.gov-tab-btn');
-					const tabPanes = document.querySelectorAll('.gov-tab-pane');
-
-					tabBtns.forEach(btn => {
-						btn.addEventListener('click', () => {
-							tabBtns.forEach(b => b.classList.remove('active'));
-							tabPanes.forEach(p => p.classList.remove('active'));
-
-							btn.classList.add('active');
-							const targetPane = document.getElementById(`tab-${btn.dataset.govTab}`);
-							if (targetPane) {
-								targetPane.classList.add('active');
-							}
-						});
-					});
-				});
-				</script>
-			</div>
-		</section>
-
-
-
-		<section id="people-eim" class="people-eim-section py-5 bg-white">
-			<div class="container position-relative">
-				<!-- Centered Section Header -->
-				<div class="text-center mb-4">
-					<h2 class="main-title mb-0"><span class="title-dark">People at</span> <span class="title-green">EIM</span></h2>
-				</div>
-				
-				<div class="swiper life-swiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide life-swiper-slide">
-							<img src="images/life-1.png" alt="EIM Team Retreat Outdoor" loading="lazy">
-						</div>
-						<div class="swiper-slide life-swiper-slide">
-							<img src="images/life-2.png" alt="EIM Collaborative Team Office" loading="lazy">
-						</div>
-						<div class="swiper-slide life-swiper-slide">
-							<img src="images/life-3.png" alt="EIM Engineering Operations Station" loading="lazy">
-						</div>
-						<div class="swiper-slide life-swiper-slide">
-							<img src="images/life-4.png" alt="EIM Team Annual Celebration" loading="lazy">
-						</div>
-					</div>
-					<div class="life-swiper-pagination swiper-pagination position-relative mt-4"></div>
-				</div>
-
-				<!-- Job Openings Header -->
-				<div class="text-center mt-5 mb-4">
-					<h3 class="careers-sub-title">Current Openings</h3>
-				</div>
-				
-				<!-- Careers Grid -->
-				<div class="row g-4 careers-grid">
-					<!-- Card 1 -->
-					<div class="col-md-6 col-lg-4">
-						<div class="career-card" data-aos="fade-up" data-aos-delay="100">
-							<div class="career-card-badge">Operations</div>
-							<h4 class="career-title">EV Operations Manager</h4>
-							<div class="career-details">
-								<span><i class="bi bi-geo-alt"></i> Navi Mumbai (JNPT Hub)</span>
-								<span><i class="bi bi-briefcase"></i> 4+ Years Exp</span>
-							</div>
-							<p class="career-description">Oversee swap-cum-charging hub operations, manage e-tractor fleet staging, and lead localized technician teams to ensure maximum vehicle uptime.</p>
-							<a href="mailto:careers@energyinmotion.in?subject=Application for EV Operations Manager" class="career-apply-btn">
-								<span>Apply Now</span>
-								<i class="bi bi-arrow-right-short"></i>
-							</a>
-						</div>
-					</div>
-					<!-- Card 2 -->
-					<div class="col-md-6 col-lg-4">
-						<div class="career-card" data-aos="fade-up" data-aos-delay="200">
-							<div class="career-card-badge">Engineering</div>
-							<h4 class="career-title">Embedded IoT Systems Engineer</h4>
-							<div class="career-details">
-								<span><i class="bi bi-geo-alt"></i> Bengaluru Tech Center</span>
-								<span><i class="bi bi-briefcase"></i> 3+ Years Exp</span>
-							</div>
-							<p class="career-description">Develop and optimize IoT software modules for real-time telemetry on battery health, swapping station robotics, and remote charger diagnostics.</p>
-							<a href="mailto:careers@energyinmotion.in?subject=Application for Embedded IoT Systems Engineer" class="career-apply-btn">
-								<span>Apply Now</span>
-								<i class="bi bi-arrow-right-short"></i>
-							</a>
-						</div>
-					</div>
-					<!-- Card 3 -->
-					<div class="col-md-6 col-lg-4">
-						<div class="career-card" data-aos="fade-up" data-aos-delay="300">
-							<div class="career-card-badge">Business Development</div>
-							<h4 class="career-title">Head of Logistics Alliances</h4>
-							<div class="career-details">
-								<span><i class="bi bi-geo-alt"></i> Mumbai / Delhi NCR</span>
-								<span><i class="bi bi-briefcase"></i> 6+ Years Exp</span>
-							</div>
-							<p class="career-description">Partner with enterprise cement, steel, and chemical conglomerates to transition their bulk outbound transport chains to electric solutions.</p>
-							<a href="mailto:careers@energyinmotion.in?subject=Application for Head of Logistics Alliances" class="career-apply-btn">
-								<span>Apply Now</span>
-								<i class="bi bi-arrow-right-short"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-		</section>
-
-		<section id="awards" class="awards-section py-5 bg-light1">
-			<div class="container">
-				<!-- Centered Section Header -->
-				<div class="text-center mb-5">
-					<h2 class="main-title mb-0"><span class="title-dark">Awards &</span> <span class="title-green">Recognition</span></h2>
-				</div>
-				
-				<!-- Awards Swiper Slider -->
-				<div class="awards-swiper swiper" data-aos="fade-up">
-					<div class="swiper-wrapper">
-						<!-- Slide 1 -->
-						<div class="swiper-slide">
-							<div class="award-card">
-								<div class="award-img-wrapper">
-									<img src="images/award-1.jpeg" alt="Award 1" loading="lazy">
-								</div>
-							</div>
-						</div>
-						<!-- Slide 2 -->
-						<div class="swiper-slide">
-							<div class="award-card">
-								<div class="award-img-wrapper">
-									<img src="images/award-2.jpeg" alt="Award 2" loading="lazy">
-								</div>
-							</div>
-						</div>
-						<!-- Slide 3 -->
-						<div class="swiper-slide">
-							<div class="award-card">
-								<div class="award-img-wrapper">
-									<img src="images/award-3.jpeg" alt="Award 3" loading="lazy">
-								</div>
-							</div>
-						</div>
-						<!-- Slide 4 -->
-						<div class="swiper-slide">
-							<div class="award-card">
-								<div class="award-img-wrapper">
-									<img src="images/award-4.jpeg" alt="Award 4" loading="lazy">
-								</div>
 							</div>
 						</div>
 					</div>

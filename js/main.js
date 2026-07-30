@@ -230,4 +230,68 @@ window.addEventListener('load', () => {
     });
   }
 
+  // Initialize Swiper for "Awards & Recognition"
+  if (document.querySelector('.awards-swiper')) {
+    new Swiper('.awards-swiper', {
+      loop: true,
+      slidesPerView: 1.1,
+      spaceBetween: 16,
+      speed: 6000, // 6 seconds transition speed
+      autoplay: {
+        delay: 0, // 0 delay for continuous scrolling
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        }
+      }
+    });
+  }
+
+  // Aceternity-Style Vertical Timeline Progress Line Handler
+  const timelineWrapper = document.querySelector('.timeline-track-wrapper');
+  const progressLine = document.querySelector('.timeline-active-progress-line');
+  const entries = document.querySelectorAll('.timeline-entry');
+  
+  if (timelineWrapper && progressLine) {
+    const handleTimelineScroll = () => {
+      const rect = timelineWrapper.getBoundingClientRect();
+      const viewHeight = window.innerHeight;
+      
+      // Calculate active progress relative to screen offset
+      const startPoint = viewHeight * 0.8; // Starts when top reaches 80% of screen height
+      const endPoint = viewHeight * 0.5;   // Ends when bottom reaches 50% of screen height
+      
+      const totalDist = rect.height;
+      const currentDist = startPoint - rect.top;
+      
+      let progress = currentDist / totalDist;
+      progress = Math.max(0, Math.min(1, progress));
+      
+      // Update glowing line height
+      progressLine.style.height = `${progress * 100}%`;
+      
+      // Highlight active dot nodes and dates
+      entries.forEach(entry => {
+        const entryRect = entry.getBoundingClientRect();
+        // Highlight node if its top is above 60% of viewport
+        if (entryRect.top <= viewHeight * 0.6) {
+          entry.classList.add('active-node');
+        } else {
+          entry.classList.remove('active-node');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', handleTimelineScroll);
+    window.addEventListener('resize', handleTimelineScroll);
+    handleTimelineScroll(); // Run once on load
+  }
+
 })();
