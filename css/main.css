@@ -7961,7 +7961,7 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 .deck-row {
   display: flex;
   align-items: center;
-  background: #ffffff;
+  background-color: #ffffff;
   border: 1px solid rgba(1, 54, 63, 0.08);
   border-radius: 24px;
   padding: 40px;
@@ -7970,10 +7970,7 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   box-shadow: 0 10px 30px rgba(1, 54, 63, 0.04);
   transform: translate3d(0, 0, 0);
   will-change: transform, background-color, border-color, box-shadow;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-              background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-              border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
 }
 .deck-num-col {
   flex: 0 0 100px;
@@ -7989,7 +7986,7 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   -webkit-text-stroke: 1.5px rgba(1, 54, 63, 0.15);
   font-family: 'PP Neue Montreal', sans-serif;
   will-change: -webkit-text-stroke-color;
-  transition: -webkit-text-stroke-color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
 }
 .deck-content-col {
   flex: 1;
@@ -8013,9 +8010,7 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   border-radius: 50px;
   font-family: 'PP Neue Montreal', sans-serif;
   will-change: color, background-color, border-color;
-  transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-              background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-              border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
 }
 .tag-red {
   color: #ef5350;
@@ -8035,7 +8030,7 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   line-height: 1.3;
   font-family: 'PP Neue Montreal', sans-serif;
   will-change: color;
-  transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
 }
 .deck-side p {
   font-size: 16px;
@@ -8043,7 +8038,7 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   color: var(--brand-dark-slate);
   margin: 0;
   will-change: color;
-  transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
 }
 .deck-side.sol-side p {
   color: var(--brand-dark-slate);
@@ -8055,15 +8050,15 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   align-self: center;
   flex-shrink: 0;
   will-change: background;
-  transition: background 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
 }
 
-/* Hover & Active States */
+/* Hover & Active States (Dark Background Effect) */
 .deck-row.active,
 .deck-row:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: var(--brand-dark-slate);
-  background: var(--brand-dark-slate);
+  background-color: var(--brand-dark-slate);
   box-shadow: 0 20px 45px rgba(1, 54, 63, 0.25);
 }
 .deck-row.active .deck-num,
@@ -8409,7 +8404,7 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 
 .offering-point-item {
   flex: 1;
-  background: #ffffff;
+  background-color: #ffffff;
   border: 1px solid rgba(1, 54, 63, 0.06);
   border-radius: 16px;
   padding: 24px;
@@ -8418,8 +8413,9 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   gap: 16px;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(1, 54, 63, 0.02);
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
   position: relative;
+  overflow: hidden;
 }
 
 .offering-point-item::after {
@@ -8430,21 +8426,22 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   width: 4px;
   height: 0%;
   background: #49c1ac;
-  border-radius: 4px 0 0 4px;
-  transition: height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 16px 0 0 16px;
+  transition: height 0.5s cubic-bezier(0.25, 1, 0.3, 1);
 }
 
-.offering-point-item.active {
-  border-color: rgba(73, 193, 172, 0.3);
-  box-shadow: 0 10px 30px rgba(1, 54, 63, 0.07);
-  transform: translateY(-2px);
+.offering-point-item.active,
+.offering-point-item:hover {
+  border-color: var(--brand-dark-slate) !important;
+  background-color: var(--brand-dark-slate) !important;
+  box-shadow: 0 12px 30px rgba(1, 54, 63, 0.2) !important;
+  transform: translateY(-4px) !important;
 }
 
-.offering-point-item.active::after {
+.offering-point-item.active::after,
+.offering-point-item:hover::after {
   height: 100%;
 }
-
-
 
 .point-content h3 {
   font-size: 18px;
@@ -8452,6 +8449,7 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   color: #01363f;
   margin: 0 0 8px 0;
   font-family: 'PP Neue Montreal', sans-serif;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
 }
 
 .point-content p {
@@ -8459,6 +8457,17 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   line-height: 1.5;
   color: #555555;
   margin: 0;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.offering-point-item.active .point-content h3,
+.offering-point-item:hover .point-content h3 {
+  color: #ffffff !important;
+}
+
+.offering-point-item.active .point-content p,
+.offering-point-item:hover .point-content p {
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* Right Column: Sticky Media Display */
@@ -8587,4 +8596,15 @@ html:not(.no-js) [data-aos="fade-left"] {
 html:not(.no-js) [data-aos="fade-left"].aos-animate {
   transform: translate3d(0, 0, 0) scale(1) !important;
   filter: blur(0);
+}
+
+/* Split Heading Colors */
+.title-dark {
+  color: #01363f !important; /* EIM brand dark slate for light backgrounds */
+}
+.title-light {
+  color: #ffffff !important; /* White for dark backgrounds */
+}
+.title-green {
+  color: var(--accent-color, #49c1ac) !important; /* EIM brand green/turquoise */
 }
