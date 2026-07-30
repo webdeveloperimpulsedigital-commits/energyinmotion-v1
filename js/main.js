@@ -190,130 +190,128 @@ window.addEventListener('load', () => {
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
   
-  
-   $('#horizontalTab').easyResponsiveTabs({
-            type: 'default', //Types: default, vertical, accordion
-            width: 'auto', //auto or any width like 600px
-            fit: true, // 100% fit in a container
-			closed: 'accordion', // Start closed if in accordion view
-            tabidentify: 'hor_1', // The tab groups identifier
-            activate: function(event) { // Callback function if tab is switched
-                var $tab = $(this);
-                var $info = $('#nested-tabInfo');
-                var $name = $('span', $info);
-                $name.text($tab.text());
-                $info.show();
-            }
-        });
-		
-		
-		
-		
-
-
-
-    $(window).scroll(function(){
-    if ($(this).scrollTop() > 800) {
-       $('.hide-desk svg').addClass('active');
-    } //else { 
-	//$('.adv-svg svg').removeClass('active');
-   // }
-	});
-
-  // Initialize Swiper for "Life at EIM"
-  if (document.querySelector('.life-swiper')) {
-    new Swiper('.life-swiper', {
-      loop: true,
-      centeredSlides: true,
-      slidesPerView: 1.15,
-      spaceBetween: 16,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.life-swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 1.6,
-          spaceBetween: 24,
-        },
-        1024: {
-          slidesPerView: 1.5,
-          spaceBetween: 32,
-        }
+  if (typeof jQuery !== 'undefined' && typeof jQuery.fn.easyResponsiveTabs === 'function') {
+    $('#horizontalTab').easyResponsiveTabs({
+      type: 'default', //Types: default, vertical, accordion
+      width: 'auto', //auto or any width like 600px
+      fit: true, // 100% fit in a container
+      closed: 'accordion', // Start closed if in accordion view
+      tabidentify: 'hor_1', // The tab groups identifier
+      activate: function(event) { // Callback function if tab is switched
+        var $tab = $(this);
+        var $info = $('#nested-tabInfo');
+        var $name = $('span', $info);
+        $name.text($tab.text());
+        $info.show();
       }
     });
   }
 
-  // Initialize Swiper for "Awards & Recognition"
-  if (document.querySelector('.awards-swiper')) {
-    new Swiper('.awards-swiper', {
-      loop: true,
-      slidesPerView: 1.1,
-      spaceBetween: 16,
-      speed: 6000, // 6 seconds transition speed
-      autoplay: {
-        delay: 0, // 0 delay for continuous scrolling
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        576: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        992: {
-          slidesPerView: 3,
-          spaceBetween: 24,
-        }
+  if (typeof jQuery !== 'undefined') {
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 800) {
+        $('.hide-desk svg').addClass('active');
       }
     });
   }
 
-  // Initialize Swiper for "Testimonials"
-  if (document.querySelector('.testimonials-swiper')) {
-    new Swiper('.testimonials-swiper', {
-      slidesPerView: 1.1,
-      spaceBetween: 16,
-      loop: false,
-      pagination: {
-        el: '.testimonials-swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        992: {
-          slidesPerView: 2,
-          spaceBetween: 32,
-          allowTouchMove: false,
-        }
-      }
-    });
-  }
-
-  // Initialize Swiper for "Careers / Current Openings"
-  if (document.querySelector('.careers-swiper')) {
-    new Swiper('.careers-swiper', {
-      slidesPerView: 1.1,
-      spaceBetween: 16,
-      loop: false,
-      pagination: {
-        el: '.careers-swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        576: {
-          slidesPerView: 2,
-          spaceBetween: 20,
+  // Initialize Swiper Sliders
+  if (typeof Swiper !== 'undefined') {
+    // Initialize Swiper for "Life at EIM"
+    if (document.querySelector('.life-swiper')) {
+      new Swiper('.life-swiper', {
+        loop: true,
+        centeredSlides: true,
+        slidesPerView: 1.15,
+        spaceBetween: 16,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
         },
-        992: {
-          slidesPerView: 3,
-          spaceBetween: 24,
-          allowTouchMove: false,
+        pagination: {
+          el: '.life-swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 1.6,
+            spaceBetween: 24,
+          },
+          1024: {
+            slidesPerView: 1.5,
+            spaceBetween: 32,
+          }
         }
-      }
-    });
+      });
+    }
+
+    // Initialize Swiper for "Awards & Recognition"
+    if (document.querySelector('.awards-swiper')) {
+      new Swiper('.awards-swiper', {
+        loop: true,
+        slidesPerView: 1.1,
+        spaceBetween: 16,
+        speed: 6000, // 6 seconds transition speed
+        autoplay: {
+          delay: 0, // 0 delay for continuous scrolling
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 24,
+          }
+        }
+      });
+    }
+
+    // Initialize Swiper for "Testimonials"
+    if (document.querySelector('.testimonials-swiper')) {
+      new Swiper('.testimonials-swiper', {
+        slidesPerView: 1.1,
+        spaceBetween: 16,
+        loop: false,
+        pagination: {
+          el: '.testimonials-swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          992: {
+            slidesPerView: 2,
+            spaceBetween: 32,
+            allowTouchMove: false,
+          }
+        }
+      });
+    }
+
+    // Initialize Swiper for "Careers / Current Openings"
+    if (document.querySelector('.careers-swiper')) {
+      new Swiper('.careers-swiper', {
+        slidesPerView: 1.1,
+        spaceBetween: 16,
+        loop: false,
+        pagination: {
+          el: '.careers-swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 24,
+            allowTouchMove: false,
+          }
+        }
+      });
+    }
   }
 
   // Aceternity-Style Vertical Timeline Progress Line Handler
