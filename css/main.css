@@ -1843,68 +1843,6 @@ section,
   scroll-margin-top: 102px;
 }
 
-/* Consistent Section Spacing */
-section:not(.hero):not(.copyright):not(.pt-0), 
-.section:not(.hero):not(.copyright):not(.pt-0), 
-.testimonials-section, 
-.journey-timeline-section, 
-.press-asymmetric-section, 
-.maitryi-section, 
-.people-eim-section, 
-.awards-section, 
-.networks-dashboard-section, 
-.services-21st-section, 
-.company-governance-section,
-.event-section {
-  padding-top: 90px !important;
-}
-
-section:not(.hero):not(.copyright):not(.pb-0), 
-.section:not(.hero):not(.copyright):not(.pb-0), 
-.testimonials-section, 
-.journey-timeline-section, 
-.press-asymmetric-section, 
-.maitryi-section, 
-.people-eim-section, 
-.awards-section, 
-.networks-dashboard-section, 
-.services-21st-section, 
-.company-governance-section,
-.event-section {
-  padding-bottom: 90px !important;
-}
-
-@media (max-width: 768px) {
-  section:not(.hero):not(.copyright):not(.pt-0), 
-  .section:not(.hero):not(.copyright):not(.pt-0), 
-  .testimonials-section, 
-  .journey-timeline-section, 
-  .press-asymmetric-section, 
-  .maitryi-section, 
-  .people-eim-section, 
-  .awards-section, 
-  .networks-dashboard-section, 
-  .services-21st-section, 
-  .company-governance-section,
-  .event-section {
-    padding-top: 60px !important;
-  }
-
-  section:not(.hero):not(.copyright):not(.pb-0), 
-  .section:not(.hero):not(.copyright):not(.pb-0), 
-  .testimonials-section, 
-  .journey-timeline-section, 
-  .press-asymmetric-section, 
-  .maitryi-section, 
-  .people-eim-section, 
-  .awards-section, 
-  .networks-dashboard-section, 
-  .services-21st-section, 
-  .company-governance-section,
-  .event-section {
-    padding-bottom: 60px !important;
-  }
-}
 
 .section-title {
   padding-bottom: 60px;
@@ -7691,38 +7629,50 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   padding-bottom: 80px;
 }
 
-/* Governance Section Styles */
+.company-governance-section h2.main-title {
+  color: var(--brand-dark-slate, #01363f) !important;
+}
+
+.company-governance-section .sub-heading-txt {
+  color: #555555 !important;
+}
+
+/* Governance Section Styles - Unified Capsule Control */
 .gov-tabs-nav {
   display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 40px;
+  background: rgba(1, 54, 63, 0.04);
+  border: 1px solid rgba(1, 54, 63, 0.07);
+  padding: 6px;
+  border-radius: 100px;
+  width: fit-content;
+  margin: 0 auto 40px auto;
+  gap: 8px;
 }
 
 .gov-tab-btn {
-  background: #ffffff;
-  border: 1px solid rgba(1, 54, 63, 0.1);
-  color: var(--brand-dark-slate, #01363f);
-  padding: 12px 30px;
-  font-size: 16px;
+  background: transparent;
+  border: none;
+  color: rgba(1, 54, 63, 0.6) !important;
+  border-radius: 100px;
+  box-shadow: none;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 10px 24px;
+  font-size: 15px;
   font-weight: 600;
-  border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.3, 1);
   font-family: 'PP Neue Montreal', sans-serif;
 }
 
 .gov-tab-btn:hover {
-  border-color: var(--accent-color, #38E0CF);
-  background: rgba(56, 224, 207, 0.05);
+  background: rgba(1, 54, 63, 0.04);
+  color: var(--brand-dark-slate, #01363f) !important;
 }
 
 .gov-tab-btn.active {
-  background: var(--brand-dark-slate, #01363f);
-  color: #ffffff;
-  border-color: var(--brand-dark-slate, #01363f);
-  box-shadow: 0 10px 25px rgba(1, 54, 63, 0.15);
+  background: var(--brand-dark-slate, #01363f) !important;
+  color: #ffffff !important;
+  border-color: var(--brand-dark-slate, #01363f) !important;
+  box-shadow: 0 8px 20px rgba(1, 54, 63, 0.15) !important;
 }
 
 .gov-tabs-content {
@@ -7776,8 +7726,8 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 
 .director-card:hover {
   transform: translateY(-5px);
-  border-color: var(--accent-color, #38E0CF);
-  box-shadow: 0 16px 35px rgba(56, 224, 207, 0.1);
+  border-color: var(--accent-color, #38E0CF) !important;
+  box-shadow: 0 16px 35px rgba(56, 224, 207, 0.12) !important;
 }
 
 .director-avatar {
@@ -7852,8 +7802,8 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 
 .committee-card:hover {
   transform: translateY(-5px);
-  border-color: var(--accent-color, #38E0CF);
-  box-shadow: 0 16px 40px rgba(56, 224, 207, 0.1);
+  border-color: var(--accent-color, #38E0CF) !important;
+  box-shadow: 0 16px 40px rgba(56, 224, 207, 0.12) !important;
 }
 
 .committee-card-header {
@@ -8891,64 +8841,98 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
   }
 }
 
-/* Event Section Tabs & Details */
+/* Event Section Tabs & Details - Unified Capsule Pill Navigation */
 .event-tabs-nav {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 45px;
-}
-
-@media (max-width: 576px) {
-  .event-tabs-nav {
-    flex-direction: column;
-    gap: 12px;
-  }
+  width: fit-content;
+  margin: 0 auto 45px auto;
+  background: rgba(1, 54, 63, 0.04);
+  border: 1px solid rgba(1, 54, 63, 0.07);
+  padding: 6px;
+  border-radius: 100px;
+  gap: 8px;
+  box-shadow: inset 0 2px 4px rgba(1, 54, 63, 0.02);
 }
 
 .event-tab-btn {
-  background: #ffffff;
-  border: 1px solid rgba(1, 54, 63, 0.08);
-  padding: 14px 28px;
-  border-radius: 16px;
+  background: transparent;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 100px;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(1, 54, 63, 0.02);
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.3, 1);
+  box-shadow: none;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
   font-family: 'PP Neue Montreal', sans-serif;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
 }
 
 .event-tab-btn:hover {
-  border-color: var(--accent-color, #38E0CF);
-  background: rgba(56, 224, 207, 0.05);
+  background: rgba(1, 54, 63, 0.04);
 }
 
 .event-tab-btn.active {
-  background: var(--brand-dark-slate, #01363f);
-  border-color: var(--brand-dark-slate, #01363f);
-  color: #ffffff;
-  box-shadow: 0 10px 25px rgba(1, 54, 63, 0.12);
+  background: var(--brand-dark-slate, #01363f) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: 0 8px 20px rgba(1, 54, 63, 0.15);
 }
 
 .event-tab-btn .event-date {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+  color: var(--brand-black, #001B1E);
+  transition: color 0.3s ease;
+}
+
+.event-tab-btn.active .event-date {
+  color: #ffffff !important;
 }
 
 .event-tab-btn .event-title-sub {
-  font-size: 12px;
-  opacity: 0.7;
+  font-size: 11px;
   font-weight: 500;
+  color: rgba(1, 54, 63, 0.55);
+  transition: color 0.3s ease;
 }
 
 .event-tab-btn.active .event-title-sub {
-  color: var(--accent-color, #38E0CF);
-  opacity: 1;
+  color: var(--brand-turquoise, #38E0CF) !important;
+}
+
+@media (max-width: 768px) {
+  .event-tabs-nav {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    width: 100% !important;
+    border-radius: 24px !important;
+    padding: 8px !important;
+    gap: 8px !important;
+    margin: 0 auto 35px auto !important;
+    overflow-x: visible !important;
+    white-space: normal !important;
+  }
+  
+  .event-tab-btn {
+    padding: 12px 14px !important;
+    border-radius: 18px !important;
+    flex-shrink: unset !important;
+    width: 100% !important;
+    gap: 2px !important;
+  }
+
+  .event-tab-btn .event-date {
+    font-size: 14px !important;
+  }
+
+  .event-tab-btn .event-title-sub {
+    font-size: 10.5px !important;
+    line-height: 1.2 !important;
+  }
 }
 
 .event-tabs-content {
@@ -9459,7 +9443,7 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(73, 193, 172, 0.15);
   border-radius: 24px;
-  padding: 30px;
+  padding: 24px 30px;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 
     0 10px 30px rgba(0, 0, 0, 0.2),
@@ -9467,8 +9451,9 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
 }
 
 .timeline-content-card:hover {
-  transform: translateY(-4px) scale(1.01);
+  background: rgba(255, 255, 255, 0.05);
   border-color: rgba(56, 224, 207, 0.4);
+  transform: translateY(-5px);
   box-shadow: 
     0 20px 40px rgba(56, 224, 207, 0.15),
     inset 0 1px 2px rgba(255, 255, 255, 0.1);
@@ -9476,7 +9461,7 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
 
 .timeline-card-heading {
   font-family: 'PP Neue Montreal', sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   color: #ffffff; /* White title in dark card */
 }
@@ -9607,6 +9592,10 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
     background: rgba(255, 255, 255, 0.05);
   }
   
+  .timeline-card-heading {
+    font-size: 20px;
+  }
+  
   .timeline-entry-desc {
     font-size: 14px;
     line-height: 22px;
@@ -9691,9 +9680,6 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
   transform: translateY(3px);
 }
 
-#overview.overview {
-  padding-top: 50px;
-}
 
 @media (max-width: 768px) {
   .hero-container {
@@ -10401,4 +10387,434 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
   .national-map-img {
     max-width: 100%;
   }
+}
+
+/* ==========================================================================
+   ELEMENTS & ICON CONSISTENCY STANDARDIZATION
+   ========================================================================== */
+
+/* Career Meta Icon Sizing */
+.career-details img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Journey Timeline Card Images */
+.timeline-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  height: auto;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.timeline-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.timeline-content-card:hover .timeline-card-img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 768px) {
+  .timeline-card-img-wrap {
+    margin-bottom: 14px;
+  }
+}
+
+/* Timeline Card Body Split-Grid Layout */
+.timeline-card-body-grid {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.timeline-info-block {
+  flex: 1.1;
+  min-width: 0;
+}
+
+.timeline-image-block {
+  flex: 0.9;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .timeline-card-body-grid {
+    flex-direction: column-reverse; /* Image on top, text below on mobile */
+    gap: 20px;
+    align-items: stretch;
+  }
+  
+  .timeline-info-block,
+  .timeline-image-block {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* Roadmap Bento Card Visual Upgrades - Light & Dark Modes */
+.roadmap-bento-card.card-light {
+  background: var(--brand-pale-turquoise, #B9EDEA) !important;
+  color: var(--brand-black, #001B1E) !important;
+  border: 1px solid rgba(0, 27, 30, 0.1) !important;
+  box-shadow: 0 20px 40px rgba(185, 237, 234, 0.15) !important;
+}
+
+.roadmap-bento-card.card-light .bento-desc {
+  color: var(--brand-black, #001B1E) !important;
+}
+
+.roadmap-bento-card.card-light strong {
+  color: var(--brand-dark-slate, #01363F) !important;
+  text-shadow: none !important;
+  font-weight: 700;
+}
+
+.roadmap-bento-card.card-light .bento-badge.badge-dark-theme {
+  background: rgba(1, 54, 63, 0.1) !important;
+  color: var(--brand-dark-slate, #01363F) !important;
+  border: 1px solid rgba(1, 54, 63, 0.2) !important;
+  margin-bottom: 20px;
+}
+
+.roadmap-bento-card.card-light:hover {
+  transform: translateY(-6px);
+  border-color: rgba(1, 54, 63, 0.3) !important;
+  box-shadow: 0 25px 50px rgba(185, 237, 234, 0.25) !important;
+}
+
+/* Dark Card Styling (with glowing turquoise strong highlights) */
+.roadmap-bento-card.card-dark strong {
+  color: #38E0CF !important;
+  text-shadow: 0 0 8px rgba(56, 224, 207, 0.25);
+  font-weight: 700;
+}
+
+/* Iron Man Arc Reactor Style HUD Year Animation Wrapper */
+.hud-year-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 25px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+/* Base ring style */
+.hud-ring {
+  position: absolute;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+/* Outer concentric spinning ring */
+.ring-outer {
+  width: 96px;
+  height: 96px;
+  border: 1.5px solid rgba(56, 224, 207, 0.1);
+  border-top-color: rgba(56, 224, 207, 0.6);
+  border-bottom-color: rgba(56, 224, 207, 0.6);
+  animation: spin-clockwise 7s linear infinite;
+}
+
+/* Middle concentric spinning ring - dashed */
+.ring-middle {
+  width: 82px;
+  height: 82px;
+  border: 1.5px dashed rgba(56, 224, 207, 0.35);
+  animation: spin-counter 5s linear infinite;
+}
+
+/* Inner concentric spinning ring - double style */
+.ring-inner {
+  width: 68px;
+  height: 68px;
+  border: 1.5px solid rgba(56, 224, 207, 0.15);
+  border-left-color: rgba(56, 224, 207, 0.55);
+  border-right-color: rgba(56, 224, 207, 0.55);
+  animation: spin-clockwise 3s linear infinite;
+}
+
+/* Central glowing core housing the year text */
+.hud-core {
+  width: 54px;
+  height: 54px;
+  background: rgba(56, 224, 207, 0.06);
+  border: 1.5px solid rgba(56, 224, 207, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: inset 0 0 10px rgba(56, 224, 207, 0.15), 0 0 12px rgba(56, 224, 207, 0.1);
+  animation: pulse-glow-hud 2.5s ease-in-out infinite;
+}
+
+.hud-year-text {
+  font-family: 'PP Neue Montreal', monospace;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #38E0CF;
+  text-shadow: 0 0 8px rgba(56, 224, 207, 0.65);
+}
+
+/* LIGHT CARD STYLE OVERRIDES (Dark HUD colors for contrast) */
+.roadmap-bento-card.card-light .ring-outer {
+  border-color: rgba(1, 54, 63, 0.08);
+  border-top-color: rgba(1, 54, 63, 0.5);
+  border-bottom-color: rgba(1, 54, 63, 0.5);
+}
+
+.roadmap-bento-card.card-light .ring-middle {
+  border-color: rgba(1, 54, 63, 0.25);
+}
+
+.roadmap-bento-card.card-light .ring-inner {
+  border-color: rgba(1, 54, 63, 0.1);
+  border-left-color: rgba(1, 54, 63, 0.45);
+  border-right-color: rgba(1, 54, 63, 0.45);
+}
+
+.roadmap-bento-card.card-light .hud-core {
+  background: rgba(1, 54, 63, 0.04);
+  border-color: rgba(1, 54, 63, 0.35);
+  box-shadow: inset 0 0 6px rgba(1, 54, 63, 0.1), 0 0 10px rgba(1, 54, 63, 0.05);
+  animation: pulse-glow-hud-light 2.5s ease-in-out infinite;
+}
+
+.roadmap-bento-card.card-light .hud-year-text {
+  color: #01363F;
+  text-shadow: none;
+}
+
+/* HUD Animation Keyframes */
+@keyframes spin-clockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-counter {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes pulse-glow-hud {
+  0%, 100% {
+    box-shadow: inset 0 0 10px rgba(56, 224, 207, 0.15), 0 0 12px rgba(56, 224, 207, 0.1);
+    border-color: rgba(56, 224, 207, 0.4);
+  }
+  50% {
+    box-shadow: inset 0 0 16px rgba(56, 224, 207, 0.35), 0 0 22px rgba(56, 224, 207, 0.3);
+    border-color: rgba(56, 224, 207, 0.7);
+  }
+}
+
+@keyframes pulse-glow-hud-light {
+  0%, 100% {
+    box-shadow: inset 0 0 6px rgba(1, 54, 63, 0.1), 0 0 10px rgba(1, 54, 63, 0.05);
+    border-color: rgba(1, 54, 63, 0.35);
+  }
+  50% {
+    box-shadow: inset 0 0 10px rgba(1, 54, 63, 0.2), 0 0 16px rgba(1, 54, 63, 0.15);
+    border-color: rgba(1, 54, 63, 0.6);
+  }
+}
+
+/* Global Green Highlight Styling */
+.title-green {
+  color: var(--brand-turquoise, #38E0CF) !important;
+}
+
+/* Standardized Main Title Margins */
+h2.main-title {
+  margin-bottom: 50px !important;
+}
+
+h2.main-title.mb-0,
+h2.main-title.mb-1,
+.networks-dashboard-section h2.main-title,
+.journey-timeline-section h2.main-title,
+.people-eim-section h2.main-title {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  h2.main-title {
+    margin-bottom: 30px !important;
+  }
+  
+  h2.main-title.mb-0,
+  h2.main-title.mb-1,
+  .networks-dashboard-section h2.main-title,
+  .journey-timeline-section h2.main-title,
+  .people-eim-section h2.main-title {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Relocated Global Section Padding Block (Overrides all custom section-specific paddings) */
+section:not(.hero):not(.copyright):not(.pt-0), 
+.section:not(.hero):not(.copyright):not(.pt-0), 
+.testimonials-section, 
+.journey-timeline-section, 
+.press-asymmetric-section, 
+.maitryi-section, 
+.people-eim-section, 
+.awards-section, 
+.networks-dashboard-section, 
+.services-21st-section, 
+.company-governance-section,
+.event-section {
+  padding-top: 90px !important;
+}
+
+section:not(.hero):not(.copyright):not(.pb-0), 
+.section:not(.hero):not(.copyright):not(.pb-0), 
+.testimonials-section, 
+.journey-timeline-section, 
+.press-asymmetric-section, 
+.maitryi-section, 
+.people-eim-section, 
+.awards-section, 
+.networks-dashboard-section, 
+.services-21st-section, 
+.company-governance-section,
+.event-section {
+  padding-bottom: 90px !important;
+}
+
+@media (max-width: 768px) {
+  section:not(.hero):not(.copyright):not(.pt-0), 
+  .section:not(.hero):not(.copyright):not(.pt-0), 
+  .testimonials-section, 
+  .journey-timeline-section, 
+  .press-asymmetric-section, 
+  .maitryi-section, 
+  .people-eim-section, 
+  .awards-section, 
+  .networks-dashboard-section, 
+  .services-21st-section, 
+  .company-governance-section,
+  .event-section {
+    padding-top: 60px !important;
+  }
+
+  section:not(.hero):not(.copyright):not(.pb-0), 
+  .section:not(.hero):not(.copyright):not(.pb-0), 
+  .testimonials-section, 
+  .journey-timeline-section, 
+  .press-asymmetric-section, 
+  .maitryi-section, 
+  .people-eim-section, 
+  .awards-section, 
+  .networks-dashboard-section, 
+  .services-21st-section, 
+  .company-governance-section,
+  .event-section {
+    padding-bottom: 60px !important;
+  }
+}
+
+/* ==========================================================================
+   Company Governance Side-by-Side Lists Layout
+   ========================================================================== */
+.gov-border-right {
+  border-right: 1px solid rgba(1, 54, 63, 0.08);
+}
+
+@media (max-width: 991px) {
+  .gov-border-right {
+    border-right: none;
+    border-bottom: 1px solid rgba(1, 54, 63, 0.08);
+    padding-bottom: 40px;
+    margin-bottom: 40px !important;
+  }
+}
+
+.gov-column-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brand-dark-slate, #01363f);
+  font-family: 'PP Neue Montreal', sans-serif;
+  letter-spacing: -0.01em;
+  border-bottom: 2px solid rgba(1, 54, 63, 0.06);
+  padding-bottom: 12px;
+  margin-top: 0;
+}
+
+.gov-committee-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--brand-dark-slate, #01363f);
+  font-family: 'PP Neue Montreal', sans-serif;
+  border-bottom: 1px solid rgba(1, 54, 63, 0.06);
+  padding-bottom: 8px;
+}
+
+.gov-member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.gov-member-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 4px 0;
+  transition: transform 0.25s ease;
+}
+
+.gov-member-row:hover {
+  transform: translateX(4px);
+}
+
+.gov-member-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.gov-member-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.gov-member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gov-member-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--brand-black, #001B1E);
+  margin: 0;
+  font-family: 'PP Neue Montreal', sans-serif;
+  line-height: 1.3;
+}
+
+.gov-member-role {
+  font-size: 13.5px;
+  color: rgba(1, 54, 63, 0.6);
+  font-weight: 500;
+  font-family: 'PP Neue Montreal', sans-serif;
+  line-height: 1.25;
 }
