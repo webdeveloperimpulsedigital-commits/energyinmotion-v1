@@ -18,7 +18,7 @@
 	<link href="css/aos.css" rel="stylesheet">
 	<link href="css/fancybox.min.css" rel="stylesheet">
 	<link href="css/easy-responsive-tabs.css" rel="stylesheet">
-	<link href="css/main.css?v=1.4" rel="stylesheet">
+	<link href="css/main.css?v=2.1" rel="stylesheet">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
 			w[l] = w[l] || []; w[l].push({
@@ -39,23 +39,22 @@
 	<!-- End Google Tag Manager (noscript) -->
 
 	<header id="header" class="header fixed-top">
-		<div class="topbar d-flex align-items-end">
-			<div class="container d-flex justify-content-end justify-content-md-end">
+		<div class="topbar d-flex align-items-center">
+			<div class="container-fluid container-xl d-flex justify-content-end">
 				<div class="contact-info d-flex align-items-center">
-					<!--div class="continfo-col"><img src="images/icon-phone.svg" alt=""><a href="tel:+91 22 6153 7989">+91 22 6153 7989</a></div-->
-					<div class="continfo-col"><img src="images/icon-email.svg" alt=""><a
-							href="mailto:powerup@energyinmotion.in">powerup@energyinmotion.in</a></div>
+					<img src="images/icon-email.svg" alt="" style="width: 13px; margin-right: 6px; filter: brightness(0) invert(1); opacity: 0.65;">
+					<a href="mailto:powerup@energyinmotion.in">powerup@energyinmotion.in</a>
 				</div>
 			</div>
 		</div>
 		<div class="branding d-flex align-items-center">
-			<div class="container position-relative d-flex align-items-center justify-content-start">
-				<a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+			<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+				<a href="index.html" class="logo d-flex align-items-center">
 					<img src="images/logo-eim.svg" alt="EIM">
 				</a>
+				
 				<nav id="navmenu" class="navmenu">
 					<ul>
-
 						<li><a href="#overview" class="active">Overview</a></li>
 						<li><a href="#solutions">Solutions</a></li>
 						<li><a href="#offerings">Offerings</a></li>
@@ -591,146 +590,148 @@
 					experienced industry leaders committed to corporate governance, sustainability, and operational
 					excellence.</p>
 
-				<!-- 21st.dev Bento Split Layout -->
-				<div class="governance-bento-grid">
-					<!-- Left Column: Board of Directors & KMP -->
-					<div class="gov-bento-card gov-directors-card" data-aos="fade-right" data-aos-delay="200">
-						<div class="gov-card-header">
-							<div class="gov-header-title-wrap">
-								<span class="gov-badge-pill badge-teal">Leadership</span>
-								<h3 class="gov-card-title">Board of Directors & KMP</h3>
-							</div>
-						</div>
+				<!-- Tabs Navigation -->
+				<div class="gov-tabs-nav" data-aos="fade-up" data-aos-delay="150">
+					<button class="gov-tab-btn active" data-gov-tab="directors">Board of Directors & KMP</button>
+					<button class="gov-tab-btn" data-gov-tab="committees">Committees of the Board</button>
+				</div>
 
-						<div class="directors-list">
+				<!-- Tabs Content -->
+				<div class="gov-tabs-content" data-aos="fade-up" data-aos-delay="200">
+					<!-- Tab 1: Directors Grid -->
+					<div class="gov-tab-pane active" id="tab-directors">
+						<div class="directors-grid">
 							<!-- Member 1 -->
-							<div class="gov-person-item">
-								<div class="person-avatar">NM</div>
-								<div class="person-details">
-									<h4 class="person-name">Mr. Narendra Murkumbi</h4>
-									<span class="person-role role-kmp">Managing Director (Key Managerial
-										Personnel)</span>
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Mr. Narendra Murkumbi</h4>
+									<span class="director-role role-kmp">Managing Director (Key Managerial Personnel)</span>
 								</div>
 							</div>
 
 							<!-- Member 2 -->
-							<div class="gov-person-item">
-								<div class="person-avatar">ST</div>
-								<div class="person-details">
-									<h4 class="person-name">Mr. Surender Kumar Tuteja</h4>
-									<span class="person-role">Independent Director</span>
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Mr. Surender Kumar Tuteja</h4>
+									<span class="director-role">Independent Director</span>
 								</div>
 							</div>
 
 							<!-- Member 3 -->
-							<div class="gov-person-item">
-								<div class="person-avatar">RK</div>
-								<div class="person-details">
-									<h4 class="person-name">Ms. Ratna Prabha Kathi</h4>
-									<span class="person-role">Independent Director</span>
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Ms. Ratna Prabha Kathi</h4>
+									<span class="director-role">Independent Director</span>
 								</div>
 							</div>
 
 							<!-- Member 4 -->
-							<div class="gov-person-item">
-								<div class="person-avatar">DK</div>
-								<div class="person-details">
-									<h4 class="person-name">Mr. Dhruv Kotak</h4>
-									<span class="person-role">Director</span>
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Mr. Dhruv Kotak</h4>
+									<span class="director-role">Director</span>
 								</div>
 							</div>
 
 							<!-- Member 5 -->
-							<div class="gov-person-item">
-								<div class="person-avatar">NY</div>
-								<div class="person-details">
-									<h4 class="person-name">Mr. Nandan Yalgi</h4>
-									<span class="person-role">Director</span>
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Mr. Nandan Yalgi</h4>
+									<span class="director-role">Director</span>
 								</div>
 							</div>
 
 							<!-- Member 6 -->
-							<div class="gov-person-item">
-								<div class="person-avatar">PS</div>
-								<div class="person-details">
-									<h4 class="person-name">Mr. Pankil Shah</h4>
-									<span class="person-role role-kmp">Chief Financial Officer (Key Managerial
-										Personnel)</span>
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Mr. Pankil Shah</h4>
+									<span class="director-role role-kmp">Chief Financial Officer (Key Managerial Personnel)</span>
 								</div>
 							</div>
 
 							<!-- Member 7 -->
-							<div class="gov-person-item">
-								<div class="person-avatar">OM</div>
-								<div class="person-details">
-									<h4 class="person-name">Mr. Omkar Mardolkar</h4>
-									<span class="person-role role-kmp">Company Secretary & Compliance Officer (Key
-										Managerial Personnel)</span>
+							<div class="director-card">
+								<div class="director-info">
+									<h4 class="director-name">Mr. Omkar Mardolkar</h4>
+									<span class="director-role role-kmp">Company Secretary & Compliance Officer (Key Managerial Personnel)</span>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Right Column: Committees of the Board -->
-					<div class="gov-bento-card gov-committees-card" data-aos="fade-left" data-aos-delay="300">
-						<div class="gov-card-header">
-							<div class="gov-header-title-wrap">
-								<span class="gov-badge-pill badge-gold">Board Committees</span>
-								<h3 class="gov-card-title text-teal">Committees of the Board</h3>
-							</div>
-						</div>
-
-						<div class="committees-wrapper">
+					<!-- Tab 2: Committees Grid -->
+					<div class="gov-tab-pane" id="tab-committees">
+						<div class="committees-grid">
 							<!-- Committee 1: Audit Committee -->
-							<div class="committee-subcard">
-								<div class="committee-subcard-header">
-									<div class="committee-icon">
+							<div class="committee-card">
+								<div class="committee-card-header">
+									<div class="committee-card-icon">
 										<img src="images/icon-star.svg" alt="Audit Committee">
 									</div>
-									<h4 class="committee-name">Audit Committee</h4>
+									<h4 class="committee-card-title">Audit Committee</h4>
 								</div>
-								<div class="committee-members-list">
-									<div class="committee-member-row">
-										<span class="member-name">Mr. Surender Kumar Tuteja</span>
-										<span class="member-badge badge-chairman">Chairman</span>
+								<div class="committee-members">
+									<div class="committee-member-item">
+										<span class="committee-member-name">Mr. Surender Kumar Tuteja</span>
+										<span class="committee-member-role role-chairman">Chairman</span>
 									</div>
-									<div class="committee-member-row">
-										<span class="member-name">Ms. Ratna Prabha Kathi</span>
-										<span class="member-badge badge-member">Member</span>
+									<div class="committee-member-item">
+										<span class="committee-member-name">Ms. Ratna Prabha Kathi</span>
+										<span class="committee-member-role role-member">Member</span>
 									</div>
-									<div class="committee-member-row">
-										<span class="member-name">Mr. Nandan Yalgi</span>
-										<span class="member-badge badge-member">Member</span>
+									<div class="committee-member-item">
+										<span class="committee-member-name">Mr. Nandan Yalgi</span>
+										<span class="committee-member-role role-member">Member</span>
 									</div>
 								</div>
 							</div>
 
 							<!-- Committee 2: Nomination & Remuneration Committee -->
-							<div class="committee-subcard">
-								<div class="committee-subcard-header">
-									<div class="committee-icon">
+							<div class="committee-card">
+								<div class="committee-card-header">
+									<div class="committee-card-icon">
 										<img src="images/icon-reliable-energy.svg" alt="Nomination Committee">
 									</div>
-									<h4 class="committee-name">Nomination & Remuneration Committee</h4>
+									<h4 class="committee-card-title">Nomination & Remuneration Committee</h4>
 								</div>
-								<div class="committee-members-list">
-									<div class="committee-member-row">
-										<span class="member-name">Mr. Surender Kumar Tuteja</span>
-										<span class="member-badge badge-chairman">Chairman</span>
+								<div class="committee-members">
+									<div class="committee-member-item">
+										<span class="committee-member-name">Mr. Surender Kumar Tuteja</span>
+										<span class="committee-member-role role-chairman">Chairman</span>
 									</div>
-									<div class="committee-member-row">
-										<span class="member-name">Ms. Ratna Prabha Kathi</span>
-										<span class="member-badge badge-member">Member</span>
+									<div class="committee-member-item">
+										<span class="committee-member-name">Ms. Ratna Prabha Kathi</span>
+										<span class="committee-member-role role-member">Member</span>
 									</div>
-									<div class="committee-member-row">
-										<span class="member-name">Mr. Dhruv Kotak</span>
-										<span class="member-badge badge-member">Member</span>
+									<div class="committee-member-item">
+										<span class="committee-member-name">Mr. Dhruv Kotak</span>
+										<span class="committee-member-role role-member">Member</span>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
+				<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					const tabBtns = document.querySelectorAll('.gov-tab-btn');
+					const tabPanes = document.querySelectorAll('.gov-tab-pane');
+
+					tabBtns.forEach(btn => {
+						btn.addEventListener('click', () => {
+							tabBtns.forEach(b => b.classList.remove('active'));
+							tabPanes.forEach(p => p.classList.remove('active'));
+
+							btn.classList.add('active');
+							const targetPane = document.getElementById(`tab-${btn.dataset.govTab}`);
+							if (targetPane) {
+								targetPane.classList.add('active');
+							}
+						});
+					});
+				});
+				</script>
 			</div>
 		</section>
 
