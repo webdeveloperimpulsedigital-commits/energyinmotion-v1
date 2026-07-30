@@ -18,7 +18,9 @@
 	<link href="css/aos.css" rel="stylesheet">
 	<link href="css/fancybox.min.css" rel="stylesheet">
 	<link href="css/easy-responsive-tabs.css" rel="stylesheet">
-	<link href="css/main.css?v=2.1" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+	<link href="css/main.css?v=4.5" rel="stylesheet">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
 			w[l] = w[l] || []; w[l].push({
@@ -48,21 +50,42 @@
 			</div>
 		</div>
 		<div class="branding d-flex align-items-center">
-			<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+			<div class="container-fluid px-md-5 position-relative d-flex align-items-center justify-content-between">
 				<a href="index.html" class="logo d-flex align-items-center">
 					<img src="images/logo-eim.svg" alt="EIM">
 				</a>
-				
 				<nav id="navmenu" class="navmenu">
 					<ul>
-						<li><a href="#overview" class="active">Overview</a></li>
-						<li><a href="#solutions">Solutions</a></li>
-						<li><a href="#offerings">Offerings</a></li>
-						<li><a href="#services">Services</a></li>
+						<li><a href="#hero" class="active">Home</a></li>
+						<li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+							<ul>
+								<li><a href="#overview">Overview</a></li>
+								<li><a href="#journey">Journey</a></li>
+								<li><a href="#testimonials">Testimonials</a></li>
+							</ul>
+						</li>
+						<li class="dropdown"><a href="#"><span>Solutions</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+							<ul>
+								<li><a href="#solutions">Barriers & Solutions</a></li>
+								<li><a href="#maitryi">Maitryi Model</a></li>
+								<li><a href="#offerings">Offerings</a></li>
+								<li><a href="#services">Services</a></li>
+							</ul>
+						</li>
 						<li><a href="#networks">Network</a></li>
-						<li><a href="#milestones">Milestones</a></li>
-						<li><a href="#press">News</a></li>
-						<li><a href="#company">Company</a></li>
+						<li class="dropdown"><a href="#"><span>Company</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+							<ul>
+								<li><a href="#leadership">Leadership</a></li>
+								<li><a href="#shareholders">Shareholders</a></li>
+								<li><a href="#people-eim">People at EIM</a></li>
+							</ul>
+						</li>
+						<li class="dropdown"><a href="#"><span>Media</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+							<ul>
+								<li><a href="#events">Events</a></li>
+								<li><a href="#press">News</a></li>
+							</ul>
+						</li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
 					<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -73,16 +96,41 @@
 	<main class="main">
 		<section id="hero" class="hero section dark-background">
 			<!-- Desktop Video -->
-			<video autoplay muted loop playsinline class="hero-video-bg hide-mob">
-				<source src="videos/EIM-Video.mp4" type="video/mp4">
+			<video autoplay muted loop playsinline class="hero-video-bg hide-mob" id="hero-video-desktop">
+				<!-- Source loaded dynamically to save bandwidth -->
 			</video>
 			<!-- Mobile Video -->
-			<video autoplay muted loop playsinline class="hero-video-bg hide-desk">
-				<source src="videos/EIM-Video.mp4" type="video/mp4">
+			<video autoplay muted loop playsinline class="hero-video-bg hide-desk" id="hero-video-mobile">
+				<!-- Source loaded dynamically to save bandwidth -->
 			</video>
+			<script>
+				(function() {
+					var isMobile = window.innerWidth <= 767;
+					if (isMobile) {
+						var mobVid = document.getElementById('hero-video-mobile');
+						if (mobVid) {
+							mobVid.src = "images/mobile.mp4";
+						}
+					} else {
+						var deskVid = document.getElementById('hero-video-desktop');
+						if (deskVid) {
+							deskVid.src = "images/desktop.mp4";
+						}
+					}
+				})();
+			</script>
 			<div class="hero-bg"></div>
-			<div class="container">
-				<!-- Content overlays removed for a clean video presentation -->
+			<div class="container hero-container">
+				<div class="hero-cta-wrapper" data-aos="fade-up" data-aos-delay="800">
+					<a href="images/EIM.pdf" target="_blank" class="hero-cta-btn">
+						<svg class="download-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+							<polyline points="7 10 12 15 17 10"></polyline>
+							<line x1="12" y1="15" x2="12" y2="3"></line>
+						</svg>
+						<span>Download Company Brochure</span>
+					</a>
+				</div>
 			</div>
 
 		</section>
@@ -241,6 +289,15 @@
 				</div>
 			</div>
 		</section>
+
+		<section id="maitryi" class="maitryi-section py-5 bg-white">
+			<div class="container text-center">
+				<h2 class="main-title mb-5" data-aos="fade-up">‘Maitryi’ as a Business Model</h2>
+				<div class="maitryi-img-wrap" data-aos="fade-up" data-aos-delay="100">
+					<img src="images/Maitryi-Model.png" alt="Maitryi as a Business Model" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+				</div>
+			</div>
+		</section>
 		<section id="offerings" class="offerings section bg-light1">
 			<div class="container">
 				<h2 class="main-title text-center mb50" data-aos="fade-up">Offerings</h2>
@@ -375,122 +432,247 @@
 				</div>
 			</div>
 		</section>
+
+		<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const spans = document.querySelectorAll('.services-panel');
+			spans.forEach(span => {
+				span.addEventListener('mouseenter', () => {
+					spans.forEach(s => s.classList.remove('active'));
+					span.classList.add('active');
+				});
+			});
+		});
+		</script>
+
 		<section id="networks" class="networks bg-dark section ptpb85">
-			<div class="container d-flex justify-content-between">
+			<div class="container d-flex justify-content-between align-items-center">
 				<div class="charge-left">
 					<h2 class="main-title" data-aos="fade-up">Charging Network</h2>
-					<p class="big-txt1" data-aos="fade-up" data-aos-delay="100">Future Ready Charging Networks <br>
-						Deployment Roadmap</p>
+					<p class="big-txt1" data-aos="fade-up" data-aos-delay="100">
+						Future Ready Charging Networks <br>
+						<span class="highlight-sub">Deployment Roadmap</span>
+					</p>
 					<ul class="timeline">
-						<li data-aos="fade-up">
+						<li data-aos="fade-up" data-aos-delay="150">
 							<div class="year"><span>2025</span></div>
-							<div class="year-txt">Introduce 22 Swapping Stations at major logistics hubs throughout
-								India, each capable of servicing 100 e-trucks per day.</div>
+							<div class="year-txt">Introduce <strong>22 Swapping Stations</strong> at major logistics hubs throughout India, each capable of servicing 100 e-trucks per day.</div>
 						</li>
-						<li data-aos="fade-up">
+						<li data-aos="fade-up" data-aos-delay="250">
 							<div class="year"><span>2027</span></div>
-							<div class="year-txt">Target the deployment of 45 additional stations in sectors like
-								cement, steel, and mining, enhancing the overall charging network for electric vehicles.
-							</div>
+							<div class="year-txt">Target the deployment of <strong>45 additional stations</strong> in sectors like cement, steel, and mining, enhancing the overall charging network for electric vehicles.</div>
 						</li>
 					</ul>
 				</div>
 				<div class="charge-right">
-					<div class="map-cont" data-aos="fade-up"><img src="images/eim-network.svg" alt=""></div>
-					<!--div class="map-btm" data-aos="fade" data-aos-delay="600"><img src="images/map-energy.png" alt=""></div-->
+					<div class="map-cont" data-aos="fade-up">
+						<img src="images/eim-network.svg" alt="India Charging Network Map">
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<section id="milestones" class="milestone section bg-blue">
+		<section id="events" class="event-section py-5 bg-blue">
 			<div class="container">
-				<h2 class="main-title text-center mb50" data-aos="fade-up">Milestones</h2>
-				
-				<div class="timeline-container" id="timeline-container">
-					<!-- Timeline Vertical Line -->
-					<div class="timeline-line">
-						<div class="timeline-scroll-indicator" id="timeline-scroll-indicator"></div>
-					</div>
+				<!-- Section Title -->
+				<h2 class="main-title text-center mb50" data-aos="fade-up">Events</h2>
 
-					<!-- Entry 1: August 2024 -->
-					<div class="timeline-entry">
-						<div class="timeline-sticky-header">
-							<div class="timeline-dot-container">
-								<div class="timeline-dot-inner"></div>
-							</div>
-							<h3 class="timeline-title-desktop">August 2024</h3>
-						</div>
-						<div class="timeline-content">
-							<h3 class="timeline-title-mobile">August 2024</h3>
-							<h2 class="timeline-entry-heading" data-aos="fade-up">Launch of 1<sup>st</sup> e-truck at JNPT</h2>
-							<div class="timeline-entry-body">
-								<div class="timeline-entry-text">
-									<ul data-aos="fade-up" class="icon-list newin">
-										<li class="start">
-											<div class="list-icon"><img src="images/icon-star.svg" alt=""></div>
-											<div class="list-txt">India’s 1st swappable heavy-duty e-truck rollout, marking a milestone in zero-emission transport.</div>
+				<!-- Event Tabs Switcher -->
+				<div class="event-tabs-nav" data-aos="fade-up" data-aos-delay="150">
+					<button class="event-tab-btn active" data-event-tab="event1">
+						<span class="event-date">August 2024</span>
+						<span class="event-title-sub">1st EV Fast Charger</span>
+					</button>
+					<button class="event-tab-btn" data-event-tab="event2">
+						<span class="event-date">September 2025</span>
+						<span class="event-title-sub">First EV Fleet Flag Off</span>
+					</button>
+					<button class="event-tab-btn" data-event-tab="event3">
+						<span class="event-date">October 2025</span>
+						<span class="event-title-sub">1st Public Swapping Station</span>
+					</button>
+					<button class="event-tab-btn" data-event-tab="event4">
+						<span class="event-date">May 2026</span>
+						<span class="event-title-sub">India's Largest Station</span>
+					</button>
+				</div>
+
+				<!-- Event Tab Content -->
+				<div class="event-tabs-content" data-aos="fade-up" data-aos-delay="200">
+					<!-- Event 1: August 2024 -->
+					<div class="event-tab-pane active" id="event-event1">
+						<div class="event-stacked-card">
+							<!-- Top Content: Info Header -->
+							<div class="event-info-header">
+								<div class="event-info-left">
+									<h3 class="event-heading">1st EV Fast Charger in JNPT</h3>
+									<div class="event-description">
+										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<p class="desc-text">Inauguration of India's first high-capacity EV Fast Charging infrastructure within the Jawaharlal Nehru Port (JNPT) premises to support heavy-duty fleet operations.</p>
+									</div>
+								</div>
+								<div class="event-info-right">
+									<ul class="event-meta-list">
+										<li>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Date</span>
+												<span class="meta-val">15th August 2024</span>
+											</div>
 										</li>
 										<li>
-											<div class="list-icon"><img src="images/icon-calendar.svg" alt=""></div>
-											<div class="list-txt">15th August 2024</div>
+											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Location</span>
+												<span class="meta-val">Jawaharlal Nehru Port, Mumbai</span>
+											</div>
 										</li>
 										<li>
-											<div class="list-icon"><img src="images/icon-location.svg" alt=""></div>
-											<div class="list-txt">Jawaharlal Nehru Port, Mumbai</div>
-										</li>
-										<li>
-											<div class="list-icon"><img src="images/icon-inaugration.svg" alt=""></div>
-											<div class="list-txt">Inaugurated By<br> Shri Unmesh Wagh, Chairman, Jawaharlal Nehru Port Authority</div>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Inaugurated By</span>
+												<span class="meta-val">Shri Unmesh Wagh, Chairman, Jawaharlal Nehru Port Authority</span>
+											</div>
 										</li>
 									</ul>
 								</div>
-								<div class="timeline-gallery-grid">
-									<img src="images/milestone-block1.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/milestone-block2.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/milestone-block3.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/milestone-block4.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/milestone-block5.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/milestone-block6.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/milestone-block7.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/milestone-block8.png" alt="Milestone Image" data-aos="fade-up">
-								</div>
+							</div>
+							
+							<!-- Bottom Content: Widescreen Image -->
+							<div class="event-widescreen-photo">
+								<img src="images/JNPT-Charger.JPG" alt="1st EV Fast Charger in JNPT" loading="lazy">
 							</div>
 						</div>
 					</div>
 
-					<!-- Entry 2: September 2024 -->
-					<div class="timeline-entry">
-						<div class="timeline-sticky-header">
-							<div class="timeline-dot-container">
-								<div class="timeline-dot-inner"></div>
-							</div>
-							<h3 class="timeline-title-desktop">September 2024</h3>
-						</div>
-						<div class="timeline-content">
-							<h3 class="timeline-title-mobile">September 2024</h3>
-							<h2 class="timeline-entry-heading" data-aos="fade-up">Launch of 1<sup>st</sup> Battery Swap Station</h2>
-							<div class="timeline-entry-body">
-								<div class="timeline-entry-text">
-									<ul data-aos="fade-up" class="icon-list newin">
-										<li class="start">
-											<div class="list-icon"><img src="images/icon-star.svg" alt=""></div>
-											<div class="list-txt">First of its kind in India, this battery swap station is designed to service 50-60 e-tractors daily, enabling rapid fleet turnaround.</div>
+					<!-- Event 2: September 2025 -->
+					<div class="event-tab-pane" id="event-event2">
+						<div class="event-stacked-card">
+							<!-- Top Content: Info Header -->
+							<div class="event-info-header">
+								<div class="event-info-left">
+									<h3 class="event-heading">India’s First Fleet of EV Trucks Flagged Off</h3>
+									<div class="event-description">
+										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<p class="desc-text">Flagging off of India’s First Fleet of EV Trucks with Swappable Batteries at JNPA, enabling zero-emission container logistics.</p>
+									</div>
+								</div>
+								<div class="event-info-right">
+									<ul class="event-meta-list">
+										<li>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Date</span>
+												<span class="meta-val">25th September 2025</span>
+											</div>
 										</li>
 										<li>
-											<div class="list-icon"><img src="images/icon-calendar.svg" alt=""></div>
-											<div class="list-txt">15th September 2024</div>
+											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Location</span>
+												<span class="meta-val">Jawaharlal Nehru Port Authority (JNPA)</span>
+											</div>
+										</li>
+										<li>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Flagged Off By</span>
+												<span class="meta-val">Shri Sarbananda Sonowal, Hon'ble Union Minister</span>
+											</div>
 										</li>
 									</ul>
 								</div>
-								<div class="timeline-gallery-grid">
-									<img src="images/milestone-block1.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/milestone-block2.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/sept-block3.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/sept-block4.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/sept-block5.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/milestone-block7.png" alt="Milestone Image" data-aos="fade-up">
-									<img src="images/milestone-block8.png" alt="Milestone Image" data-aos="fade-up">
+							</div>
+							
+							<!-- Bottom Content: Widescreen Image -->
+							<div class="event-widescreen-photo">
+								<img src="images/sept-block3.png" alt="India’s First Fleet of EV Trucks Flagged Off" loading="lazy">
+							</div>
+						</div>
+					</div>
+
+					<!-- Event 3: October 2025 -->
+					<div class="event-tab-pane" id="event-event3">
+						<div class="event-stacked-card">
+							<!-- Top Content: Info Header -->
+							<div class="event-info-header">
+								<div class="event-info-left">
+									<h3 class="event-heading">India’s 1st Public Heavy Duty Swapping Station</h3>
+									<div class="event-description">
+										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<p class="desc-text">Inauguration of India’s 1st Public Heavy Duty Commercial E-Vehicle Battery Swapping Cum Charging Station, and Flagging Off of the EIM-Foton ASHWA Battery Swappable Heavy-Duty E-Tractor.</p>
+									</div>
 								</div>
+								<div class="event-info-right">
+									<ul class="event-meta-list">
+										<li>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Date</span>
+												<span class="meta-val">8th October 2025</span>
+											</div>
+										</li>
+										<li>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Inaugurated & Flagged Off</span>
+												<span class="meta-val"><strong>Inaugurated By</strong> Shri Nitin Gadkari, Hon'ble Union Minister of Road Transport & Highways<br>
+												<strong>Flagged Off By</strong> Shri H. D. Kumaraswamy, Hon’ble Union Minister of Heavy Industries</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<!-- Bottom Content: Widescreen Image -->
+							<div class="event-widescreen-photo">
+								<img src="images/milestone-block5.png" alt="India’s 1st Public Heavy Duty Swapping Station" loading="lazy">
+							</div>
+						</div>
+					</div>
+
+					<!-- Event 4: May 2026 -->
+					<div class="event-tab-pane" id="event-event4">
+						<div class="event-stacked-card">
+							<!-- Top Content: Info Header -->
+							<div class="event-info-header">
+								<div class="event-info-left">
+									<h3 class="event-heading">India's Largest Battery Swapping & Charging Station</h3>
+									<div class="event-description">
+										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<p class="desc-text">Inauguration of India's largest battery swapping and charging station terminal, enhancing green freight transit speed and infrastructure capacities.</p>
+									</div>
+								</div>
+								<div class="event-info-right">
+									<ul class="event-meta-list">
+										<li>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Date</span>
+												<span class="meta-val">2nd May 2026</span>
+											</div>
+										</li>
+										<li>
+											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Location</span>
+												<span class="meta-val">Jawaharlal Nehru Port, Mumbai</span>
+											</div>
+										</li>
+										<li>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-txt">
+												<span class="meta-label">Inaugurated By</span>
+												<span class="meta-val">Shri Gaurav Dayal, IAS, Chairperson, Jawaharlal Nehru Port Authority</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<!-- Bottom Content: Widescreen Image -->
+							<div class="event-widescreen-photo">
+								<img src="images/milestone-block6.png" alt="India's Largest Battery Swapping & Charging Station" loading="lazy">
 							</div>
 						</div>
 					</div>
@@ -500,47 +682,21 @@
 
 		<script>
 		document.addEventListener('DOMContentLoaded', function() {
-			const container = document.getElementById('timeline-container');
-			const indicator = document.getElementById('timeline-scroll-indicator');
-			const entries = document.querySelectorAll('.timeline-entry');
+			const eventBtns = document.querySelectorAll('.event-tab-btn');
+			const eventPanes = document.querySelectorAll('.event-tab-pane');
 
-			function updateTimeline() {
-				if (!container || !indicator) return;
-				const rect = container.getBoundingClientRect();
-				const viewHeight = window.innerHeight;
+			eventBtns.forEach(btn => {
+				btn.addEventListener('click', () => {
+					eventBtns.forEach(b => b.classList.remove('active'));
+					eventPanes.forEach(p => p.classList.remove('active'));
 
-				// Scroll progress calculation
-				const startOffset = viewHeight * 0.3;
-				const endOffset = viewHeight * 0.7;
-
-				const containerHeight = rect.height;
-				const totalScrollable = containerHeight - (viewHeight - endOffset) - startOffset;
-
-				const scrolled = startOffset - rect.top;
-				let progress = scrolled / totalScrollable;
-				progress = Math.max(0, Math.min(1, progress));
-
-				indicator.style.height = (progress * 100) + '%';
-
-				// Light up dot and title when active
-				entries.forEach((entry) => {
-					const entryRect = entry.getBoundingClientRect();
-					const dot = entry.querySelector('.timeline-dot-inner');
-					const title = entry.querySelector('.timeline-title-desktop');
-					
-					if (entryRect.top <= startOffset + 50) {
-						if (dot) dot.classList.add('active');
-						if (title) title.classList.add('active');
-					} else {
-						if (dot) dot.classList.remove('active');
-						if (title) title.classList.remove('active');
+					btn.classList.add('active');
+					const targetPane = document.getElementById(`event-${btn.dataset.eventTab}`);
+					if (targetPane) {
+						targetPane.classList.add('active');
 					}
 				});
-			}
-
-			window.addEventListener('scroll', updateTimeline);
-			window.addEventListener('resize', updateTimeline);
-			setTimeout(updateTimeline, 100);
+			});
 		});
 		</script>
 
@@ -554,7 +710,7 @@
 					<!-- Left Column: Large Widescreen Photo Frame -->
 					<div class="press-asymmetric-image-wrapper" data-aos="fade-right">
 						<a href="documents/Press-Release.pdf" target="_blank" class="press-image-link">
-							<img src="images/Press-Release-img.png" alt="HPCL Partnership Signing Ceremony">
+							<img src="images/Press-Release-img.png" alt="HPCL Partnership Signing Ceremony" loading="lazy">
 							<div class="press-image-glow-overlay"></div>
 						</a>
 					</div>
@@ -582,7 +738,7 @@
 			</div>
 		</section>
 
-		<section id="company" class="company-governance-section py-5">
+		<section id="leadership" class="company-governance-section py-5">
 			<div class="container">
 				<!-- Section Title matching all other sections -->
 				<h2 class="main-title text-center mb35" data-aos="fade-up">Company Leadership</h2>
@@ -737,10 +893,12 @@
 
 
 
-		<section id="company" class="company section shareholders-section-modern py-5">
+		<section id="shareholders" class="company section shareholders-section-modern py-5">
 			<div class="container">
 				<h2 class="main-title text-center transform-none mb-3">Our Shareholders</h2>
-				<p class="sub-heading-txt text-center mb-5" data-aos="fade-up" data-aos-delay="100"></p>
+				<p class="sub-heading-txt text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+					EIM is a joint venture between <strong>Ravindra Energy Limited</strong>, a listed company in the business of renewable energy projects and <strong>JM Baxi Group</strong>, the 2nd largest company in the ports & logistics sector.
+				</p>
 
 				<div class="shareholders-bento-main d-flex flex-column flex-lg-row gap-4 align-items-stretch">
 					<!-- Left Side: Dual Shareholder Bento Cards -->
@@ -751,52 +909,30 @@
 								<div class="logo-cont mb-0"><a href="https://www.ravindraenergy.com/"
 										target="_blank"><img src="images/logo-ravindra-energy.svg"
 											alt="Ravindra Energy Limited" class="shareholder-logo-img"></a></div>
-								<span class="shareholder-status-pill">50% Subsidiary Owner</span>
 							</div>
-							<p class="shareholder-intro-text mb-4">Ravindra Energy Limited, which is a listed company in
-								the business of building and operating renewable energy projects. We also have a
-								prominent player from the ports & logistics sector as a shareholder.</p>
-							<div class="shareholder-features-grid">
-								<div class="bento-feature-item">
-									<div class="bento-icon-box"><img src="images/icon-reliable-energy.svg"
-											alt="Green Energy"></div>
-									<div class="bento-feature-text">Reliable Green Energy Provider to corporates</div>
-								</div>
-								<div class="bento-feature-item">
-									<div class="bento-icon-box"><img src="images/icon-energy-trading.svg"
-											alt="Energy Trading"></div>
-									<div class="bento-feature-text">Energy Trading – Power exchange & bilateral
-										contracts</div>
-								</div>
-								<div class="bento-feature-item">
-									<div class="bento-icon-box"><img src="images/icon-renewable-energy.svg"
-											alt="RTC Renewable"></div>
-									<div class="bento-feature-text">Round-the-clock RTC Renewable (Solar PV, Wind, BESS)
-									</div>
-								</div>
-								<div class="bento-feature-item">
-									<div class="bento-icon-box"><img src="images/icon-solar-projects.svg"
-											alt="Solar Irrigation"></div>
-									<div class="bento-feature-text">Solar PV based agricultural irrigation solutions
-									</div>
-								</div>
-							</div>
+							<ul class="shareholder-bullet-list">
+								<li>Reliable Green Energy Provider to corporates</li>
+								<li>Rural solar projects</li>
+								<li>Round the clock renewable energy solutions including solar, wind and BESS (Battery energy storage system)</li>
+								<li>Energy Trading – exchange + bilateral contracts</li>
+								<li>For more info: <a href="https://www.nseindia.com/get-quotes/equity?symbol=RELTD" target="_blank" class="shareholder-link">https://www.nseindia.com/get-quotes/equity?symbol=RELTD</a></li>
+							</ul>
 						</div>
 
 						<!-- Card 2: J M Baxi Group -->
 						<div class="bento-shareholder-card jmbaxi-bento-card p-4 rounded-4" data-aos="fade-up"
 							data-aos-delay="200">
 							<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
-								<h3 class="jmbaxi-card-title text-accent mb-0 font-weight-bold">J M Baxi Group</h3>
-								<span class="legacy-badge-gold">More than 100-Year Legacy</span>
+								<div class="logo-cont mb-0"><a href="https://www.jmbaxi.com/"
+										target="_blank"><img src="images/jm-main-logo.svg"
+											alt="J M Baxi Group" class="shareholder-logo-img"></a></div>
 							</div>
-							<p class="shareholder-intro-text mb-3">Founded in 1916, J M Baxi Group has spent more than a
-								century at the heart of India’s maritime and trade landscape. What began on the
-								waterfront has grown into a unified platform spanning ports, logistics, marine services,
-								and supporting supply-chain infrastructure – all built on deep maritime expertise.</p>
-							<p class="shareholder-intro-text highlight-quote mb-0">Across the port-centric ecosystem,
-								our focus remains the same: help India move cargo, commerce, and communities forward.
-							</p>
+							<ul class="shareholder-bullet-list">
+								<li>108-year-old business conglomerate, in marine services, ports and logistics and technology</li>
+								<li>Operates container and multi-cargo terminals, CFS/ICDs, rail logistics and project cargo services</li>
+								<li>India's largest and most comprehensive port and inland location network</li>
+								<li>For more info: <a href="https://www.jmbaxi.com/" target="_blank" class="shareholder-link">https://www.jmbaxi.com/</a></li>
+							</ul>
 						</div>
 					</div>
 
@@ -805,34 +941,277 @@
 						<div class="bento-graphic-grid">
 							<!-- Top Featured Card: Port Operations & EV Container Transit -->
 							<div class="bento-tile tile-image tile-img-featured">
-								<img src="images/eim-offering-img3.jpg" alt="Port EV Container Logistics"
-									class="bento-tile-img">
-								<div class="tile-overlay-caption">
-									<div class="d-flex align-items-center justify-content-between">
-										<span class="tile-title">Port EV Container Transit</span>
-										<span class="tile-badge">Port Ecosystem</span>
-									</div>
-								</div>
+								<img src="images/shareholder-2.JPG" alt="Port EV Container Logistics"
+									class="bento-tile-img" loading="lazy">
 							</div>
 							<!-- Bottom Left Card: EV Fleet -->
 							<div class="bento-tile tile-image tile-img-fleet">
-								<img src="images/eim-offering-img1.jpg" alt="Heavy-Duty EV Fleet"
-									class="bento-tile-img">
-								<div class="tile-overlay-caption">
-									<span class="tile-title">Heavy-Duty EV Fleet</span>
-								</div>
+								<img src="images/shareholder-3.JPG" alt="Heavy-Duty EV Fleet"
+									class="bento-tile-img" loading="lazy">
 							</div>
 							<!-- Bottom Right Card: Battery Swapping Hub -->
 							<div class="bento-tile tile-image tile-img-swapping">
-								<img src="images/eim-offering-img2.jpg" alt="Automated Swapping Hub"
-									class="bento-tile-img">
-								<div class="tile-overlay-caption">
-									<span class="tile-title">Port Swapping Hub</span>
+								<img src="images/shareholder-1.jpg" alt="Automated Swapping Hub"
+									class="bento-tile-img" loading="lazy">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="people-eim" class="people-eim-section py-5 bg-white">
+			<div class="container position-relative">
+				<!-- Centered Section Header -->
+				<div class="text-center mb-4">
+					<h2 class="main-title mb-0"><span class="title-dark">People at</span> <span class="title-green">EIM</span></h2>
+				</div>
+				
+				<div class="swiper life-swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide life-swiper-slide">
+							<img src="images/life-1.png" alt="EIM Team Retreat Outdoor" loading="lazy">
+						</div>
+						<div class="swiper-slide life-swiper-slide">
+							<img src="images/life-2.png" alt="EIM Collaborative Team Office" loading="lazy">
+						</div>
+						<div class="swiper-slide life-swiper-slide">
+							<img src="images/life-3.png" alt="EIM Engineering Operations Station" loading="lazy">
+						</div>
+						<div class="swiper-slide life-swiper-slide">
+							<img src="images/life-4.png" alt="EIM Team Annual Celebration" loading="lazy">
+						</div>
+					</div>
+					<div class="life-swiper-pagination swiper-pagination position-relative mt-4"></div>
+				</div>
+
+				<!-- Job Openings Header -->
+				<div class="text-center mt-5 mb-4">
+					<h3 class="careers-sub-title">Current Openings</h3>
+				</div>
+				
+				<!-- Careers Grid -->
+				<div class="row g-4 careers-grid">
+					<!-- Card 1 -->
+					<div class="col-md-6 col-lg-4">
+						<div class="career-card" data-aos="fade-up" data-aos-delay="100">
+							<div class="career-card-badge">Operations</div>
+							<h4 class="career-title">EV Operations Manager</h4>
+							<div class="career-details">
+								<span><i class="bi bi-geo-alt"></i> Navi Mumbai (JNPT Hub)</span>
+								<span><i class="bi bi-briefcase"></i> 4+ Years Exp</span>
+							</div>
+							<p class="career-description">Oversee swap-cum-charging hub operations, manage e-tractor fleet staging, and lead localized technician teams to ensure maximum vehicle uptime.</p>
+							<a href="mailto:careers@energyinmotion.in?subject=Application for EV Operations Manager" class="career-apply-btn">
+								<span>Apply Now</span>
+								<i class="bi bi-arrow-right-short"></i>
+							</a>
+						</div>
+					</div>
+					<!-- Card 2 -->
+					<div class="col-md-6 col-lg-4">
+						<div class="career-card" data-aos="fade-up" data-aos-delay="200">
+							<div class="career-card-badge">Engineering</div>
+							<h4 class="career-title">Embedded IoT Systems Engineer</h4>
+							<div class="career-details">
+								<span><i class="bi bi-geo-alt"></i> Bengaluru Tech Center</span>
+								<span><i class="bi bi-briefcase"></i> 3+ Years Exp</span>
+							</div>
+							<p class="career-description">Develop and optimize IoT software modules for real-time telemetry on battery health, swapping station robotics, and remote charger diagnostics.</p>
+							<a href="mailto:careers@energyinmotion.in?subject=Application for Embedded IoT Systems Engineer" class="career-apply-btn">
+								<span>Apply Now</span>
+								<i class="bi bi-arrow-right-short"></i>
+							</a>
+						</div>
+					</div>
+					<!-- Card 3 -->
+					<div class="col-md-6 col-lg-4">
+						<div class="career-card" data-aos="fade-up" data-aos-delay="300">
+							<div class="career-card-badge">Business Development</div>
+							<h4 class="career-title">Head of Logistics Alliances</h4>
+							<div class="career-details">
+								<span><i class="bi bi-geo-alt"></i> Mumbai / Delhi NCR</span>
+								<span><i class="bi bi-briefcase"></i> 6+ Years Exp</span>
+							</div>
+							<p class="career-description">Partner with enterprise cement, steel, and chemical conglomerates to transition their bulk outbound transport chains to electric solutions.</p>
+							<a href="mailto:careers@energyinmotion.in?subject=Application for Head of Logistics Alliances" class="career-apply-btn">
+								<span>Apply Now</span>
+								<i class="bi bi-arrow-right-short"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="journey" class="journey-section py-5">
+			<div class="container">
+				<h2 class="main-title text-center mb-5" data-aos="fade-up">Journey So Far</h2>
+
+				<div class="journey-flow-wrapper" data-aos="fade-up">
+					<!-- Animated Snake SVG Path (Desktop only) -->
+					<svg class="journey-flow-svg d-none d-md-block" viewBox="0 0 1000 1320" preserveAspectRatio="none">
+						<path d="M 280,120 C 450,120 550,280 720,280 C 850,280 500,460 280,460 C 100,460 550,640 720,640 C 850,640 500,820 280,820 C 100,820 550,1000 720,1000 C 850,1000 500,1180 280,1180" 
+							  class="journey-road-divider" stroke="rgba(73, 193, 172, 0.6)" stroke-width="2.5" stroke-dasharray="8, 6" fill="none" stroke-linecap="round" />
+					</svg>
+
+					<!-- Staggered Milestone Cards -->
+					<div class="journey-cards-grid">
+						
+						<!-- Card 1 (Left) -->
+						<div class="journey-card-item card-left pos-1" style="--theme-color: #49c1ac; --theme-bg: #f2fbf9; --theme-border: #d6f3ee;">
+							<div class="journey-card-inner">
+								<svg class="journey-pin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M0 0h24v24H0z" fill="none" />
+									<path d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+								</svg>
+								<div class="journey-card-content">
+									<h3 class="journey-card-title">Mar 2024</h3>
+									<p class="journey-card-desc">Company Registration</p>
 								</div>
 							</div>
-							<!-- Bottom Brand Bar -->
-							<div class="bento-tile tile-brand-bar">
-								<img src="images/energy-in-motion.svg" alt="Energy In Motion" class="bento-logo-img">
+						</div>
+
+						<!-- Card 2 (Right) -->
+						<div class="journey-card-item card-right pos-2" style="--theme-color: #01363f; --theme-bg: #f4f6f7; --theme-border: #e2e7e8;">
+							<div class="journey-card-inner">
+								<svg class="journey-pin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M0 0h24v24H0z" fill="none" />
+									<path d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+								</svg>
+								<div class="journey-card-content">
+									<h3 class="journey-card-title">July 2025</h3>
+									<p class="journey-card-desc">E-tractor Homologation</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Card 3 (Left) -->
+						<div class="journey-card-item card-left pos-3" style="--theme-color: #49c1ac; --theme-bg: #f2fbf9; --theme-border: #d6f3ee;">
+							<div class="journey-card-inner">
+								<svg class="journey-pin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M0 0h24v24H0z" fill="none" />
+									<path d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+								</svg>
+								<div class="journey-card-content">
+									<h3 class="journey-card-title">Aug 2025</h3>
+									<p class="journey-card-desc">1st Commercial Sale</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Card 4 (Right) -->
+						<div class="journey-card-item card-right pos-4" style="--theme-color: #01363f; --theme-bg: #f4f6f7; --theme-border: #e2e7e8;">
+							<div class="journey-card-inner">
+								<svg class="journey-pin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M0 0h24v24H0z" fill="none" />
+									<path d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+								</svg>
+								<div class="journey-card-content">
+									<h3 class="journey-card-title">Sep 2025</h3>
+									<p class="journey-card-desc">E-tractor Launch @ JNPA</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Card 5 (Left) -->
+						<div class="journey-card-item card-left pos-5" style="--theme-color: #49c1ac; --theme-bg: #f2fbf9; --theme-border: #d6f3ee;">
+							<div class="journey-card-inner">
+								<svg class="journey-pin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M0 0h24v24H0z" fill="none" />
+									<path d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+								</svg>
+								<div class="journey-card-content">
+									<h3 class="journey-card-title">Oct 2025</h3>
+									<p class="journey-card-desc">Swap Station Launch @ DICT</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Card 6 (Right) -->
+						<div class="journey-card-item card-right pos-6" style="--theme-color: #01363f; --theme-bg: #f4f6f7; --theme-border: #e2e7e8;">
+							<div class="journey-card-inner">
+								<svg class="journey-pin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M0 0h24v24H0z" fill="none" />
+									<path d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+								</svg>
+								<div class="journey-card-content">
+									<h3 class="journey-card-title">Nov 2025</h3>
+									<p class="journey-card-desc">No. 2 in India in EHDT Sale</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Card 7 (Left) -->
+						<div class="journey-card-item card-left pos-7" style="--theme-color: #49c1ac; --theme-bg: #f2fbf9; --theme-border: #d6f3ee;">
+							<div class="journey-card-inner">
+								<svg class="journey-pin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M0 0h24v24H0z" fill="none" />
+									<path d="M16 3a1 1 0 0 1 .117 1.993l-.117 .007v4.764l1.894 3.789a1 1 0 0 1 .1 .331l.006 .116v2a1 1 0 0 1 -.883 .993l-.117 .007h-4v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-2a1 1 0 0 1 .06 -.34l.046 -.107l1.894 -3.791v-4.762a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" />
+								</svg>
+								<div class="journey-card-content">
+									<h3 class="journey-card-title">June 2026</h3>
+									<p class="journey-card-desc">Vehicle Assembly Plant @ Talegaon</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="testimonials" class="testimonials-section py-5">
+			<div class="container">
+				<h2 class="main-title text-center mb50" data-aos="fade-up">Testimonials</h2>
+				
+				<div class="testimonials-grid" data-aos="fade-up" data-aos-delay="200">
+					<!-- Testimonial 1 -->
+					<div class="testimonial-card">
+						<!-- Quote Box -->
+						<div class="testimonial-quote-wrap">
+							<span class="quote-icon open-quote">“</span>
+							<p class="testimonial-text">
+								By deploying <strong>EIM vehicles in NCR region</strong>, not only do I feel proud to be contributing to a <strong>Greener Environment</strong>, but I also feel richer each time my vehicle enters into Delhi, as my EV trucks are exempted from paying <strong>Rs 4000/- NGT Tax</strong> per trip imposed by Delhi Govt for Diesel trucks.
+							</p>
+							<span class="quote-icon close-quote">”</span>
+						</div>
+						
+						<!-- Bio Footer Box -->
+						<div class="testimonial-footer">
+							<div class="testimonial-bio">
+								<h4 class="testimonial-name">Gurjeet Singh Bhatia</h4>
+								<span class="testimonial-role">AVP - Transport Operations</span>
+								<span class="testimonial-company">J M Baxi, The Port & Logistics</span>
+							</div>
+							<div class="testimonial-avatar-wrap">
+								<div class="avatar-bg-block"></div>
+								<img src="images/gurjeet.png" alt="Gurjeet Singh Bhatia" class="testimonial-avatar-img" loading="lazy">
+							</div>
+						</div>
+					</div>
+
+					<!-- Testimonial 2 -->
+					<div class="testimonial-card">
+						<!-- Quote Box -->
+						<div class="testimonial-quote-wrap">
+							<span class="quote-icon open-quote">“</span>
+							<p class="testimonial-text">
+								As one of the early users of <strong>EIM vehicles at JNPT Port at Navi Mumbai</strong>, I’m amazed at the way EIM has created the charging infra in the JNPT eco-system comprising of multiple Swapping-cum-Charging stations - in terms of speed & scale. Looking at current oil prices, I feel lucky <strong>I switched to EV early</strong>.
+							</p>
+							<span class="quote-icon close-quote">”</span>
+						</div>
+						
+						<!-- Bio Footer Box -->
+						<div class="testimonial-footer">
+							<div class="testimonial-bio">
+								<h4 class="testimonial-name">Vitthal Wable</h4>
+								<span class="testimonial-role">Director, Radiance Green Mobility Pvt. Ltd.</span>
+								<span class="testimonial-company">Jyothi Transport & Freight Services Pvt. Ltd.</span>
+							</div>
+							<div class="testimonial-avatar-wrap">
+								<div class="avatar-bg-block"></div>
+								<img src="images/vitthal.png" alt="Vitthal Wable" class="testimonial-avatar-img" loading="lazy">
 							</div>
 						</div>
 					</div>
@@ -907,12 +1286,12 @@
 					© Copyright 2024 Energy In Motion Ltd. All rights reserved. <br>Web Design by Image Online Pvt.
 					Ltd.
 				</div>
-				<div class="copy-img"><img src="images/footer-truck.png" alt=""></div>
+				<div class="copy-img"><img src="images/footer-truck.png" alt="" loading="lazy"></div>
 			</div>
 		</section>
 		<div style="display: none;" id="narendra" class="fancy-popup">
 			<div class="fancy-cont">
-				<div class="fancy-img"> <img src="images/narendra-murkumbi.jpg" alt=""></div>
+				<div class="fancy-img"> <img src="images/narendra-murkumbi.jpg" alt="" loading="lazy"></div>
 				<div class="fancy-txt">
 					<h2 class="main-title mb-1"> Narendra Murkumbi</h2>
 					<p class="designation mb-3">Managing Director & CEO</p>
@@ -952,7 +1331,7 @@
 	</div> -->
 		<div style="display: none;" id="devdatta" class="fancy-popup">
 			<div class="fancy-cont">
-				<div class="fancy-img"> <img src="images/devdatta-deshmukh.png" alt=""></div>
+				<div class="fancy-img"> <img src="images/devdatta-deshmukh.png" alt="" loading="lazy"></div>
 				<div class="fancy-txt">
 					<h2 class="main-title mb-1"> Devdatta Deshmukh</h2>
 					<p class="designation mb-3">Manager - Strategy</p>
@@ -977,7 +1356,7 @@
 		</div>
 		<div style="display: none;" id="munjal" class="fancy-popup">
 			<div class="fancy-cont">
-				<div class="fancy-img"> <img src="images/munjal-savla.png" alt=""></div>
+				<div class="fancy-img"> <img src="images/munjal-savla.png" alt="" loading="lazy"></div>
 				<div class="fancy-txt">
 					<h2 class="main-title mb-1"> Munjal Savla</h2>
 					<p class="designation mb-3">General Manager - Technology</p>
@@ -1017,8 +1396,10 @@
 		<!--script src="js/imagesloaded.pkgd.min.js"></script>
   <script src="js/isotope.pkgd.min.js"></script-->
 		<script src="js/easyResponsiveTabs.js"></script>
-		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="js/main.js"></script>
+
 
 	</main>
 </body>

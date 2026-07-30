@@ -29,10 +29,14 @@
 
   function mobileNavToogle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+    if (mobileNavToggleBtn) {
+      mobileNavToggleBtn.classList.toggle('bi-list');
+      mobileNavToggleBtn.classList.toggle('bi-x');
+    }
   }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  if (mobileNavToggleBtn) {
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -63,9 +67,25 @@
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
+    const removePreloader = () => {
+      if (preloader.classList.contains('preloader-removed')) return;
+      preloader.classList.add('preloader-removed');
+      preloader.style.opacity = '0';
+      setTimeout(() => {
+        preloader.remove();
+      }, 600); // matches the 0.6s transition in CSS
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(removePreloader, 300);
+      });
+    } else {
+      setTimeout(removePreloader, 300);
+    }
+
+    window.addEventListener('load', removePreloader);
+    setTimeout(removePreloader, 1500); // 1.5s safety fallback
   }
 
   /**
@@ -78,13 +98,15 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
@@ -180,8 +202,32 @@ window.addEventListener('load', () => {
    // }
 	});
 
-
-
-
+  // Initialize Swiper for "Life at EIM"
+  if (document.querySelector('.life-swiper')) {
+    new Swiper('.life-swiper', {
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: 1.15,
+      spaceBetween: 16,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.life-swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 1.6,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 1.5,
+          spaceBetween: 32,
+        }
+      }
+    });
+  }
 
 })();
