@@ -8886,16 +8886,7 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
   color: #ffffff !important;
 }
 
-.event-tab-btn .event-title-sub {
-  font-size: 11px;
-  font-weight: 500;
-  color: rgba(1, 38, 45, 0.55);
-  transition: color 0.3s ease;
-}
 
-.event-tab-btn.active .event-title-sub {
-  color: var(--brand-turquoise, #38E0CF) !important;
-}
 
 @media (max-width: 768px) {
   .event-tabs-nav {
@@ -8922,10 +8913,7 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
     font-size: 14px !important;
   }
 
-  .event-tab-btn .event-title-sub {
-    font-size: 10.5px !important;
-    line-height: 1.2 !important;
-  }
+
 }
 
 .event-tabs-content {
