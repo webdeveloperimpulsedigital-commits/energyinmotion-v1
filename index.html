@@ -25,7 +25,7 @@
 	<link href="css/easy-responsive-tabs.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-	<link href="css/main.css?v=5.0" rel="stylesheet">
+	<link href="css/main.css?v=7.9" rel="stylesheet">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
 			w[l] = w[l] || []; w[l].push({
@@ -67,7 +67,7 @@
 									class="bi bi-chevron-down toggle-dropdown"></i></a>
 							<ul>
 								<li><a href="#overview">Overview</a></li>
-								<li><a href="#journey">Journey</a></li>
+								<!-- <li><a href="#journey">Journey</a></li> -->
 								<li><a href="#testimonials">Testimonials</a></li>
 							</ul>
 						</li>
@@ -165,13 +165,31 @@
 				<!-- Row 2: Sliding Accordion Panels Grid -->
 				<div class="overview-accordion-grid" data-aos="fade-up" data-aos-delay="200">
 					<!-- Panel 1: Drive -->
-					<div class="accordion-panel active" style="background-image: url('images/overview-1.jpg');"></div>
+					<div class="accordion-panel active" style="background-image: url('images/overview-1.jpg');">
+						<div class="accordion-panel-overlay">
+							<div class="accordion-panel-body">
+								<h3 class="accordion-panel-h3">Drive</h3>
+							</div>
+						</div>
+					</div>
 
 					<!-- Panel-2: Energize -->
-					<div class="accordion-panel" style="background-image: url('images/overview-2.jpg');"></div>
+					<div class="accordion-panel" style="background-image: url('images/overview-2.jpg');">
+						<div class="accordion-panel-overlay">
+							<div class="accordion-panel-body">
+								<h3 class="accordion-panel-h3">Energize</h3>
+							</div>
+						</div>
+					</div>
 
 					<!-- Panel 3: Charge -->
-					<div class="accordion-panel" style="background-image: url('images/overview-3.jpg');"></div>
+					<div class="accordion-panel" style="background-image: url('images/overview-3.jpg');">
+						<div class="accordion-panel-overlay">
+							<div class="accordion-panel-body">
+								<h3 class="accordion-panel-h3">Charge</h3>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -235,7 +253,7 @@
 							<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
 								<div class="logo-cont mb-0"><a href="https://www.ravindraenergy.com/"
 										target="_blank"><img src="images/logo-ravindra-energy.svg"
-											alt="Ravindra Energy Limited" class="shareholder-logo-img"></a></div>
+											alt="Ravindra Energy Limited" class="shareholder-logo-img ravindra-logo"></a></div>
 							</div>
 							<ul class="shareholder-bullet-list">
 								<li>Reliable Green Energy Provider to corporates</li>
@@ -251,12 +269,12 @@
 						</div>
 
 						<!-- Card 2: J M Baxi Group -->
-						<div class="bento-shareholder-card jmbaxi-bento-card p-4 rounded-4" data-aos="fade-up"
+						<div class="bento-shareholder-card p-4 rounded-4" data-aos="fade-up"
 							data-aos-delay="200">
 							<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
 								<div class="logo-cont mb-0"><a href="https://www.jmbaxi.com/" target="_blank"><img
 											src="images/jm-main-logo.svg" alt="J M Baxi Group"
-											class="shareholder-logo-img"></a></div>
+											class="shareholder-logo-img jmbaxi-logo"></a></div>
 							</div>
 							<ul class="shareholder-bullet-list">
 								<li>108-year-old business conglomerate, in marine services, ports and logistics and
@@ -467,17 +485,17 @@
 					<div class="offerings-sticky-media-column" data-aos="fade-left">
 						<div class="offerings-image-display">
 							<div class="offering-display-img active" data-offering-img="1"
-								data-bg="images/offering-1.jpg" style="background-image: url('images/offering-1.jpg');">
+								data-bg="images/Next-Generation.png" style="background-image: url('images/Next-Generation.png');">
 							</div>
-							<div class="offering-display-img" data-offering-img="2" data-bg="images/offering-2.jpg">
+							<div class="offering-display-img" data-offering-img="2" data-bg="images/Integrated-Charging.png">
 							</div>
-							<div class="offering-display-img" data-offering-img="3" data-bg="images/offering-3.jpg">
+							<div class="offering-display-img" data-offering-img="3" data-bg="images/Automated-Battery.png">
 							</div>
-							<div class="offering-display-img" data-offering-img="4" data-bg="images/offering-1.jpg">
+							<div class="offering-display-img" data-offering-img="4" data-bg="images/Automated-Battery.png">
 							</div>
-							<div class="offering-display-img" data-offering-img="5" data-bg="images/offering-2.jpg">
+							<div class="offering-display-img" data-offering-img="5" data-bg="images/Intelligent-Energy.png">
 							</div>
-							<div class="offering-display-img" data-offering-img="6" data-bg="images/offering-3.jpg">
+							<div class="offering-display-img" data-offering-img="6" data-bg="images/Powered-by-Renewable.png">
 							</div>
 						</div>
 					</div>
@@ -514,6 +532,52 @@
 						});
 					});
 				}
+			});
+		</script>
+
+		<section id="services" class="services-21st-section py-5">
+			<div class="container">
+				<h2 class="main-title text-center mb50" data-aos="fade-up">Services & E-Tractors</h2>
+
+				<!-- Services Accordion Grid -->
+				<div class="services-accordion-grid" data-aos="fade-up" data-aos-delay="200">
+					<!-- Panel 1: Swapping Infrastructure -->
+					<div class="services-panel active" style="background-image: url('images/overview-1.jpg');">
+						<div class="services-panel-overlay">
+							<div class="services-panel-body">
+								<h3 class="services-panel-h3">Automated Battery Swapping & Charging Hub</h3>
+								<p class="services-panel-p">A fully automated energy hub that enables rapid battery
+									swapping while simultaneously charging multiple battery packs and electric vehicle.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Panel 2: E-Tractors -->
+					<div class="services-panel" style="background-image: url('images/overview-3.jpg');">
+						<div class="services-panel-overlay">
+							<div class="services-panel-body">
+								<h3 class="services-panel-h3">Next-Generation Electric Tractor</h3>
+								<p class="services-panel-p">Purpose-built for heavy-duty commercial applications, the
+									EIM electric tractor features an advanced swappable battery platform that delivers
+									faster turnaround, greater operational flexibility, and seamless integration with
+									EIM's energy ecosystem.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const spans = document.querySelectorAll('.services-panel');
+				spans.forEach(span => {
+					span.addEventListener('mouseenter', () => {
+						spans.forEach(s => s.classList.remove('active'));
+						span.classList.add('active');
+					});
+				});
 			});
 		</script>
 
@@ -578,53 +642,9 @@
 			</div>
 		</section>
 
-		<section id="services" class="services-21st-section py-5">
-			<div class="container">
-				<h2 class="main-title text-center mb50" data-aos="fade-up">Services & E-Tractors</h2>
 
-				<!-- Services Accordion Grid -->
-				<div class="services-accordion-grid" data-aos="fade-up" data-aos-delay="200">
-					<!-- Panel 1: Swapping Infrastructure -->
-					<div class="services-panel active" style="background-image: url('images/overview-1.jpg');">
-						<div class="services-panel-overlay">
-							<div class="services-panel-body">
-								<h3 class="services-panel-h3">Automated Battery Swapping & Charging Hub</h3>
-								<p class="services-panel-p">A fully automated energy hub that enables rapid battery
-									swapping while simultaneously charging multiple battery packs and electric vehicle.
-								</p>
-							</div>
-						</div>
-					</div>
 
-					<!-- Panel 2: E-Tractors -->
-					<div class="services-panel" style="background-image: url('images/overview-3.jpg');">
-						<div class="services-panel-overlay">
-							<div class="services-panel-body">
-								<h3 class="services-panel-h3">Next-Generation Electric Tractor</h3>
-								<p class="services-panel-p">Purpose-built for heavy-duty commercial applications, the
-									EIM electric tractor features an advanced swappable battery platform that delivers
-									faster turnaround, greater operational flexibility, and seamless integration with
-									EIM's energy ecosystem.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				const spans = document.querySelectorAll('.services-panel');
-				spans.forEach(span => {
-					span.addEventListener('mouseenter', () => {
-						spans.forEach(s => s.classList.remove('active'));
-						span.classList.add('active');
-					});
-				});
-			});
-		</script>
-
-		<section id="journey" class="journey-timeline-section">
+		<section id="journey" class="journey-timeline-section" style="display: none;">
 			<div class="container timeline-container">
 				<!-- Section Header -->
 				<div class="text-center mb-5">
@@ -905,8 +925,8 @@
 								<div class="testimonial-footer">
 									<div class="testimonial-bio">
 										<h4 class="testimonial-name">Gurjeet Singh Bhatia</h4>
-										<span class="testimonial-role">AVP - Transport Operations</span>
-										<span class="testimonial-company">J M Baxi, The Port & Logistics</span>
+										<span class="testimonial-role">AVP - Transport Operations - Delhi International Cargo Terminal Private Limited.</span>
+										<span class="testimonial-company">(J M Baxi Ports & Logistics Private Limited)</span>
 									</div>
 									<div class="testimonial-avatar-wrap">
 										<div class="avatar-bg-block"></div>
@@ -943,6 +963,58 @@
 									<div class="testimonial-avatar-wrap">
 										<div class="avatar-bg-block"></div>
 										<img src="images/vitthal.png" alt="Vitthal Wable" class="testimonial-avatar-img"
+											loading="lazy">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 3 -->
+						<div class="swiper-slide">
+							<div class="testimonial-card">
+								<!-- Quote Box -->
+								<div class="testimonial-quote-wrap">
+									<p class="testimonial-text">
+										Our transition from <strong>ICE to EIM EVs</strong> has been a well-calculated strategic move, executed with remarkable efficiency. What truly differentiates EIM is not just the product, but the strength of their <strong>aftersales ecosystem</strong>. Their team has consistently ensured <strong>high fleet uptime</strong>, <strong>swift issue resolution</strong>, and a <strong>proactive approach to maintenance</strong>. EIM has proven to be a <strong>dependable long-term partner</strong> in our journey towards sustainable mobility.
+									</p>
+								</div>
+
+								<!-- Bio Footer Box -->
+								<div class="testimonial-footer">
+									<div class="testimonial-bio">
+										<h4 class="testimonial-name">Mr. Janardhan Matre</h4>
+										<span class="testimonial-role">Managing Director</span>
+										<span class="testimonial-company">JIVI ENTERPRISES</span>
+									</div>
+									<div class="testimonial-avatar-wrap">
+										<div class="avatar-bg-block"></div>
+										<img src="images/JANARDHAN.png" alt="Mr. Janardhan Matre" class="testimonial-avatar-img"
+											loading="lazy">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 4 -->
+						<div class="swiper-slide">
+							<div class="testimonial-card">
+								<!-- Quote Box -->
+								<div class="testimonial-quote-wrap">
+									<p class="testimonial-text">
+										Choosing <strong>Energy In Motion Ltd.</strong> for our transition from <strong>ICE to EV</strong> has proven to be the right decision. Beyond delivering reliable electric vehicles, EIM's <strong>Aftersales team</strong> has demonstrated exceptional ownership, providing timely field support, fast issue resolution, and continuous technical assistance. Their dedication has enabled us to maintain <strong>high fleet uptime</strong> while confidently embracing a <strong>cleaner and more sustainable future</strong>.
+									</p>
+								</div>
+
+								<!-- Bio Footer Box -->
+								<div class="testimonial-footer">
+									<div class="testimonial-bio">
+										<h4 class="testimonial-name">Mr. Ajit Kumar Singh</h4>
+										<span class="testimonial-role">CFS Head, Mumbai Container Freight Station</span>
+										<span class="testimonial-company">J M Baxi Container Holdings Pvt Ltd.</span>
+									</div>
+									<div class="testimonial-avatar-wrap">
+										<div class="avatar-bg-block"></div>
+										<img src="images/Ajit-Kumar.png" alt="Mr. Ajit Kumar Singh" class="testimonial-avatar-img"
 											loading="lazy">
 									</div>
 								</div>
@@ -1449,16 +1521,22 @@
 				<div class="swiper life-swiper">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide life-swiper-slide">
-							<img src="images/life-1.png" alt="EIM Team Retreat Outdoor" loading="lazy">
+							<img src="images/team-1.JPG" alt="EIM Team Members" loading="lazy">
 						</div>
 						<div class="swiper-slide life-swiper-slide">
-							<img src="images/life-2.png" alt="EIM Collaborative Team Office" loading="lazy">
+							<img src="images/team-2.jpg" alt="EIM Team Work" loading="lazy">
 						</div>
 						<div class="swiper-slide life-swiper-slide">
-							<img src="images/life-3.png" alt="EIM Engineering Operations Station" loading="lazy">
+							<img src="images/team-3.jpg" alt="EIM Team Group Photo" loading="lazy">
 						</div>
 						<div class="swiper-slide life-swiper-slide">
-							<img src="images/life-4.png" alt="EIM Team Annual Celebration" loading="lazy">
+							<img src="images/team-4.jpg" alt="EIM Team with Electric Truck" loading="lazy">
+						</div>
+						<div class="swiper-slide life-swiper-slide">
+							<img src="images/team-5.jpg" alt="EIM Team Members at Station" loading="lazy">
+						</div>
+						<div class="swiper-slide life-swiper-slide">
+							<img src="images/team-6.jpeg" alt="EIM Team Office Meeting" loading="lazy">
 						</div>
 					</div>
 					<div class="life-swiper-pagination swiper-pagination position-relative mt-4"></div>
@@ -1542,40 +1620,36 @@
 					<h2 class="main-title mb-0">Awards & Recognition</h2>
 				</div>
 
-				<!-- Awards Swiper Slider -->
-				<div class="awards-swiper swiper" data-aos="fade-up">
-					<div class="swiper-wrapper">
-						<!-- Slide 1 -->
-						<div class="swiper-slide">
-							<div class="award-card">
-								<div class="award-img-wrapper">
-									<img src="images/award-1.jpeg" alt="Award 1" loading="lazy">
-								</div>
-							</div>
+				<!-- Awards Grid Layout (Static 3-Column) -->
+				<div class="awards-grid" data-aos="fade-up">
+					<!-- Award 1 -->
+					<div class="award-card">
+						<div class="award-img-wrapper">
+							<img src="images/award-1.jpeg" alt="Award 1" loading="lazy">
 						</div>
-						<!-- Slide 2 -->
-						<div class="swiper-slide">
-							<div class="award-card">
-								<div class="award-img-wrapper">
-									<img src="images/award-2.jpeg" alt="Award 2" loading="lazy">
-								</div>
-							</div>
+						<div class="award-content">
+							<h4 class="award-title">Lorem Ipsum Award</h4>
+							<p class="award-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						</div>
-						<!-- Slide 3 -->
-						<div class="swiper-slide">
-							<div class="award-card">
-								<div class="award-img-wrapper">
-									<img src="images/award-3.jpeg" alt="Award 3" loading="lazy">
-								</div>
-							</div>
+					</div>
+					<!-- Award 2 -->
+					<div class="award-card">
+						<div class="award-img-wrapper">
+							<img src="images/award-2.jpeg" alt="Award 2" loading="lazy">
 						</div>
-						<!-- Slide 4 -->
-						<div class="swiper-slide">
-							<div class="award-card">
-								<div class="award-img-wrapper">
-									<img src="images/award-4.jpeg" alt="Award 4" loading="lazy">
-								</div>
-							</div>
+						<div class="award-content">
+							<h4 class="award-title">Consectetur Adipiscing</h4>
+							<p class="award-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						</div>
+					</div>
+					<!-- Award 3 -->
+					<div class="award-card">
+						<div class="award-img-wrapper">
+							<img src="images/award-3.jpeg" alt="Award 3" loading="lazy">
+						</div>
+						<div class="award-content">
+							<h4 class="award-title">Tempor Incididunt</h4>
+							<p class="award-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						</div>
 					</div>
 				</div>
@@ -1643,12 +1717,11 @@
 				</div>
 			</div>
 		</section>
-		<section id="copyright" class="copyright section  pt-0 pb-0">
-			<div class="container d-flex justify-content-between">
-				<div class="copy-txt">
+		<section id="copyright" class="copyright section pt-0 pb-0">
+			<div class="container d-flex justify-content-center text-center">
+				<div class="copy-txt text-center">
 					© Copyright 2026 Energy In Motion Ltd. All rights reserved. <br>Web Design by <a href="https://www.theimpulsedigital.com/" target="_blank">Impulse Digital</a>
 				</div>
-				<div class="copy-img"><img src="images/footer-img-truck.png" alt="" loading="lazy" style="max-height: 360px; width: auto; object-fit: contain; margin-top: -90px; display: block;"></div>
 			</div>
 		</section>
 		<div style="display: none;" id="narendra" class="fancy-popup">

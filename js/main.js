@@ -245,36 +245,18 @@ window.addEventListener('load', () => {
       });
     }
 
-    // Initialize Swiper for "Awards & Recognition"
-    if (document.querySelector('.awards-swiper')) {
-      new Swiper('.awards-swiper', {
-        loop: true,
-        slidesPerView: 1.1,
-        spaceBetween: 16,
-        speed: 6000, // 6 seconds transition speed
-        autoplay: {
-          delay: 0, // 0 delay for continuous scrolling
-          disableOnInteraction: false,
-        },
-        breakpoints: {
-          576: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          992: {
-            slidesPerView: 3,
-            spaceBetween: 24,
-          }
-        }
-      });
-    }
+
 
     // Initialize Swiper for "Testimonials"
     if (document.querySelector('.testimonials-swiper')) {
       new Swiper('.testimonials-swiper', {
         slidesPerView: 1.1,
         spaceBetween: 16,
-        loop: false,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
         pagination: {
           el: '.testimonials-swiper-pagination',
           clickable: true,
@@ -283,7 +265,7 @@ window.addEventListener('load', () => {
           992: {
             slidesPerView: 2,
             spaceBetween: 32,
-            allowTouchMove: false,
+            allowTouchMove: true,
           }
         }
       });
