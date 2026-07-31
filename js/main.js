@@ -294,6 +294,30 @@ window.addEventListener('load', () => {
         }
       });
     }
+
+    // Initialize Swiper for "Awards & Recognition"
+    if (document.querySelector('.awards-swiper')) {
+      new Swiper('.awards-swiper', {
+        slidesPerView: 1.1,
+        spaceBetween: 16,
+        loop: false,
+        pagination: {
+          el: '.awards-swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            allowTouchMove: false, // Static grid display on desktop
+          }
+        }
+      });
+    }
   }
 
   // Aceternity-Style Vertical Timeline Progress Line Handler
@@ -336,3 +360,54 @@ window.addEventListener('load', () => {
     handleTimelineScroll(); // Run once on load
   }
 })();
+
+/**
+ * Global Contact Form Validation
+ */
+function validate_form(form) {
+  let isValid = true;
+  const requiredInputs = form.querySelectorAll('[required]');
+  
+  // Reset previous validation states
+  form.querySelectorAll('.floating-group').forEach(group => {
+    group.classList.remove('has-error');
+    const errorMsg = group.querySelector('.error-message');
+    if (errorMsg) errorMsg.remove();
+  });
+
+  requiredInputs.forEach(input => {
+    let value = input.value.trim();
+    let group = input.closest('.floating-group');
+    let errorText = '';
+
+    if (!value) {
+      isValid = false;
+      errorText = 'This field is required';
+    } else if (input.type === 'email') {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(value)) {
+        isValid = false;
+        errorText = 'Please enter a valid email address';
+      }
+    } else if (input.name === 'frmcontact') {
+      const phonePattern = /^\d{10}$/; // Basic 10-digit validation
+      if (!phonePattern.test(value.replace(/[-+()\s]/g, ''))) {
+        isValid = false;
+        errorText = 'Please enter a valid 10-digit mobile number';
+      }
+    }
+
+    if (errorText) {
+      isValid = false;
+      if (group) {
+        group.classList.add('has-error');
+        const errorElement = document.createElement('span');
+        errorElement.className = 'error-message';
+        errorElement.textContent = errorText;
+        group.appendChild(errorElement);
+      }
+    }
+  });
+
+  return isValid;
+}

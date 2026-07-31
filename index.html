@@ -431,6 +431,7 @@
 									<h3>Next-Generation Electric Tractor</h3>
 									<p>Engineered for high-performance heavy-duty freight.</p>
 								</div>
+								<div class="offering-mobile-img" style="background-image: url('images/Next-Generation.png');"></div>
 							</div>
 							<!-- Point 2 -->
 							<div class="offering-point-item" data-offering="2">
@@ -438,6 +439,7 @@
 									<h3>Integrated Charging Network</h3>
 									<p>Reliable energy infrastructure designed for uninterrupted operations.</p>
 								</div>
+								<div class="offering-mobile-img" style="background-image: url('images/Integrated-Charging.png');"></div>
 							</div>
 						</div>
 
@@ -449,6 +451,7 @@
 									<h3>Automated Battery Swapping</h3>
 									<p>Automated battery exchange in minutes to maximize fleet uptime.</p>
 								</div>
+								<div class="offering-mobile-img" style="background-image: url('images/Automated-Battery.png');"></div>
 							</div>
 							<!-- Point 4 -->
 							<div class="offering-point-item" data-offering="4">
@@ -457,6 +460,7 @@
 									<p>Flexible subscription model that lowers upfront investment and simplifies
 										ownership.</p>
 								</div>
+								<div class="offering-mobile-img" style="background-image: url('images/Automated-Battery.png');"></div>
 							</div>
 						</div>
 
@@ -468,6 +472,7 @@
 									<h3>Intelligent Energy Management</h3>
 									<p>Smart software optimizes battery allocation, charging, and fleet scheduling.</p>
 								</div>
+								<div class="offering-mobile-img" style="background-image: url('images/Intelligent-Energy.png');"></div>
 							</div>
 							<!-- Point 6 -->
 							<div class="offering-point-item" data-offering="6">
@@ -476,6 +481,7 @@
 									<p>Supporting cleaner, lower-carbon logistics through sustainable energy
 										infrastructure.</p>
 								</div>
+								<div class="offering-mobile-img" style="background-image: url('images/Powered-by-Renewable.png');"></div>
 							</div>
 						</div>
 
@@ -509,26 +515,33 @@
 				const images = document.querySelectorAll('.offering-display-img');
 
 				if (points && images) {
+					function activateOffering(element) {
+						const index = element.getAttribute('data-offering');
+
+						// Set active point
+						points.forEach(p => p.classList.remove('active'));
+						element.classList.add('active');
+
+						// Set active image
+						images.forEach(img => {
+							if (img.getAttribute('data-offering-img') === index) {
+								const bg = img.getAttribute('data-bg');
+								if (bg && !img.style.backgroundImage) {
+									img.style.backgroundImage = `url('${bg}')`;
+								}
+								img.classList.add('active');
+							} else {
+								img.classList.remove('active');
+							}
+						});
+					}
+
 					points.forEach(point => {
 						point.addEventListener('mouseenter', function () {
-							const index = this.getAttribute('data-offering');
-
-							// Set active point
-							points.forEach(p => p.classList.remove('active'));
-							this.classList.add('active');
-
-							// Set active image
-							images.forEach(img => {
-								if (img.getAttribute('data-offering-img') === index) {
-									const bg = img.getAttribute('data-bg');
-									if (bg && !img.style.backgroundImage) {
-										img.style.backgroundImage = `url('${bg}')`;
-									}
-									img.classList.add('active');
-								} else {
-									img.classList.remove('active');
-								}
-							});
+							activateOffering(this);
+						});
+						point.addEventListener('click', function () {
+							activateOffering(this);
 						});
 					});
 				}
@@ -1616,80 +1629,137 @@
 					<h2 class="main-title mb-0">Awards & Recognition</h2>
 				</div>
 
-				<!-- Awards Grid Layout (Static 3-Column) -->
-				<div class="awards-grid" data-aos="fade-up">
-					<!-- Award 1: Homologation -->
-					<div class="award-card">
-						<div class="award-img-wrapper">
-							<img src="images/award-4.jpeg" alt="E-tractor Homologation ARAI" loading="lazy">
+				<!-- Awards Swiper Slider Layout -->
+				<div class="awards-swiper swiper" data-aos="fade-up">
+					<div class="swiper-wrapper">
+						<!-- Award 1: Homologation -->
+						<div class="swiper-slide">
+							<div class="award-card">
+								<div class="award-img-wrapper">
+									<img src="images/award-4.jpeg" alt="E-tractor Homologation ARAI" loading="lazy">
+								</div>
+								<div class="award-content">
+									<h4 class="award-title">ARAI CMVR Homologation</h4>
+									<p class="award-desc">Energy In Motion Limited has secured CMVR homologation certification from ARAI for India’s first heavy-duty, battery-swappable 55T electric tractor — achieved in a record 7 months.
+									<br><br>
+									Certification covers the 282 kWh model (July 2025) and the newly homologated 350 kWh model (July 2026), offering longer range and wider application.</p>
+								</div>
+							</div>
 						</div>
-						<div class="award-content">
-							<h4 class="award-title">ARAI CMVR Homologation</h4>
-							<p class="award-desc">Energy In Motion Limited has secured CMVR homologation certification from ARAI for India’s first heavy-duty, battery-swappable 55T electric tractor — achieved in a record 7 months.
-							<br><br>
-							Certification covers the 282 kWh model (July 2025) and the newly homologated 350 kWh model (July 2026), offering longer range and wider application.</p>
+						<!-- Award 2: Modinomics Award -->
+						<div class="swiper-slide">
+							<div class="award-card">
+								<div class="award-img-wrapper">
+									<img src="images/1778053049503.jpg" alt="Viksit Bharat Ambassador of Change Award" loading="lazy">
+								</div>
+								<div class="award-content">
+									<h4 class="award-title">Viksit Bharat 'Ambassador of Change' Award</h4>
+									<p class="award-desc">At #CF2026, EIM was honoured by Smt. Meenakshi Lekhi (Former Minister of State, GoI) with the MODINOMICS 3.0 Edition Award under ‘Jury Choice for Climate Action’ (Future in Mobility category) for its role in advancing next-gen mobility. Organised by Ease of Doing Business.</p>
+								</div>
+							</div>
+						</div>
+						<!-- Award 3: SAEINDIA Recognition -->
+						<div class="swiper-slide">
+							<div class="award-card">
+								<div class="award-img-wrapper">
+									<img src="images/award-3.jpeg" alt="SAEINDIA Recognition" loading="lazy">
+								</div>
+								<div class="award-content">
+									<h4 class="award-title">SAEINDIA Recognition</h4>
+									<p class="award-desc">SAE International, established in 1905 in the United States, is a premier global body representing mobility engineers. SAEINDIA invited Mr. Nandan Bhojraj and Kapil Baidya, and felicitated Energy in Motion (EIM) with a memento in recognition of its valuable support.</p>
+								</div>
+							</div>
 						</div>
 					</div>
-					<!-- Award 2: Modinomics Award -->
-					<div class="award-card">
-						<div class="award-img-wrapper">
-							<img src="images/1778053049503.jpg" alt="Viksit Bharat Ambassador of Change Award" loading="lazy">
-						</div>
-						<div class="award-content">
-							<h4 class="award-title">Viksit Bharat 'Ambassador of Change' Award</h4>
-							<p class="award-desc">At #CF2026, EIM was honoured by Smt. Meenakshi Lekhi (Former Minister of State, GoI) with the MODINOMICS 3.0 Edition Award under ‘Jury Choice for Climate Action’ (Future in Mobility category) for its role in advancing next-gen mobility. Organised by Ease of Doing Business.</p>
-						</div>
-					</div>
-					<!-- Award 3: SAEINDIA Recognition -->
-					<div class="award-card">
-						<div class="award-img-wrapper">
-							<img src="images/award-3.jpeg" alt="SAEINDIA Recognition" loading="lazy">
-						</div>
-						<div class="award-content">
-							<h4 class="award-title">SAEINDIA Recognition</h4>
-							<p class="award-desc">SAE International, established in 1905 in the United States, is a premier global body representing mobility engineers. SAEINDIA invited Mr. Nandan Bhojraj and Kapil Baidya, and felicitated Energy in Motion (EIM) with a memento in recognition of its valuable support.</p>
-						</div>
-					</div>
+					<!-- Swiper Pagination -->
+					<div class="swiper-pagination awards-swiper-pagination"></div>
 				</div>
 			</div>
 		</section>
 
 		<section id="contact" class="contactus section pb-0">
 			<div class="container d-flex justify-content-between">
-				<div class="contact-left">
-					<h2 class="main-title mb35" data-aos="fade-up">Contact Us</h2>
-					<div class="logo-cont"><img src="images/energy-in-motion.svg" alt=""></div>
-					<p class="font20">B-3702, Kohinoor Square, <br>
-						N. C. Kelkar Marg,<br>
-						Dadar (West), Mumbai – 400028</p>
-					<!--p class="phone-cont">+91 22 6153 7989</p-->
-					<p class="email-cont"><a href="mailto:powerup@energyinmotion.in">powerup@energyinmotion.in</a></p>
+				<div class="contact-left" data-aos="fade-right">
+					<div class="contact-map-wrap">
+						<iframe src="https://maps.google.com/maps?q=B-3702,%20Kohinoor%20Square,%20N.%20C.%20Kelkar%20Marg,%20Dadar%20(West),%20Mumbai%20-%20400028&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+							width="100%" 
+							height="100%" 
+							style="border:0;" 
+							allowfullscreen="" 
+							loading="lazy" 
+							referrerpolicy="no-referrer-when-downgrade">
+						</iframe>
+					</div>
+					
+					<div class="contact-left-content">
+						<h2 class="contact-card-title">Contact Us</h2>
+						<div class="logo-cont"><img src="images/energy-in-motion.svg" alt="Energy In Motion Logo"></div>
+						
+						<div class="contact-info-items">
+							<div class="contact-info-item">
+								<div class="icon-wrap">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="info-icon">
+										<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+										<circle cx="12" cy="10" r="3"></circle>
+									</svg>
+								</div>
+								<div class="text-wrap">
+									<span class="info-label">Address</span>
+									<p class="info-val"><a href="https://maps.google.com/?q=B-3702,+Kohinoor+Square,+N.+C.+Kelkar+Marg,+Dadar+West,+Mumbai+-+400028" target="_blank" rel="noopener noreferrer" class="address-link">B-3702, Kohinoor Square, <br>N. C. Kelkar Marg, <br>Dadar (West), Mumbai – 400028</a></p>
+								</div>
+							</div>
+
+							<div class="contact-info-item">
+								<div class="icon-wrap">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="info-icon">
+										<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+										<polyline points="22,6 12,13 2,6"></polyline>
+									</svg>
+								</div>
+								<div class="text-wrap">
+									<span class="info-label">Email Us</span>
+									<p class="info-val"><a href="mailto:powerup@energyinmotion.in">powerup@energyinmotion.in</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="contact-right">
-					<h2 class="main-title mb35" data-aos="fade-up">Get in touch</h2>
+				<div class="contact-right" data-aos="fade-left">
+					<h2 class="contact-card-title-dark">Get in Touch</h2>
+					<p class="contact-card-subtitle">Have questions or want to partner with us? Drop us a message.</p>
 					<div class="get-form">
 						<div class="contact-form">
 							<form class="contact-form" action="contact-mailto.php" enctype="multipart/form-data"
 								method="post" name="enquiry" onsubmit="return validate_form(this);" id="career-form">
 								<div class="formp-row two-col">
-									<div class="formp-col" data-aos="fade-up"><input name="frmname" type="text" value=""
-											placeholder="First Name*" required><span class="focus-border"><i></i></span>
+									<div class="formp-col floating-group" data-aos="fade-up">
+										<input name="frmname" type="text" value="" placeholder=" " required class="floating-input">
+										<label class="floating-label">First Name*</label>
+										<span class="focus-border"><i></i></span>
 									</div>
-									<div class="formp-col" data-aos="fade-up"><input name="frmlast" type="text" value=""
-											placeholder="Last Name*" required><span class="focus-border"><i></i></span>
+									<div class="formp-col floating-group" data-aos="fade-up">
+										<input name="frmlast" type="text" value="" placeholder=" " required class="floating-input">
+										<label class="floating-label">Last Name*</label>
+										<span class="focus-border"><i></i></span>
 									</div>
-									<div class="formp-col" data-aos="fade-up"><input name="frmemail" type="text"
-											value="" placeholder="Email Address*" required><span
-											class="focus-border"><i></i></span></div>
-									<div class="formp-col" data-aos="fade-up"><input name="frmcontact" type="text"
-											value="" placeholder="Mobile Number*" required><span
-											class="focus-border"><i></i></span></div>
-
+									<div class="formp-col floating-group" data-aos="fade-up">
+										<input name="frmemail" type="email" value="" placeholder=" " required class="floating-input">
+										<label class="floating-label">Email Address*</label>
+										<span class="focus-border"><i></i></span>
+									</div>
+									<div class="formp-col floating-group" data-aos="fade-up">
+										<input name="frmcontact" type="tel" value="" placeholder=" " required class="floating-input">
+										<label class="floating-label">Mobile Number*</label>
+										<span class="focus-border"><i></i></span>
+									</div>
 								</div>
 
 								<div class="formp-row mb30" data-aos="fade-up">
-									<div class="formp-col mb0"><textarea name="frmdes" placeholder="Your Message"
-											required></textarea><span class="focus-border"><i></i></span></div>
+									<div class="formp-col floating-group mb0">
+										<textarea name="frmdes" placeholder=" " required class="floating-input floating-textarea"></textarea>
+										<label class="floating-label">Your Message*</label>
+										<span class="focus-border"><i></i></span>
+									</div>
 								</div>
 
 								<div class="formp-row mb30 capt" data-aos="fade-up">
@@ -1697,12 +1767,17 @@
 										<div class="g-recaptcha"
 											data-sitekey="6Lf4XDAsAAAAAOfHRvkeWz_Q-YEXwYRV0NDyBhnH"></div>
 									</div>
-
 								</div>
+
 								<div class="formp-row mb-0 capt" data-aos="fade-up">
 									<div class="submit-btn-cont">
-										<div class="submit-btn"><input type="submit" value="Submit"><span
-												class="arw"></span></div>
+										<div class="premium-submit-wrapper">
+											<input type="submit" value="Submit Message" class="premium-submit-input">
+											<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="premium-submit-arrow">
+												<line x1="5" y1="12" x2="19" y2="12"></line>
+												<polyline points="12 5 19 12 12 19"></polyline>
+											</svg>
+										</div>
 										<input type="hidden"
 											value="text,frmname,Name,text,frmemail,E-mail,text,frmphone,Phone No."
 											name="js_Blank">
