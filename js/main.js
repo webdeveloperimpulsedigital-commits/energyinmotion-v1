@@ -228,9 +228,9 @@ window.addEventListener('load', () => {
           delay: 3500,
           disableOnInteraction: false,
         },
-        navigation: {
-          nextEl: '.life-nav-next',
-          prevEl: '.life-nav-prev',
+        pagination: {
+          el: '.life-swiper-pagination',
+          clickable: true,
         },
         breakpoints: {
           768: {
@@ -255,9 +255,9 @@ window.addEventListener('load', () => {
           delay: 5000,
           disableOnInteraction: false,
         },
-        navigation: {
-          nextEl: '.testimonials-nav-next',
-          prevEl: '.testimonials-nav-prev',
+        pagination: {
+          el: '.testimonials-swiper-pagination',
+          clickable: true,
         },
         breakpoints: {
           992: {
@@ -275,9 +275,9 @@ window.addEventListener('load', () => {
         slidesPerView: 1.1,
         spaceBetween: 16,
         loop: false,
-        navigation: {
-          nextEl: '.careers-nav-next',
-          prevEl: '.careers-nav-prev',
+        pagination: {
+          el: '.careers-swiper-pagination',
+          clickable: true,
         },
         breakpoints: {
           576: {
@@ -299,9 +299,9 @@ window.addEventListener('load', () => {
         slidesPerView: 1.1,
         spaceBetween: 16,
         loop: false,
-        navigation: {
-          nextEl: '.awards-nav-next',
-          prevEl: '.awards-nav-prev',
+        pagination: {
+          el: '.awards-swiper-pagination',
+          clickable: true,
         },
         breakpoints: {
           576: {

@@ -9087,6 +9087,29 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
   width: 100%;
 }
 
+/* Testimonials Pagination Dots */
+.testimonials-swiper-pagination.swiper-pagination {
+  position: relative !important;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.testimonials-swiper-pagination .swiper-pagination-bullet {
+  background: var(--brand-turquoise, #38E0CF) !important;
+  opacity: 0.35;
+  transition: all 0.3s ease;
+  margin: 0 !important;
+}
+
+.testimonials-swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--brand-turquoise, #38E0CF) !important;
+  width: 24px !important;
+  border-radius: 4px !important;
+  opacity: 1 !important;
+}
+
 /* Brand Swiper Navigation Arrow Buttons (All Sliders) */
 .testimonials-swiper-nav,
 .life-swiper-nav,
