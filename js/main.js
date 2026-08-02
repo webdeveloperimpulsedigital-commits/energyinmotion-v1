@@ -217,9 +217,35 @@ window.addEventListener('load', () => {
 
   // Initialize Swiper Sliders
   if (typeof Swiper !== 'undefined') {
+    // Helper to bind robust click and touch handlers to navigation buttons
+    function bindSwiperNav(swiperInstance, prevSelector, nextSelector) {
+      const prevBtn = document.querySelector(prevSelector);
+      const nextBtn = document.querySelector(nextSelector);
+
+      if (prevBtn) {
+        ['click', 'touchend'].forEach(evtType => {
+          prevBtn.addEventListener(evtType, function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            swiperInstance.slidePrev();
+          }, { passive: false });
+        });
+      }
+
+      if (nextBtn) {
+        ['click', 'touchend'].forEach(evtType => {
+          nextBtn.addEventListener(evtType, function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            swiperInstance.slideNext();
+          }, { passive: false });
+        });
+      }
+    }
+
     // Initialize Swiper for "Life at EIM"
     if (document.querySelector('.life-swiper')) {
-      new Swiper('.life-swiper', {
+      const lifeSwiper = new Swiper('.life-swiper', {
         loop: true,
         centeredSlides: true,
         slidesPerView: 1.15,
@@ -243,13 +269,12 @@ window.addEventListener('load', () => {
           }
         }
       });
+      bindSwiperNav(lifeSwiper, '.life-nav-prev', '.life-nav-next');
     }
-
-
 
     // Initialize Swiper for "Testimonials"
     if (document.querySelector('.testimonials-swiper')) {
-      new Swiper('.testimonials-swiper', {
+      const testimonialsSwiper = new Swiper('.testimonials-swiper', {
         slidesPerView: 1,
         spaceBetween: 24,
         loop: true,
@@ -269,11 +294,12 @@ window.addEventListener('load', () => {
           }
         }
       });
+      bindSwiperNav(testimonialsSwiper, '.testimonials-nav-prev', '.testimonials-nav-next');
     }
 
     // Initialize Swiper for "Careers / Current Openings"
     if (document.querySelector('.careers-swiper')) {
-      new Swiper('.careers-swiper', {
+      const careersSwiper = new Swiper('.careers-swiper', {
         slidesPerView: 1.1,
         spaceBetween: 16,
         loop: false,
@@ -293,11 +319,12 @@ window.addEventListener('load', () => {
           }
         }
       });
+      bindSwiperNav(careersSwiper, '.careers-nav-prev', '.careers-nav-next');
     }
 
     // Initialize Swiper for "Awards & Recognition"
     if (document.querySelector('.awards-swiper')) {
-      new Swiper('.awards-swiper', {
+      const awardsSwiper = new Swiper('.awards-swiper', {
         slidesPerView: 1.1,
         spaceBetween: 16,
         loop: false,
@@ -317,6 +344,7 @@ window.addEventListener('load', () => {
           }
         }
       });
+      bindSwiperNav(awardsSwiper, '.awards-nav-prev', '.awards-nav-next');
     }
   }
 

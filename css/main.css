@@ -9127,6 +9127,9 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
   padding: 0 !important;
   margin: 0 !important;
   line-height: 1 !important;
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: transparent !important;
   transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
   box-shadow: 0 6px 18px rgba(1, 38, 45, 0.2) !important;
 }
