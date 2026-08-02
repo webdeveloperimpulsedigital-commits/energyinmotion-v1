@@ -228,9 +228,9 @@ window.addEventListener('load', () => {
           delay: 3500,
           disableOnInteraction: false,
         },
-        pagination: {
-          el: '.life-swiper-pagination',
-          clickable: true,
+        navigation: {
+          nextEl: '.life-nav-next',
+          prevEl: '.life-nav-prev',
         },
         breakpoints: {
           768: {
@@ -250,16 +250,16 @@ window.addEventListener('load', () => {
     // Initialize Swiper for "Testimonials"
     if (document.querySelector('.testimonials-swiper')) {
       new Swiper('.testimonials-swiper', {
-        slidesPerView: 1.1,
-        spaceBetween: 16,
+        slidesPerView: 1,
+        spaceBetween: 24,
         loop: true,
         autoplay: {
           delay: 5000,
           disableOnInteraction: false,
         },
-        pagination: {
-          el: '.testimonials-swiper-pagination',
-          clickable: true,
+        navigation: {
+          nextEl: '.testimonials-nav-next',
+          prevEl: '.testimonials-nav-prev',
         },
         breakpoints: {
           992: {
@@ -277,9 +277,9 @@ window.addEventListener('load', () => {
         slidesPerView: 1.1,
         spaceBetween: 16,
         loop: false,
-        pagination: {
-          el: '.careers-swiper-pagination',
-          clickable: true,
+        navigation: {
+          nextEl: '.careers-nav-next',
+          prevEl: '.careers-nav-prev',
         },
         breakpoints: {
           576: {
@@ -301,9 +301,9 @@ window.addEventListener('load', () => {
         slidesPerView: 1.1,
         spaceBetween: 16,
         loop: false,
-        pagination: {
-          el: '.awards-swiper-pagination',
-          clickable: true,
+        navigation: {
+          nextEl: '.awards-nav-next',
+          prevEl: '.awards-nav-prev',
         },
         breakpoints: {
           576: {
@@ -313,7 +313,7 @@ window.addEventListener('load', () => {
           992: {
             slidesPerView: 3,
             spaceBetween: 30,
-            allowTouchMove: false, // Static grid display on desktop
+            allowTouchMove: false,
           }
         }
       });
