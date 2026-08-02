@@ -217,30 +217,20 @@ window.addEventListener('load', () => {
 
   // Initialize Swiper Sliders
   if (typeof Swiper !== 'undefined') {
-    // Helper to bind robust click and touch handlers to navigation buttons
+    // Helper to bind robust click handlers to navigation buttons
     function bindSwiperNav(swiperInstance, prevSelector, nextSelector) {
-      const prevBtn = document.querySelector(prevSelector);
-      const nextBtn = document.querySelector(nextSelector);
-
-      if (prevBtn) {
-        ['click', 'touchend'].forEach(evtType => {
-          prevBtn.addEventListener(evtType, function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            swiperInstance.slidePrev();
-          }, { passive: false });
+      document.querySelectorAll(prevSelector).forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          if (e) e.stopPropagation();
+          swiperInstance.slidePrev();
         });
-      }
-
-      if (nextBtn) {
-        ['click', 'touchend'].forEach(evtType => {
-          nextBtn.addEventListener(evtType, function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            swiperInstance.slideNext();
-          }, { passive: false });
+      });
+      document.querySelectorAll(nextSelector).forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          if (e) e.stopPropagation();
+          swiperInstance.slideNext();
         });
-      }
+      });
     }
 
     // Initialize Swiper for "Life at EIM"
