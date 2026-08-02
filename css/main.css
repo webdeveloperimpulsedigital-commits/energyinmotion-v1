@@ -9087,26 +9087,44 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
   width: 100%;
 }
 
-/* Testimonials Pagination Dots */
-.testimonials-swiper-pagination.swiper-pagination {
+/* All Swiper Pagination Dots (Testimonials, Life at EIM, Careers, Awards) */
+.testimonials-swiper-pagination,
+.life-swiper-pagination,
+.careers-swiper-pagination,
+.awards-swiper-pagination {
   position: relative !important;
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
+  margin-top: 30px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+  z-index: 10 !important;
+  width: 100% !important;
 }
 
-.testimonials-swiper-pagination .swiper-pagination-bullet {
-  background: var(--brand-turquoise, #38E0CF) !important;
-  opacity: 0.35;
-  transition: all 0.3s ease;
+.testimonials-swiper-pagination .swiper-pagination-bullet,
+.life-swiper-pagination .swiper-pagination-bullet,
+.careers-swiper-pagination .swiper-pagination-bullet,
+.awards-swiper-pagination .swiper-pagination-bullet {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #38E0CF !important;
+  opacity: 0.35 !important;
+  transition: all 0.3s ease !important;
   margin: 0 !important;
+  cursor: pointer !important;
+  display: inline-block !important;
 }
 
-.testimonials-swiper-pagination .swiper-pagination-bullet-active {
-  background: var(--brand-turquoise, #38E0CF) !important;
-  width: 24px !important;
+.testimonials-swiper-pagination .swiper-pagination-bullet-active,
+.life-swiper-pagination .swiper-pagination-bullet-active,
+.careers-swiper-pagination .swiper-pagination-bullet-active,
+.awards-swiper-pagination .swiper-pagination-bullet-active {
+  width: 26px !important;
+  height: 8px !important;
   border-radius: 4px !important;
+  background: #38E0CF !important;
   opacity: 1 !important;
 }
 
