@@ -9992,32 +9992,40 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
   }
 }
 
-/* Mobile Deck Badge Labels for What Makes EIM Different */
-.mobile-deck-badge {
-  display: inline-block !important;
-  width: auto !important;
-  width: fit-content !important;
-  max-width: fit-content !important;
-  align-self: flex-start !important;
-  font-size: 10.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
-  padding: 4px 12px !important;
-  border-radius: 20px !important;
-  margin-bottom: 10px !important;
+/* Mobile Deck Badge Labels for What Makes EIM Different (Mobile Only) */
+@media (min-width: 992px) {
+  .mobile-deck-badge {
+    display: none !important;
+  }
 }
 
-.mobile-deck-badge.badge-challenge {
-  background-color: rgba(239, 68, 68, 0.15) !important;
-  color: #dc2626 !important;
-  border: 1px solid rgba(239, 68, 68, 0.3) !important;
-}
+@media (max-width: 991.98px) {
+  .mobile-deck-badge {
+    display: inline-block !important;
+    width: auto !important;
+    width: fit-content !important;
+    max-width: fit-content !important;
+    align-self: flex-start !important;
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    padding: 4px 12px !important;
+    border-radius: 20px !important;
+    margin-bottom: 10px !important;
+  }
 
-.mobile-deck-badge.badge-solution {
-  background-color: rgba(1, 38, 45, 0.15) !important;
-  color: #001B1E !important;
-  border: 1px solid rgba(1, 38, 45, 0.25) !important;
+  .mobile-deck-badge.badge-challenge {
+    background-color: rgba(239, 68, 68, 0.15) !important;
+    color: #dc2626 !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+  }
+
+  .mobile-deck-badge.badge-solution {
+    background-color: rgba(1, 38, 45, 0.15) !important;
+    color: #001B1E !important;
+    border: 1px solid rgba(1, 38, 45, 0.25) !important;
+  }
 }
 
 @media (max-width: 768px) {
