@@ -7329,6 +7329,10 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 }
 
 /* Right side graphic bento tile grid */
+.shareholders-left-col .bento-shareholder-card {
+  flex: 1 1 0%;
+}
+
 .shareholders-right-bento {
   width: 100%;
   display: flex;
@@ -7338,11 +7342,10 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 .bento-graphic-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 415px 195px;
+  grid-template-rows: 1.85fr 1fr;
   gap: 16px;
   width: 100%;
   height: 100%;
-  min-height: 626px;
 }
 
 .bento-tile {
@@ -10394,10 +10397,18 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
 }
 
 /* --- Careers / Job Openings Section --- */
+#current-openings,
+.current-openings-section {
+  scroll-margin-top: 90px;
+}
+
 .careers-sub-title {
   font-family: 'PP Neue Montreal', sans-serif;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: 0.06em;
+  text-transform: capitalize;
   color: var(--brand-black);
   margin-bottom: 8px;
 }
@@ -10590,7 +10601,7 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
 
 @media (min-width: 992px) {
   .awards-swiper-pagination {
-    display: none !important;
+    display: flex !important;
   }
 }
 

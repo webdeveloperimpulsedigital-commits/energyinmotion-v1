@@ -299,6 +299,10 @@ window.addEventListener('load', () => {
         slidesPerView: 1.1,
         spaceBetween: 16,
         loop: false,
+        autoplay: {
+          delay: 4500,
+          disableOnInteraction: false,
+        },
         pagination: {
           el: '.awards-swiper-pagination',
           clickable: true,
@@ -307,11 +311,12 @@ window.addEventListener('load', () => {
           576: {
             slidesPerView: 2,
             spaceBetween: 20,
+            allowTouchMove: true,
           },
           992: {
             slidesPerView: 3,
             spaceBetween: 30,
-            allowTouchMove: false,
+            allowTouchMove: true,
           }
         }
       });
