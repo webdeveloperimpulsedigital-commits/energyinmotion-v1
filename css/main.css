@@ -9920,6 +9920,21 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
 }
 
 @media (max-width: 768px) {
+  .networks-dashboard-section {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  .networks-dashboard-section .container {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    max-width: 100% !important;
+  }
+  .networks-dashboard-section .network-img-wrap img {
+    border-radius: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
   .event-stacked-card {
     flex-direction: column !important;
   }
