@@ -7626,6 +7626,72 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   }
 }
 
+/* Bento Shareholder Card & Bullet List */
+.bento-shareholder-card {
+  background: #01262D !important;
+  padding: 50px 40px !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(56, 224, 207, 0.15) !important;
+  box-shadow: 0 15px 40px rgba(1, 38, 45, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.shareholder-logo-img.ravindra-logo {
+  height: 68px !important;
+  max-height: 80px !important;
+  width: auto !important;
+}
+
+.bento-shareholder-card .logo-cont {
+  background: #ffffff;
+  padding: 14px 28px;
+  border-radius: 16px;
+  display: inline-block;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.shareholder-bullet-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 30px 0 0 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+}
+
+.shareholder-bullet-list li {
+  position: relative !important;
+  padding-left: 28px !important;
+  font-size: 19px !important;
+  font-weight: 500 !important;
+  line-height: 1.55 !important;
+  color: #ffffff !important;
+  font-family: 'PP Neue Montreal', sans-serif !important;
+}
+
+.shareholder-bullet-list li::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 10px !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background-color: #38E0CF !important;
+  box-shadow: 0 0 10px rgba(56, 224, 207, 0.6) !important;
+}
+
+@media (max-width: 767px) {
+  .bento-shareholder-card {
+    padding: 30px 24px !important;
+  }
+  .shareholder-bullet-list li {
+    font-size: 16px !important;
+  }
+}
+
 /* ==========================================================================
    21st.dev Style Company Governance Section
    ========================================================================== */
@@ -8009,48 +8075,56 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 }
 .solutions-header-tags {
   margin-top: 25px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   padding: 0 40px;
   width: 100%;
 }
 .solutions-header-inner {
   display: flex;
   align-items: center;
+  gap: 40px;
   width: 100%;
 }
-@media (min-width: 993px) {
-  .header-num-offset {
-    flex: 0 0 140px;
-  }
-  .header-tag-col {
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
-  .challenge-tag-col {
-    justify-content: center !important;
-  }
-  .solution-tag-col {
-    justify-content: center !important;
-    padding-left: 0 !important;
-  }
+.header-num-offset {
+  flex: 0 0 100px;
 }
+.header-content-cols {
+  flex: 1;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.header-tag-col {
+  flex: 1;
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+}
+.challenge-tag-col {
+  justify-content: center !important;
+}
+.solution-tag-col {
+  justify-content: center !important;
+  padding-left: 0 !important;
+}
+
 @media (max-width: 992px) {
-  .header-num-offset {
-    display: none;
-  }
   .solutions-header-tags {
     padding: 0;
   }
+  .header-num-offset {
+    display: none;
+  }
   .solutions-header-inner {
-    flex-direction: row !important;
+    justify-content: center;
+  }
+  .header-content-cols {
+    flex: 0 0 auto;
     justify-content: center;
     gap: 20px;
   }
   .header-tag-col {
     flex: 0 0 auto;
-    display: flex;
-    justify-content: center !important;
   }
 }
 .solutions-deck {
@@ -8103,29 +8177,28 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   gap: 12px;
 }
 .deck-tag {
-  font-size: 13px !important;
+  font-size: 12px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
-  padding: 0 !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+  letter-spacing: 0.08em !important;
+  padding: 6px 18px !important;
+  border-radius: 50px !important;
+  display: inline-block !important;
   font-family: 'PP Neue Montreal', sans-serif !important;
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.3s ease !important;
 }
 .tag-red {
-  color: #e53935 !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
+  color: #dc2626 !important;
+  background: rgba(239, 68, 68, 0.12) !important;
+  background-color: rgba(239, 68, 68, 0.12) !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
 }
 .tag-teal {
   color: #01262D !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
+  background: rgba(56, 224, 207, 0.2) !important;
+  background-color: rgba(56, 224, 207, 0.2) !important;
+  border: 1px solid rgba(56, 224, 207, 0.4) !important;
 }
 .deck-side h3 {
   font-size: 24px;
@@ -9822,14 +9895,27 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
   border-top: 1px solid rgba(1, 38, 45, 0.06);
 }
 
+.event-widescreen-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  background-color: #ffffff;
+  object-position: center !important;
+}
+
 @media (min-width: 992px) {
+  .event-info-header {
+    flex: 0 0 42%;
+    max-width: 42%;
+  }
   .event-widescreen-photo {
     display: flex;
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 58%;
+    max-width: 58%;
     aspect-ratio: auto;
     border-top: none;
     border-left: 1px solid rgba(1, 38, 45, 0.06);
+    background-color: #ffffff;
   }
 }
 
@@ -11828,4 +11914,26 @@ section:not(.hero):not(.copyright):not(.pb-0),
   color: rgba(1, 38, 45, 0.78);
   margin: 0;
   font-family: 'PP Neue Montreal', sans-serif;
+}
+
+/* Zoom ONLY the 2nd screenshot image (Automated-Battery.png) to highlight Truck & 100% Battery Full graphic */
+.offering-display-img[style*="Automated-Battery.png"],
+.offering-display-img[data-bg*="Automated-Battery.png"] {
+  background-size: 160% !important;
+  background-position: 50% 90% !important;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* Ensure 1st screenshot image (EIM-truck.jpg) is standard cover without zoom */
+.offering-display-img[style*="EIM-truck.jpg"],
+.offering-display-img[data-bg*="EIM-truck.jpg"] {
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+@media (max-width: 767px) {
+  .offering-mobile-img[style*="Automated-Battery.png"] {
+    background-size: 145% !important;
+    background-position: 50% 85% !important;
+  }
 }
