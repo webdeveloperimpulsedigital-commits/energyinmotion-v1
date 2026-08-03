@@ -7185,15 +7185,16 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 @media (min-width: 992px) {
   .shareholders-left-col,
   .Shareholder-left-col {
-    flex: 1 1 53%;
-    max-width: 53%;
+    flex: 1 1 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
   }
 
   .shareholders-right-bento,
   .Shareholder-right-bento {
-    flex: 1 1 47%;
-    max-width: 47%;
-    width: 100%;
+    flex: 1 1 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
     display: flex;
     align-self: stretch;
   }
@@ -8008,12 +8009,13 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 }
 .solutions-header-tags {
   margin-top: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 0 40px;
 }
 .solutions-header-inner {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 @media (min-width: 993px) {
   .solutions-header-inner {
@@ -8022,7 +8024,8 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   }
   .header-tag-col {
     flex: 1;
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
   .header-divider-space {
     width: 1px;
@@ -8033,8 +8036,14 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
     padding: 0;
   }
   .solutions-header-inner {
+    flex-direction: row !important;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
+  }
+  .header-tag-col {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
   }
   .header-divider-space {
     display: none;
