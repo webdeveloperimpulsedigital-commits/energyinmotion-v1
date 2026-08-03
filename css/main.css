@@ -8011,6 +8011,7 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   margin-top: 25px;
   margin-bottom: 15px;
   padding: 0 40px;
+  width: 100%;
 }
 .solutions-header-inner {
   display: flex;
@@ -8018,20 +8019,26 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   width: 100%;
 }
 @media (min-width: 993px) {
-  .solutions-header-inner {
-    padding-left: 140px;
-    gap: 50px;
+  .header-num-offset {
+    flex: 0 0 140px;
   }
   .header-tag-col {
     flex: 1;
     display: flex;
-    justify-content: center;
+    align-items: center;
   }
-  .header-divider-space {
-    width: 1px;
+  .challenge-tag-col {
+    justify-content: flex-start;
+  }
+  .solution-tag-col {
+    justify-content: flex-start;
+    padding-left: 25px;
   }
 }
 @media (max-width: 992px) {
+  .header-num-offset {
+    display: none;
+  }
   .solutions-header-tags {
     padding: 0;
   }
@@ -8044,9 +8051,6 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
     flex: 0 0 auto;
     display: flex;
     justify-content: center;
-  }
-  .header-divider-space {
-    display: none;
   }
 }
 .solutions-deck {
