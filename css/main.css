@@ -7177,17 +7177,20 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   padding-bottom: 80px;
 }
 
-.shareholders-section-modern .container {
+.shareholders-section-modern .container,
+.Shareholder-section-modern .container {
   max-width: 1380px !important;
 }
 
 @media (min-width: 992px) {
-  .shareholders-left-col {
+  .shareholders-left-col,
+  .Shareholder-left-col {
     flex: 1 1 53%;
     max-width: 53%;
   }
 
-  .shareholders-right-bento {
+  .shareholders-right-bento,
+  .Shareholder-right-bento {
     flex: 1 1 47%;
     max-width: 47%;
     width: 100%;
@@ -7223,6 +7226,38 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   transform: translateY(-4px);
   border-color: #38E0CF;
   box-shadow: 0 12px 30px rgba(73, 193, 172, 0.15);
+}
+
+.shareholder-bullet-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.shareholder-bullet-list li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.55;
+  font-family: 'PP Neue Montreal', sans-serif;
+}
+
+.shareholder-bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background-color: #38E0CF;
+  box-shadow: 0 0 8px rgba(56, 224, 207, 0.6);
 }
 
 .shareholder-logo-img {
@@ -7329,11 +7364,13 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 }
 
 /* Right side graphic bento tile grid */
-.shareholders-left-col .bento-shareholder-card {
+.shareholders-left-col .bento-shareholder-card,
+.Shareholder-left-col .bento-shareholder-card {
   flex: 1 1 0%;
 }
 
-.shareholders-right-bento {
+.shareholders-right-bento,
+.Shareholder-right-bento {
   width: 100%;
   display: flex;
   align-self: stretch;
@@ -7871,6 +7908,15 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   font-family: 'PP Neue Montreal', sans-serif;
   margin-top: 25px;
 }
+.maitryi-lead-text {
+  max-width: 950px;
+  margin: 20px auto 45px auto;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #555555;
+  font-family: 'PP Neue Montreal', sans-serif;
+}
 .overview-accordion-grid {
   display: flex;
   width: 100%;
@@ -7960,11 +8006,45 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   background-color: #ffffff !important;
   overflow: hidden;
 }
+.solutions-header-tags {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  padding: 0 40px;
+}
+.solutions-header-inner {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 993px) {
+  .solutions-header-inner {
+    padding-left: 140px;
+    gap: 50px;
+  }
+  .header-tag-col {
+    flex: 1;
+    text-align: center;
+  }
+  .header-divider-space {
+    width: 1px;
+  }
+}
+@media (max-width: 992px) {
+  .solutions-header-tags {
+    padding: 0;
+  }
+  .solutions-header-inner {
+    justify-content: center;
+    gap: 15px;
+  }
+  .header-divider-space {
+    display: none;
+  }
+}
 .solutions-deck {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-top: 50px;
+  margin-top: 20px;
   width: 100%;
 }
 .deck-row {
@@ -8062,41 +8142,41 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
 }
 
-/* Hover & Active States (Dark Background Effect) */
+/* Hover & Active States (Brand Green Background Effect) */
 .deck-row.active,
 .deck-row:hover {
   transform: translateY(-4px);
-  border-color: var(--accent-color, #38E0CF) !important;
-  background-color: var(--brand-dark-slate);
-  box-shadow: 0 20px 45px rgba(1, 38, 45, 0.25);
+  border-color: #38E0CF !important;
+  background-color: #38E0CF !important;
+  box-shadow: 0 20px 45px rgba(56, 224, 207, 0.35);
 }
 .deck-row.active .deck-num,
 .deck-row:hover .deck-num {
-  -webkit-text-stroke-color: rgba(255, 255, 255, 0.25);
+  -webkit-text-stroke-color: rgba(1, 38, 45, 0.4) !important;
 }
 .deck-row.active .deck-side h3,
 .deck-row:hover .deck-side h3 {
-  color: #ffffff !important;
+  color: #01262D !important;
 }
 .deck-row.active .deck-side p,
 .deck-row:hover .deck-side p {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: #01262D !important;
 }
 .deck-row.active .tag-teal,
 .deck-row:hover .tag-teal {
-  color: var(--brand-turquoise);
-  background: rgba(56, 224, 207, 0.15);
-  border-color: rgba(56, 224, 207, 0.3);
+  color: #ffffff !important;
+  background: #01262D !important;
+  border-color: #01262D !important;
 }
 .deck-row.active .tag-red,
 .deck-row:hover .tag-red {
-  color: #ef5350;
-  background: rgba(239, 83, 80, 0.15);
-  border-color: rgba(239, 83, 80, 0.3);
+  color: #ffffff !important;
+  background: #b71c1c !important;
+  border-color: #b71c1c !important;
 }
 .deck-row.active .deck-divider,
 .deck-row:hover .deck-divider {
-  background: linear-gradient(to bottom, rgba(239, 83, 80, 0.3), rgba(56, 224, 207, 0.4) 50%, rgba(56, 224, 207, 0));
+  background: linear-gradient(to bottom, rgba(1, 38, 45, 0.25), rgba(1, 38, 45, 0.5) 50%, rgba(1, 38, 45, 0)) !important;
 }
 
 
@@ -11296,11 +11376,15 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
 
 /* Standardized Main Title Margins */
 h2.main-title {
-  margin-bottom: 50px !important;
+  margin-bottom: 50px;
 }
 
-h2.main-title.mb-0,
-h2.main-title.mb-1,
+h2.main-title.mb-0 { margin-bottom: 0 !important; }
+h2.main-title.mb-1 { margin-bottom: 6px !important; }
+h2.main-title.mb-2 { margin-bottom: 12px !important; }
+h2.main-title.mb-3 { margin-bottom: 16px !important; }
+h2.main-title.mb-4 { margin-bottom: 24px !important; }
+
 .networks-dashboard-section h2.main-title,
 .journey-timeline-section h2.main-title,
 .people-eim-section h2.main-title {
@@ -11309,11 +11393,15 @@ h2.main-title.mb-1,
 
 @media (max-width: 768px) {
   h2.main-title {
-    margin-bottom: 30px !important;
+    margin-bottom: 30px;
   }
   
-  h2.main-title.mb-0,
-  h2.main-title.mb-1,
+  h2.main-title.mb-0 { margin-bottom: 0 !important; }
+  h2.main-title.mb-1 { margin-bottom: 6px !important; }
+  h2.main-title.mb-2 { margin-bottom: 10px !important; }
+  h2.main-title.mb-3 { margin-bottom: 14px !important; }
+  h2.main-title.mb-4 { margin-bottom: 20px !important; }
+
   .networks-dashboard-section h2.main-title,
   .journey-timeline-section h2.main-title,
   .people-eim-section h2.main-title {
