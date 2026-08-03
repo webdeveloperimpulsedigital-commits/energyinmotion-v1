@@ -10221,12 +10221,14 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  padding-bottom: 40px;
 }
 
 .hero-cta-wrapper {
-  margin-top: 185px;
+  margin-top: auto;
+  margin-bottom: 0;
   z-index: 10;
 }
 
@@ -10271,17 +10273,27 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    padding-bottom: 48px;
   }
   
   .hero-cta-wrapper {
-    margin-top: 110px;
+    margin-top: auto;
+    margin-bottom: 0;
   }
   
   .hero-cta-btn {
-    padding: 12px 24px;
-    font-size: 13.5px;
+    padding: 8px 18px;
+    font-size: 12px;
+    font-weight: 500;
+    gap: 8px;
+    border-radius: 6px;
+  }
+
+  .hero-cta-btn .download-icon {
+    width: 15px;
+    height: 15px;
   }
   
   #overview.overview {
@@ -11463,4 +11475,158 @@ section:not(.hero):not(.copyright):not(.pb-0),
   font-weight: 500;
   font-family: 'PP Neue Montreal', sans-serif;
   line-height: 1.25;
+}
+
+/* ==========================================================================
+   Location Boxes Grid (Post-Form Section)
+   ========================================================================== */
+.location-boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+@media (max-width: 1199px) {
+  .location-boxes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .location-boxes-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 25px;
+  }
+}
+
+.location-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 14px;
+  border: 1px solid rgba(1, 38, 45, 0.08);
+  box-shadow: 0 10px 30px rgba(1, 38, 45, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  height: 100%;
+}
+
+.location-card:hover {
+  background: var(--brand-dark-slate, #01262d);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(1, 38, 45, 0.2);
+  border-color: var(--accent-color, #38e0cf);
+}
+
+.location-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.location-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(56, 224, 207, 0.12);
+  color: var(--brand-dark-slate, #01262d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.location-card:hover .location-icon-wrap {
+  background: rgba(56, 224, 207, 0.2);
+  color: #38e0cf;
+}
+
+.location-card-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--brand-black, #001b1e);
+  margin: 0;
+  font-family: 'PP Neue Montreal', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.location-card:hover .location-card-title {
+  color: #ffffff;
+}
+
+.location-card-address {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(1, 38, 45, 0.75);
+  margin-bottom: 18px;
+  font-family: 'PP Neue Montreal', sans-serif;
+  flex-grow: 1;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.location-card:hover .location-card-address {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.location-card-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(1, 38, 45, 0.08);
+  font-size: 12.5px;
+  color: var(--brand-dark-slate, #01262d);
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-weight: 500;
+  width: 100%;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.location-card-contact span {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.location-card:hover .location-card-contact {
+  border-top-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.location-card-contact svg {
+  color: #3eb09c;
+  stroke-width: 2.5;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.location-card:hover .location-card-contact svg {
+  color: #38e0cf;
+}
+
+.location-card-contact a {
+  color: var(--brand-black, #001b1e);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.location-card:hover .location-card-contact a {
+  color: #38e0cf;
+}
+
+.location-card-contact a:hover {
+  color: #b9edea;
 }
