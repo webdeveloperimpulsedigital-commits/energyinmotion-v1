@@ -7185,16 +7185,16 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 @media (min-width: 992px) {
   .shareholders-left-col,
   .Shareholder-left-col {
-    flex: 1 1 50% !important;
-    max-width: 50% !important;
-    width: 50% !important;
+    flex: 0 0 calc(50% - 12px) !important;
+    max-width: calc(50% - 12px) !important;
+    width: calc(50% - 12px) !important;
   }
 
   .shareholders-right-bento,
   .Shareholder-right-bento {
-    flex: 1 1 50% !important;
-    max-width: 50% !important;
-    width: 50% !important;
+    flex: 0 0 calc(50% - 12px) !important;
+    max-width: calc(50% - 12px) !important;
+    width: calc(50% - 12px) !important;
     display: flex;
     align-self: stretch;
   }
