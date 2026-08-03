@@ -25,7 +25,7 @@
 	<link href="css/easy-responsive-tabs.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-	<link href="css/main.css?v=24.0" rel="stylesheet">
+	<link href="css/main.css?v=28.0" rel="stylesheet">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
 			w[l] = w[l] || []; w[l].push({
@@ -145,8 +145,8 @@
 						At EIM, we are proud to be building India’s state-of-the-art electric commercial vehicle ecosystem designed to power the future of logistics and transport. We are building India’s integrated electric freight ecosystem, combining advanced electric vehicles, battery swapping, charging infrastructure, and intelligent support services. Our solutions help enterprises transition to cleaner transport while improving operational efficiency, reducing the total cost of ownership, and minimizing technology risk.
 					</p>
 				</div>
-				<!-- Row 2: Sliding Accordion Panels Grid -->
-				<div class="overview-accordion-grid" data-aos="fade-up" data-aos-delay="200">
+				<!-- Row 2: Sliding Accordion Panels Grid (Hidden on Mobile) -->
+				<div class="overview-accordion-grid d-none d-md-flex" data-aos="fade-up" data-aos-delay="200">
 					<!-- Panel 1: Drive -->
 					<div class="accordion-panel active" style="background-image: url('images/overview-1.jpg');">
 						<div class="accordion-panel-overlay">
@@ -220,12 +220,19 @@
 			});
 		</script>
 		<section id="Shareholder" class="company section Shareholder-section-modern py-5">
+			<style>
+				.shareholder-bullet-list li::before {
+					background-color: #001B1E !important;
+					background: #001B1E !important;
+					box-shadow: none !important;
+				}
+			</style>
 			<div class="container">
-				<div class="shareholder-logo-wrap text-center mb-0">
-					<img src="images/overview.png" alt="Energy in Motion" class="img-fluid"
-						style="width: 600px; max-width: 95%; height: auto;" loading="lazy">
+				<div class="shareholder-logo-wrap text-center mb-3">
+					<img src="images/eim_secondarylogo.png" alt="Energy in Motion" class="img-fluid"
+						style="width: 520px; max-width: 95%; height: auto;" loading="lazy">
 				</div>
-				<p class="sub-heading-txt text-center mb-4 mt-1" data-aos="fade-up" data-aos-delay="100">
+				<p class="sub-heading-txt text-center mb-4 mt-3" data-aos="fade-up" data-aos-delay="100">
 					EIM is associate company of <strong>Ravindra Energy Limited</strong>, which is listed company in Renewable Energy Space.
 				</p>
 
@@ -233,7 +240,8 @@
 					<!-- Left Side: Shareholder Bento Card -->
 					<div class="col-lg-6 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
 						<!-- Card 1: Ravindra Energy Limited -->
-						<div class="bento-shareholder-card p-4 p-md-5 rounded-4 h-100 d-flex flex-column justify-content-center">
+						<div class="bento-shareholder-card p-4 p-md-5 rounded-4 h-100 d-flex flex-column justify-content-center"
+							style="background-color: #66CCC0 !important; background: #66CCC0 !important;">
 							<div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
 								<div class="logo-cont mb-0"><a href="https://www.ravindraenergy.com/"
 										target="_blank"><img src="images/logo-ravindra-energy.svg"
@@ -241,11 +249,11 @@
 											class="shareholder-logo-img ravindra-logo"></a></div>
 							</div>
 							<ul class="shareholder-bullet-list mb-0">
-								<li>Reliable Green Energy Provider to corporates</li>
-								<li>Rural solar projects</li>
-								<li>Round the clock renewable energy solutions including solar, wind and BESS (Battery
+								<li style="color: #001B1E !important;">Reliable Green Energy Provider to corporates</li>
+								<li style="color: #001B1E !important;">Rural solar projects</li>
+								<li style="color: #001B1E !important;">Round the clock renewable energy solutions including solar, wind and BESS (Battery
 									energy storage system)</li>
-								<li>Energy Trading – exchange + bilateral contracts</li>
+								<li style="color: #001B1E !important;">Energy Trading – exchange + bilateral contracts</li>
 							</ul>
 						</div>
 					</div>
@@ -262,16 +270,20 @@
 		</section>
 
 		<section id="maitryi" class="maitryi-section py-5 bg-white">
-			<div class="container text-center">
+			<div class="container text-center px-2 px-md-3">
 				<h2 class="main-title mb-2" data-aos="fade-up">‘Maitryi’ as a Business Model</h2>
 				<p class="maitryi-lead-text" data-aos="fade-up" data-aos-delay="50">
 					Our Maitryi business model seamlessly integrates electric vehicles, battery swapping, charging
 					infrastructure, and green energy-helping fleet owners maximize uptime, efficiency, and
 					profitability.
 				</p>
-				<div class="maitryi-img-wrap" data-aos="fade-up" data-aos-delay="100">
+				<div class="maitryi-img-wrap w-100" data-aos="fade-up" data-aos-delay="100">
+					<!-- Original Desktop Image -->
 					<img src="images/Maitryi-Model.jpg" alt="Maitryi as a Business Model"
-						class="img-fluid rounded-4 shadow-sm" loading="lazy">
+						class="img-fluid rounded-4 shadow-sm w-100 d-none d-md-block" loading="lazy">
+					<!-- Mobile Image -->
+					<img src="images/Maitryi-Model-HD.png?v=1.0" alt="Maitryi as a Business Model"
+						class="img-fluid rounded-4 shadow-sm w-100 d-block d-md-none" style="image-rendering: -webkit-optimize-contrast;" loading="eager">
 				</div>
 			</div>
 		</section>
@@ -280,8 +292,8 @@
 			<div class="container">
 				<h2 class="main-title text-center mb-2 transform-none" data-aos="fade-up">What Makes EIM Different?</h2>
 
-				<!-- Header Tags placed at the top after title -->
-				<div class="solutions-header-tags" data-aos="fade-up" data-aos-delay="50">
+				<!-- Header Tags placed at the top after title (Desktop Only) -->
+				<div class="solutions-header-tags d-none d-md-block" data-aos="fade-up" data-aos-delay="50">
 					<div class="solutions-header-inner">
 						<div class="header-num-offset"></div>
 						<div class="header-content-cols">
@@ -307,6 +319,7 @@
 						<div class="deck-content-col">
 							<!-- Challenge Side -->
 							<div class="deck-side challenge-side-col">
+								<span class="mobile-deck-badge badge-challenge d-inline-block d-md-none">The Challenge</span>
 								<h3>Reduce Capital Investment</h3>
 								<p>Electric trucks often require substantially higher upfront investment than
 									conventional diesel vehicles.</p>
@@ -317,6 +330,7 @@
 
 							<!-- EIM Solution Side -->
 							<div class="deck-side sol-side">
+								<span class="mobile-deck-badge badge-solution d-inline-block d-md-none">EIM Solution</span>
 								<h3>Battery-as-a-Service</h3>
 								<p>Lower acquisition costs by separating battery ownership from the vehicle.</p>
 							</div>
@@ -334,6 +348,7 @@
 						<div class="deck-content-col">
 							<!-- Challenge Side -->
 							<div class="deck-side challenge-side-col">
+								<span class="mobile-deck-badge badge-challenge d-inline-block d-md-none">The Challenge</span>
 								<h3>Charging Downtime</h3>
 								<p>Evs have 6X higher refuelling down-time compared to diesel truck</p>
 							</div>
@@ -343,6 +358,7 @@
 
 							<!-- EIM Solution Side -->
 							<div class="deck-side sol-side">
+								<span class="mobile-deck-badge badge-solution d-inline-block d-md-none">EIM Solution</span>
 								<h3>Battery Swapping</h3>
 								<p>Automated Battery Swapping gets trucks back on the road in minutes, maximizing fleet
 									productivity.</p>
@@ -361,6 +377,7 @@
 						<div class="deck-content-col">
 							<!-- Challenge Side -->
 							<div class="deck-side challenge-side-col">
+								<span class="mobile-deck-badge badge-challenge d-inline-block d-md-none">The Challenge</span>
 								<h3>Route Reliability</h3>
 								<p>Limited charging infrastructure and extended charging times can disrupt fleet
 									operations and constrain business growth.</p>
@@ -371,6 +388,7 @@
 
 							<!-- EIM Solution Side -->
 							<div class="deck-side sol-side">
+								<span class="mobile-deck-badge badge-solution d-inline-block d-md-none">EIM Solution</span>
 								<h3>Smart Energy Management</h3>
 								<p>Intelligently coordinates battery swapping, charging, and fleet deployment to
 									maximize uptime, optimize energy availability, and keep freight moving with
@@ -588,11 +606,90 @@
 			});
 		</script>
 
-		<section id="networks" class="networks-dashboard-section py-4">
+		<section id="networks" class="networks-dashboard-section py-5">
 			<div class="container">
-				<div class="network-img-wrap text-center" data-aos="fade-up">
-					<img src="images/network.jpeg" alt="Network Overview" class="img-fluid rounded-4 shadow-sm w-100"
-						loading="lazy">
+				<!-- Centered Section Header -->
+				<div class="text-center mb-4" data-aos="fade-up">
+					<h2 class="main-title mb-0">Network Overview</h2>
+				</div>
+
+				<!-- Side by Side Layout: Left Map (Big) | Right Stats Box -->
+				<div class="row g-4 align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+					<!-- Left Side: Map Image (Full & Uncropped) -->
+					<div class="col-lg-8 d-flex">
+						<div class="network-map-container w-100 rounded-4 overflow-hidden shadow-sm d-flex align-items-center justify-content-center border-0 bg-transparent">
+							<img src="images/new-map-image.png?v=10.0" alt="Network Overview Map" class="img-fluid w-100 h-100 rounded-4" style="object-fit: contain; image-rendering: -webkit-optimize-contrast;" loading="eager">
+						</div>
+					</div>
+
+					<!-- Right Side: Content / Stats Box -->
+					<div class="col-lg-4 d-flex">
+						<div class="network-stats-card p-4 p-md-4 rounded-4 w-100 d-flex flex-column justify-content-start gap-3 text-white" style="background: linear-gradient(145deg, #01262D 0%, #001B1E 100%) !important; border: 1px solid rgba(56, 224, 207, 0.3); box-shadow: 0 12px 35px rgba(0,0,0,0.3);">
+							<!-- Top Title & Badge -->
+							<div>
+								<span class="badge rounded-pill px-3 py-2 mb-2" style="background: rgba(56, 224, 207, 0.12); color: #38E0CF; border: 1px solid rgba(56, 224, 207, 0.3); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;">
+									Network Metrics
+								</span>
+								<h4 class="fw-bold text-white mb-1" style="font-family: 'PP Neue Montreal', sans-serif;">Total Swap Stations</h4>
+								<p class="small mb-0" style="color: #94a3b8; font-size: 13.5px;">Priority swap-station sites planned across India</p>
+							</div>
+
+							<!-- Big Stat Number Highlight -->
+							<div class="p-3 rounded-4 text-center text-md-start" style="background: rgba(56, 224, 207, 0.05); border: 1px solid rgba(56, 224, 207, 0.2);">
+								<span class="text-uppercase tracking-wider small fw-bold d-block mb-1" style="color: #94a3b8; font-size: 11px; letter-spacing: 0.1em;">NETWORK TOTAL</span>
+								<div class="d-flex align-items-baseline gap-2 justify-content-center justify-content-md-start">
+									<span class="display-3 fw-bold" style="color: #38E0CF; font-family: 'PP Neue Montreal', sans-serif; line-height: 1;">55</span>
+									<span class="fw-semibold text-white">Sites</span>
+								</div>
+							</div>
+
+							<!-- Breakdown Status List -->
+							<div class="network-breakdown-list d-flex flex-column gap-2 mt-5 pt-2">
+								<div class="d-flex align-items-center justify-content-between p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+									<div class="d-flex align-items-center gap-3">
+										<span class="rounded-circle" style="width: 10px; height: 10px; background: #38E0CF; box-shadow: 0 0 10px rgba(56,224,207,0.5);"></span>
+										<span class="fw-medium text-white" style="font-size: 14.5px;">Existing Stations</span>
+									</div>
+									<span class="fw-bold fs-5" style="color: #38E0CF;">07</span>
+								</div>
+
+								<div class="d-flex align-items-center justify-content-between p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+									<div class="d-flex align-items-center gap-3">
+										<span class="rounded-circle" style="width: 10px; height: 10px; background: #38E0CF; box-shadow: 0 0 10px rgba(56,224,207,0.5);"></span>
+										<span class="fw-medium text-white" style="font-size: 14.5px;">Upcoming Stations</span>
+									</div>
+									<span class="fw-bold fs-5" style="color: #38E0CF;">17</span>
+								</div>
+
+								<div class="d-flex align-items-center justify-content-between p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+									<div class="d-flex align-items-center gap-3">
+										<span class="rounded-circle" style="width: 10px; height: 10px; background: #ef4444; box-shadow: 0 0 10px rgba(239,68,68,0.5);"></span>
+										<span class="fw-medium text-white" style="font-size: 14.5px;">Planned Stations</span>
+									</div>
+									<span class="fw-bold fs-5" style="color: #ef4444;">31</span>
+								</div>
+							</div>
+
+							<!-- Map Legend Card (Pushed down with mt-auto) -->
+							<div class="network-legend-card p-3 rounded-4 mt-auto mt-4" style="background: rgba(56, 224, 207, 0.05); border: 1px solid rgba(56, 224, 207, 0.25);">
+								<div class="d-flex flex-column gap-2">
+									<div class="d-flex align-items-center gap-3 p-2 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);">
+										<div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 28px; height: 28px; background: #0d9488; color: #ffffff;">
+											<i class="bi bi-lightning-charge-fill" style="font-size: 12px;"></i>
+										</div>
+										<span class="small fw-semibold text-white" style="font-size: 13px; line-height: 1.3;">EIM Existing / Upcoming Swapstation Locations</span>
+									</div>
+
+									<div class="d-flex align-items-center gap-3 p-2 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);">
+										<div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 28px; height: 28px; background: #ef4444; color: #ffffff;">
+											<i class="bi bi-geo-alt-fill" style="font-size: 12px;"></i>
+										</div>
+										<span class="small fw-semibold text-white" style="font-size: 13px; line-height: 1.3;">Planned Swapstation Locations</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -1169,7 +1266,7 @@
 											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
 											<div class="meta-txt">
 												<span class="meta-label">Handed Over By</span>
-												<span class="meta-val">Narendra Murkumbi</span>
+												<span class="meta-val">Narendra Murkumbi<br><small class="d-block text-muted mt-1" style="font-size: 13.5px; font-weight: 500; color: #475569 !important;">Managing Director, Energy in Motion</small></span>
 											</div>
 										</li>
 									</ul>
@@ -1440,7 +1537,7 @@
 										<span><img src="images/icon-calendar.svg" alt="" class="career-meta-icon"> Full
 											Time</span>
 									</div>
-									<a href="mailto:careers@energyinmotion.in?subject=Application for Operator"
+									<a href="mailto:hr@energyinmotion.in?subject=Application for Operator"
 										class="career-apply-btn">
 										<span>Apply Now</span>
 										<i class="bi bi-arrow-right-short"></i>
@@ -1458,7 +1555,7 @@
 										<span><img src="images/icon-calendar.svg" alt="" class="career-meta-icon"> Full
 											Time</span>
 									</div>
-									<a href="mailto:careers@energyinmotion.in?subject=Application for Charger Technician"
+									<a href="mailto:hr@energyinmotion.in?subject=Application for Charger Technician"
 										class="career-apply-btn">
 										<span>Apply Now</span>
 										<i class="bi bi-arrow-right-short"></i>
@@ -1476,7 +1573,7 @@
 										<span><img src="images/icon-calendar.svg" alt="" class="career-meta-icon"> Full
 											Time</span>
 									</div>
-									<a href="mailto:careers@energyinmotion.in?subject=Application for Sales Co-ordinator"
+									<a href="mailto:hr@energyinmotion.in?subject=Application for Sales Co-ordinator"
 										class="career-apply-btn">
 										<span>Apply Now</span>
 										<i class="bi bi-arrow-right-short"></i>

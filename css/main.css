@@ -7214,19 +7214,18 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 }
 
 .bento-shareholder-card {
-  background: #01262D;
-  border: 1px solid rgba(73, 193, 172, 0.4);
-  border-radius: 20px;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 10px 30px rgba(1, 38, 45, 0.2);
-  display: flex;
-  flex-direction: column;
+  background: #66CCC0 !important;
+  border: 1px solid rgba(1, 27, 30, 0.15) !important;
+  border-radius: 20px !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 10px 30px rgba(102, 204, 192, 0.25) !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .bento-shareholder-card:hover {
-  transform: translateY(-4px);
-  border-color: #38E0CF;
-  box-shadow: 0 12px 30px rgba(73, 193, 172, 0.15);
+  transform: translateY(-4px) !important;
+  box-shadow: 0 14px 35px rgba(102, 204, 192, 0.35) !important;
 }
 
 .shareholder-bullet-list {
@@ -7240,25 +7239,25 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
 }
 
 .shareholder-bullet-list li {
-  position: relative;
-  padding-left: 28px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #ffffff;
-  line-height: 1.55;
-  font-family: 'PP Neue Montreal', sans-serif;
+  position: relative !important;
+  padding-left: 28px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #001B1E !important;
+  line-height: 1.55 !important;
+  font-family: 'PP Neue Montreal', sans-serif !important;
 }
 
 .shareholder-bullet-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 10px;
-  height: 10px;
-  border-radius: 3px;
-  background-color: #38E0CF;
-  box-shadow: 0 0 8px rgba(56, 224, 207, 0.6);
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 8px !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background-color: #001B1E !important;
+  box-shadow: none !important;
 }
 
 .shareholder-logo-img {
@@ -9919,7 +9918,147 @@ html:not(.no-js) [data-aos="fade-left"].aos-animate {
   }
 }
 
+@media (min-width: 992px) {
+  .border-end-lg {
+    border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+}
+
+/* Network Overview Dashboard Card */
+.network-card-wrapper {
+  background: #e4f6f3;
+  border: 1px solid rgba(56, 224, 207, 0.3);
+  box-shadow: 0 12px 35px rgba(1, 38, 45, 0.15);
+}
+
+.network-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #01262D;
+  font-family: 'PP Neue Montreal', sans-serif;
+}
+
+.network-subtitle {
+  font-size: 15px;
+  color: #475569;
+  font-family: 'PP Neue Montreal', sans-serif;
+}
+
+.network-map-container {
+  border: 1px solid rgba(1, 38, 45, 0.1);
+  background: #ffffff;
+}
+
+.network-stats-card {
+  background: #062328 !important;
+  border: 1px solid rgba(56, 224, 207, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.network-stats-card .stats-number {
+  font-size: 58px;
+  line-height: 1;
+  font-weight: 800;
+  color: #38E0CF;
+  font-family: 'PP Neue Montreal', sans-serif;
+}
+
+.network-stats-list li {
+  font-size: 16px;
+  color: #e2e8f0;
+}
+
+/* Hide Overview Accordion Images Grid on Mobile Devices */
+@media (max-width: 767.98px) {
+  .overview-accordion-grid {
+    display: none !important;
+  }
+
+  /* 4K HD Maitryi Model Image for Mobile Devices (Full Uncropped) */
+  .maitryi-img-wrap {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 1.2rem !important;
+    overflow: hidden !important;
+    border-radius: 16px !important;
+  }
+  .maitryi-img-wrap img {
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    border-radius: 16px !important;
+    image-rendering: -webkit-optimize-contrast !important;
+  }
+}
+
+/* Mobile Deck Badge Labels for What Makes EIM Different */
+.mobile-deck-badge {
+  display: inline-block !important;
+  width: auto !important;
+  width: fit-content !important;
+  max-width: fit-content !important;
+  align-self: flex-start !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  padding: 4px 12px !important;
+  border-radius: 20px !important;
+  margin-bottom: 10px !important;
+}
+
+.mobile-deck-badge.badge-challenge {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+  color: #dc2626 !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+
+.mobile-deck-badge.badge-solution {
+  background-color: rgba(1, 38, 45, 0.15) !important;
+  color: #001B1E !important;
+  border: 1px solid rgba(1, 38, 45, 0.25) !important;
+}
+
 @media (max-width: 768px) {
+  .deck-row {
+    padding: 20px 16px !important;
+    border-radius: 20px !important;
+  }
+  .deck-content-col {
+    gap: 14px !important;
+  }
+  .deck-side {
+    width: 100% !important;
+    padding: 16px 16px !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+  }
+  .deck-side.challenge-side-col {
+    background: rgba(255, 255, 255, 0.35) !important;
+    border: 1px solid rgba(239, 68, 68, 0.25) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+  }
+  .deck-side.sol-side {
+    background: rgba(1, 38, 45, 0.08) !important;
+    border: 1px solid rgba(1, 38, 45, 0.18) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .network-card-wrapper {
+    padding: 20px 16px !important;
+  }
+  .network-title {
+    font-size: 20px !important;
+  }
+  .network-subtitle {
+    font-size: 13px !important;
+  }
+  .network-stats-card .stats-number {
+    font-size: 44px !important;
+  }
   .networks-dashboard-section {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
