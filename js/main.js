@@ -81,7 +81,7 @@
   });
 
   /**
-   * Preloader
+   * Preloader - Fast Instant Fade Out
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
@@ -89,21 +89,20 @@
       if (preloader.classList.contains('preloader-removed')) return;
       preloader.classList.add('preloader-removed');
       preloader.style.opacity = '0';
+      preloader.style.pointerEvents = 'none';
       setTimeout(() => {
-        preloader.remove();
-      }, 600); // matches the 0.6s transition in CSS
+        if (preloader.parentNode) preloader.remove();
+      }, 250);
     };
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(removePreloader, 300);
-      });
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      removePreloader();
     } else {
-      setTimeout(removePreloader, 300);
+      document.addEventListener('DOMContentLoaded', removePreloader);
     }
 
     window.addEventListener('load', removePreloader);
-    setTimeout(removePreloader, 1500); // 1.5s safety fallback
+    setTimeout(removePreloader, 500);
   }
 
   /**

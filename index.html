@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<title>EIM</title>
@@ -25,7 +28,7 @@
 	<link href="css/easy-responsive-tabs.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-	<link href="css/main.css?v=31.0" rel="stylesheet">
+	<link href="css/main.css?v=34.0" rel="stylesheet">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
 			w[l] = w[l] || []; w[l].push({
@@ -50,7 +53,7 @@
 			<div class="container-fluid container-xl d-flex justify-content-end">
 				<div class="contact-info d-flex align-items-center">
 					<img src="images/icon-email.svg" alt=""
-						style="width: 13px; margin-right: 6px; filter: brightness(0) invert(1); opacity: 0.65;">
+						style="width: 13px; margin-right: 6px; filter: brightness(0) invert(1); opacity: 0.65;" decoding="async" loading="eager" fetchpriority="high">
 					<a href="mailto:powerup@energyinmotion.in">powerup@energyinmotion.in</a>
 				</div>
 			</div>
@@ -58,7 +61,7 @@
 		<div class="branding d-flex align-items-center">
 			<div class="container-fluid px-md-5 position-relative d-flex align-items-center justify-content-between">
 				<a href="index.html" class="logo d-flex align-items-center">
-					<img src="images/logo-eim.svg" alt="EIM">
+					<img src="images/logo-eim.svg" alt="EIM" decoding="async" loading="eager" fetchpriority="high">
 				</a>
 				<nav id="navmenu" class="navmenu">
 					<ul>
@@ -107,26 +110,33 @@
 	<main class="main">
 		<section id="hero" class="hero section dark-background">
 			<!-- Desktop Video -->
-			<video autoplay muted loop playsinline class="hero-video-bg hide-mob" id="hero-video-desktop">
-				<!-- Source loaded dynamically to save bandwidth -->
+			<video autoplay muted loop playsinline preload="none" class="hero-video-bg hide-mob" id="hero-video-desktop">
 			</video>
 			<!-- Mobile Video -->
-			<video autoplay muted loop playsinline class="hero-video-bg hide-desk" id="hero-video-mobile">
-				<!-- Source loaded dynamically to save bandwidth -->
+			<video autoplay muted loop playsinline preload="none" class="hero-video-bg hide-desk" id="hero-video-mobile">
 			</video>
 			<script>
 				(function () {
-					var isMobile = window.innerWidth <= 767;
-					if (isMobile) {
-						var mobVid = document.getElementById('hero-video-mobile');
-						if (mobVid) {
-							mobVid.src = "images/mobile.mp4";
+					function initHeroVideo() {
+						var isMobile = window.innerWidth <= 767;
+						if (isMobile) {
+							var mobVid = document.getElementById('hero-video-mobile');
+							if (mobVid && !mobVid.src) {
+								mobVid.src = "images/mobile.mp4";
+							}
+						} else {
+							var deskVid = document.getElementById('hero-video-desktop');
+							if (deskVid && !deskVid.src) {
+								deskVid.src = "images/desktop.mp4";
+							}
 						}
+					}
+					if (document.readyState === 'complete') {
+						setTimeout(initHeroVideo, 200);
 					} else {
-						var deskVid = document.getElementById('hero-video-desktop');
-						if (deskVid) {
-							deskVid.src = "images/desktop.mp4";
-						}
+						window.addEventListener('load', function() {
+							setTimeout(initHeroVideo, 200);
+						});
 					}
 				})();
 			</script>
@@ -229,7 +239,7 @@
 			<div class="container">
 				<div class="shareholder-logo-wrap text-center mb-3">
 					<img src="images/eim_secondarylogo.png" alt="Energy in Motion" class="img-fluid"
-						style="width: 520px; max-width: 95%; height: auto;" loading="lazy">
+						style="width: 520px; max-width: 95%; height: auto;" loading="lazy" decoding="async">
 				</div>
 				<p class="sub-heading-txt text-center mb-4 mt-3" data-aos="fade-up" data-aos-delay="100">
 					EIM is an associate company of <strong>Ravindra Energy Limited</strong>, a listed company in the renewable energy sector.
@@ -245,7 +255,7 @@
 								<div class="logo-cont mb-0"><a href="https://www.ravindraenergy.com/"
 										target="_blank"><img src="images/logo-ravindra-energy.svg"
 											alt="Ravindra Energy Limited"
-											class="shareholder-logo-img ravindra-logo"></a></div>
+											class="shareholder-logo-img ravindra-logo" decoding="async" loading="lazy"></a></div>
 							</div>
 							<ul class="shareholder-bullet-list mb-0">
 								<li style="color: #ffffff !important;">Reliable Green Energy Provider to corporates</li>
@@ -261,7 +271,7 @@
 					<div class="col-lg-6 d-flex flex-column" data-aos="fade-left" data-aos-delay="300">
 						<div class="bento-tile tile-image w-100 h-100 rounded-4 overflow-hidden">
 							<img src="images/shareholder-2.JPG" alt="Port EV Container Logistics" class="bento-tile-img"
-								loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+								loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" decoding="async">
 						</div>
 					</div>
 				</div>
@@ -279,10 +289,10 @@
 				<div class="maitryi-img-wrap w-100" data-aos="fade-up" data-aos-delay="100">
 					<!-- Original Desktop Image -->
 					<img src="images/Maitryi-Model.jpg" alt="Maitryi as a Business Model"
-						class="img-fluid rounded-4 shadow-sm w-100 d-none d-md-block" loading="lazy">
+						class="img-fluid rounded-4 shadow-sm w-100 d-none d-md-block" loading="lazy" decoding="async">
 					<!-- Mobile Image -->
 					<img src="images/Maitryi-Model-HD.png?v=1.0" alt="Maitryi as a Business Model"
-						class="img-fluid rounded-4 shadow-sm w-100 d-block d-md-none" style="image-rendering: -webkit-optimize-contrast;" loading="eager">
+						class="img-fluid rounded-4 shadow-sm w-100 d-block d-md-none" style="image-rendering: -webkit-optimize-contrast;" loading="lazy" decoding="async">
 				</div>
 			</div>
 		</section>
@@ -551,7 +561,7 @@
 			<div class="container">
 				<div class="overview-header text-center" data-aos="fade-up" style="margin-bottom: 35px; max-width: 100%;">
 					<h2 class="main-title mb-0" style="margin-bottom: 8px !important;">After-Sales Service</h2>
-					<p class="overview-lead-text" style="max-width: 1150px; width: 100%; margin: 8px auto 0 auto; font-size: 18.5px;">
+					<p class="overview-lead-text" style="max-width: 1150px; width: 100%; margin: 8px auto 0 auto; font-size: 18.5px; text-align: center;">
 						We have a strong service team that operates 24 hours a day across many locations in India.
 					</p>
 				</div>
@@ -617,7 +627,7 @@
 					<!-- Left Side: Map Image (Full & Uncropped) -->
 					<div class="col-lg-8 d-flex">
 						<div class="network-map-container w-100 rounded-4 overflow-hidden shadow-sm d-flex align-items-center justify-content-center border-0 bg-transparent">
-							<img src="images/new-map-image.png?v=10.0" alt="Network Overview Map" class="img-fluid w-100 h-100 rounded-4" style="object-fit: contain; image-rendering: -webkit-optimize-contrast;" loading="eager">
+							<img src="images/new-map-image.png?v=10.0" alt="Network Overview Map" class="img-fluid w-100 h-100 rounded-4" style="object-fit: contain; image-rendering: -webkit-optimize-contrast;" loading="lazy" decoding="async">
 						</div>
 					</div>
 
@@ -736,7 +746,7 @@
 									<div class="timeline-image-block">
 										<div class="timeline-card-img-wrap mb-0">
 											<img src="images/timeline-2-may.jpg" alt="Vehicle Assembly Plant @ Talegaon"
-												class="timeline-card-img" loading="lazy">
+												class="timeline-card-img" loading="lazy" decoding="async">
 										</div>
 									</div>
 								</div>
@@ -766,7 +776,7 @@
 									<div class="timeline-image-block">
 										<div class="timeline-card-img-wrap mb-0">
 											<img src="images/e-tractors.jpg" alt="No. 2 in India in EHDT Sale"
-												class="timeline-card-img" loading="lazy">
+												class="timeline-card-img" loading="lazy" decoding="async">
 										</div>
 									</div>
 								</div>
@@ -796,7 +806,7 @@
 									<div class="timeline-image-block">
 										<div class="timeline-card-img-wrap mb-0">
 											<img src="images/timeline-8-oct.jpg" alt="Swap Station Launch @ DICT"
-												class="timeline-card-img" loading="lazy">
+												class="timeline-card-img" loading="lazy" decoding="async">
 										</div>
 									</div>
 								</div>
@@ -826,7 +836,7 @@
 									<div class="timeline-image-block">
 										<div class="timeline-card-img-wrap mb-0">
 											<img src="images/timeline-25-sep.jpg" alt="E-tractor Launch @ JNPA"
-												class="timeline-card-img" loading="lazy">
+												class="timeline-card-img" loading="lazy" decoding="async">
 										</div>
 									</div>
 								</div>
@@ -856,7 +866,7 @@
 									<div class="timeline-image-block">
 										<div class="timeline-card-img-wrap mb-0">
 											<img src="images/timeline-15-aug.jpg" alt="1st Commercial Sale"
-												class="timeline-card-img" loading="lazy">
+												class="timeline-card-img" loading="lazy" decoding="async">
 										</div>
 									</div>
 								</div>
@@ -886,7 +896,7 @@
 									<div class="timeline-image-block">
 										<div class="timeline-card-img-wrap mb-0">
 											<img src="images/timeline-jnpt-charger.jpg" alt="E-tractor Homologation"
-												class="timeline-card-img" loading="lazy">
+												class="timeline-card-img" loading="lazy" decoding="async">
 										</div>
 									</div>
 								</div>
@@ -916,7 +926,7 @@
 									<div class="timeline-image-block">
 										<div class="timeline-card-img-wrap mb-0">
 											<img src="images/timeline-life-1.jpg" alt="Company Registration"
-												class="timeline-card-img" loading="lazy">
+												class="timeline-card-img" loading="lazy" decoding="async">
 										</div>
 									</div>
 								</div>
@@ -938,7 +948,7 @@
 					<div class="press-asymmetric-image-wrapper" data-aos="fade-right">
 						<a href="documents/Press-Release.pdf" target="_blank" class="press-image-link">
 							<img src="images/Press-Release-img.jpg" alt="HPCL Partnership Signing Ceremony"
-								loading="lazy">
+								loading="lazy" decoding="async">
 							<div class="press-image-glow-overlay"></div>
 						</a>
 					</div>
@@ -999,7 +1009,7 @@
 									<div class="testimonial-avatar-wrap">
 										<div class="avatar-bg-block"></div>
 										<img src="images/vitthal.png" alt="Vitthal Wable" class="testimonial-avatar-img"
-											loading="lazy">
+											loading="lazy" decoding="async">
 									</div>
 								</div>
 							</div>
@@ -1032,7 +1042,7 @@
 									<div class="testimonial-avatar-wrap">
 										<div class="avatar-bg-block"></div>
 										<img src="images/JANARDHAN.png" alt="Mr. Janardhan Matre"
-											class="testimonial-avatar-img" loading="lazy">
+											class="testimonial-avatar-img" loading="lazy" decoding="async">
 									</div>
 								</div>
 							</div>
@@ -1065,7 +1075,7 @@
 									<div class="testimonial-avatar-wrap">
 										<div class="avatar-bg-block"></div>
 										<img src="images/gurjeet.png" alt="Gurjeet Singh Bhatia"
-											class="testimonial-avatar-img" loading="lazy">
+											class="testimonial-avatar-img" loading="lazy" decoding="async">
 									</div>
 								</div>
 							</div>
@@ -1097,7 +1107,7 @@
 									<div class="testimonial-avatar-wrap">
 										<div class="avatar-bg-block"></div>
 										<img src="images/Ajit-Kumar.png" alt="Mr. Ajit Kumar Singh"
-											class="testimonial-avatar-img" loading="lazy">
+											class="testimonial-avatar-img" loading="lazy" decoding="async">
 									</div>
 								</div>
 							</div>
@@ -1146,7 +1156,7 @@
 								<div class="event-info-left">
 									<h3 class="event-heading">1st EV Fast Charger in JNPT</h3>
 									<div class="event-description">
-										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<div class="desc-icon"><img src="images/icon-star.svg" alt="" decoding="async" loading="lazy"></div>
 										<p class="desc-text">Inauguration of India's first high-capacity EV Fast
 											Charging infrastructure within the Jawaharlal Nehru Port (JNPT) premises to
 											support heavy-duty fleet operations.</p>
@@ -1155,21 +1165,21 @@
 								<div class="event-info-right">
 									<ul class="event-meta-list">
 										<li>
-											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Date</span>
 												<span class="meta-val">15th August 2024</span>
 											</div>
 										</li>
 										<li>
-											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-location.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Location</span>
 												<span class="meta-val">Jawaharlal Nehru Port, Mumbai</span>
 											</div>
 										</li>
 										<li>
-											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Inaugurated By</span>
 												<span class="meta-val">Shri Unmesh Wagh<br><small class="d-block text-muted mt-1" style="font-size: 13.5px; font-weight: 500; color: #475569 !important;">Chairman, Jawaharlal Nehru Port Authority</small></span>
@@ -1181,7 +1191,7 @@
 
 							<!-- Bottom Content: Widescreen Image -->
 							<div class="event-widescreen-photo">
-								<img src="images/15-aug.jpeg" alt="1st EV Fast Charger in JNPT" loading="lazy">
+								<img src="images/15-aug.jpeg" alt="1st EV Fast Charger in JNPT" loading="lazy" decoding="async">
 							</div>
 						</div>
 					</div>
@@ -1194,28 +1204,28 @@
 								<div class="event-info-left">
 									<h3 class="event-heading">ARAI CMVR Homologation</h3>
 									<div class="event-description">
-										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<div class="desc-icon"><img src="images/icon-star.svg" alt="" decoding="async" loading="lazy"></div>
 										<p class="desc-text">Energy In Motion Limited has secured CMVR homologation certification from ARAI for India’s first heavy-duty, battery-swappable 55T electric tractor-achieved in a record 7 months.<br><br>Certification covers the 282 kWh model (July 2025) and the newly homologated 350 kWh model (July 2026), offering longer range and wider application.</p>
 									</div>
 								</div>
 								<div class="event-info-right">
 									<ul class="event-meta-list">
 										<li>
-											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Date</span>
 												<span class="meta-val">July 2025</span>
 											</div>
 										</li>
 										<li>
-											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-location.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Location</span>
 												<span class="meta-val">ARAI, Pune</span>
 											</div>
 										</li>
 										<li>
-											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Certificate Awarded By</span>
 												<span class="meta-val">Mr. Regi Mathai<br><small class="d-block text-muted mt-1" style="font-size: 13.5px; font-weight: 500; color: #475569 !important;">Chairman, ARAI</small></span>
@@ -1227,7 +1237,7 @@
 
 							<!-- Bottom Content: Widescreen Image -->
 							<div class="event-widescreen-photo">
-								<img src="images/award-4.jpeg" alt="ARAI CMVR Homologation" loading="lazy">
+								<img src="images/award-4.jpeg" alt="ARAI CMVR Homologation" loading="lazy" decoding="async">
 							</div>
 						</div>
 					</div>
@@ -1240,28 +1250,28 @@
 								<div class="event-info-left">
 									<h3 class="event-heading">First EV Truck Handover to MICT (Mumbai International Cargo Terminal)</h3>
 									<div class="event-description">
-										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<div class="desc-icon"><img src="images/icon-star.svg" alt="" decoding="async" loading="lazy"></div>
 										<p class="desc-text">Handover of the first EV truck to MICT (Mumbai International Cargo Terminal).</p>
 									</div>
 								</div>
 								<div class="event-info-right">
 									<ul class="event-meta-list">
 										<li>
-											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Date</span>
 												<span class="meta-val">1st August 2025</span>
 											</div>
 										</li>
 										<li>
-											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-location.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Location</span>
 												<span class="meta-val">MICT (Mumbai International Cargo Terminal), Mumbai</span>
 											</div>
 										</li>
 										<li>
-											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Handed Over By</span>
 												<span class="meta-val">Narendra Murkumbi<br><small class="d-block text-muted mt-1" style="font-size: 13.5px; font-weight: 500; color: #475569 !important;">Managing Director, Energy in Motion</small></span>
@@ -1273,7 +1283,7 @@
 
 							<!-- Bottom Content: Widescreen Image -->
 							<div class="event-widescreen-photo">
-								<img src="images/new-people-img.jpg" alt="First EV Truck Handover to MICT" loading="lazy">
+								<img src="images/new-people-img.jpg" alt="First EV Truck Handover to MICT" loading="lazy" decoding="async">
 							</div>
 						</div>
 					</div>
@@ -1286,7 +1296,7 @@
 								<div class="event-info-left">
 									<h3 class="event-heading">India’s First Fleet of EV Trucks Flagged Off</h3>
 									<div class="event-description">
-										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<div class="desc-icon"><img src="images/icon-star.svg" alt="" decoding="async" loading="lazy"></div>
 										<p class="desc-text">Flagging off of India’s First Fleet of EV Trucks with
 											Swappable Batteries at JNPA, enabling zero-emission container logistics.</p>
 									</div>
@@ -1294,21 +1304,21 @@
 								<div class="event-info-right">
 									<ul class="event-meta-list">
 										<li>
-											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Date</span>
 												<span class="meta-val">25th September 2025</span>
 											</div>
 										</li>
 										<li>
-											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-location.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Location</span>
 												<span class="meta-val">Jawaharlal Nehru Port Authority (JNPA)</span>
 											</div>
 										</li>
 										<li>
-											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Flagged Off By</span>
 												<span class="meta-val">Shri Sarbananda Sonowal<br><small class="d-block text-muted mt-1" style="font-size: 13.5px; font-weight: 500; color: #475569 !important;">Hon'ble Union Minister</small></span>
@@ -1321,7 +1331,7 @@
 							<!-- Bottom Content: Widescreen Image -->
 							<div class="event-widescreen-photo">
 								<img src="images/25-sep.JPG" alt="India’s First Fleet of EV Trucks Flagged Off"
-									loading="lazy">
+									loading="lazy" decoding="async">
 							</div>
 						</div>
 					</div>
@@ -1334,7 +1344,7 @@
 								<div class="event-info-left">
 									<h3 class="event-heading">India’s 1st Public Heavy Duty Swapping Station</h3>
 									<div class="event-description">
-										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<div class="desc-icon"><img src="images/icon-star.svg" alt="" decoding="async" loading="lazy"></div>
 										<p class="desc-text">Inauguration of India’s 1st Public Heavy Duty Commercial
 											E-Vehicle Battery Swapping Cum Charging Station, and Flagging Off of the
 											EIM-Foton ASHWA Battery Swappable Heavy-Duty E-Tractor.</p>
@@ -1343,14 +1353,14 @@
 								<div class="event-info-right">
 									<ul class="event-meta-list">
 										<li>
-											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Date</span>
 												<span class="meta-val">8th October 2025</span>
 											</div>
 										</li>
 										<li>
-											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Inaugurated & Flagged Off</span>
 												<span class="meta-val"><strong style="color: #01262D;">Inaugurated By:</strong> Shri Nitin Gadkari<br><small class="d-block text-muted mt-1 mb-2" style="font-size: 13.5px; font-weight: 500; color: #475569 !important;">Hon'ble Union Minister of Road Transport & Highways</small><strong style="color: #01262D;">Flagged Off By:</strong> Shri H. D. Kumaraswamy<br><small class="d-block text-muted mt-1" style="font-size: 13.5px; font-weight: 500; color: #475569 !important;">Hon’ble Union Minister of Heavy Industries</small></span>
@@ -1363,7 +1373,7 @@
 							<!-- Bottom Content: Widescreen Image -->
 							<div class="event-widescreen-photo">
 								<img src="images/8-oct.JPG" alt="India’s 1st Public Heavy Duty Swapping Station"
-									loading="lazy">
+									loading="lazy" decoding="async">
 							</div>
 						</div>
 					</div>
@@ -1376,7 +1386,7 @@
 								<div class="event-info-left">
 									<h3 class="event-heading">India's Largest Battery Swapping & Charging Station</h3>
 									<div class="event-description">
-										<div class="desc-icon"><img src="images/icon-star.svg" alt=""></div>
+										<div class="desc-icon"><img src="images/icon-star.svg" alt="" decoding="async" loading="lazy"></div>
 										<p class="desc-text">Inauguration of India's largest battery swapping and
 											charging station terminal, enhancing green freight transit speed and
 											infrastructure capacities.</p>
@@ -1385,21 +1395,21 @@
 								<div class="event-info-right">
 									<ul class="event-meta-list">
 										<li>
-											<div class="meta-icon"><img src="images/icon-calendar.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-calendar.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Date</span>
 												<span class="meta-val">2nd May 2026</span>
 											</div>
 										</li>
 										<li>
-											<div class="meta-icon"><img src="images/icon-location.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-location.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Location</span>
 												<span class="meta-val">Jawaharlal Nehru Port, Mumbai</span>
 											</div>
 										</li>
 										<li>
-											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt=""></div>
+											<div class="meta-icon"><img src="images/icon-inaugration.svg" alt="" decoding="async" loading="lazy"></div>
 											<div class="meta-txt">
 												<span class="meta-label">Inaugurated By</span>
 												<span class="meta-val">Shri Gaurav Dayal, IAS<br><small class="d-block text-muted mt-1" style="font-size: 13.5px; font-weight: 500; color: #475569 !important;">Chairperson, Jawaharlal Nehru Port Authority</small></span>
@@ -1412,7 +1422,7 @@
 							<!-- Bottom Content: Widescreen Image -->
 							<div class="event-widescreen-photo">
 								<img src="images/2-may.JPG" alt="India's Largest Battery Swapping & Charging Station"
-									loading="lazy">
+									loading="lazy" decoding="async">
 							</div>
 						</div>
 					</div>
@@ -1486,23 +1496,23 @@
 				<div class="swiper life-swiper">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide life-swiper-slide">
-							<img src="images/new-team-1.jpg" alt="EIM Team Members" loading="lazy">
+							<img src="images/new-team-1.jpg" alt="EIM Team Members" loading="lazy" decoding="async">
 						</div>
 						<div class="swiper-slide life-swiper-slide">
-							<img src="images/new-team-2.jpg" alt="EIM Team Celebration" loading="lazy">
+							<img src="images/new-team-2.jpg" alt="EIM Team Celebration" loading="lazy" decoding="async">
 						</div>
 
 						<div class="swiper-slide life-swiper-slide">
-							<img src="images/team-2.jpg" alt="EIM Team Work" loading="lazy">
+							<img src="images/team-2.jpg" alt="EIM Team Work" loading="lazy" decoding="async">
 						</div>
 						<div class="swiper-slide life-swiper-slide">
-							<img src="images/team-3.jpg" alt="EIM Team Group Photo" loading="lazy">
+							<img src="images/team-3.jpg" alt="EIM Team Group Photo" loading="lazy" decoding="async">
 						</div>
 						<div class="swiper-slide life-swiper-slide">
-							<img src="images/team-4.jpg" alt="EIM Team with Electric Truck" loading="lazy">
+							<img src="images/team-4.jpg" alt="EIM Team with Electric Truck" loading="lazy" decoding="async">
 						</div>
 						<div class="swiper-slide life-swiper-slide">
-							<img src="images/team-5.jpg" alt="EIM Team Members at Station" loading="lazy">
+							<img src="images/team-5.jpg" alt="EIM Team Members at Station" loading="lazy" decoding="async">
 						</div>
 
 					</div>
@@ -1525,9 +1535,9 @@
 									<div class="career-card-badge">Operations</div>
 									<h4 class="career-title">Operator</h4>
 									<div class="career-details">
-										<span><img src="images/icon-location.svg" alt="" class="career-meta-icon">
+										<span><img src="images/icon-location.svg" alt="" class="career-meta-icon" decoding="async" loading="lazy">
 											Thanjavur, Chennai</span>
-										<span><img src="images/icon-calendar.svg" alt="" class="career-meta-icon"> Full
+										<span><img src="images/icon-calendar.svg" alt="" class="career-meta-icon" decoding="async" loading="lazy"> Full
 											Time</span>
 									</div>
 									<a href="mailto:hr@energyinmotion.in?subject=Application for Operator"
@@ -1543,9 +1553,9 @@
 									<div class="career-card-badge">Technical</div>
 									<h4 class="career-title">Charger Technician</h4>
 									<div class="career-details">
-										<span><img src="images/icon-location.svg" alt="" class="career-meta-icon">
+										<span><img src="images/icon-location.svg" alt="" class="career-meta-icon" decoding="async" loading="lazy">
 											Amirghadh, Gujarat</span>
-										<span><img src="images/icon-calendar.svg" alt="" class="career-meta-icon"> Full
+										<span><img src="images/icon-calendar.svg" alt="" class="career-meta-icon" decoding="async" loading="lazy"> Full
 											Time</span>
 									</div>
 									<a href="mailto:hr@energyinmotion.in?subject=Application for Charger Technician"
@@ -1561,9 +1571,9 @@
 									<div class="career-card-badge">Sales</div>
 									<h4 class="career-title">Sales Co-ordinator</h4>
 									<div class="career-details">
-										<span><img src="images/icon-location.svg" alt="" class="career-meta-icon"> Navi
+										<span><img src="images/icon-location.svg" alt="" class="career-meta-icon" decoding="async" loading="lazy"> Navi
 											Mumbai</span>
-										<span><img src="images/icon-calendar.svg" alt="" class="career-meta-icon"> Full
+										<span><img src="images/icon-calendar.svg" alt="" class="career-meta-icon" decoding="async" loading="lazy"> Full
 											Time</span>
 									</div>
 									<a href="mailto:hr@energyinmotion.in?subject=Application for Sales Co-ordinator"
@@ -1595,7 +1605,7 @@
 							<div class="award-card">
 								<div class="award-img-wrapper">
 									<img src="images/1778053049503.jpg" alt="Viksit Bharat Ambassador of Change Award"
-										loading="lazy">
+										loading="lazy" decoding="async">
 								</div>
 								<div class="award-content">
 									<h4 class="award-title">Viksit Bharat 'Ambassador of Change' Award</h4>
@@ -1610,7 +1620,7 @@
 						<div class="swiper-slide">
 							<div class="award-card">
 								<div class="award-img-wrapper">
-									<img src="images/award-3.jpeg" alt="SAEINDIA Recognition" loading="lazy">
+									<img src="images/award-3.jpeg" alt="SAEINDIA Recognition" loading="lazy" decoding="async">
 								</div>
 								<div class="award-content">
 									<h4 class="award-title">SAEINDIA Recognition</h4>
@@ -1626,7 +1636,7 @@
 							<div class="award-card">
 								<div class="award-img-wrapper">
 									<img src="images/foton.jpg" alt="Foton Pioneer in New Energy Promotion Award"
-										loading="lazy">
+										loading="lazy" decoding="async">
 								</div>
 								<div class="award-content">
 									<h4 class="award-title">Foton 'The Pioneer in New Energy Promotion' Award</h4>
@@ -1657,7 +1667,7 @@
 
 					<div class="contact-left-content">
 						<h2 class="contact-card-title">Contact Us</h2>
-						<div class="logo-cont"><img src="images/energy-in-motion.svg" alt="Energy In Motion Logo"></div>
+						<div class="logo-cont"><img src="images/energy-in-motion.svg" alt="Energy In Motion Logo" decoding="async" loading="lazy"></div>
 
 						<div class="contact-info-items">
 							<div class="contact-info-item">
@@ -1852,7 +1862,7 @@
 		</section>
 		<div style="display: none;" id="narendra" class="fancy-popup">
 			<div class="fancy-cont">
-				<div class="fancy-img"> <img src="images/narendra-murkumbi.jpg" alt="" loading="lazy"></div>
+				<div class="fancy-img"> <img src="images/narendra-murkumbi.jpg" alt="" loading="lazy" decoding="async"></div>
 				<div class="fancy-txt">
 					<h2 class="main-title mb-1"> Narendra Murkumbi</h2>
 					<p class="designation mb-3">Managing Director & CEO</p>
@@ -1875,7 +1885,7 @@
 		</div>
 		<!-- <div style="display: none;" id="rajiv" class="fancy-popup">
 		<div class="fancy-cont">
-			<div class="fancy-img"> <img src="images/rajiv-singh.jpg" alt=""></div>
+			<div class="fancy-img"> <img src="images/rajiv-singh.jpg" alt="" decoding="async" loading="lazy"></div>
 			<div class="fancy-txt">
 			<h2 class="main-title mb-1"> Rajiv Singh</h2>
 			<p class="designation mb-3">President - Sales & Charging Network</p>
@@ -1892,7 +1902,7 @@
 	</div> -->
 		<div style="display: none;" id="devdatta" class="fancy-popup">
 			<div class="fancy-cont">
-				<div class="fancy-img"> <img src="images/devdatta-deshmukh.png" alt="" loading="lazy"></div>
+				<div class="fancy-img"> <img src="images/devdatta-deshmukh.png" alt="" loading="lazy" decoding="async"></div>
 				<div class="fancy-txt">
 					<h2 class="main-title mb-1"> Devdatta Deshmukh</h2>
 					<p class="designation mb-3">Manager - Strategy</p>
@@ -1917,7 +1927,7 @@
 		</div>
 		<div style="display: none;" id="munjal" class="fancy-popup">
 			<div class="fancy-cont">
-				<div class="fancy-img"> <img src="images/munjal-savla.png" alt="" loading="lazy"></div>
+				<div class="fancy-img"> <img src="images/munjal-savla.png" alt="" loading="lazy" decoding="async"></div>
 				<div class="fancy-txt">
 					<h2 class="main-title mb-1"> Munjal Savla</h2>
 					<p class="designation mb-3">General Manager - Technology</p>
@@ -1947,7 +1957,7 @@
 		<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
 				class="bi bi-arrow-up-short"></i></a>
 		<div id="preloader">
-			<div class="loader-cont"><img src="images/logo-eim.svg" alt=""></div>
+			<div class="loader-cont"><img src="images/logo-eim.svg" alt="" decoding="async" loading="eager" fetchpriority="high"></div>
 		</div>
 
 		<script src="js/jquery-3.4.1.min.js"></script>
@@ -1959,7 +1969,7 @@
 		<script src="js/easyResponsiveTabs.js"></script>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-		<script src="js/main.js?v=5.1"></script>
+		<script src="js/main.js?v=6.0"></script>
 
 
 	</main>
