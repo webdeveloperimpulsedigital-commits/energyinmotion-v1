@@ -11836,12 +11836,18 @@ section:not(.hero):not(.copyright):not(.pb-0),
    ========================================================================== */
 .location-boxes-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
   margin-top: 40px;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
+  .location-boxes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
   .location-boxes-grid {
     grid-template-columns: repeat(2, 1fr);
   }
