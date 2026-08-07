@@ -51,7 +51,7 @@
 
 	<header id="header" class="header fixed-top">
 		<div class="topbar d-flex align-items-center">
-			<div class="container-fluid px-md-5 d-flex justify-content-between align-items-center">
+			<div class="container-fluid px-md-5 d-flex justify-content-end align-items-center">
 				<div class="contact-info d-flex align-items-center">
 					<i class="bi bi-envelope fill-icon me-2"></i><a href="mailto:powerup@energyinmotion.in">powerup@energyinmotion.in</a>
 				</div>
@@ -59,45 +59,45 @@
 		</div>
 		<div class="branding d-flex align-items-center">
 			<div class="container-fluid px-md-5 position-relative d-flex align-items-center justify-content-between">
-				<a href="../index.html" class="logo d-flex align-items-center">
+				<a href="#hero" class="logo d-flex align-items-center">
 					<img src="images/logo-eim.svg" alt="EIM" decoding="async" loading="eager" fetchpriority="high">
 				</a>
 				<nav id="navmenu" class="navmenu">
 					<ul>
 						<li><a href="#hero" class="active">Home</a></li>
-						<li class="dropdown"><a href="#"><span>About</span> <i
-									class="bi bi-chevron-down toggle-dropdown"></i></a>
+						
+						<!-- Dropdown 1: About EIM -->
+						<li class="dropdown">
+							<a href="#overview"><span>About EIM</span> <i class="bi bi-chevron-down toggle-dropdown ms-1"></i></a>
 							<ul>
-								<li><a href="#overview">Overview</a></li>
+								<li><a href="#overview">Why Choose EIM</a></li>
+								<li><a href="#solutions">What Makes EIM Different</a></li>
+								<li><a href="#maitryi">Maitryi Model</a></li>
 							</ul>
 						</li>
-						<li class="dropdown"><a href="#"><span>Solutions</span> <i
-									class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+						<!-- Dropdown 2: Solutions & Network -->
+						<li class="dropdown">
+							<a href="#offerings"><span>Solutions & Network</span> <i class="bi bi-chevron-down toggle-dropdown ms-1"></i></a>
 							<ul>
-								<li><a href="#maitryi">Maitryi Model</a></li>
-								<li><a href="#solutions">What Makes EIM Different?</a></li>
-								<li><a href="#lineup">EV Truck Models</a></li>
-								<li><a href="#calculator">TCO Savings Calculator</a></li>
 								<li><a href="#offerings">Offerings</a></li>
 								<li><a href="#services">After-Sales Service</a></li>
-								<li><a href="#testimonials">Testimonials</a></li>
+								<li><a href="#networks">Swap Station Network</a></li>
 							</ul>
 						</li>
-						<li><a href="#networks">Network</a></li>
-						<li class="dropdown"><a href="#"><span>Company</span> <i
-									class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+						<!-- Dropdown 3: Company & Media -->
+						<li class="dropdown">
+							<a href="#testimonials"><span>Company & Media</span> <i class="bi bi-chevron-down toggle-dropdown ms-1"></i></a>
 							<ul>
+								<li><a href="#testimonials">Testimonials</a></li>
+								<li><a href="#press">News & Media</a></li>
+								<li><a href="#events">Events</a></li>
 								<li><a href="#awards">Awards & Recognition</a></li>
 							</ul>
 						</li>
-						<li class="dropdown"><a href="#"><span>Media</span> <i
-									class="bi bi-chevron-down toggle-dropdown"></i></a>
-							<ul>
-								<li><a href="#events">Events</a></li>
-								<li><a href="#press">News</a></li>
-							</ul>
-						</li>
-						<li><a href="#hero-inquiry-card" class="nav-get-in-touch-btn"><span>Get In Touch</span></a></li>
+
+						<li><a href="#contact" class="nav-get-in-touch-btn"><span>Get In Touch</span></a></li>
 					</ul>
 					<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 				</nav>
@@ -114,7 +114,9 @@
 					<!-- Hero Left Column: Headline & Paragraph -->
 					<div class="col-lg-7" data-aos="fade-right">
 						<h1 class="ev-hero-headline">
-							Empowering Heavy Logistics with <span class="highlight">Zero-Emission EV Trucks</span>
+							Empowering Heavy<br class="d-none d-md-block">
+							Logistics with<br class="d-none d-md-block">
+							<span class="highlight">Zero-Emission EV Trucks</span>
 						</h1>
 						<p class="ev-hero-subtext">
 							Transform your heavy commercial fleet with EIM's ARAI-homologated Electric Trucks. 
@@ -126,42 +128,39 @@
 					<div class="col-lg-5" data-aos="fade-left" id="hero-inquiry-card">
 						<div class="ev-hero-form-card">
 							<div class="ev-form-header">
-								<h3>Get EV Truck Quote</h3>
+								<h3>Get in Touch</h3>
 							</div>
 
 							<form class="ev-hero-form" action="contact-mailto.php" method="post" id="ev-truck-inquiry-form">
 								<div class="form-group">
-									<label for="frmname">Full Name*</label>
-									<input type="text" id="frmname" name="frmname" class="ev-form-control" placeholder="e.g. Rajesh Kumar" required>
+									<label for="hero-frmname">Full Name*</label>
+									<input type="text" id="hero-frmname" name="frmname" class="ev-form-control" placeholder="e.g. Rajesh Kumar" required>
 								</div>
 
 								<div class="form-group">
-									<label for="frmemail">Work Email*</label>
-									<input type="email" id="frmemail" name="frmemail" class="ev-form-control" placeholder="name@company.com" required>
+									<label for="hero-frmemail">Work Email*</label>
+									<input type="email" id="hero-frmemail" name="frmemail" class="ev-form-control" placeholder="name@company.com" required>
 								</div>
 
 								<div class="form-group">
-									<label for="frmcontact">Mobile Number*</label>
-									<input type="tel" id="frmcontact" name="frmcontact" class="ev-form-control" placeholder="+91 98765 43210" required>
+									<label for="hero-frmcontact">Mobile Number*</label>
+									<input type="tel" id="hero-frmcontact" name="frmcontact" class="ev-form-control" placeholder="+91 98765 43210" required>
 								</div>
 
 								<div class="form-group">
-									<label for="frmdes">Message*</label>
-									<textarea id="frmdes" name="frmdes" rows="2" class="ev-form-control" placeholder="Tell us your payload requirement or fleet inquiry..." required></textarea>
+									<label for="hero-frmdes">Payload / Fleet Requirement*</label>
+									<textarea id="hero-frmdes" name="frmdes" rows="2" class="ev-form-control" placeholder="e.g. 55-Ton Heavy Commercial Truck, 10 Fleet Units..." required></textarea>
 								</div>
 
 								<!-- Hidden Fields for backend mail script -->
-								<input type="hidden" name="subject" value="EV Truck Inquiry from Website">
+								<input type="hidden" name="subject" value="EV Truck Inquiry from Landing Page">
 								<input type="hidden" value="text,frmname,Name,text,frmemail,E-mail,text,frmcontact,Phone No." name="js_Blank">
 								<input type="hidden" name="js_Email" value="frmemail,E-mail">
 
 								<button type="submit" class="ev-btn-primary mt-2">
-									<span>Request Demo & Quote</span>
+									<span>Submit</span>
 									<i class="bi bi-arrow-right-circle-fill"></i>
 								</button>
-								<p class="ev-form-privacy">
-									<i class="bi bi-lock-fill"></i> Your details are confidential. No spam guaranteed.
-								</p>
 							</form>
 						</div>
 					</div>
@@ -173,42 +172,92 @@
 			<div class="container">
 				<!-- Row 1: Header + Text -->
 				<div class="overview-header text-center" data-aos="fade-up">
-					<h2 class="main-title">Overview</h2>
+					<h2 class="main-title">Why Choose EIM</h2>
 					<p class="overview-lead-text">
 						At EIM, we are proud to be building India’s state-of-the-art electric commercial vehicle ecosystem designed to power the future of logistics and transport. We are building India’s integrated electric freight ecosystem, combining advanced electric vehicles, battery swapping, charging infrastructure, and intelligent support services. Our solutions help enterprises transition to cleaner transport while improving operational efficiency, reducing the total cost of ownership, and minimizing technology risk.
 					</p>
 				</div>
-				<!-- Row 2: Sliding Accordion Panels Grid (Hidden on Mobile) -->
-				<div class="overview-accordion-grid d-none d-md-flex" data-aos="fade-up" data-aos-delay="200">
-					<!-- Panel 1: Drive -->
-					<div class="accordion-panel active" style="background-image: url('images/overview-1.jpg');">
-						<div class="accordion-panel-overlay">
-							<div class="accordion-panel-body">
-								<!-- <h3 class="accordion-panel-h3">Drive</h3> -->
-							</div>
+				<!-- Row 2: Animated Stats Grid Counter (Count Up From 0) -->
+				<div class="overview-stats-grid mt-5" data-aos="fade-up" data-aos-delay="200">
+					<div class="overview-stat-card">
+						<div class="stat-number-wrap">
+							<span class="stat-number" data-target="55" data-suffix="+">0</span>
 						</div>
+						<h4 class="stat-label">Swap Stations</h4>
+						<p class="stat-desc">Priority swap-station sites across India</p>
 					</div>
 
-					<!-- Panel-2: Energize -->
-					<div class="accordion-panel" style="background-image: url('images/factoery-img.png');">
-						<div class="accordion-panel-overlay">
-							<div class="accordion-panel-body">
-								<!-- <h3 class="accordion-panel-h3">Energize</h3> -->
-							</div>
+					<div class="overview-stat-card">
+						<div class="stat-number-wrap">
+							<span class="stat-number" data-target="100" data-suffix="%">0</span>
 						</div>
+						<h4 class="stat-label">Fleet Uptime</h4>
+						<p class="stat-desc">Reliable heavy commercial EV operations</p>
 					</div>
 
-					<!-- Panel 3: Charge -->
-					<div class="accordion-panel" style="background-image: url('images/overview-3.jpg');">
-						<div class="accordion-panel-overlay">
-							<div class="accordion-panel-body">
-								<!-- <h3 class="accordion-panel-h3">Charge</h3> -->
-							</div>
+					<div class="overview-stat-card">
+						<div class="stat-number-wrap">
+							<span class="stat-number" data-target="24" data-suffix="/7">0</span>
 						</div>
+						<h4 class="stat-label">Support & Service</h4>
+						<p class="stat-desc">Real-time battery swapping & maintenance</p>
+					</div>
+
+					<div class="overview-stat-card">
+						<div class="stat-number-wrap">
+							<span class="stat-number" data-target="10000" data-suffix="+">0</span>
+						</div>
+						<h4 class="stat-label">Tons CO₂ Saved</h4>
+						<p class="stat-desc">Accelerating sustainable zero-emission freight</p>
 					</div>
 				</div>
 			</div>
 		</section>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				// Animated Count Up numbers for Overview Section
+				const statNumbers = document.querySelectorAll('.overview-stat-card .stat-number');
+				if (statNumbers.length > 0) {
+					const observerOptions = {
+						root: null,
+						threshold: 0.3
+					};
+
+					const observer = new IntersectionObserver((entries, observerInstance) => {
+						entries.forEach(entry => {
+							if (entry.isIntersecting) {
+								const el = entry.target;
+								const target = parseInt(el.getAttribute('data-target'), 10);
+								const suffix = el.getAttribute('data-suffix') || '';
+								const duration = 1800;
+								const startTime = performance.now();
+
+								function updateCount(currentTime) {
+									const elapsedTime = currentTime - startTime;
+									const progress = Math.min(elapsedTime / duration, 1);
+									const easeProgress = 1 - Math.pow(1 - progress, 3);
+									const currentCount = Math.floor(easeProgress * target);
+
+									el.textContent = currentCount.toLocaleString() + suffix;
+
+									if (progress < 1) {
+										requestAnimationFrame(updateCount);
+									} else {
+										el.textContent = target.toLocaleString() + suffix;
+									}
+								}
+
+								requestAnimationFrame(updateCount);
+								observerInstance.unobserve(el);
+							}
+						});
+					}, observerOptions);
+
+					statNumbers.forEach(stat => observer.observe(stat));
+				}
+			});
+		</script>
 
 		<script>
 			document.addEventListener('DOMContentLoaded', function () {
@@ -269,6 +318,129 @@
 			});
 		</script>
 
+		<!-- WHAT MAKES EIM DIFFERENT SECTION (Split Challenge vs Solution Cards) -->
+		<section id="solutions" class="ev-comparison-solutions-section py-5">
+			<div class="container">
+				<!-- Section Header -->
+				<div class="text-center mb-5" data-aos="fade-up">
+					<h2 class="main-title mb-0">What Makes EIM Different?</h2>
+				</div>
+
+				<!-- 3 Comparison Cards Grid -->
+				<div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="100">
+					
+					<!-- Card 1: Capital Investment -->
+					<div class="col-lg-4 col-md-6">
+						<div class="eim-compare-card h-100">
+							<!-- Top Block: Industry Challenge -->
+							<div class="compare-block challenge-block">
+								<div class="compare-badge badge-challenge">
+									<i class="bi bi-exclamation-triangle-fill"></i>
+									<span>THE CHALLENGE</span>
+								</div>
+								<h3 class="compare-title">Reduce Capital Investment</h3>
+								<p class="compare-desc">
+									Electric trucks often require substantially higher upfront investment than conventional diesel vehicles.
+								</p>
+							</div>
+
+							<!-- Divider Arrow -->
+							<div class="compare-divider">
+								<div class="divider-icon">
+									<i class="bi bi-arrow-down-short"></i>
+								</div>
+							</div>
+
+							<!-- Bottom Block: EIM Solution -->
+							<div class="compare-block solution-block">
+								<div class="compare-badge badge-solution">
+									<i class="bi bi-check-circle-fill"></i>
+									<span>EIM SOLUTION</span>
+								</div>
+								<h3 class="compare-title">Battery-as-a-Service</h3>
+								<p class="compare-desc">
+									Lower acquisition costs by separating battery ownership from the vehicle.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 2: Refueling & Downtime -->
+					<div class="col-lg-4 col-md-6">
+						<div class="eim-compare-card h-100">
+							<!-- Top Block: Industry Challenge -->
+							<div class="compare-block challenge-block">
+								<div class="compare-badge badge-challenge">
+									<i class="bi bi-exclamation-triangle-fill"></i>
+									<span>THE CHALLENGE</span>
+								</div>
+								<h3 class="compare-title">Charging Downtime</h3>
+								<p class="compare-desc">
+									Evs have 6X higher refuelling down-time compared to diesel truck
+								</p>
+							</div>
+
+							<!-- Divider Arrow -->
+							<div class="compare-divider">
+								<div class="divider-icon">
+									<i class="bi bi-arrow-down-short"></i>
+								</div>
+							</div>
+
+							<!-- Bottom Block: EIM Solution -->
+							<div class="compare-block solution-block">
+								<div class="compare-badge badge-solution">
+									<i class="bi bi-check-circle-fill"></i>
+									<span>EIM SOLUTION</span>
+								</div>
+								<h3 class="compare-title">Battery Swapping</h3>
+								<p class="compare-desc">
+									Automated Battery Swapping gets trucks back on the road in minutes, maximizing fleet productivity.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 3: Route Reliability -->
+					<div class="col-lg-4 col-md-6">
+						<div class="eim-compare-card h-100">
+							<!-- Top Block: Industry Challenge -->
+							<div class="compare-block challenge-block">
+								<div class="compare-badge badge-challenge">
+									<i class="bi bi-exclamation-triangle-fill"></i>
+									<span>THE CHALLENGE</span>
+								</div>
+								<h3 class="compare-title">Route Reliability</h3>
+								<p class="compare-desc">
+									Limited charging infrastructure and extended charging times can disrupt fleet operations and constrain business growth.
+								</p>
+							</div>
+
+							<!-- Divider Arrow -->
+							<div class="compare-divider">
+								<div class="divider-icon">
+									<i class="bi bi-arrow-down-short"></i>
+								</div>
+							</div>
+
+							<!-- Bottom Block: EIM Solution -->
+							<div class="compare-block solution-block">
+								<div class="compare-badge badge-solution">
+									<i class="bi bi-check-circle-fill"></i>
+									<span>EIM SOLUTION</span>
+								</div>
+								<h3 class="compare-title">Smart Energy Management</h3>
+								<p class="compare-desc">
+									Intelligently coordinates battery swapping, charging, and fleet deployment to maximize uptime, optimize energy availability, and keep freight moving with confidence.
+								</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
 		<section id="maitryi" class="maitryi-section py-5 bg-white">
 			<div class="container text-center px-2 px-md-3">
 				<h2 class="main-title mb-2" data-aos="fade-up">‘Maitryi’ as a Business Model</h2>
@@ -288,145 +460,26 @@
 			</div>
 		</section>
 
-		<!-- 3D FLIP CARD SHOWCASE: WHAT MAKES EIM DIFFERENT? -->
-		<section id="solutions" class="ev-flip-solutions-section py-5">
+		<!-- Interstitial CTA Banner 1 -->
+		<section class="landing-cta-banner py-3">
 			<div class="container">
-				<!-- Section Header (Clean Title Only) -->
-				<div class="text-center mb-5" data-aos="fade-up">
-					<h2 class="main-title transform-none">What Makes EIM Different?</h2>
+				<div class="cta-banner-inner d-flex flex-column flex-md-row align-items-center justify-content-between gap-3" data-aos="fade-up">
+					<h4 class="cta-banner-text text-white mb-0 fw-semibold">
+						Ready to transition your commercial fleet to zero-emission EV trucks?
+					</h4>
+					<a href="#contact" class="cta-banner-btn">
+						<span>Get In Touch</span>
+						<i class="bi bi-arrow-right-circle-fill"></i>
+					</a>
 				</div>
-
-				<!-- 3 Flip Cards Row -->
-				<div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="100">
-					
-					<!-- Flip Card 1: BaaS -->
-					<div class="col-lg-4 col-md-6">
-						<div class="ev-flip-card">
-							<div class="ev-flip-card-inner">
-								
-								<!-- FRONT SIDE: THE CHALLENGE -->
-								<div class="ev-flip-card-front" style="background-image: url('images/overview-1.jpg');">
-									<div class="ev-flip-overlay overlay-red">
-										<div class="ev-flip-top d-flex justify-content-between align-items-center">
-											<span class="ev-flip-num">01</span>
-											<span class="ev-badge-challenge"><i class="bi bi-exclamation-triangle-fill me-1"></i> THE CHALLENGE</span>
-										</div>
-										<div class="ev-flip-body text-start">
-											<h3>Reduce Capital Investment</h3>
-											<p>Electric trucks often require substantially higher upfront investment than conventional diesel vehicles.</p>
-										</div>
-										<div class="ev-flip-hint">
-											<span>Hover to Reveal Solution <i class="bi bi-arrow-right-circle-fill ms-1"></i></span>
-										</div>
-									</div>
-								</div>
-
-								<!-- BACK SIDE: EIM SOLUTION -->
-								<div class="ev-flip-card-back" style="background-image: url('images/overview-1.jpg');">
-									<div class="ev-flip-overlay overlay-teal">
-										<div class="ev-flip-top d-flex justify-content-between align-items-center">
-											<span class="ev-flip-num">01</span>
-											<span class="ev-badge-solution"><i class="bi bi-check-circle-fill me-1"></i> EIM SOLUTION</span>
-										</div>
-										<div class="ev-flip-body text-start">
-											<h3>Battery-as-a-Service</h3>
-											<p>Lower acquisition costs by separating battery ownership from the vehicle.</p>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-
-					<!-- Flip Card 2: Battery Swapping -->
-					<div class="col-lg-4 col-md-6">
-						<div class="ev-flip-card">
-							<div class="ev-flip-card-inner">
-								
-								<!-- FRONT SIDE: THE CHALLENGE -->
-								<div class="ev-flip-card-front" style="background-image: url('images/factoery-img.png');">
-									<div class="ev-flip-overlay overlay-red">
-										<div class="ev-flip-top d-flex justify-content-between align-items-center">
-											<span class="ev-flip-num">02</span>
-											<span class="ev-badge-challenge"><i class="bi bi-exclamation-triangle-fill me-1"></i> THE CHALLENGE</span>
-										</div>
-										<div class="ev-flip-body text-start">
-											<h3>Charging Downtime</h3>
-											<p>Evs have 6X higher refuelling down-time compared to diesel truck</p>
-										</div>
-										<div class="ev-flip-hint">
-											<span>Hover to Reveal Solution <i class="bi bi-arrow-right-circle-fill ms-1"></i></span>
-										</div>
-									</div>
-								</div>
-
-								<!-- BACK SIDE: EIM SOLUTION -->
-								<div class="ev-flip-card-back" style="background-image: url('images/factoery-img.png');">
-									<div class="ev-flip-overlay overlay-teal">
-										<div class="ev-flip-top d-flex justify-content-between align-items-center">
-											<span class="ev-flip-num">02</span>
-											<span class="ev-badge-solution"><i class="bi bi-check-circle-fill me-1"></i> EIM SOLUTION</span>
-										</div>
-										<div class="ev-flip-body text-start">
-											<h3>Battery Swapping</h3>
-											<p>Automated Battery Swapping gets trucks back on the road in minutes, maximizing fleet productivity.</p>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-
-					<!-- Flip Card 3: Route Reliability -->
-					<div class="col-lg-4 col-md-6">
-						<div class="ev-flip-card">
-							<div class="ev-flip-card-inner">
-								
-								<!-- FRONT SIDE: THE CHALLENGE -->
-								<div class="ev-flip-card-front" style="background-image: url('images/overview-3.jpg');">
-									<div class="ev-flip-overlay overlay-red">
-										<div class="ev-flip-top d-flex justify-content-between align-items-center">
-											<span class="ev-flip-num">03</span>
-											<span class="ev-badge-challenge"><i class="bi bi-exclamation-triangle-fill me-1"></i> THE CHALLENGE</span>
-										</div>
-										<div class="ev-flip-body text-start">
-											<h3>Route Reliability</h3>
-											<p>Limited charging infrastructure and extended charging times can disrupt fleet operations and constrain business growth.</p>
-										</div>
-										<div class="ev-flip-hint">
-											<span>Hover to Reveal Solution <i class="bi bi-arrow-right-circle-fill ms-1"></i></span>
-										</div>
-									</div>
-								</div>
-
-								<!-- BACK SIDE: EIM SOLUTION -->
-								<div class="ev-flip-card-back" style="background-image: url('images/overview-3.jpg');">
-									<div class="ev-flip-overlay overlay-teal">
-										<div class="ev-flip-top d-flex justify-content-between align-items-center">
-											<span class="ev-flip-num">03</span>
-											<span class="ev-badge-solution"><i class="bi bi-check-circle-fill me-1"></i> EIM SOLUTION</span>
-										</div>
-										<div class="ev-flip-body text-start">
-											<h3>Smart Energy Management</h3>
-											<p>Intelligently coordinates battery swapping, charging, and fleet deployment to maximize uptime, optimize energy availability, and keep freight moving with confidence.</p>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-
-				</div>
+			</div>
 		</section>
 
 		<!-- COVERFLOW CAROUSEL SLIDER SHOWCASE: OFFERINGS -->
-		<section id="offerings" class="ev-coverflow-section py-5">
+		<section id="offerings" class="ev-coverflow-section py-3 py-md-5">
 			<div class="container">
 				<!-- Section Header -->
-				<h2 class="main-title text-center mb-5" data-aos="fade-up">Offerings</h2>
+				<h2 class="main-title text-center mb-2" data-aos="fade-up">Offerings</h2>
 
 				<!-- Coverflow Slider Wrapper -->
 				<div class="ev-coverflow-container" data-aos="fade-up" data-aos-delay="100">
@@ -581,9 +634,50 @@
 							}
 						});
 					});
+
+					// Touch / Swipe Gestures for Mobile (Thumb Sliding)
+					const track = document.querySelector('.ev-coverflow-track');
+					if (track) {
+						let touchStartX = 0;
+						let touchEndX = 0;
+						const minSwipeDistance = 35;
+
+						track.addEventListener('touchstart', function (e) {
+							touchStartX = e.changedTouches[0].screenX;
+						}, { passive: true });
+
+						track.addEventListener('touchend', function (e) {
+							touchEndX = e.changedTouches[0].screenX;
+							const distance = touchEndX - touchStartX;
+							if (Math.abs(distance) > minSwipeDistance) {
+								if (distance < 0) {
+									// Swipe Left -> Next Slide
+									currentIndex = (currentIndex + 1) % totalSlides;
+								} else {
+									// Swipe Right -> Prev Slide
+									currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+								}
+								updateCoverflow();
+							}
+						}, { passive: true });
+					}
 				}
 			});
 		</script>
+		<!-- Interstitial CTA Banner 2 -->
+		<section class="landing-cta-banner py-3">
+			<div class="container">
+				<div class="cta-banner-inner d-flex flex-column flex-md-row align-items-center justify-content-between gap-3" data-aos="fade-up">
+					<h4 class="cta-banner-text text-white mb-0 fw-semibold">
+						Cut operating fuel costs by up to 50% with Megawatt Battery Swapping.
+					</h4>
+					<a href="#contact" class="cta-banner-btn">
+						<span>Get In Touch</span>
+						<i class="bi bi-arrow-right-circle-fill"></i>
+					</a>
+				</div>
+			</div>
+		</section>
 
 		<section id="services" class="services-21st-section py-5">
 			<div class="container">
@@ -597,7 +691,8 @@
 				<!-- Services Accordion Grid -->
 				<div class="services-accordion-grid" data-aos="fade-up" data-aos-delay="200">
 					<!-- Panel 1: After-Sales Service Team -->
-					<div class="services-panel active" style="background-image: url('images/after-sales-team.jpeg');">
+					<div class="services-panel">
+						<div class="services-panel-bg" style="background-image: url('images/after-sales-team.jpeg');"></div>
 						<div class="services-panel-overlay">
 							<div class="services-panel-body">
 								<h3 class="services-panel-h3">After-Sales Service Team</h3>
@@ -607,23 +702,23 @@
 					</div>
 
 					<!-- Panel 2: Mobile Service Van -->
-					<div class="services-panel" style="background-image: url('images/van.jpeg');">
+					<div class="services-panel">
+						<div class="services-panel-bg" style="background-image: url('images/van.jpeg');"></div>
 						<div class="services-panel-overlay">
 							<div class="services-panel-body">
 								<h3 class="services-panel-h3">Mobile Service Van</h3>
-								<p class="services-panel-p">Our service vans are ready to provide support whenever fleet
-									owners require assistance.</p>
+								<p class="services-panel-p">Our service vans are ready to provide support whenever fleet owners require assistance.</p>
 							</div>
 						</div>
 					</div>
 
 					<!-- Panel 3: PORTA Cabin -->
-					<div class="services-panel" style="background-image: url('images/container.jpeg');">
+					<div class="services-panel">
+						<div class="services-panel-bg" style="background-image: url('images/container.jpeg');"></div>
 						<div class="services-panel-overlay">
 							<div class="services-panel-body">
 								<h3 class="services-panel-h3">PORTA Cabin</h3>
-								<p class="services-panel-p">Our service workshops are well equipped with specialized
-									tools and spare parts to keep our vehicles running efficiently.</p>
+								<p class="services-panel-p">Our service workshops are well equipped with specialized tools and spare parts to keep our vehicles running efficiently.</p>
 							</div>
 						</div>
 					</div>
@@ -965,41 +1060,51 @@
 			</div>
 		</section>
 
-		<section id="press" class="press-asymmetric-section">
+		<!-- Interstitial CTA Banner 3 -->
+		<section class="landing-cta-banner py-3">
+			<div class="container">
+				<div class="cta-banner-inner d-flex flex-column flex-md-row align-items-center justify-content-between gap-3" data-aos="fade-up">
+					<h4 class="cta-banner-text text-white mb-0 fw-semibold">
+						Ensure high fleet uptime with EIM's 24/7 dedicated after-sales support.
+					</h4>
+					<a href="#contact" class="cta-banner-btn">
+						<span>Get In Touch</span>
+						<i class="bi bi-arrow-right-circle-fill"></i>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section id="press" class="press-asymmetric-section py-5">
 			<div class="container">
 				<!-- Section Title -->
-				<h2 class="main-title text-center mb35 transform-none" data-aos="fade-up">News</h2>
+				<h2 class="main-title text-center mb-4" data-aos="fade-up">News</h2>
 
-				<div class="press-asymmetric-container">
-
-					<!-- Left Column: Large Widescreen Photo Frame -->
-					<div class="press-asymmetric-image-wrapper" data-aos="fade-right">
-						<a href="documents/Press-Release.pdf" target="_blank" class="press-image-link">
-							<img src="images/Press-Release-img.jpg" alt="HPCL Partnership Signing Ceremony"
-								loading="lazy" decoding="async">
-							<div class="press-image-glow-overlay"></div>
-						</a>
-					</div>
-
-					<!-- Right Column: Overlapping Frosted Glass Card -->
-					<div class="press-asymmetric-content-card" data-aos="fade-left" data-aos-delay="200">
-						<h3 class="press-asymmetric-heading">
-							Energy in Motion partners with HPCL to set-up charging and battery swapping infrastructure
-							at retail outlets across India for deployment of Electric Heavy Commercial Vehicles
-						</h3>
-
-						<div class="press-asymmetric-action">
-							<a href="documents/Press-Release.pdf" target="_blank" class="press-asymmetric-btn">
-								<span>Read Full Release</span>
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2.5"
-										stroke-linecap="round" stroke-linejoin="round" />
-								</svg>
-							</a>
+				<!-- Full Width News Card with Bottom Hover Reveal -->
+				<div class="press-fullwidth-card" data-aos="fade-up" data-aos-delay="150">
+					<a href="documents/Press-Release.pdf" target="_blank" class="press-fullwidth-link">
+						<!-- Full Width Image -->
+						<img src="images/Press-Release-img.jpg" alt="HPCL Partnership Signing Ceremony" loading="lazy" decoding="async">
+						
+						<!-- Bottom Content Overlay -->
+						<div class="press-fullwidth-overlay">
+							<div class="press-fullwidth-body">
+								<div class="press-fullwidth-badge">
+									<span class="press-badge-dot"></span>
+									<span>Press Release &bull; July 2024</span>
+								</div>
+								<h3 class="press-fullwidth-heading">
+									Energy in Motion partners with HPCL to set-up charging and battery swapping infrastructure at retail outlets across India for deployment of Electric Heavy Commercial Vehicles
+								</h3>
+								<div class="press-fullwidth-btn">
+									<span>Read Full Release</span>
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+							</div>
 						</div>
-					</div>
-
+					</a>
 				</div>
 			</div>
 		</section>
@@ -1017,11 +1122,7 @@
 								<!-- Quote Box -->
 								<div class="testimonial-quote-wrap">
 									<p class="testimonial-text">
-										As one of the early users of <strong>EIM vehicles at JNPT Port at Navi
-											Mumbai</strong>, I’m amazed at the way EIM has created the charging infra in
-										the JNPT eco-system comprising of multiple Swapping-cum-Charging stations - in
-										terms of speed & scale. Looking at current oil prices, I feel lucky <strong>I
-											switched to EV early</strong>.
+										As one of the early users of <strong>EIM vehicles at JNPT Port at Navi Mumbai</strong>, I’m amazed at the way EIM has created the charging infra in the JNPT eco-system comprising of multiple Swapping-cum-Charging stations - in terms of speed & scale. Looking at current oil prices, I feel lucky <strong>I switched to EV early</strong>.
 									</p>
 								</div>
 
@@ -1029,15 +1130,12 @@
 								<div class="testimonial-footer">
 									<div class="testimonial-bio">
 										<h4 class="testimonial-name">Vitthal Wable</h4>
-										<span class="testimonial-role">Director, Radiance Green Mobility Pvt.
-											Ltd.</span>
-										<span class="testimonial-company">Jyothi Transport & Freight Services Pvt.
-											Ltd.</span>
+										<span class="testimonial-role">Director, Radiance Green Mobility Pvt. Ltd.</span>
+										<span class="testimonial-company">Jyothi Transport & Freight Services Pvt. Ltd.</span>
 									</div>
 									<div class="testimonial-avatar-wrap">
 										<div class="avatar-bg-block"></div>
-										<img src="images/vitthal.png" alt="Vitthal Wable" class="testimonial-avatar-img"
-											loading="lazy" decoding="async">
+										<img src="images/vitthal.png" alt="Vitthal Wable" class="testimonial-avatar-img" loading="lazy" decoding="async">
 									</div>
 								</div>
 							</div>
@@ -1049,14 +1147,7 @@
 								<!-- Quote Box -->
 								<div class="testimonial-quote-wrap">
 									<p class="testimonial-text">
-										Our transition from <strong>ICE to EIM EVs</strong> has been a well-calculated
-										strategic move, executed with remarkable efficiency. What truly differentiates
-										EIM is not just the product, but the strength of their <strong>aftersales
-											ecosystem</strong>. Their team has consistently ensured <strong>high fleet
-											uptime</strong>, <strong>swift issue resolution</strong>, and a
-										<strong>proactive approach to maintenance</strong>. EIM has proven to be a
-										<strong>dependable long-term partner</strong> in our journey towards sustainable
-										mobility.
+										Our transition from <strong>ICE to EIM EVs</strong> has been a well-calculated strategic move, executed with remarkable efficiency. What truly differentiates EIM is not just the product, but the strength of their <strong>aftersales ecosystem</strong>. Their team has consistently ensured <strong>high fleet uptime</strong>, <strong>swift issue resolution</strong>, and a <strong>proactive approach to maintenance</strong>. EIM has proven to be a <strong>dependable long-term partner</strong> in our journey towards sustainable mobility.
 									</p>
 								</div>
 
@@ -1069,8 +1160,7 @@
 									</div>
 									<div class="testimonial-avatar-wrap">
 										<div class="avatar-bg-block"></div>
-										<img src="images/JANARDHAN.png" alt="Mr. Janardhan Matre"
-											class="testimonial-avatar-img" loading="lazy" decoding="async">
+										<img src="images/JANARDHAN.png" alt="Mr. Janardhan Matre" class="testimonial-avatar-img" loading="lazy" decoding="async">
 									</div>
 								</div>
 							</div>
@@ -1082,12 +1172,7 @@
 								<!-- Quote Box -->
 								<div class="testimonial-quote-wrap">
 									<p class="testimonial-text">
-										By deploying <strong>EIM vehicles in NCR region</strong>, not only do I feel
-										proud to be contributing to a <strong>Greener Environment</strong>, but I also
-										feel richer each time my vehicle enters into Delhi, as <strong>my EV trucks are
-											exempted
-											from paying Rs 4000/- NGT Tax per trip</strong> imposed by Delhi Govt
-										for Diesel trucks.
+										By deploying <strong>EIM vehicles in NCR region</strong>, not only do I feel proud to be contributing to a <strong>Greener Environment</strong>, but I also feel richer each time my vehicle enters into Delhi, as <strong>my EV trucks are exempted from paying Rs 4000/- NGT Tax per trip</strong> imposed by Delhi Govt for Diesel trucks.
 									</p>
 								</div>
 
@@ -1095,15 +1180,12 @@
 								<div class="testimonial-footer">
 									<div class="testimonial-bio">
 										<h4 class="testimonial-name">Gurjeet Singh Bhatia</h4>
-										<span class="testimonial-role">AVP - Transport Operations - Delhi International
-											Cargo Terminal Private Limited.</span>
-										<span class="testimonial-company">(J M Baxi Ports & Logistics Private
-											Limited)</span>
+										<span class="testimonial-role">AVP - Transport Operations - Delhi International Cargo Terminal Private Limited.</span>
+										<span class="testimonial-company">(J M Baxi Ports & Logistics Private Limited)</span>
 									</div>
 									<div class="testimonial-avatar-wrap">
 										<div class="avatar-bg-block"></div>
-										<img src="images/gurjeet.png" alt="Gurjeet Singh Bhatia"
-											class="testimonial-avatar-img" loading="lazy" decoding="async">
+										<img src="images/gurjeet.png" alt="Gurjeet Singh Bhatia" class="testimonial-avatar-img" loading="lazy" decoding="async">
 									</div>
 								</div>
 							</div>
@@ -1115,13 +1197,7 @@
 								<!-- Quote Box -->
 								<div class="testimonial-quote-wrap">
 									<p class="testimonial-text">
-										Choosing <strong>Energy In Motion Ltd.</strong> for our transition from
-										<strong>ICE to EV</strong> has proven to be the right decision. Beyond
-										delivering reliable electric vehicles, EIM's <strong>Aftersales team</strong>
-										has demonstrated exceptional ownership, providing timely field support, fast
-										issue resolution, and continuous technical assistance. Their dedication has
-										enabled us to maintain <strong>high fleet uptime</strong> while confidently
-										embracing a <strong>cleaner and more sustainable future</strong>.
+										Choosing <strong>Energy In Motion Ltd.</strong> for our transition from <strong>ICE to EV</strong> has proven to be the right decision. Beyond delivering reliable electric vehicles, EIM's <strong>Aftersales team</strong> has demonstrated exceptional ownership, providing timely field support, fast issue resolution, and continuous technical assistance. Their dedication has enabled us to maintain <strong>high fleet uptime</strong> while confidently embracing a <strong>cleaner and more sustainable future</strong>.
 									</p>
 								</div>
 
@@ -1134,8 +1210,7 @@
 									</div>
 									<div class="testimonial-avatar-wrap">
 										<div class="avatar-bg-block"></div>
-										<img src="images/Ajit-Kumar.png" alt="Mr. Ajit Kumar Singh"
-											class="testimonial-avatar-img" loading="lazy" decoding="async">
+										<img src="images/Ajit-Kumar.png" alt="Mr. Ajit Kumar Singh" class="testimonial-avatar-img" loading="lazy" decoding="async">
 									</div>
 								</div>
 							</div>
@@ -1514,108 +1589,21 @@
 
 
 
-		<section id="people-eim" class="people-eim-section py-5 bg-white">
-			<div class="container position-relative">
-				<!-- Centered Section Header -->
-				<div class="text-center mb-4">
-					<h2 class="main-title mb-0">People at EIM</h2>
+
+
+		<!-- Interstitial CTA Banner 4 -->
+		<section class="landing-cta-banner py-3">
+			<div class="container">
+				<div class="cta-banner-inner d-flex flex-column flex-md-row align-items-center justify-content-between gap-3" data-aos="fade-up">
+					<h4 class="cta-banner-text text-white mb-0 fw-semibold">
+						Partner with EIM to build India's green electric commercial transport network.
+					</h4>
+					<a href="#contact" class="cta-banner-btn">
+						<span>Get In Touch</span>
+						<i class="bi bi-arrow-right-circle-fill"></i>
+					</a>
 				</div>
-
-				<div class="swiper life-swiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide life-swiper-slide">
-							<img src="images/new-team-1.jpg" alt="EIM Team Members" loading="lazy" decoding="async">
-						</div>
-						<div class="swiper-slide life-swiper-slide">
-							<img src="images/new-team-2.jpg" alt="EIM Team Celebration" loading="lazy" decoding="async">
-						</div>
-
-						<div class="swiper-slide life-swiper-slide">
-							<img src="images/team-2.jpg" alt="EIM Team Work" loading="lazy" decoding="async">
-						</div>
-						<div class="swiper-slide life-swiper-slide">
-							<img src="images/team-3.jpg" alt="EIM Team Group Photo" loading="lazy" decoding="async">
-						</div>
-						<div class="swiper-slide life-swiper-slide">
-							<img src="images/team-4.jpg" alt="EIM Team with Electric Truck" loading="lazy" decoding="async">
-						</div>
-						<div class="swiper-slide life-swiper-slide">
-							<img src="images/team-5.jpg" alt="EIM Team Members at Station" loading="lazy" decoding="async">
-						</div>
-
-					</div>
-					<div class="life-swiper-pagination swiper-pagination position-relative mt-4"></div>
-				</div>
-
-				<!-- Current Openings Section -->
-				<div id="current-openings" class="current-openings-section">
-					<!-- Job Openings Header -->
-					<div class="text-center mt-5 mb-4">
-						<h2 class="main-title mb-0">Current Openings</h2>
-					</div>
-
-					<!-- Careers Swiper Slider -->
-					<div class="careers-swiper swiper" data-aos="fade-up" data-aos-delay="200">
-						<div class="swiper-wrapper">
-							<!-- Slide 1 -->
-							<div class="swiper-slide">
-								<div class="career-card">
-									<div class="career-card-badge">Operations</div>
-									<h4 class="career-title">Operator</h4>
-									<div class="career-details">
-										<span><img src="images/icon-location.svg" alt="" class="career-meta-icon" decoding="async" loading="lazy">
-											Thanjavur, Chennai</span>
-										<span><img src="images/icon-calendar.svg" alt="" class="career-meta-icon" decoding="async" loading="lazy"> Full
-											Time</span>
-									</div>
-									<a href="mailto:hr@energyinmotion.in?subject=Application for Operator"
-										class="career-apply-btn">
-										<span>Apply Now</span>
-										<i class="bi bi-arrow-right-short"></i>
-									</a>
-								</div>
-							</div>
-							<!-- Slide 2 -->
-							<div class="swiper-slide">
-								<div class="career-card">
-									<div class="career-card-badge">Technical</div>
-									<h4 class="career-title">Charger Technician</h4>
-									<div class="career-details">
-										<span><img src="images/icon-location.svg" alt="" class="career-meta-icon" decoding="async" loading="lazy">
-											Amirghadh, Gujarat</span>
-										<span><img src="images/icon-calendar.svg" alt="" class="career-meta-icon" decoding="async" loading="lazy"> Full
-											Time</span>
-									</div>
-									<a href="mailto:hr@energyinmotion.in?subject=Application for Charger Technician"
-										class="career-apply-btn">
-										<span>Apply Now</span>
-										<i class="bi bi-arrow-right-short"></i>
-									</a>
-								</div>
-							</div>
-							<!-- Slide 3 -->
-							<div class="swiper-slide">
-								<div class="career-card">
-									<div class="career-card-badge">Sales</div>
-									<h4 class="career-title">Sales Co-ordinator</h4>
-									<div class="career-details">
-										<span><img src="images/icon-location.svg" alt="" class="career-meta-icon" decoding="async" loading="lazy"> Navi
-											Mumbai</span>
-										<span><img src="images/icon-calendar.svg" alt="" class="career-meta-icon" decoding="async" loading="lazy"> Full
-											Time</span>
-									</div>
-									<a href="mailto:hr@energyinmotion.in?subject=Application for Sales Co-ordinator"
-										class="career-apply-btn">
-										<span>Apply Now</span>
-										<i class="bi bi-arrow-right-short"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<!-- Swiper Pagination -->
-						<div class="swiper-pagination careers-swiper-pagination"></div>
-					</div>
-				</div>
+			</div>
 		</section>
 
 		<section id="awards" class="awards-section py-5 bg-light1">
@@ -1682,215 +1670,45 @@
 			</div>
 		</section>
 
-		<section id="contact" class="contactus section pb-0">
-			<div class="container d-flex justify-content-between">
-				<div class="contact-left" data-aos="fade-right">
-					<div class="contact-map-wrap">
-						<iframe
-							src="https://maps.google.com/maps?q=1A,%201st%20floor,%20Kohinoor%20Square,%20Dadar%20(W),%20Mumbai%20-%20400028,%20Maharashtra,%20India&t=&z=16&ie=UTF8&iwloc=&output=embed"
-							width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-							referrerpolicy="no-referrer-when-downgrade">
-						</iframe>
-					</div>
+		<section id="contact" class="contactus section py-5">
+			<div class="container d-flex justify-content-center">
+				<div class="col-lg-6 col-md-9 w-100" style="max-width: 620px;" data-aos="fade-up">
+					<div class="ev-hero-form-card ev-contact-dark-card">
+						<div class="ev-form-header text-center mb-4">
+							<h3 class="mb-0 text-white fw-bold">Get in Touch</h3>
+						</div>
 
-					<div class="contact-left-content">
-						<h2 class="contact-card-title">Contact Us</h2>
-						<div class="logo-cont"><img src="images/energy-in-motion.svg" alt="Energy In Motion Logo" decoding="async" loading="lazy"></div>
-
-						<div class="contact-info-items">
-							<div class="contact-info-item">
-								<div class="icon-wrap">
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-										stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-										class="info-icon">
-										<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-										<circle cx="12" cy="10" r="3"></circle>
-									</svg>
-								</div>
-								<div class="text-wrap">
-									<span class="info-label">Address</span>
-									<p class="info-val"><a
-											href="https://maps.google.com/?q=1A,+1st+floor,+Kohinoor+Square,+Dadar+W,+Mumbai+-+400028"
-											target="_blank" rel="noopener noreferrer" class="address-link">1A, 1st
-											floor, Kohinoor Square, <br>Dadar (W), Mumbai – 400028, <br>Maharashtra,
-											India</a></p>
-								</div>
+						<form class="ev-hero-form" action="contact-mailto.php" method="post" id="ev-truck-footer-form">
+							<div class="form-group mb-3">
+								<label for="footer-frmname" class="text-white opacity-90 fw-medium">Full Name*</label>
+								<input type="text" id="footer-frmname" name="frmname" class="ev-form-control dark-input" placeholder="e.g. Rajesh Kumar" required>
 							</div>
 
-							<div class="contact-info-item">
-								<div class="icon-wrap">
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-										stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-										class="info-icon">
-										<path
-											d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-										</path>
-										<polyline points="22,6 12,13 2,6"></polyline>
-									</svg>
-								</div>
-								<div class="text-wrap">
-									<span class="info-label">Email Us</span>
-									<p class="info-val"><a
-											href="mailto:powerup@energyinmotion.in">powerup@energyinmotion.in</a></p>
-								</div>
+							<div class="form-group mb-3">
+								<label for="footer-frmemail" class="text-white opacity-90 fw-medium">Work Email*</label>
+								<input type="email" id="footer-frmemail" name="frmemail" class="ev-form-control dark-input" placeholder="name@company.com" required>
 							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contact-right" data-aos="fade-left">
-					<h2 class="contact-card-title-dark">Get in Touch</h2>
-					<p class="contact-card-subtitle">Have questions or want to partner with us? Drop us a message.</p>
-					<div class="get-form">
-						<div class="contact-form">
-							<form class="contact-form" action="contact-mailto.php" enctype="multipart/form-data"
-								method="post" name="enquiry" onsubmit="return validate_form(this);" id="career-form">
-								<div class="formp-row two-col">
-									<div class="formp-col floating-group" data-aos="fade-up">
-										<input name="frmname" type="text" value="" placeholder=" " required
-											class="floating-input">
-										<label class="floating-label">First Name*</label>
-										<span class="focus-border"><i></i></span>
-									</div>
-									<div class="formp-col floating-group" data-aos="fade-up">
-										<input name="frmlast" type="text" value="" placeholder=" " required
-											class="floating-input">
-										<label class="floating-label">Last Name*</label>
-										<span class="focus-border"><i></i></span>
-									</div>
-									<div class="formp-col floating-group" data-aos="fade-up">
-										<input name="frmemail" type="email" value="" placeholder=" " required
-											class="floating-input">
-										<label class="floating-label">Email Address*</label>
-										<span class="focus-border"><i></i></span>
-									</div>
-									<div class="formp-col floating-group" data-aos="fade-up">
-										<input name="frmcontact" type="tel" value="" placeholder=" " required
-											class="floating-input">
-										<label class="floating-label">Mobile Number*</label>
-										<span class="focus-border"><i></i></span>
-									</div>
-								</div>
 
-								<div class="formp-row mb30" data-aos="fade-up">
-									<div class="formp-col floating-group mb0">
-										<textarea name="frmdes" placeholder=" " required
-											class="floating-input floating-textarea"></textarea>
-										<label class="floating-label">Your Message*</label>
-										<span class="focus-border"><i></i></span>
-									</div>
-								</div>
-
-								<div class="formp-row mb30 capt" data-aos="fade-up">
-									<div class="captcha-code">
-										<div class="g-recaptcha"
-											data-sitekey="6Lf4XDAsAAAAAOfHRvkeWz_Q-YEXwYRV0NDyBhnH"></div>
-									</div>
-								</div>
-
-								<div class="formp-row mb-0 capt" data-aos="fade-up">
-									<div class="submit-btn-cont">
-										<div class="premium-submit-wrapper">
-											<input type="submit" value="Submit Message" class="premium-submit-input">
-											<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-												stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-												stroke-linejoin="round" class="premium-submit-arrow">
-												<line x1="5" y1="12" x2="19" y2="12"></line>
-												<polyline points="12 5 19 12 12 19"></polyline>
-											</svg>
-										</div>
-										<input type="hidden"
-											value="text,frmname,Name,text,frmemail,E-mail,text,frmphone,Phone No."
-											name="js_Blank">
-										<input type="hidden" name="js_Email" value="frmemail,E-mail">
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Location Boxes (Post-Form Section) -->
-			<div class="container pb-5">
-				<div class="location-boxes-grid">
-					<!-- Box 1: Mumbai Office -->
-					<div class="location-card" data-aos="fade-up" data-aos-delay="100">
-						<div class="location-card-header">
-							<div class="location-icon-wrap">
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-									<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-									<circle cx="12" cy="10" r="3"></circle>
-								</svg>
+							<div class="form-group mb-3">
+								<label for="footer-frmcontact" class="text-white opacity-90 fw-medium">Mobile Number*</label>
+								<input type="tel" id="footer-frmcontact" name="frmcontact" class="ev-form-control dark-input" placeholder="+91 98765 43210" required>
 							</div>
-							<h4 class="location-card-title">Mumbai Office</h4>
-						</div>
-						<p class="location-card-address">1A, 1st floor, Kohinoor Square, Dadar (W), Mumbai – 400028,
-							Maharashtra, India</p>
-					</div>
 
-					<!-- Box 2: Noida Office -->
-					<div class="location-card" data-aos="fade-up" data-aos-delay="200">
-						<div class="location-card-header">
-							<div class="location-icon-wrap">
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-									<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-									<circle cx="12" cy="10" r="3"></circle>
-								</svg>
+							<div class="form-group mb-3">
+								<label for="footer-frmdes" class="text-white opacity-90 fw-medium">Payload / Fleet Requirement*</label>
+								<textarea id="footer-frmdes" name="frmdes" rows="3" class="ev-form-control dark-input" placeholder="Tell us your payload requirement or fleet inquiry..." required></textarea>
 							</div>
-							<h4 class="location-card-title">Noida Office</h4>
-						</div>
-						<p class="location-card-address">J.M Baxi Corporate Tower, 12th Floor, Sector 136, Noida, Uttar
-							Pradesh – 201304</p>
-					</div>
 
-					<!-- Box 3: Pune Office -->
-					<div class="location-card" data-aos="fade-up" data-aos-delay="300">
-						<div class="location-card-header">
-							<div class="location-icon-wrap">
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-									<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-									<circle cx="12" cy="10" r="3"></circle>
-								</svg>
-							</div>
-							<h4 class="location-card-title">Pune Office</h4>
-						</div>
-						<p class="location-card-address">301, Prabhavee Tech Park, Survey No. – 125, Baner Main Road,
-							Baner, Pune – 411045</p>
-					</div>
+							<!-- Hidden Fields for backend mail script -->
+							<input type="hidden" name="subject" value="EV Truck Inquiry from Footer Contact">
+							<input type="hidden" value="text,frmname,Name,text,frmemail,E-mail,text,frmcontact,Phone No." name="js_Blank">
+							<input type="hidden" name="js_Email" value="frmemail,E-mail">
 
-					<!-- Box 4: Nhava Seva Office -->
-					<div class="location-card" data-aos="fade-up" data-aos-delay="400">
-						<div class="location-card-header">
-							<div class="location-icon-wrap">
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-									<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-									<circle cx="12" cy="10" r="3"></circle>
-								</svg>
-							</div>
-							<h4 class="location-card-title">Nhava Seva Office</h4>
-						</div>
-						<p class="location-card-address">Energy In Motion, C Wing, 211 & 212, NMSEZ Commercial Business
-							Complex, Dronagiri 6, Sector No. – 11, SH54 Navghar, Nhava Seva Station, Maharashtra –
-							400707</p>
-					</div>
-
-					<!-- Box 5: Factory -->
-					<div class="location-card" data-aos="fade-up" data-aos-delay="500">
-						<div class="location-card-header">
-							<div class="location-icon-wrap">
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-									<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-									<circle cx="12" cy="10" r="3"></circle>
-								</svg>
-							</div>
-							<h4 class="location-card-title">EIM Ltd. Factory</h4>
-						</div>
-						<p class="location-card-address">Gat No. 147 & 418 (Part), Opp. Talegaon MIDC Phase 5, Ambi, Pune, Maharashtra – 410507</p>
+							<button type="submit" class="ev-btn-primary mt-3 w-100">
+								<span>Submit</span>
+								<i class="bi bi-arrow-right-circle-fill"></i>
+							</button>
+						</form>
 					</div>
 				</div>
 			</div>
