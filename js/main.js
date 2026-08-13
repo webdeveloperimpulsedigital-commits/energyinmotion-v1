@@ -258,6 +258,10 @@ window.addEventListener('load', () => {
           el: '.testimonials-swiper-pagination',
           clickable: true,
         },
+        navigation: {
+          nextEl: '.testimonials-swiper-next',
+          prevEl: '.testimonials-swiper-prev',
+        },
         breakpoints: {
           992: {
             slidesPerView: 2,

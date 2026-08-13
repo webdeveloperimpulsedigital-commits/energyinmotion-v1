@@ -74,12 +74,38 @@
    ========================================================================== */
 #hero.ev-hero-section {
   position: relative;
-  min-height: calc(100vh - 80px);
-  padding-top: 140px !important;
-  padding-bottom: 70px !important;
-  background: radial-gradient(circle at 80% 20%, rgba(56, 224, 207, 0.12) 0%, rgba(1, 38, 45, 0.6) 40%, #001B1E 80%);
+  min-height: 860px;
+  padding-top: 150px !important;
+  padding-bottom: 110px !important;
+  background: #001B1E;
   display: flex;
   align-items: center;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* Background Video Styling */
+.ev-hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ev-hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 23, 26, 0.55) 0%, rgba(1, 38, 45, 0.35) 50%, rgba(0, 27, 30, 0.55) 100%);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .ev-hero-bg-glow {
@@ -91,13 +117,30 @@
   background: radial-gradient(circle, rgba(56, 224, 207, 0.15) 0%, transparent 70%);
   filter: blur(80px);
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
 }
 
 .ev-hero-container {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  .hide-mob {
+    display: none !important;
+  }
+  .hide-desk {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) {
+  .hide-mob {
+    display: block !important;
+  }
+  .hide-desk {
+    display: none !important;
+  }
 }
 
 .ev-hero-headline {
@@ -107,6 +150,7 @@
   letter-spacing: -0.02em;
   color: #FFFFFF;
   margin-bottom: 20px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 .ev-hero-headline .highlight {
@@ -124,21 +168,23 @@
   max-width: 600px;
 }
 
-/* Lead Capture Form Card in Hero (Compact One-View Styling) */
-.ev-hero-form-card {
-  background: rgba(1, 38, 45, 0.9);
-  border: 1px solid rgba(56, 224, 207, 0.35);
-  border-radius: 16px;
-  padding: 20px 24px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(56, 224, 207, 0.1);
+/* Lead Capture Form Card (Solid Premium Dark Styling) */
+.ev-hero-form-card, .ev-modal-card {
+  background: #01262d;
+  border: 1.5.px solid rgba(56, 224, 207, 0.45);
+  border-radius: 18px;
+  padding: 24px 26px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 224, 207, 0.15);
   position: relative;
   transition: border-color 0.3s ease;
 }
 
+.ev-modal-card {
+  border-color: #38E0CF;
+}
+
 .ev-hero-form-card:hover {
-  border-color: rgba(56, 224, 207, 0.6);
+  border-color: rgba(56, 224, 207, 0.7);
 }
 
 .ev-form-header {
@@ -146,54 +192,54 @@
 }
 
 .ev-form-header h3 {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 0;
+  margin-bottom: 4px;
 }
 
 .ev-form-header p {
-  font-size: 0.85rem;
-  color: rgba(231, 241, 241, 0.7);
+  font-size: 0.88rem;
+  color: rgba(231, 241, 241, 0.85);
   margin: 0;
-  text-align: left;
 }
 
 .ev-hero-form .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   position: relative;
 }
 
 .ev-hero-form label {
   display: block;
   font-size: 0.78rem;
-  font-weight: 500;
-  color: rgba(231, 241, 241, 0.9);
-  margin-bottom: 3px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
   letter-spacing: 0.02em;
 }
 
 .ev-form-control {
   width: 100%;
-  padding: 8px 12px;
-  background: rgba(0, 27, 30, 0.8);
-  border: 1px solid rgba(231, 241, 241, 0.18);
+  padding: 9px 14px;
+  background: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
   border-radius: 8px;
-  color: #FFFFFF;
-  font-size: 0.88rem;
+  color: #0f172a !important;
+  font-size: 0.9rem;
   font-family: inherit;
   transition: all 0.3s ease;
 }
 
 .ev-form-control:focus {
   outline: none;
-  border-color: #38E0CF;
-  background: rgba(0, 27, 30, 0.95);
-  box-shadow: 0 0 0 3px rgba(56, 224, 207, 0.15);
+  border-color: #38E0CF !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(56, 224, 207, 0.3) !important;
 }
 
 .ev-form-control::placeholder {
-  color: rgba(231, 241, 241, 0.4);
+  color: #64748b !important;
+  opacity: 1 !important;
 }
 
 select.ev-form-control {
@@ -206,12 +252,12 @@ select.ev-form-control {
 
 .ev-btn-primary {
   width: 100%;
-  padding: 10px 14px;
+  padding: 9px 14px;
   background: linear-gradient(135deg, #38E0CF 0%, #20B3A3 100%);
   border: none;
   border-radius: 8px;
   color: #001B1E;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   display: flex;
@@ -221,9 +267,7 @@ select.ev-form-control {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 20px rgba(56, 224, 207, 0.25);
-  margin-top: 8px !important;
-}
-  box-shadow: 0 8px 20px rgba(56, 224, 207, 0.25);
+  margin-top: 6px !important;
 }
 
 .ev-btn-primary:hover {
@@ -2222,8 +2266,9 @@ select.ev-form-control {
 
 @media (max-width: 992px) {
   .ev-hero-section {
-    padding-top: 105px !important;
-    padding-bottom: 50px !important;
+    padding-top: 115px !important;
+    padding-bottom: 55px !important;
+    min-height: auto;
   }
   .ev-calc-grid {
     grid-template-columns: 1fr;
@@ -2233,8 +2278,9 @@ select.ev-form-control {
 
 @media (max-width: 768px) {
   .ev-hero-section {
-    padding-top: 95px !important;
-    padding-bottom: 40px !important;
+    padding-top: 105px !important;
+    padding-bottom: 45px !important;
+    min-height: auto;
   }
   .ev-hero-headline {
     font-size: 1.65rem !important;
@@ -2265,4 +2311,96 @@ select.ev-form-control {
     font-size: 1.48rem !important;
     line-height: 1.24 !important;
   }
+}
+
+/* 2-Image Clean Showcase Styling */
+.eim-image-card {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(1, 38, 45, 0.08);
+  border: 1.5px solid #e2e8f0;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: #01262d;
+}
+
+.eim-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.eim-image-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(1, 38, 45, 0.14), 0 0 25px rgba(56, 224, 207, 0.3);
+  border-color: #38E0CF;
+}
+
+.eim-image-card:hover img {
+  transform: scale(1.06);
+}
+
+.eim-image-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(1, 38, 45, 0.6) 100%);
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  pointer-events: none;
+}
+
+.eim-card-badge {
+  background: rgba(1, 38, 45, 0.88);
+  color: #38E0CF;
+  border: 1px solid rgba(56, 224, 207, 0.45);
+  backdrop-filter: blur(8px);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 30px;
+  text-transform: uppercase;
+}
+
+/* Side-by-Side Interstitial CTA Banner Layout */
+.landing-cta-banner {
+  padding: 36px 0 !important;
+}
+
+.cta-banner-inner {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-align: left !important;
+  gap: 24px !important;
+}
+
+.cta-banner-text {
+  text-align: left !important;
+  margin: 0 !important;
+  max-width: 780px !important;
+  font-size: 1.4rem !important;
+  line-height: 1.35 !important;
+}
+
+@media (max-width: 767px) {
+  .cta-banner-inner {
+    flex-direction: column !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .cta-banner-text {
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+}
+
+.cta-banner-btn {
+  margin: 0 auto !important;
 }
