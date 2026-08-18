@@ -10,6 +10,76 @@
   color: var(--brand-azure, #E7F1F1);
   font-family: 'PP Neue Montreal', sans-serif;
   overflow-x: hidden;
+  letter-spacing: normal !important;
+}
+
+/* Global Clean Typography Reset - Remove unnatural word spacing & justification */
+body, p, span, div, h1, h2, h3, h4, h5, h6, a, li, label, strong, b, em {
+  text-align: left;
+  letter-spacing: normal;
+  word-spacing: normal !important;
+}
+
+p {
+  text-align: left !important;
+  word-spacing: normal !important;
+}
+
+/* Transparent Header on Hero */
+.header {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  transition: all 0.4s ease !important;
+}
+
+.header .branding {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.header .topbar {
+  display: none !important;
+  border: none !important;
+}
+
+.scrolled .header, body.scrolled .header {
+  background: rgba(1, 38, 45, 0.94) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(56, 224, 207, 0.18) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Header Get In Touch Button (EIM Brand Color Styling - No Border Radius) */
+a.nav-get-in-touch-btn, .nav-get-in-touch-btn {
+  background: var(--accent-color, #38E0CF) !important;
+  color: #001B1E !important;
+  padding: 10px 24px !important;
+  border-radius: 0 !important;
+  font-weight: 800 !important;
+  font-size: 13.5px !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 15px rgba(56, 224, 207, 0.35) !important;
+  border: none !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+a.nav-get-in-touch-btn:hover, .nav-get-in-touch-btn:hover {
+  background: #20B3A3 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(56, 224, 207, 0.5) !important;
 }
 
 /* Custom Scrollbar */
@@ -72,19 +142,23 @@
 /* ==========================================================================
    HERO SECTION (Compact, No Cut-Off Layout)
    ========================================================================== */
-#hero.ev-hero-section {
+/* ==========================================================================
+   HERO SECTION (Big Full-Height Video Showcase)
+   ========================================================================== */
+#hero.ev-hero-video-section, #hero.ev-hero-showcase-section, #hero.ev-hero-section {
   position: relative;
-  min-height: 860px;
-  padding-top: 150px !important;
-  padding-bottom: 110px !important;
+  width: 100%;
+  height: 100vh;
+  min-height: 850px;
+  max-height: none;
+  padding: 0 !important;
   background: #001B1E;
   display: flex;
   align-items: center;
-  overflow-x: hidden;
-  overflow-y: visible;
+  justify-content: center;
+  overflow: hidden;
 }
 
-/* Background Video Styling */
 .ev-hero-video-bg {
   position: absolute;
   top: 0;
@@ -92,38 +166,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center bottom;
+  object-position: center center;
   z-index: 1;
   pointer-events: none;
 }
 
-.ev-hero-video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(0, 23, 26, 0.55) 0%, rgba(1, 38, 45, 0.35) 50%, rgba(0, 27, 30, 0.55) 100%);
-  z-index: 2;
-  pointer-events: none;
-}
-
-.ev-hero-bg-glow {
-  position: absolute;
-  top: -10%;
-  left: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(56, 224, 207, 0.15) 0%, transparent 70%);
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 3;
-}
-
-.ev-hero-container {
-  position: relative;
-  z-index: 4;
-  width: 100%;
+.ev-hero-video-overlay-bottom {
+  display: none !important;
 }
 
 @media (max-width: 767px) {
@@ -141,31 +190,6 @@
   .hide-desk {
     display: none !important;
   }
-}
-
-.ev-hero-headline {
-  font-size: 3.1rem;
-  font-weight: 700;
-  line-height: 1.18;
-  letter-spacing: -0.02em;
-  color: #FFFFFF;
-  margin-bottom: 20px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-}
-
-.ev-hero-headline .highlight {
-  color: #38E0CF;
-  background: linear-gradient(135deg, #38E0CF 0%, #B9EDEA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.ev-hero-subtext {
-  font-size: 1.15rem;
-  line-height: 1.65;
-  color: rgba(231, 241, 241, 0.9);
-  margin-bottom: 0;
-  max-width: 600px;
 }
 
 /* Lead Capture Form Card (Solid Premium Dark Styling) */
@@ -505,248 +529,193 @@ select.ev-form-control {
 }
 
 /* ==========================================================================
-   CLEAN 3-CARD SHOWCASE SLIDER (Offerings - Exactly 3 Cards Visible)
+   OFFERINGS MULTI-CARD CAROUSEL SHOWCASE (Responsive & Touch Optimized)
    ========================================================================== */
-.ev-coverflow-section {
-  padding: 95px 0;
-  background: #F8FAFC !important;
-  position: relative;
-  overflow: hidden;
+.eim-offerings-section {
+  padding: 45px 0 20px 0 !important;
+  background: #ffffff !important;
 }
 
-.ev-coverflow-container {
-  position: relative;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 5px 0 30px 0;
-  overflow: visible !important;
+.eim-offerings-header-row {
+  margin-bottom: 24px;
 }
 
-.ev-coverflow-track {
-  position: relative;
-  height: 560px;
+.eim-offerings-header-desc {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.98rem !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  color: #475569 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-top: 14px !important;
+  margin-bottom: 22px !important;
+}
+
+.eim-offerings-nav-group {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1400px;
-}
-
-.ev-coverflow-slide {
-  position: absolute;
-  width: 780px;
-  max-width: 90vw;
-  height: 480px;
-  border-radius: 28px;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease, filter 0.6s ease;
-  cursor: pointer;
-  overflow: hidden;
-  border: 2px solid rgba(1, 38, 45, 0.15);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.ev-coverflow-slide.active {
-  z-index: 10;
-  transform: translateX(0) scale(1);
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  box-shadow: 0 30px 65px rgba(1, 38, 45, 0.4);
-  border-color: #38E0CF;
-}
-
-.ev-coverflow-slide.prev {
-  z-index: 5;
-  transform: translateX(-340px) scale(0.85) rotateY(6deg);
-  opacity: 0.85;
-  visibility: visible;
-  pointer-events: auto;
-  filter: brightness(0.8);
-}
-
-.ev-coverflow-slide.next {
-  z-index: 5;
-  transform: translateX(340px) scale(0.85) rotateY(-6deg);
-  opacity: 0.85;
-  visibility: visible;
-  pointer-events: auto;
-  filter: brightness(0.8);
-}
-
-.ev-coverflow-slide.far-prev,
-.ev-coverflow-slide.far-next {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateX(0) scale(0.6);
-}
-
-.ev-coverflow-card-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0, 27, 30, 0.96) 0%, rgba(1, 38, 45, 0.82) 75%, rgba(0,0,0,0) 100%);
-  padding: 36px 40px;
-  color: #FFFFFF;
-  opacity: 0.95;
-  visibility: visible;
-  transform: translateY(0);
-  transition: all 0.4s ease;
-}
-
-.ev-coverflow-slide.active .ev-coverflow-card-overlay {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.coverflow-badge {
-  display: inline-block;
-  padding: 6px 16px;
-  background: rgba(56, 224, 207, 0.18);
-  border: 1px solid #38E0CF;
-  border-radius: 20px;
-  color: #38E0CF;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  margin-bottom: 10px;
-}
-
-.ev-coverflow-card-overlay h3 {
-  font-size: 1.85rem;
-  font-weight: 800;
-  color: #FFFFFF !important;
-  margin-bottom: 8px;
-  letter-spacing: -0.01em;
-}
-
-.ev-coverflow-card-overlay p {
-  font-size: 1.05rem;
-  color: rgba(231, 241, 241, 0.95) !important;
-  margin: 0;
-  line-height: 1.5;
-}
-
-.ev-coverflow-nav {
-  display: none !important;
-}
-
-.ev-coverflow-nav:hover {
-  background: #009E8E;
-  color: #FFFFFF;
-  transform: translateY(-50%) scale(1.1);
-}
-
-.ev-coverflow-dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
-  margin-top: 25px;
 }
 
-.ev-coverflow-dots .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #CBD5E1;
+.eim-offerings-nav-btn {
+  width: 42px;
+  height: 42px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  color: #001B1E;
+  border-radius: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
   cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  transition: all 0.25s ease;
+}
+
+.eim-offerings-nav-btn:hover,
+.eim-offerings-nav-btn:active {
+  background: var(--accent-color, #38E0CF);
+  border-color: var(--accent-color, #38E0CF);
+  color: #001B1E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 224, 207, 0.3);
+}
+
+.eim-offerings-swiper {
+  padding-bottom: 4px !important;
+  overflow: hidden !important;
+}
+
+.eim-offering-card {
+  position: relative;
+  height: 480px;
+  background: #011d23;
+  border: 1px solid #e2e8f0;
+  border-radius: 0 !important;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(1, 38, 45, 0.08);
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
+}
+
+.eim-offering-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-color, #38E0CF);
+  box-shadow: 0 20px 48px rgba(1, 38, 45, 0.16);
+}
+
+.eim-offering-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.eim-offering-card:hover .eim-offering-bg-img {
+  transform: scale(1.08);
+}
+
+.eim-offering-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 27, 30, 0.05) 0%, rgba(0, 27, 30, 0.50) 45%, rgba(0, 27, 30, 0.96) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 36px 32px 32px 32px;
+  z-index: 2;
+}
+
+.eim-offering-title {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: #ffffff !important;
+  font-size: 1.38rem !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 8px;
+}
+
+.eim-offering-desc {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: #cbd5e1 !important;
+  font-size: 0.94rem !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  margin-bottom: 0 !important;
+}
+
+.eim-offerings-pagination {
+  margin-top: 18px !important;
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100% !important;
+}
+
+.eim-offerings-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #cbd5e1;
+  opacity: 1;
+  border-radius: 0 !important;
   transition: all 0.3s ease;
+  margin: 0 !important;
+  cursor: pointer;
 }
 
-.ev-coverflow-dots .dot.active {
-  width: 32px;
-  border-radius: 20px;
-  background: #009E8E;
+.eim-offerings-pagination .swiper-pagination-bullet-active {
+  width: 28px;
+  background: var(--accent-color, #38E0CF);
 }
 
-@media (max-width: 992px) {
-  .ev-coverflow-container {
-    padding: 0 0 20px 0 !important;
+@media (max-width: 991px) {
+  .eim-offering-card {
+    height: 420px;
   }
-  .ev-coverflow-track {
-    height: 440px !important;
+  .eim-offering-overlay {
+    padding: 28px 24px 24px 24px;
   }
-  .ev-coverflow-slide {
-    width: 78% !important;
-    max-width: 600px !important;
-    height: 400px !important;
-  }
-  .ev-coverflow-slide.prev {
-    transform: translateX(-160px) scale(0.85) rotateY(4deg) !important;
-  }
-  .ev-coverflow-slide.next {
-    transform: translateX(160px) scale(0.85) rotateY(-4deg) !important;
+  .eim-offering-title {
+    font-size: 1.25rem !important;
   }
 }
 
-@media (max-width: 768px) {
-  .ev-coverflow-section {
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
+@media (max-width: 767px) {
+  .eim-offerings-section {
+    padding: 35px 0 15px 0 !important;
   }
-  .ev-coverflow-container {
-    padding: 0 0 10px 0 !important;
+  .eim-offerings-header-row {
+    margin-bottom: 16px;
   }
-  .ev-coverflow-track {
-    height: 360px !important;
+  .eim-offerings-header-desc {
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
   }
-  .ev-coverflow-slide {
-    width: 92% !important;
-    max-width: 380px !important;
-    height: 340px !important;
-    border-radius: 20px !important;
-    box-shadow: 0 15px 40px rgba(1, 38, 45, 0.3) !important;
+  .eim-offering-card {
+    height: 390px;
   }
-  .ev-coverflow-slide.prev,
-  .ev-coverflow-slide.next {
-    transform: translateX(0) scale(0.9) !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
+  .eim-offering-overlay {
+    padding: 24px 20px 20px 20px;
   }
-  .ev-coverflow-card-overlay {
-    padding: 20px 22px !important;
+  .eim-offering-title {
+    font-size: 1.22rem !important;
   }
-  .coverflow-badge {
-    padding: 4px 12px !important;
-    font-size: 0.72rem !important;
-    margin-bottom: 6px !important;
-  }
-  .ev-coverflow-card-overlay h3 {
-    font-size: 1.35rem !important;
-    margin-bottom: 4px !important;
-  }
-  .ev-coverflow-card-overlay p {
+  .eim-offering-desc {
     font-size: 0.88rem !important;
-    line-height: 1.4 !important;
+    line-height: 1.5 !important;
   }
-  .ev-coverflow-dots {
-    margin-top: 15px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .ev-coverflow-track {
-    height: 340px !important;
-  }
-  .ev-coverflow-slide {
-    width: 94% !important;
-    max-width: 340px !important;
-    height: 320px !important;
-    border-radius: 18px !important;
-  }
-  .ev-coverflow-card-overlay {
-    padding: 16px 18px !important;
-  }
-  .ev-coverflow-card-overlay h3 {
-    font-size: 1.2rem !important;
+  .eim-offerings-nav-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
   }
 }
 
@@ -2254,7 +2223,7 @@ select.ev-form-control {
    ========================================================================== */
 @media (max-width: 1200px) {
   .ev-hero-headline {
-    font-size: 2.8rem;
+    font-size: 2.7rem;
   }
   .ev-metrics-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2265,10 +2234,9 @@ select.ev-form-control {
 }
 
 @media (max-width: 992px) {
-  .ev-hero-section {
-    padding-top: 115px !important;
-    padding-bottom: 55px !important;
-    min-height: auto;
+  #hero.ev-hero-video-section, #hero.ev-hero-showcase-section, #hero.ev-hero-section {
+    height: 75vh;
+    min-height: 540px;
   }
   .ev-calc-grid {
     grid-template-columns: 1fr;
@@ -2277,21 +2245,6 @@ select.ev-form-control {
 }
 
 @media (max-width: 768px) {
-  .ev-hero-section {
-    padding-top: 105px !important;
-    padding-bottom: 45px !important;
-    min-height: auto;
-  }
-  .ev-hero-headline {
-    font-size: 1.65rem !important;
-    line-height: 1.25 !important;
-    margin-bottom: 14px !important;
-  }
-  .ev-hero-subtext {
-    font-size: 0.95rem !important;
-    line-height: 1.5 !important;
-    margin-bottom: 20px !important;
-  }
   .ev-section-title {
     font-size: 1.75rem !important;
   }
@@ -2307,9 +2260,9 @@ select.ev-form-control {
 }
 
 @media (max-width: 576px) {
-  .ev-hero-headline {
-    font-size: 1.48rem !important;
-    line-height: 1.24 !important;
+  #hero.ev-hero-video-section, #hero.ev-hero-showcase-section, #hero.ev-hero-section {
+    height: 65vh;
+    min-height: 420px;
   }
 }
 
@@ -2366,9 +2319,13 @@ select.ev-form-control {
   text-transform: uppercase;
 }
 
-/* Side-by-Side Interstitial CTA Banner Layout */
+/* Interstitial CTA Banner (Compact, Sweet & Simple, Sharp Rectangular CTA) */
 .landing-cta-banner {
-  padding: 36px 0 !important;
+  background: linear-gradient(135deg, rgba(1, 38, 45, 0.88) 0%, rgba(0, 27, 30, 0.92) 100%), url('../images/footer-img-truck.png') center right / cover no-repeat !important;
+  padding: 28px 0 !important;
+  border-top: 1px solid rgba(56, 224, 207, 0.2) !important;
+  border-bottom: 1px solid rgba(56, 224, 207, 0.2) !important;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.4) !important;
 }
 
 .cta-banner-inner {
@@ -2377,30 +2334,1850 @@ select.ev-form-control {
   align-items: center !important;
   justify-content: space-between !important;
   text-align: left !important;
-  gap: 24px !important;
+  gap: 32px !important;
+  max-width: 1040px;
+  margin: 0 auto;
 }
 
-.cta-banner-text {
-  text-align: left !important;
-  margin: 0 !important;
-  max-width: 780px !important;
-  font-size: 1.4rem !important;
-  line-height: 1.35 !important;
+.cta-banner-text-wrap {
+  max-width: 720px;
+}
+
+.cta-banner-title {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.32rem !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.cta-banner-subtitle {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.92rem !important;
+  font-weight: 400 !important;
+  color: #cbd5e1 !important;
+  line-height: 1.5 !important;
+}
+
+.cta-banner-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 11px 26px !important;
+  background: var(--accent-color, #38E0CF) !important;
+  color: #001B1E !important;
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  box-shadow: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.cta-banner-btn:hover {
+  background: #2cb8a8 !important;
+  color: #001B1E !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(56, 224, 207, 0.3) !important;
 }
 
 @media (max-width: 767px) {
+  .landing-cta-banner {
+    padding: 30px 0 !important;
+    text-align: center !important;
+  }
   .cta-banner-inner {
     flex-direction: column !important;
     text-align: center !important;
     justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
   }
-
-  .cta-banner-text {
+  .cta-banner-text-wrap {
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+  .cta-banner-title {
+    font-size: 1.25rem !important;
+    text-align: center !important;
+    margin-bottom: 8px !important;
+  }
+  .cta-banner-subtitle {
+    font-size: 0.88rem !important;
     text-align: center !important;
     margin: 0 auto !important;
   }
+  .cta-banner-text {
+    font-size: 1.2rem !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  .cta-banner-btn {
+    align-self: center !important;
+    margin: 6px auto 0 auto !important;
+    display: inline-flex !important;
+    text-align: center !important;
+  }
 }
 
-.cta-banner-btn {
-  margin: 0 auto !important;
+/* ==========================================================================
+   WHY CHOOSE EIM - 50/50 SPLIT SHOWCASE SECTION (Clean White Background)
+   ========================================================================== */
+.eim-split-showcase-section {
+  position: relative;
+  background: #ffffff !important;
+  padding: 0 0 50px 0 !important;
+  overflow: hidden;
+}
+
+.eim-split-image-wrap {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  position: relative;
+  overflow: hidden;
+}
+
+.eim-split-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.eim-split-image-wrap:hover .eim-split-img {
+  transform: scale(1.03);
+}
+
+.eim-split-content-panel {
+  background: #ffffff !important;
+  height: 100%;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px 80px;
+  color: #111827 !important;
+}
+
+.eim-split-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #001B1E !important;
+  margin-bottom: 24px;
+}
+
+.eim-split-text {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #374151 !important;
+  margin-bottom: 0;
+}
+
+.eim-split-text:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1200px) {
+  .eim-split-content-panel {
+    padding: 50px 45px;
+  }
+  .eim-split-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .eim-split-image-wrap {
+    min-height: 360px;
+  }
+  .eim-split-content-panel {
+    min-height: auto;
+    padding: 45px 30px;
+  }
+  .eim-split-title {
+    font-size: 1.95rem;
+  }
+  .eim-split-text {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .eim-split-image-wrap {
+    min-height: 260px;
+  }
+  .eim-split-content-panel {
+    padding: 35px 20px;
+  }
+  .eim-split-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* ==========================================================================
+   STICKY SCROLLING IMAGE ANIMATION SHOWCASE SECTION (Clean White Background)
+   ========================================================================== */
+.eim-sticky-scroll-section {
+  position: relative;
+  background: #ffffff !important;
+  padding: 20px 0 60px 0 !important;
+  margin: 0;
+  overflow: visible;
+}
+
+.eim-fleet-section-title {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: #001B1E !important;
+  font-size: 32px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 42px !important;
+  margin-top: 0 !important;
+  margin-bottom: 14px;
+  text-align: left !important;
+}
+
+.eim-fleet-section-desc {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: #555555 !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  max-width: 100% !important;
+  width: 100%;
+  margin: 0 0 36px 0 !important;
+  text-align: left !important;
+}
+
+.eim-sticky-cards-track {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eim-sticky-card-wrap {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 90px;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.15s ease-out;
+  transform-origin: top center;
+  will-change: transform;
+}
+
+.eim-sticky-card-wrap:last-child {
+  margin-bottom: 15px !important;
+}
+
+.eim-sticky-card-wrap:nth-child(1) {
+  top: 90px;
+  z-index: 1;
+}
+.eim-sticky-card-wrap:nth-child(2) {
+  top: 115px;
+  z-index: 2;
+}
+.eim-sticky-card-wrap:nth-child(3) {
+  top: 140px;
+  z-index: 3;
+}
+.eim-sticky-card-wrap:nth-child(4) {
+  top: 165px;
+  z-index: 4;
+}
+
+.eim-sticky-card {
+  position: relative;
+  width: 100%;
+  height: 640px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.22), 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+.eim-sticky-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.eim-sticky-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 50px 44px 34px 44px;
+  background: linear-gradient(180deg, rgba(0, 27, 30, 0) 0%, rgba(0, 27, 30, 0.85) 45%, rgba(0, 27, 30, 0.98) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.eim-sticky-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  background: rgba(56, 224, 207, 0.2);
+  border: 1px solid rgba(56, 224, 207, 0.5);
+  border-radius: 30px;
+  color: #38E0CF;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.eim-sticky-card-title {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.eim-sticky-card-desc {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 800px;
+}
+
+@media (max-width: 1200px) {
+  .eim-sticky-card {
+    height: 520px;
+  }
+  .eim-sticky-card-title {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .eim-sticky-scroll-section {
+    padding: 50px 0 80px 0;
+  }
+  .eim-sticky-scroll-section .ev-section-title {
+    font-size: 1.75rem;
+  }
+  .eim-sticky-card {
+    height: 420px;
+    border-radius: 20px;
+  }
+  .eim-sticky-card-title {
+    font-size: 1.15rem;
+  }
+  .eim-sticky-card-wrap:nth-child(1) { top: 80px; }
+  .eim-sticky-card-wrap:nth-child(2) { top: 100px; }
+  .eim-sticky-card-wrap:nth-child(3) { top: 120px; }
+  .eim-sticky-card-wrap:nth-child(4) { top: 140px; }
+}
+
+@media (max-width: 576px) {
+  .eim-sticky-card {
+    height: 290px;
+    border-radius: 16px;
+  }
+  .eim-sticky-card-overlay {
+    padding: 20px 16px 14px 16px;
+  }
+  .eim-sticky-card-title {
+    font-size: 1rem;
+  }
+  .eim-sticky-badge {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+}
+
+/* Overview Stat Items (Minimal Left-Line Accent in Brand Turquoise) */
+.overview-stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 36px !important;
+  align-items: center !important;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.overview-stat-card {
+  border: none !important;
+  border-left: 3.5px solid var(--accent-color, #38E0CF) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 2px 0 2px 16px !important;
+  text-align: left !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+.overview-stat-card::before,
+.overview-stat-card::after {
+  display: none !important;
+}
+
+.overview-stat-card:hover {
+  transform: none !important;
+  border-color: var(--accent-color, #38E0CF) !important;
+  box-shadow: none !important;
+}
+
+.overview-stat-card:hover::before,
+.overview-stat-card:hover::after {
+  display: none !important;
+}
+
+.stat-number-wrap {
+  margin-bottom: 2px !important;
+}
+
+.stat-number {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 38px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  color: #001B1E !important;
+  letter-spacing: -0.01em !important;
+}
+
+.stat-label {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  color: #555555 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+}
+
+.stat-desc {
+  display: none !important;
+}
+
+@media (max-width: 991px) {
+  .overview-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 28px !important;
+  }
+  .stat-number {
+    font-size: 32px !important;
+  }
+  .stat-label {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .overview-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  .stat-number {
+    font-size: 26px !important;
+  }
+  .overview-stat-card {
+    padding-left: 10px !important;
+    border-left-width: 3px !important;
+  }
+}
+
+/* ==========================================================================
+   WHAT MAKES EIM DIFFERENT - 3-COLUMN DIRECT COMPARISON CARDS
+   ========================================================================== */
+.solutions-comparison-section {
+  background: #ffffff !important;
+  padding: 55px 0 !important;
+}
+
+.solutions-section-subtitle {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: #555555 !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  max-width: 780px;
+}
+
+.eim-comparison-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0 !important;
+  box-shadow: 0 6px 20px rgba(1, 38, 45, 0.03);
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.eim-comparison-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color, #38E0CF);
+  box-shadow: 0 12px 30px rgba(1, 38, 45, 0.08);
+}
+
+.eim-card-category {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 10px 20px;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  color: #64748b !important;
+  text-transform: uppercase;
+}
+
+/* Challenge Box (Top) */
+.eim-comp-challenge {
+  background: #fffafa;
+  padding: 20px 20px 22px 20px;
+  border-bottom: 1px dashed #fecaca;
+  flex-shrink: 0;
+}
+
+.badge-challenge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 0.68rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.eim-comp-heading {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: #991b1b !important;
+  font-size: 1.08rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.eim-comp-text {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: #4b5563 !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+/* Flow Connector Arrow */
+.eim-comp-connector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 0;
+  z-index: 2;
+}
+
+.eim-connector-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--accent-color, #38E0CF);
+  color: #001B1E;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 500;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-50%);
+}
+
+/* Solution Box (Bottom) */
+.eim-comp-solution {
+  background: #01262d;
+  color: #ffffff;
+  padding: 24px 20px 20px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-solution {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(56, 224, 207, 0.15);
+  border: 1px solid rgba(56, 224, 207, 0.4);
+  color: var(--accent-color, #38E0CF);
+  font-size: 0.68rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.eim-solution-heading {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: #ffffff !important;
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.eim-solution-text {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: #cbd5e1 !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  line-height: 1.55;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.eim-solution-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(56, 224, 207, 0.12);
+  border-left: 3px solid var(--accent-color, #38E0CF);
+  color: var(--accent-color, #38E0CF);
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  padding: 4px 9px;
+  border-radius: 0;
+  align-self: flex-start;
+}
+
+/* ==========================================================================
+   MAITRYI AS A BUSINESS MODEL - HIGH DEFINITION SHOWCASE
+   ========================================================================== */
+.eim-maitryi-section {
+  background: #ffffff !important;
+  padding: 55px 0 !important;
+}
+
+.eim-maitryi-lead-text {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: #555555 !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  max-width: 100% !important;
+  width: 100%;
+}
+
+.eim-maitryi-showcase-wrap {
+  width: 100%;
+  max-width: 100%;
+  background: #011d23;
+  border: 1px solid #0d3840;
+  border-radius: 0 !important;
+  box-shadow: 0 16px 45px rgba(1, 38, 45, 0.12), 0 0 30px rgba(56, 224, 207, 0.06);
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eim-maitryi-showcase-wrap:hover {
+  border-color: var(--accent-color, #38E0CF);
+  box-shadow: 0 20px 50px rgba(1, 38, 45, 0.16), 0 0 35px rgba(56, 224, 207, 0.1);
+}
+
+.eim-maitryi-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  object-fit: cover;
+}
+
+/* Global Heading Refinement (PP Neue Montreal Medium 500) */
+h2.main-title {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 32px !important;
+  font-weight: 500 !important;
+  line-height: 42px !important;
+  letter-spacing: -0.01em !important;
+  color: #001B1E !important;
+}
+
+/* Dual-Tone Heading Colors */
+.title-dark {
+  color: #001B1E !important;
+}
+
+.title-green {
+  color: #0da492 !important;
+}
+
+@media (max-width: 768px) {
+  h2.main-title {
+    font-size: 26px !important;
+    line-height: 34px !important;
+  }
+}
+
+/* ==========================================================================
+   AFTER-SALES SERVICE - INTERACTIVE HOVER-PREVIEW SHOWCASE
+   ========================================================================== */
+.eim-services-interactive-section {
+  background: #ffffff !important;
+  padding: 55px 0 !important;
+}
+
+.eim-services-lead-text {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  color: #555555 !important;
+  font-size: 1.05rem !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.eim-services-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1.5px solid #e2e8f0;
+}
+
+.eim-service-item {
+  position: relative;
+  padding: 30px 24px;
+  border-bottom: 1.5px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  background: #ffffff;
+}
+
+.eim-service-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent-color, #38E0CF);
+  opacity: 0;
+  transform: scaleY(0.4);
+  transition: all 0.3s ease;
+}
+
+.eim-service-item:hover,
+.eim-service-item.active {
+  background: #f8fafc;
+  padding-left: 32px;
+}
+
+.eim-service-item:hover::before,
+.eim-service-item.active::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.eim-service-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.eim-service-title {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 500 !important;
+  color: #001B1E !important;
+  letter-spacing: -0.01em !important;
+  margin: 0;
+  transition: color 0.25s ease;
+}
+
+.eim-service-item:hover .eim-service-title,
+.eim-service-item.active .eim-service-title {
+  color: #0da492 !important;
+}
+
+.eim-service-arrow {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.eim-service-item:hover .eim-service-arrow,
+.eim-service-item.active .eim-service-arrow {
+  color: #0da492;
+  transform: translateX(6px);
+}
+
+.eim-service-desc {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  color: #64748b !important;
+  margin: 0;
+  padding-left: 0;
+  max-width: 520px;
+  transition: color 0.25s ease;
+}
+
+.eim-service-item.active .eim-service-desc {
+  color: #334155 !important;
+}
+
+/* Right Column Image Preview Container (Borderless) */
+.eim-services-preview-wrap {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background: transparent;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.eim-service-preview-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 0.5s cubic-bezier(0.2, 0, 0, 1), transform 0.7s cubic-bezier(0.2, 0, 0, 1);
+  pointer-events: none;
+}
+
+.eim-service-preview-img.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.eim-services-preview-overlay {
+  display: none;
+}
+
+/* Mobile In-Card Preview Image (Shown inside active card on mobile in one single view) */
+.eim-service-mobile-img-wrap {
+  margin-top: 16px;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  display: none;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(1, 38, 45, 0.08);
+}
+
+.eim-service-item.active .eim-service-mobile-img-wrap {
+  display: block;
+  animation: eimFadeSlideDown 0.35s ease forwards;
+}
+
+.eim-service-mobile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@keyframes eimFadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 991px) {
+  .eim-services-preview-wrap {
+    display: none !important;
+  }
+  .eim-service-item {
+    padding: 22px 18px;
+  }
+  .eim-service-title {
+    font-size: 1.22rem !important;
+  }
+  .eim-service-desc {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ==========================================================================
+   NETWORK OVERVIEW - CLEAN WHITE METRICS SHOWCASE (EXACT CONTENT ONLY)
+   ========================================================================== */
+.eim-network-metrics-section {
+  background: #ffffff !important;
+  padding: 55px 0 !important;
+}
+
+.eim-network-main-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0 !important;
+  padding: 36px 32px;
+}
+
+.eim-network-badge {
+  display: inline-block;
+  background: rgba(13, 164, 146, 0.1);
+  border: 1px solid rgba(13, 164, 146, 0.3);
+  color: #0da492;
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  text-transform: uppercase;
+  border-radius: 0 !important;
+}
+
+.eim-network-card-title {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: 500 !important;
+  color: #001B1E !important;
+  letter-spacing: -0.01em;
+}
+
+.eim-network-card-subtitle {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.95rem !important;
+  color: #64748b !important;
+  margin: 0;
+}
+
+.eim-network-total-display {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #0da492;
+  padding: 16px 20px;
+  display: inline-block;
+  min-width: 220px;
+}
+
+.eim-network-total-label {
+  display: block;
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.eim-network-total-number {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 2.5rem !important;
+  font-weight: 500 !important;
+  color: #0da492 !important;
+  line-height: 1 !important;
+}
+
+.eim-network-total-unit {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  color: #001B1E !important;
+}
+
+.eim-network-status-row {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+}
+
+.eim-network-status-row:hover {
+  border-color: #0da492;
+  box-shadow: 0 6px 18px rgba(1, 38, 45, 0.04);
+}
+
+.eim-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.eim-dot-cyan {
+  background: #0da492;
+  box-shadow: 0 0 8px rgba(13, 164, 146, 0.4);
+}
+
+.eim-dot-red {
+  background: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+.eim-status-name {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 500 !important;
+  color: #001B1E !important;
+}
+
+.eim-status-count {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.35rem !important;
+  font-weight: 600 !important;
+  color: #0da492 !important;
+}
+
+.eim-count-red {
+  color: #ef4444 !important;
+}
+
+/* Zone Breakdown Cards */
+.eim-zone-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-top: 3px solid #0da492;
+  border-radius: 0 !important;
+  padding: 24px 20px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.eim-zone-card:hover {
+  border-color: #0da492;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(1, 38, 45, 0.05);
+}
+
+.eim-zone-title {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: #001B1E !important;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid #f1f5f9;
+}
+
+.eim-zone-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eim-zone-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.88rem !important;
+  color: #555555;
+}
+
+.eim-zone-list li strong {
+  font-weight: 600;
+  color: #001B1E;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   TESTIMONIALS - CLEAN SLIDER WITH TOP ARROW NAVIGATION CTA
+   ========================================================================== */
+.eim-testimonials-showcase-section {
+  background: #ffffff !important;
+  padding: 55px 0 !important;
+  position: relative;
+}
+
+.eim-testimonials-header-row {
+  margin-bottom: 25px;
+}
+
+.eim-testimonials-label {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  color: #0da492;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.eim-testimonials-headline {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 2.2rem !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em;
+}
+
+.eim-testimonials-nav-btn {
+  width: 42px;
+  height: 42px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  color: #001B1E;
+  border-radius: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.eim-testimonials-nav-btn:hover {
+  background: var(--accent-color, #38E0CF);
+  border-color: var(--accent-color, #38E0CF);
+  color: #001B1E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 224, 207, 0.3);
+}
+
+.eim-testimonial-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0 !important;
+  height: 430px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 28px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.eim-testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3.5px;
+  background: #0da492;
+  transition: width 0.35s cubic-bezier(0.2, 0, 0, 1);
+  z-index: 10;
+}
+
+.eim-testimonial-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 28px rgba(1, 38, 45, 0.07);
+  transform: translateY(-3px);
+}
+
+.eim-testimonial-card:hover::before {
+  width: 100%;
+}
+
+.eim-testimonial-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.eim-testimonial-avatar-thumb {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid #f1f5f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.eim-testimonial-quote {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  color: #334155 !important;
+  margin: 14px 0;
+}
+
+.eim-testimonial-author-footer {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+}
+
+.eim-testimonial-author-name {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #001B1E !important;
+  margin-bottom: 3px;
+}
+
+.eim-testimonial-author-role {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.82rem !important;
+  font-weight: 400 !important;
+  color: #64748b !important;
+  line-height: 1.4 !important;
+  margin: 0;
+}
+
+.eim-testimonial-author-role span {
+  color: #0da492;
+  font-weight: 500;
+}
+
+.eim-testimonials-pagination {
+  margin-top: 24px !important;
+  margin-bottom: 0 !important;
+}
+
+.eim-testimonials-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #cbd5e1;
+  opacity: 1;
+  border-radius: 0 !important;
+  transition: all 0.3s ease;
+}
+
+.eim-testimonials-pagination .swiper-pagination-bullet-active {
+  width: 24px;
+  background: var(--accent-color, #38E0CF);
+}
+
+@media (max-width: 991px) {
+  .eim-testimonial-card {
+    height: 400px;
+    padding: 24px 20px;
+  }
+  .eim-testimonials-headline {
+    font-size: 1.8rem !important;
+  }
+}
+
+/* ==========================================================================
+   EVENTS & MILESTONES - IMMERSIVE SHOWCASE CAROUSEL (Matching Reference)
+   ========================================================================== */
+.eim-events-showcase-section {
+  background: #ffffff !important;
+  padding: 55px 0 !important;
+  position: relative;
+}
+
+.eim-events-header-row {
+  margin-bottom: 25px;
+}
+
+.eim-events-headline {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 2.2rem !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em;
+}
+
+.eim-events-header-desc {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  color: #475569 !important;
+  max-width: 540px;
+}
+
+.eim-events-nav-btn {
+  width: 42px;
+  height: 42px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  color: #001B1E;
+  border-radius: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.eim-events-nav-btn:hover {
+  background: var(--accent-color, #38E0CF);
+  border-color: var(--accent-color, #38E0CF);
+  color: #001B1E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 224, 207, 0.3);
+}
+
+.eim-events-swiper {
+  overflow: hidden !important;
+  padding-bottom: 5px !important;
+}
+
+.eim-event-card {
+  position: relative;
+  height: 480px;
+  background: #011d23;
+  border-radius: 0 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 26px 24px;
+  cursor: pointer;
+}
+
+.eim-event-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.65s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.eim-event-card:hover .eim-event-bg-img {
+  transform: scale(1.06);
+}
+
+.eim-event-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 27, 30, 0.1) 0%, rgba(0, 27, 30, 0.3) 30%, rgba(0, 27, 30, 0.85) 65%, rgba(0, 27, 30, 0.98) 100%);
+  pointer-events: none;
+}
+
+.eim-event-top-bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.eim-event-circle-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: all 0.35s ease;
+}
+
+.eim-event-card:hover .eim-event-circle-arrow {
+  background: var(--accent-color, #38E0CF);
+  border-color: var(--accent-color, #38E0CF);
+  color: #001B1E;
+  transform: translateX(4px) scale(1.05);
+}
+
+.eim-event-bottom-bar {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+}
+
+.eim-event-date-pill {
+  display: inline-block;
+  background: rgba(56, 224, 207, 0.18);
+  border: 1px solid rgba(56, 224, 207, 0.4);
+  color: var(--accent-color, #38E0CF);
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  margin-bottom: 10px;
+  border-radius: 0 !important;
+}
+
+.eim-event-title-bottom {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.35rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  line-height: 1.3 !important;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.eim-event-desc {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.92rem !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  color: #e2e8f0 !important;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.eim-event-meta-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.82rem !important;
+  color: #cbd5e1;
+}
+
+.eim-event-meta-tag span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.eim-event-meta-tag span i {
+  color: var(--accent-color, #38E0CF);
+}
+
+.eim-events-pagination {
+  margin-top: 24px !important;
+  margin-bottom: 0 !important;
+}
+
+.eim-events-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #cbd5e1;
+  opacity: 1;
+  border-radius: 0 !important;
+  transition: all 0.3s ease;
+}
+
+.eim-events-pagination .swiper-pagination-bullet-active {
+  width: 24px;
+  background: var(--accent-color, #38E0CF);
+}
+
+@media (max-width: 991px) {
+  .eim-event-card {
+    height: 420px;
+    padding: 20px;
+  }
+  .eim-events-headline {
+    font-size: 1.8rem !important;
+  }
+}
+
+/* ==========================================================================
+   NEWS & PRESS RELEASE - FULL-WIDTH MODERN SHOWCASE
+   ========================================================================== */
+.eim-news-section {
+  background: #ffffff !important;
+  padding: 55px 0 !important;
+}
+
+.eim-news-lead-text {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  color: #555555 !important;
+  max-width: 100% !important;
+  width: 100%;
+}
+
+.eim-news-fullwidth-wrap {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0 !important;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 35px rgba(1, 38, 45, 0.06);
+  position: relative;
+  background: #ffffff;
+}
+
+.eim-news-fullwidth-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   AWARDS & RECOGNITION SECTION - LIGHT MODERN 3-COLUMN SHOWCASE
+   ========================================================================== */
+.eim-awards-section {
+  background: #ffffff !important;
+  padding: 55px 0 !important;
+}
+
+.eim-awards-lead-text {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  color: #555555 !important;
+  max-width: 100% !important;
+  width: 100%;
+}
+
+.eim-award-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0 !important;
+  box-shadow: 0 4px 20px rgba(1, 38, 45, 0.04);
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.eim-award-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #0da492;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+  z-index: 5;
+}
+
+.eim-award-card:hover {
+  transform: translateY(-5px);
+  border-color: #0da492;
+  box-shadow: 0 16px 40px rgba(1, 38, 45, 0.1);
+}
+
+.eim-award-card:hover::before {
+  transform: scaleX(1);
+}
+
+.eim-award-img-box {
+  width: 100%;
+  height: 230px;
+  background: #f8fafc;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.eim-award-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.2, 0, 0, 1);
+  display: block;
+}
+
+.eim-award-card:hover .eim-award-img {
+  transform: scale(1.05);
+}
+
+.eim-award-body {
+  padding: 24px 22px 26px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.eim-award-title {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  color: #001B1E !important;
+  margin-bottom: 8px;
+}
+
+.eim-award-org {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  color: #0da492;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+  background: rgba(13, 164, 146, 0.08);
+  padding: 4px 10px;
+  width: fit-content;
+}
+
+.eim-award-desc {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  color: #64748b !important;
+  margin-bottom: 0;
+}
+
+.eim-award-desc strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   CONTACT & FLEET INQUIRY - CINEMATIC SHADED TRUCK BACKGROUND SHOWCASE
+   ========================================================================== */
+.eim-contact-section {
+  position: relative;
+  background-color: #001518 !important;
+  background-image: 
+    linear-gradient(135deg, rgba(0, 21, 24, 0.93) 0%, rgba(1, 38, 45, 0.85) 50%, rgba(0, 21, 24, 0.95) 100%),
+    url('../images/EIM-truck.jpg') !important;
+  background-position: center right !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  padding: 85px 0 95px 0 !important;
+  overflow: hidden;
+}
+
+.eim-contact-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 75% 25%, rgba(56, 224, 207, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.eim-contact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(56, 224, 207, 0.12);
+  border: 1px solid rgba(56, 224, 207, 0.3);
+  color: var(--accent-color, #38E0CF);
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.74rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+
+.eim-contact-lead {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  color: rgba(231, 241, 241, 0.85) !important;
+  max-width: 520px;
+}
+
+.eim-contact-pillars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.eim-contact-pillar-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--accent-color, #38E0CF);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.92rem !important;
+  font-weight: 500 !important;
+  color: #ffffff;
+  transition: all 0.25s ease;
+}
+
+.eim-contact-pillar-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(56, 224, 207, 0.4);
+  transform: translateX(4px);
+}
+
+.eim-contact-pillar-item i {
+  color: var(--accent-color, #38E0CF);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.eim-contact-direct-box {
+  background: rgba(1, 38, 45, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(56, 224, 207, 0.3);
+  padding: 16px 20px;
+  margin-top: 28px;
+}
+
+.eim-contact-email-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(56, 224, 207, 0.15);
+  border: 1px solid rgba(56, 224, 207, 0.35);
+  color: var(--accent-color, #38E0CF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.eim-contact-email-sub {
+  display: block;
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em;
+  color: rgba(231, 241, 241, 0.65);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.eim-contact-email-val {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: var(--accent-color, #38E0CF) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.eim-contact-email-val:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+/* Glassmorphic Contact Form Console */
+.eim-contact-form-card {
+  background: rgba(1, 38, 45, 0.90);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1.5px solid rgba(56, 224, 207, 0.4);
+  border-radius: 0 !important;
+  padding: 38px 34px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 0 35px rgba(56, 224, 207, 0.12);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.eim-form-card-title {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 1.45rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin-bottom: 4px;
+}
+
+.eim-form-card-subtitle {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.88rem !important;
+  color: rgba(231, 241, 241, 0.75) !important;
+  margin-bottom: 22px;
+}
+
+/* Modern Luxury Dark Form Controls */
+.eim-console-form .form-group {
+  margin-bottom: 16px;
+}
+
+.eim-console-form label {
+  display: block;
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.eim-console-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1.5px solid rgba(56, 224, 207, 0.28) !important;
+  border-radius: 0 !important;
+  color: #ffffff !important;
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.94rem !important;
+  transition: all 0.3s ease;
+}
+
+.eim-console-input:focus {
+  outline: none;
+  background: rgba(0, 27, 30, 0.95) !important;
+  border-color: var(--accent-color, #38E0CF) !important;
+  box-shadow: 0 0 0 3px rgba(56, 224, 207, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.eim-console-input::placeholder {
+  color: rgba(231, 241, 241, 0.45) !important;
+}
+
+.eim-form-privacy-note {
+  font-family: 'PP Neue Montreal', sans-serif !important;
+  font-size: 0.76rem !important;
+  color: rgba(231, 241, 241, 0.6) !important;
+  margin-top: 14px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }

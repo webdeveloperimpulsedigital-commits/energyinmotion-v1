@@ -52,71 +52,24 @@
 	<!-- End Google Tag Manager (noscript) -->
 
 	<header id="header" class="header fixed-top">
-		<div class="topbar d-flex align-items-center">
-			<div class="container-fluid px-md-5 d-flex justify-content-end align-items-center">
-				<div class="contact-info d-flex align-items-center">
-					<i class="bi bi-envelope fill-icon me-2"></i><a
-						href="mailto:powerup@energyinmotion.in">powerup@energyinmotion.in</a>
-				</div>
-			</div>
-		</div>
 		<div class="branding d-flex align-items-center">
 			<div class="container-fluid px-md-5 position-relative d-flex align-items-center justify-content-between">
 				<a href="#hero" class="logo d-flex align-items-center">
 					<img src="images/logo-eim.svg" alt="EIM" decoding="async" loading="eager" fetchpriority="high">
 				</a>
-				<nav id="navmenu" class="navmenu">
-					<ul>
-						<li><a href="#hero" class="active">Home</a></li>
-
-						<!-- Dropdown 1: About EIM -->
-						<li class="dropdown">
-							<a href="#overview"><span>About EIM</span> <i
-									class="bi bi-chevron-down toggle-dropdown ms-1"></i></a>
-							<ul>
-								<li><a href="#overview">What Makes EIM Different?</a></li>
-								<li><a href="#maitryi">Maitryi Model</a></li>
-							</ul>
-						</li>
-
-						<!-- Dropdown 2: Solutions & Network -->
-						<li class="dropdown">
-							<a href="#offerings"><span>Solutions & Network</span> <i
-									class="bi bi-chevron-down toggle-dropdown ms-1"></i></a>
-							<ul>
-								<li><a href="#offerings">Offerings</a></li>
-								<li><a href="#services">After-Sales Service</a></li>
-								<li><a href="#networks">Swap Station Network</a></li>
-							</ul>
-						</li>
-
-						<!-- Dropdown 3: Company & Media -->
-						<li class="dropdown">
-							<a href="#testimonials"><span>Company & Media</span> <i
-									class="bi bi-chevron-down toggle-dropdown ms-1"></i></a>
-							<ul>
-								<li><a href="#testimonials">Testimonials</a></li>
-								<li><a href="#press">News & Media</a></li>
-								<li><a href="#events">Events</a></li>
-								<li><a href="#awards">Awards & Recognition</a></li>
-							</ul>
-						</li>
-
-						<li><a href="#contact" class="nav-get-in-touch-btn"><span>Get In Touch</span></a></li>
-					</ul>
-					<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-				</nav>
+				<a href="#contact" class="nav-get-in-touch-btn"><span>Get In Touch</span></a>
 			</div>
 		</div>
 	</header>
 	<main class="main">
-		<!-- HERO SECTION WITH INQUIRY FORM -->
-		<section id="hero" class="ev-hero-section">
-			<!-- Background Video (Desktop & Mobile) -->
+		<!-- HERO SECTION: BIG FULL-HEIGHT VIDEO -->
+		<section id="hero" class="ev-hero-video-section">
+			<!-- Desktop Video -->
 			<video autoplay muted loop playsinline preload="auto" class="ev-hero-video-bg hide-mob"
 				id="ev-hero-video-desktop" src="images/landing-page-video-desktop.mp4">
 				<source src="images/landing-page-video-desktop.mp4" type="video/mp4">
 			</video>
+			<!-- Mobile Video -->
 			<video autoplay muted loop playsinline preload="auto" class="ev-hero-video-bg hide-desk"
 				id="ev-hero-video-mobile" src="images/landing-page-video-mobile.mp4">
 				<source src="images/landing-page-video-mobile.mp4" type="video/mp4">
@@ -136,106 +89,211 @@
 					}
 				})();
 			</script>
-			<div class="ev-hero-video-overlay"></div>
-			<div class="ev-hero-bg-glow"></div>
+			<div class="ev-hero-video-overlay-bottom"></div>
+		</section>
 
-			<div class="container ev-hero-container">
-				<div class="row align-items-center gy-4">
-					<!-- Hero Left Column: Headline -->
-					<div class="col-lg-7" data-aos="fade-right">
-						<h1 class="ev-hero-headline">
-							Empowering Heavy<br class="d-none d-md-block">
-							Logistics with<br class="d-none d-md-block">
-							<span class="highlight">Zero-Emission EV Trucks</span>
-						</h1>
-					</div>
-
-					<!-- Hero Right Column: Lead Inquiry Form -->
-					<div class="col-lg-5" data-aos="fade-left" id="hero-inquiry-card">
-						<div class="ev-hero-form-card">
-							<div class="ev-form-header">
-								<h3>Looking for electric heavy-duty vehicles? Talk to EIM.</h3>
-							</div>
-
-							<form class="ev-hero-form" action="contact-mailto.php" method="post"
-								id="ev-truck-inquiry-form">
-								<div class="form-group">
-									<label for="hero-frmname">Full Name*</label>
-									<input type="text" id="hero-frmname" name="frmname" class="ev-form-control"
-										placeholder="e.g. Rajesh Kumar" required>
-								</div>
-
-								<div class="form-group">
-									<label for="hero-frmemail">Work Email*</label>
-									<input type="email" id="hero-frmemail" name="frmemail" class="ev-form-control"
-										placeholder="name@company.com" required>
-								</div>
-
-								<div class="form-group">
-									<label for="hero-frmcontact">Mobile Number*</label>
-									<input type="tel" id="hero-frmcontact" name="frmcontact" class="ev-form-control"
-										placeholder="+91 98765 43210" required>
-								</div>
-
-								<div class="form-group">
-									<label for="hero-frmdes">Payload / Fleet Requirement*</label>
-									<textarea id="hero-frmdes" name="frmdes" rows="2" class="ev-form-control"
-										placeholder="e.g. 55-Ton Heavy Commercial Truck, 10 Fleet Units..."
-										required></textarea>
-								</div>
-
-								<!-- Hidden Fields for backend mail script -->
-								<input type="hidden" name="subject" value="EV Truck Inquiry from Landing Page">
-								<input type="hidden"
-									value="text,frmname,Name,text,frmemail,E-mail,text,frmcontact,Phone No."
-									name="js_Blank">
-								<input type="hidden" name="js_Email" value="frmemail,E-mail">
-
-								<button type="submit" class="ev-btn-primary mt-2">
-									<span>Submit</span>
-									<i class="bi bi-arrow-right-circle-fill"></i>
-								</button>
-							</form>
+		<!-- OFFERINGS MULTI-CARD CAROUSEL SHOWCASE (Directly After Hero) -->
+		<section id="offerings" class="eim-offerings-section bg-white">
+			<div class="container">
+				<!-- Header Row: Desktop maintains Title Left & Nav Right with Full-Width Desc Below; Mobile has clean stack with Nav before images -->
+				<div class="eim-offerings-header-row mb-4" data-aos="fade-up">
+					<!-- Desktop Top Row (Title Left + Nav Right) -->
+					<div class="d-none d-md-flex align-items-center justify-content-between mb-3 pb-1">
+						<h2 class="main-title mb-0">
+							<span class="title-dark">Our Integrated</span> <span class="title-green">Offerings</span>
+						</h2>
+						<div class="eim-offerings-nav-group d-flex gap-2 flex-shrink-0">
+							<button class="eim-offerings-nav-btn offerings-prev-btn" aria-label="Previous Offering">
+								<i class="bi bi-arrow-left"></i>
+							</button>
+							<button class="eim-offerings-nav-btn offerings-next-btn" aria-label="Next Offering">
+								<i class="bi bi-arrow-right"></i>
+							</button>
 						</div>
 					</div>
+
+					<!-- Mobile Top Title (Mobile only) -->
+					<div class="d-flex d-md-none mb-2">
+						<h2 class="main-title mb-0">
+							<span class="title-dark">Our Integrated</span> <span class="title-green">Offerings</span>
+						</h2>
+					</div>
+
+					<!-- Full-Width Paragraph Description -->
+					<p class="eim-offerings-header-desc mb-0">
+						EIM delivers a comprehensive, full-stack ecosystem engineered for commercial logistics—combining high-performance electric heavy commercial vehicles, rapid automated battery swapping, and intelligent energy management.
+					</p>
+
+					<!-- Mobile Navigation Buttons (Left-aligned after paragraph / before images on mobile only) -->
+					<div class="d-flex d-md-none justify-content-start mt-3 mb-1">
+						<div class="eim-offerings-nav-group d-flex gap-2">
+							<button class="eim-offerings-nav-btn offerings-prev-btn" aria-label="Previous Offering">
+								<i class="bi bi-arrow-left"></i>
+							</button>
+							<button class="eim-offerings-nav-btn offerings-next-btn" aria-label="Next Offering">
+								<i class="bi bi-arrow-right"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Multi-Card Swiper Carousel (2 Wide Cards per View, 6 Total Offerings) -->
+				<div class="swiper eim-offerings-swiper" data-aos="fade-up" data-aos-delay="100">
+					<div class="swiper-wrapper">
+						<!-- Slide 1: Next-Gen Electric Tractor -->
+						<div class="swiper-slide">
+							<div class="eim-offering-card">
+								<img src="images/EIM-truck.jpg" alt="Next-Generation Electric Tractor" class="eim-offering-bg-img" loading="lazy">
+								<div class="eim-offering-overlay">
+									<h3 class="eim-offering-title">Next-Generation Electric Tractor</h3>
+									<p class="eim-offering-desc">Engineered for high-performance heavy-duty freight with zero emissions and high uptime.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 2: Integrated Charging Network -->
+						<div class="swiper-slide">
+							<div class="eim-offering-card">
+								<img src="images/Integrated-Charging.png" alt="Integrated Charging Network" class="eim-offering-bg-img" loading="lazy">
+								<div class="eim-offering-overlay">
+									<h3 class="eim-offering-title">Integrated Charging Network</h3>
+									<p class="eim-offering-desc">Reliable energy infrastructure designed for uninterrupted operations.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 3: Automated Battery Swapping -->
+						<div class="swiper-slide">
+							<div class="eim-offering-card">
+								<img src="images/Automated-Battery.webp" alt="Automated Battery Swapping" class="eim-offering-bg-img" loading="lazy">
+								<div class="eim-offering-overlay">
+									<h3 class="eim-offering-title">Automated Battery Swapping</h3>
+									<p class="eim-offering-desc">Automated battery exchange in minutes to maximize fleet uptime.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 4: Battery-as-a-Service -->
+						<div class="swiper-slide">
+							<div class="eim-offering-card">
+								<img src="images/offering-1.jpg" alt="Battery-as-a-Service" class="eim-offering-bg-img" loading="lazy">
+								<div class="eim-offering-overlay">
+									<h3 class="eim-offering-title">Battery-as-a-Service</h3>
+									<p class="eim-offering-desc">Flexible subscription model that lowers upfront investment and simplifies ownership.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 5: Intelligent Energy Management -->
+						<div class="swiper-slide">
+							<div class="eim-offering-card">
+								<img src="images/Intelligent-Energy.png" alt="Intelligent Energy Management" class="eim-offering-bg-img" loading="lazy">
+								<div class="eim-offering-overlay">
+									<h3 class="eim-offering-title">Intelligent Energy Management</h3>
+									<p class="eim-offering-desc">Smart software optimizes battery allocation, charging, and fleet scheduling.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Slide 6: Powered by Renewable Energy -->
+						<div class="swiper-slide">
+							<div class="eim-offering-card">
+								<img src="images/Automated-Battery.png" alt="Powered by Renewable Energy" class="eim-offering-bg-img" loading="lazy">
+								<div class="eim-offering-overlay">
+									<h3 class="eim-offering-title">Powered by Renewable Energy</h3>
+									<p class="eim-offering-desc">Supporting cleaner, lower-carbon logistics through sustainable energy infrastructure.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Pagination Dots Centered After/Below the Images -->
+					<div class="swiper-pagination eim-offerings-pagination position-relative"></div>
 				</div>
 			</div>
 		</section>
 
-		<section id="overview" class="company overview section bg-blue">
-			<div class="container">
-				<!-- Row 1: Header + Text -->
-				<div class="overview-header text-center" data-aos="fade-up">
-					<h2 class="main-title">Why Choose EIM</h2>
-					<p class="overview-lead-text">
-						At EIM, we are proud to be building India’s state-of-the-art electric commercial vehicle
-						ecosystem designed to power the future of logistics and transport. We are building India’s
-						integrated electric freight ecosystem, combining advanced electric vehicles, battery swapping,
-						charging infrastructure, and intelligent support services. Our solutions help enterprises
-						transition to cleaner transport while improving operational efficiency, reducing the total cost
-						of ownership, and minimizing technology risk.
-					</p>
-				</div>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				if (typeof Swiper !== 'undefined') {
+					new Swiper('.eim-offerings-swiper', {
+						slidesPerView: 1,
+						spaceBetween: 16,
+						loop: true,
+						speed: 550,
+						grabCursor: true,
+						touchRatio: 1.2,
+						autoplay: {
+							delay: 4500,
+							disableOnInteraction: false,
+							pauseOnMouseEnter: true,
+						},
+						navigation: {
+							prevEl: '.offerings-prev-btn',
+							nextEl: '.offerings-next-btn',
+						},
+						pagination: {
+							el: '.eim-offerings-pagination',
+							clickable: true,
+						},
+						breakpoints: {
+							768: {
+								slidesPerView: 2,
+								spaceBetween: 28,
+							}
+						}
+					});
+				}
+			});
+		</script>
 
-				<!-- Row 2: 2 Visual Image Showcase Cards (No Text Box Below) -->
-				<div class="row g-4 mb-5" data-aos="fade-up" data-aos-delay="150">
-					<!-- Image Card 1 -->
-					<div class="col-lg-6 col-md-6">
-						<div class="eim-image-card">
-							<img src="images/overview-1.jpg" alt="EIM Heavy Commercial EV Fleet" class="img-fluid">
+		<!-- SECTION: WHY CHOOSE EIM (WITH STICKY SCROLLING IMAGE ANIMATION) -->
+		<section id="overview" class="eim-sticky-scroll-section">
+			<div class="container text-start" data-aos="fade-up">
+				<h2 class="eim-fleet-section-title">
+					<span class="title-dark">Why Choose</span> <span class="title-green">EIM</span>
+				</h2>
+				<p class="eim-fleet-section-desc">
+					At EIM, we are proud to be building India’s state-of-the-art electric commercial vehicle
+					ecosystem designed to power the future of logistics and transport. We are building India’s
+					integrated electric freight ecosystem, combining advanced electric vehicles, battery swapping,
+					charging infrastructure, and intelligent support services. Our solutions help enterprises
+					transition to cleaner transport while improving operational efficiency, reducing the total cost
+					of ownership, and minimizing technology risk.
+				</p>
+
+				<div class="eim-sticky-cards-track" id="eimStickyCardsTrack">
+					<!-- Sticky Card 1 -->
+					<div class="eim-sticky-card-wrap" data-index="0">
+						<div class="eim-sticky-card">
+							<img src="images/Eim-Cement-plant.png" alt="EIM Heavy Commercial EV Fleet - Cement Plant Corridor" class="eim-sticky-card-img" loading="lazy">
 						</div>
 					</div>
 
-					<!-- Image Card 2 -->
-					<div class="col-lg-6 col-md-6">
-						<div class="eim-image-card">
-							<img src="images/overview-3.jpg" alt="EIM Charging & Megawatt Infra" class="img-fluid">
+					<!-- Sticky Card 2 -->
+					<div class="eim-sticky-card-wrap" data-index="1">
+						<div class="eim-sticky-card">
+							<img src="images/img-1.png" alt="EIM 55-Ton Heavy Commercial Electric Tractor" class="eim-sticky-card-img" loading="lazy">
+						</div>
+					</div>
+
+					<!-- Sticky Card 3 -->
+					<div class="eim-sticky-card-wrap" data-index="2">
+						<div class="eim-sticky-card">
+							<img src="images/on-port.png" alt="EIM Port & Intermodal Container Transport" class="eim-sticky-card-img" loading="lazy">
+						</div>
+					</div>
+
+					<!-- Sticky Card 4 -->
+					<div class="eim-sticky-card-wrap" data-index="3">
+						<div class="eim-sticky-card">
+							<img src="images/Vector-Smart-Object1.png" alt="EIM Integrated Clean Logistics Network" class="eim-sticky-card-img" loading="lazy">
 						</div>
 					</div>
 				</div>
 
-				<!-- Row 3: Animated Stats Grid Counter (Count Up From 0) -->
-				<div class="overview-stats-grid mt-4" data-aos="fade-up" data-aos-delay="250">
+				<!-- Stats Grid Counter -->
+				<div class="overview-stats-grid mt-4 pt-2 pb-4" data-aos="fade-up" data-aos-delay="200">
 					<div class="overview-stat-card">
 						<div class="stat-number-wrap">
 							<span class="stat-number" data-target="55" data-suffix="+">0</span>
@@ -269,6 +327,43 @@
 					</div>
 				</div>
 			</div>
+
+			<script>
+				(function initStickyCardScaling() {
+					function setupScaling() {
+						var track = document.getElementById('eimStickyCardsTrack');
+						if (!track) return;
+						var cardWraps = track.querySelectorAll('.eim-sticky-card-wrap');
+						var total = cardWraps.length;
+
+						function updateCardScales() {
+							cardWraps.forEach(function (card, index) {
+								if (index < total - 1) {
+									var nextCard = cardWraps[index + 1];
+									var cardRect = card.getBoundingClientRect();
+									var nextRect = nextCard.getBoundingClientRect();
+									var distance = Math.max(0, nextRect.top - cardRect.top);
+									var maxDist = 320;
+									var progress = Math.min(1, Math.max(0, 1 - distance / maxDist));
+									var targetScale = Math.max(0.88, 1 - (total - index - 1) * 0.04);
+									var currentScale = 1 - progress * (1 - targetScale);
+									card.style.transform = 'scale(' + currentScale.toFixed(4) + ')';
+								}
+							});
+						}
+
+						window.addEventListener('scroll', updateCardScales, { passive: true });
+						window.addEventListener('resize', updateCardScales);
+						updateCardScales();
+					}
+
+					if (document.readyState === 'loading') {
+						document.addEventListener('DOMContentLoaded', setupScaling);
+					} else {
+						setupScaling();
+					}
+				})();
+			</script>
 		</section>
 
 		<script>
@@ -375,467 +470,271 @@
 			});
 		</script>
 
-		<!-- WHAT MAKES EIM DIFFERENT SECTION (Top Tabs + Bottom Spotlight Card) -->
-		<section id="solutions" class="solutions-accordion-section py-5">
+		<!-- WHAT MAKES EIM DIFFERENT SECTION (3-Column Side-by-Side Comparison Cards) -->
+		<section id="solutions" class="solutions-comparison-section py-5">
 			<div class="container">
-				<!-- Centered Header -->
-				<h2 class="main-title text-center mb-4" data-aos="fade-up">What Makes EIM Different?</h2>
-
-				<!-- Top Horizontal Feature Selector Tabs Row -->
-				<div class="mobile-tabs-scroll-wrap max-w-spotlight mx-auto mb-4" data-aos="fade-up"
-					data-aos-delay="50">
-					<!-- Tab 1: Capital Investment -->
-					<button class="matrix-tab-btn horizontal-tab active" data-matrix-tab="pane1">
-						<span class="tab-title mb-0">Reduce Capital Investment</span>
-					</button>
-
-					<!-- Tab 2: Charging Downtime -->
-					<button class="matrix-tab-btn horizontal-tab" data-matrix-tab="pane2">
-						<span class="tab-title mb-0">Charging Downtime</span>
-					</button>
-
-					<!-- Tab 3: Route Reliability -->
-					<button class="matrix-tab-btn horizontal-tab" data-matrix-tab="pane3">
-						<span class="tab-title mb-0">Route Reliability</span>
-					</button>
+				<!-- Left-Aligned Header -->
+				<div class="text-start mb-4 pb-2" data-aos="fade-up">
+					<h2 class="main-title mb-2">
+						<span class="title-dark">What Makes</span> <span class="title-green">EIM Different?</span>
+					</h2>
+					<p class="solutions-section-subtitle ms-0 me-auto">
+						Eliminating the core financial, operational, and infrastructure bottlenecks of conventional commercial EV adoption.
+					</p>
 				</div>
 
-				<!-- Bottom Dynamic Spotlight Content Card (Full Width Below Tabs) -->
-				<div class="max-w-spotlight mx-auto" data-aos="fade-up" data-aos-delay="100">
-					<div class="matrix-panes-wrapper">
+				<!-- 3-Column Comparison Grid -->
+				<div class="row g-4 justify-content-center">
+					<!-- Column 1: Capital Investment -->
+					<div class="col-lg-4 col-md-6 col-12 d-flex" data-aos="fade-up" data-aos-delay="100">
+						<div class="eim-comparison-card w-100">
+							<div class="eim-card-category">
+								<span>01 • CAPITAL INVESTMENT</span>
+							</div>
 
-						<!-- Pane 1: Capital Investment -->
-						<div class="matrix-pane active" id="matrix-pane1">
-							<div class="matrix-spotlight-card">
-								<!-- Top Challenge Box -->
-								<div class="spotlight-box challenge-box">
-									<div class="box-header mb-2">
-										<span class="box-badge badge-red"><i
-												class="bi bi-exclamation-triangle-fill me-1"></i> THE CHALLENGE</span>
-									</div>
-									<h4 class="box-heading">Reduce Capital Investment</h4>
-									<p class="box-desc">
-										Electric trucks often require substantially higher upfront investment than
-										conventional diesel vehicles.
-									</p>
+							<!-- Top: The Challenge -->
+							<div class="eim-comp-box eim-comp-challenge">
+								<div class="eim-comp-badge badge-challenge">
+									<i class="bi bi-exclamation-triangle-fill"></i> THE CHALLENGE
 								</div>
+								<h4 class="eim-comp-heading">High Upfront Vehicle Cost</h4>
+								<p class="eim-comp-text">
+									Electric heavy trucks traditionally require substantially higher upfront investment than diesel vehicles due to high battery pack costs.
+								</p>
+							</div>
 
-								<!-- Flow Connector -->
-								<div class="matrix-flow-connector">
-									<div class="connector-icon"><i class="bi bi-arrow-down"></i></div>
+							<!-- Flow Connector -->
+							<div class="eim-comp-connector">
+								<div class="eim-connector-icon">
+									<i class="bi bi-arrow-down"></i>
 								</div>
+							</div>
 
-								<!-- Bottom Solution Box -->
-								<div class="spotlight-box solution-box">
-									<div class="box-header mb-2">
-										<span class="box-badge badge-mint"><i class="bi bi-check-circle-fill me-1"></i>
-											EIM SOLUTION</span>
-									</div>
-									<h3 class="solution-heading">Battery-as-a-Service</h3>
-									<p class="box-desc mb-0">
-										Lower acquisition costs by separating battery ownership from the vehicle.
-									</p>
+							<!-- Bottom: EIM Solution -->
+							<div class="eim-comp-box eim-comp-solution">
+								<div class="eim-comp-badge badge-solution">
+									<i class="bi bi-check-circle-fill"></i> EIM ADVANTAGE
+								</div>
+								<h3 class="eim-solution-heading">Battery-as-a-Service</h3>
+								<p class="eim-solution-text">
+									Separates battery ownership from the vehicle, bringing upfront acquisition costs to diesel parity and eliminating battery degradation risk.
+								</p>
+								<div class="eim-solution-pill">
+									<i class="bi bi-lightning-charge-fill"></i> Diesel-Parity CapEx
 								</div>
 							</div>
 						</div>
+					</div>
 
-						<!-- Pane 2: Charging Downtime -->
-						<div class="matrix-pane" id="matrix-pane2">
-							<div class="matrix-spotlight-card">
-								<!-- Top Challenge Box -->
-								<div class="spotlight-box challenge-box">
-									<div class="box-header mb-2">
-										<span class="box-badge badge-red"><i
-												class="bi bi-exclamation-triangle-fill me-1"></i> THE CHALLENGE</span>
-									</div>
-									<h4 class="box-heading">Charging Downtime</h4>
-									<p class="box-desc">
-										Evs have 6X higher refuelling down-time compared to diesel truck
-									</p>
+					<!-- Column 2: Refueling & Charging Downtime -->
+					<div class="col-lg-4 col-md-6 col-12 d-flex" data-aos="fade-up" data-aos-delay="200">
+						<div class="eim-comparison-card w-100">
+							<div class="eim-card-category">
+								<span>02 • TURNAROUND SPEED</span>
+							</div>
+
+							<!-- Top: The Challenge -->
+							<div class="eim-comp-box eim-comp-challenge">
+								<div class="eim-comp-badge badge-challenge">
+									<i class="bi bi-exclamation-triangle-fill"></i> THE CHALLENGE
 								</div>
+								<h4 class="eim-comp-heading">Hours of Charging Downtime</h4>
+								<p class="eim-comp-text">
+									Direct plug-in charging forces prolonged vehicle idle time, resulting in 6X higher refueling delays compared to fast diesel fueling.
+								</p>
+							</div>
 
-								<!-- Flow Connector -->
-								<div class="matrix-flow-connector">
-									<div class="connector-icon"><i class="bi bi-arrow-down"></i></div>
+							<!-- Flow Connector -->
+							<div class="eim-comp-connector">
+								<div class="eim-connector-icon">
+									<i class="bi bi-arrow-down"></i>
 								</div>
+							</div>
 
-								<!-- Bottom Solution Box -->
-								<div class="spotlight-box solution-box">
-									<div class="box-header mb-2">
-										<span class="box-badge badge-mint"><i class="bi bi-check-circle-fill me-1"></i>
-											EIM SOLUTION</span>
-									</div>
-									<h3 class="solution-heading">Battery Swapping</h3>
-									<p class="box-desc mb-0">
-										Automated Battery Swapping gets trucks back on the road in minutes, maximizing
-										fleet productivity.
-									</p>
+							<!-- Bottom: EIM Solution -->
+							<div class="eim-comp-box eim-comp-solution">
+								<div class="eim-comp-badge badge-solution">
+									<i class="bi bi-check-circle-fill"></i> EIM ADVANTAGE
+								</div>
+								<h3 class="eim-solution-heading">Sub-5-Min Battery Swapping</h3>
+								<p class="eim-solution-text">
+									Automated drive-through swapping exchanges depleted batteries for fully charged packs in under 5 minutes, maximizing 24/7 fleet productivity.
+								</p>
+								<div class="eim-solution-pill">
+									<i class="bi bi-lightning-charge-fill"></i> Sub-5-Minute Swap
 								</div>
 							</div>
 						</div>
+					</div>
 
-						<!-- Pane 3: Route Reliability -->
-						<div class="matrix-pane" id="matrix-pane3">
-							<div class="matrix-spotlight-card">
-								<!-- Top Challenge Box -->
-								<div class="spotlight-box challenge-box">
-									<div class="box-header mb-2">
-										<span class="box-badge badge-red"><i
-												class="bi bi-exclamation-triangle-fill me-1"></i> THE CHALLENGE</span>
-									</div>
-									<h4 class="box-heading">Route Reliability</h4>
-									<p class="box-desc">
-										Limited charging infrastructure and extended charging times can disrupt fleet
-										operations and constrain business growth.
-									</p>
+					<!-- Column 3: Route Reliability & Grid Constraints -->
+					<div class="col-lg-4 col-md-6 col-12 d-flex" data-aos="fade-up" data-aos-delay="300">
+						<div class="eim-comparison-card w-100">
+							<div class="eim-card-category">
+								<span>03 • ROUTE RELIABILITY</span>
+							</div>
+
+							<!-- Top: The Challenge -->
+							<div class="eim-comp-box eim-comp-challenge">
+								<div class="eim-comp-badge badge-challenge">
+									<i class="bi bi-exclamation-triangle-fill"></i> THE CHALLENGE
 								</div>
+								<h4 class="eim-comp-heading">Uncertain Route Infrastructure</h4>
+								<p class="eim-comp-text">
+									Limited public charging and grid constraints cause route uncertainty, range anxiety, and unexpected delays in long-haul freight schedules.
+								</p>
+							</div>
 
-								<!-- Flow Connector -->
-								<div class="matrix-flow-connector">
-									<div class="connector-icon"><i class="bi bi-arrow-down"></i></div>
+							<!-- Flow Connector -->
+							<div class="eim-comp-connector">
+								<div class="eim-connector-icon">
+									<i class="bi bi-arrow-down"></i>
 								</div>
+							</div>
 
-								<!-- Bottom Solution Box -->
-								<div class="spotlight-box solution-box">
-									<div class="box-header mb-2">
-										<span class="box-badge badge-mint"><i class="bi bi-check-circle-fill me-1"></i>
-											EIM SOLUTION</span>
-									</div>
-									<h3 class="solution-heading">Smart Energy Management</h3>
-									<p class="box-desc mb-0">
-										Intelligently coordinates battery swapping, charging, and fleet deployment to
-										maximize uptime, optimize energy availability, and keep freight moving with
-										confidence.
-									</p>
+							<!-- Bottom: EIM Solution -->
+							<div class="eim-comp-box eim-comp-solution">
+								<div class="eim-comp-badge badge-solution">
+									<i class="bi bi-check-circle-fill"></i> EIM ADVANTAGE
+								</div>
+								<h3 class="eim-solution-heading">Smart Energy & Corridors</h3>
+								<p class="eim-solution-text">
+									Dedicated highway swapping network with intelligent energy management coordinates swapping and fleet routes for uninterrupted haulage.
+								</p>
+								<div class="eim-solution-pill">
+									<i class="bi bi-lightning-charge-fill"></i> 99%+ Route Uptime
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
-
 			</div>
 		</section>
 
-		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				const matrixBtns = document.querySelectorAll('.matrix-tab-btn');
-				const matrixPanes = document.querySelectorAll('.matrix-pane');
-
-				matrixBtns.forEach(btn => {
-					btn.addEventListener('click', function () {
-						if (this.classList.contains('active')) return;
-
-						const targetTab = this.getAttribute('data-matrix-tab');
-
-						matrixBtns.forEach(b => b.classList.remove('active'));
-						matrixPanes.forEach(p => p.classList.remove('active'));
-
-						this.classList.add('active');
-						const activePane = document.getElementById(`matrix-${targetTab}`);
-						if (activePane) {
-							activePane.classList.add('active');
-						}
-					});
-				});
-			});
-		</script>
-
-		<section id="maitryi" class="maitryi-section py-5 bg-white">
-			<div class="container text-center px-2 px-md-3">
-				<h2 class="main-title mb-2" data-aos="fade-up">‘Maitryi’ as a Business Model</h2>
-				<p class="maitryi-lead-text" data-aos="fade-up" data-aos-delay="50">
+		<!-- SECTION: 'MAITRYI' AS A BUSINESS MODEL -->
+		<section id="maitryi" class="eim-maitryi-section py-5 bg-white">
+			<div class="container text-start">
+				<h2 class="main-title mb-2" data-aos="fade-up">
+					<span class="title-dark">‘Maitryi’ as a</span> <span class="title-green">Business Model</span>
+				</h2>
+				<p class="eim-maitryi-lead-text mb-4" data-aos="fade-up" data-aos-delay="50">
 					Our Maitryi business model seamlessly integrates electric vehicles, battery swapping, charging
 					infrastructure, and green energy-helping fleet owners maximize uptime, efficiency, and
 					profitability.
 				</p>
-				<div class="maitryi-img-wrap w-100" data-aos="fade-up" data-aos-delay="100">
-					<!-- Original Desktop Image -->
-					<img src="images/Maitryi-Model.jpg" alt="Maitryi as a Business Model"
-						class="img-fluid rounded-4 shadow-sm w-100 d-none d-md-block" loading="lazy" decoding="async">
-					<!-- Mobile Image -->
-					<img src="images/Maitryi-Model-HD.png?v=1.0" alt="Maitryi as a Business Model"
-						class="img-fluid rounded-4 shadow-sm w-100 d-block d-md-none"
-						style="image-rendering: -webkit-optimize-contrast;" loading="lazy" decoding="async">
+				<div class="eim-maitryi-showcase-wrap w-100" data-aos="fade-up" data-aos-delay="100">
+					<!-- High-Definition Maitryi Model Diagram -->
+					<img src="images/Maitryi-Model.png" alt="Maitryi as a Business Model"
+						class="eim-maitryi-img d-none d-md-block" loading="lazy" decoding="async">
+					<!-- Mobile Optimized Image -->
+					<img src="images/Maitryi-Model-HD.png?v=2.0" alt="Maitryi as a Business Model"
+						class="eim-maitryi-img d-block d-md-none" loading="lazy" decoding="async">
 				</div>
 			</div>
 		</section>
 
-		<!-- Interstitial CTA Banner 1 -->
-		<section class="landing-cta-banner py-3">
+		<!-- Interstitial CTA Banner -->
+		<section class="landing-cta-banner">
 			<div class="container">
 				<div class="cta-banner-inner d-flex flex-column flex-md-row align-items-center justify-content-between text-center text-md-start gap-3"
 					data-aos="fade-up">
-					<h4 class="cta-banner-text text-white mb-0 fw-semibold">
-						Ready to electrify your fleet? Share your requirements with EIM.
-					</h4>
+					<div class="cta-banner-text-wrap">
+						<h4 class="cta-banner-title mb-1">
+							Ready to Electrify Your Fleet?
+						</h4>
+						<p class="cta-banner-subtitle mb-0">
+							Partner with EIM for customized heavy-duty EV deployment, automated battery swapping, and green energy infrastructure.
+						</p>
+					</div>
 					<a href="#contact" class="cta-banner-btn flex-shrink-0">
-						<span>Get In Touch</span>
-						<i class="bi bi-arrow-right-circle-fill"></i>
+						<span>GET IN TOUCH</span>
+						<i class="bi bi-arrow-right"></i>
 					</a>
 				</div>
 			</div>
 		</section>
 
-		<!-- COVERFLOW CAROUSEL SLIDER SHOWCASE: OFFERINGS -->
-		<section id="offerings" class="ev-coverflow-section py-3 py-md-5">
+
+
+		<!-- AFTER-SALES SERVICE - INTERACTIVE HOVER-PREVIEW SHOWCASE -->
+		<section id="services" class="eim-services-interactive-section">
 			<div class="container">
 				<!-- Section Header -->
-				<h2 class="main-title text-center mb-2" data-aos="fade-up">Offerings</h2>
-
-				<!-- Coverflow Slider Wrapper -->
-				<div class="ev-coverflow-container" data-aos="fade-up" data-aos-delay="100">
-
-					<!-- Left/Right Nav Arrow Buttons -->
-					<button class="ev-coverflow-nav nav-prev" id="coverflow-prev" aria-label="Previous Slide">
-						<i class="bi bi-chevron-left"></i>
-					</button>
-					<button class="ev-coverflow-nav nav-next" id="coverflow-next" aria-label="Next Slide">
-						<i class="bi bi-chevron-right"></i>
-					</button>
-
-					<!-- Cards Stage Track -->
-					<div class="ev-coverflow-track" id="coverflow-track">
-
-						<!-- Slide 1 -->
-						<div class="ev-coverflow-slide active" data-slide="1"
-							style="background-image: url('images/EIM-truck.jpg');">
-							<div class="ev-coverflow-card-overlay">
-								<span class="coverflow-badge">OFFERING 01</span>
-								<h3>Next-Generation Electric Tractor</h3>
-								<p>Engineered for high-performance heavy-duty freight.</p>
-							</div>
-						</div>
-
-						<!-- Slide 2 -->
-						<div class="ev-coverflow-slide" data-slide="2"
-							style="background-image: url('images/Integrated-Charging.png');">
-							<div class="ev-coverflow-card-overlay">
-								<span class="coverflow-badge">OFFERING 02</span>
-								<h3>Integrated Charging Network</h3>
-								<p>Reliable energy infrastructure designed for uninterrupted operations.</p>
-							</div>
-						</div>
-
-						<!-- Slide 3 -->
-						<div class="ev-coverflow-slide" data-slide="3"
-							style="background-image: url('images/Automated-Battery.webp');">
-							<div class="ev-coverflow-card-overlay">
-								<span class="coverflow-badge">OFFERING 03</span>
-								<h3>Automated Battery Swapping</h3>
-								<p>Automated battery exchange in minutes to maximize fleet uptime.</p>
-							</div>
-						</div>
-
-						<!-- Slide 4 -->
-						<div class="ev-coverflow-slide" data-slide="4"
-							style="background-image: url('images/offering-1.jpg');">
-							<div class="ev-coverflow-card-overlay">
-								<span class="coverflow-badge">OFFERING 04</span>
-								<h3>Battery-as-a-Service</h3>
-								<p>Flexible subscription model that lowers upfront investment and simplifies ownership.
-								</p>
-							</div>
-						</div>
-
-						<!-- Slide 5 -->
-						<div class="ev-coverflow-slide" data-slide="5"
-							style="background-image: url('images/Intelligent-Energy.png');">
-							<div class="ev-coverflow-card-overlay">
-								<span class="coverflow-badge">OFFERING 05</span>
-								<h3>Intelligent Energy Management</h3>
-								<p>Smart software optimizes battery allocation, charging, and fleet scheduling.</p>
-							</div>
-						</div>
-
-						<!-- Slide 6 -->
-						<div class="ev-coverflow-slide" data-slide="6"
-							style="background-image: url('images/Automated-Battery.png');">
-							<div class="ev-coverflow-card-overlay">
-								<span class="coverflow-badge">OFFERING 06</span>
-								<h3>Powered by Renewable Energy</h3>
-								<p>Supporting cleaner, lower-carbon logistics through sustainable energy infrastructure.
-								</p>
-							</div>
-						</div>
-
-					</div>
-
-					<!-- Pagination Indicators -->
-					<div class="ev-coverflow-dots" id="coverflow-dots">
-						<span class="dot active" data-dot="1"></span>
-						<span class="dot" data-dot="2"></span>
-						<span class="dot" data-dot="3"></span>
-						<span class="dot" data-dot="4"></span>
-						<span class="dot" data-dot="5"></span>
-						<span class="dot" data-dot="6"></span>
-					</div>
-
-				</div>
-			</div>
-		</section>
-
-		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				// Coverflow Slider logic for Offerings
-				const slides = document.querySelectorAll('.ev-coverflow-slide');
-				const dots = document.querySelectorAll('.ev-coverflow-dots .dot');
-				const btnPrev = document.getElementById('coverflow-prev');
-				const btnNext = document.getElementById('coverflow-next');
-				let currentIndex = 0;
-				const totalSlides = slides.length;
-
-				function updateCoverflow() {
-					slides.forEach((slide, index) => {
-						slide.className = 'ev-coverflow-slide';
-						const offset = index - currentIndex;
-
-						if (offset === 0) {
-							slide.classList.add('active');
-						} else if (offset === -1 || (currentIndex === 0 && index === totalSlides - 1)) {
-							slide.classList.add('prev');
-						} else if (offset === 1 || (currentIndex === totalSlides - 1 && index === 0)) {
-							slide.classList.add('next');
-						} else if (offset < -1) {
-							slide.classList.add('far-prev');
-						} else {
-							slide.classList.add('far-next');
-						}
-					});
-
-					dots.forEach((dot, index) => {
-						if (index === currentIndex) {
-							dot.classList.add('active');
-						} else {
-							dot.classList.remove('active');
-						}
-					});
-				}
-
-				if (slides.length > 0) {
-					updateCoverflow();
-
-					if (btnPrev) {
-						btnPrev.addEventListener('click', () => {
-							currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-							updateCoverflow();
-						});
-					}
-
-					if (btnNext) {
-						btnNext.addEventListener('click', () => {
-							currentIndex = (currentIndex + 1) % totalSlides;
-							updateCoverflow();
-						});
-					}
-
-					dots.forEach(dot => {
-						dot.addEventListener('click', function () {
-							currentIndex = parseInt(this.getAttribute('data-dot')) - 1;
-							updateCoverflow();
-						});
-					});
-
-					slides.forEach((slide, index) => {
-						slide.addEventListener('click', function () {
-							if (index !== currentIndex) {
-								currentIndex = index;
-								updateCoverflow();
-							}
-						});
-					});
-
-					// Touch / Swipe Gestures for Mobile (Thumb Sliding)
-					const track = document.querySelector('.ev-coverflow-track');
-					if (track) {
-						let touchStartX = 0;
-						let touchEndX = 0;
-						const minSwipeDistance = 35;
-
-						track.addEventListener('touchstart', function (e) {
-							touchStartX = e.changedTouches[0].screenX;
-						}, { passive: true });
-
-						track.addEventListener('touchend', function (e) {
-							touchEndX = e.changedTouches[0].screenX;
-							const distance = touchEndX - touchStartX;
-							if (Math.abs(distance) > minSwipeDistance) {
-								if (distance < 0) {
-									// Swipe Left -> Next Slide
-									currentIndex = (currentIndex + 1) % totalSlides;
-								} else {
-									// Swipe Right -> Prev Slide
-									currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-								}
-								updateCoverflow();
-							}
-						}, { passive: true });
-					}
-				}
-			});
-		</script>
-		<!-- Interstitial CTA Banner 2 -->
-		<section class="landing-cta-banner py-3">
-			<div class="container">
-				<div class="cta-banner-inner d-flex flex-column flex-md-row align-items-center justify-content-between text-center text-md-start gap-3"
-					data-aos="fade-up">
-					<h4 class="cta-banner-text text-white mb-0 fw-semibold">
-						Explore the right electric mobility solution for your fleet.
-					</h4>
-					<a href="#contact" class="cta-banner-btn flex-shrink-0">
-						<span>Get In Touch</span>
-						<i class="bi bi-arrow-right-circle-fill"></i>
-					</a>
-				</div>
-			</div>
-		</section>
-
-		<section id="services" class="services-21st-section py-5">
-			<div class="container">
-				<div class="overview-header text-center" data-aos="fade-up"
-					style="margin-bottom: 35px; max-width: 100%;">
-					<h2 class="main-title mb-0" style="margin-bottom: 8px !important;">After-Sales Service</h2>
-					<p class="overview-lead-text"
-						style="max-width: 1150px; width: 100%; margin: 8px auto 0 auto; font-size: 18.5px; text-align: center;">
+				<div class="text-start mb-4 pb-2" data-aos="fade-up">
+					<h2 class="main-title mb-2">
+						<span class="title-dark">After-Sales</span> <span class="title-green">Service</span>
+					</h2>
+					<p class="eim-services-lead-text ms-0 mb-0">
 						We have a strong service team that operates 24 hours a day across many locations in India.
 					</p>
 				</div>
 
-				<!-- Services Accordion Grid -->
-				<div class="services-accordion-grid" data-aos="fade-up" data-aos-delay="200">
-					<!-- Panel 1: After-Sales Service Team -->
-					<div class="services-panel">
-						<div class="services-panel-bg" style="background-image: url('images/after-sales-team.jpeg');">
-						</div>
-						<div class="services-panel-overlay">
-							<div class="services-panel-body">
-								<h3 class="services-panel-h3">After-Sales Service Team</h3>
-								<p class="services-panel-p">We are committed to supporting our customers 24x7.</p>
+				<!-- 2-Column Interactive Showcase -->
+				<div class="row align-items-center g-4 g-lg-5" data-aos="fade-up" data-aos-delay="150">
+					<!-- Left Column: Interactive Service List Items -->
+					<div class="col-lg-6 col-12">
+						<div class="eim-services-list">
+							<!-- Service Item 1 -->
+							<div class="eim-service-item active" data-service-index="0">
+								<div class="eim-service-item-header">
+									<h3 class="eim-service-title">After-Sales Service Team</h3>
+									<i class="bi bi-arrow-right eim-service-arrow"></i>
+								</div>
+								<p class="eim-service-desc">
+									We are committed to supporting our customers 24x7 with dedicated, highly trained EV engineers stationed across vital freight hubs.
+								</p>
+								<!-- Inline Mobile Image (Shown in single viewport on mobile) -->
+								<div class="eim-service-mobile-img-wrap d-lg-none">
+									<img src="images/after-sales-team.jpeg" alt="After-Sales Service Team" class="eim-service-mobile-img" loading="lazy">
+								</div>
+							</div>
+
+							<!-- Service Item 2 -->
+							<div class="eim-service-item" data-service-index="1">
+								<div class="eim-service-item-header">
+									<h3 class="eim-service-title">Mobile Service Van</h3>
+									<i class="bi bi-arrow-right eim-service-arrow"></i>
+								</div>
+								<p class="eim-service-desc">
+									Our service vans are ready to provide rapid-response on-road diagnostic and repair support whenever fleet owners require assistance.
+								</p>
+								<!-- Inline Mobile Image (Shown in single viewport on mobile) -->
+								<div class="eim-service-mobile-img-wrap d-lg-none">
+									<img src="images/van.jpeg" alt="Mobile Service Van" class="eim-service-mobile-img" loading="lazy">
+								</div>
+							</div>
+
+							<!-- Service Item 3 -->
+							<div class="eim-service-item" data-service-index="2">
+								<div class="eim-service-item-header">
+									<h3 class="eim-service-title">PORTA Cabin</h3>
+									<i class="bi bi-arrow-right eim-service-arrow"></i>
+								</div>
+								<p class="eim-service-desc">
+									Our service workshops are well equipped with specialized tools and spare parts to keep our vehicles running efficiently.
+								</p>
+								<!-- Inline Mobile Image (Shown in single viewport on mobile) -->
+								<div class="eim-service-mobile-img-wrap d-lg-none">
+									<img src="images/container.jpeg?v=2.0" alt="PORTA Cabin" class="eim-service-mobile-img" loading="lazy">
+								</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Panel 2: Mobile Service Van -->
-					<div class="services-panel">
-						<div class="services-panel-bg" style="background-image: url('images/van.jpeg');"></div>
-						<div class="services-panel-overlay">
-							<div class="services-panel-body">
-								<h3 class="services-panel-h3">Mobile Service Van</h3>
-								<p class="services-panel-p">Our service vans are ready to provide support whenever fleet
-									owners require assistance.</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- Panel 3: PORTA Cabin -->
-					<div class="services-panel">
-						<div class="services-panel-bg" style="background-image: url('images/container.jpeg');"></div>
-						<div class="services-panel-overlay">
-							<div class="services-panel-body">
-								<h3 class="services-panel-h3">PORTA Cabin</h3>
-								<p class="services-panel-p">Our service workshops are well equipped with specialized
-									tools and spare parts to keep our vehicles running efficiently.</p>
-							</div>
+					<!-- Right Column: Desktop Hover Image Preview Container (d-none d-lg-block) -->
+					<div class="col-lg-6 col-12 d-none d-lg-block">
+						<div class="eim-services-preview-wrap">
+							<!-- Image 1: After-Sales Service Team -->
+							<img src="images/after-sales-team.jpeg" alt="After-Sales Service Team"
+								class="eim-service-preview-img active" data-preview-index="0" loading="lazy" decoding="async">
+							<!-- Image 2: Mobile Service Van -->
+							<img src="images/van.jpeg" alt="Mobile Service Van"
+								class="eim-service-preview-img" data-preview-index="1" loading="lazy" decoding="async">
+							<!-- Image 3: PORTA Cabin -->
+							<img src="images/container.jpeg?v=2.0" alt="PORTA Cabin"
+								class="eim-service-preview-img" data-preview-index="2" loading="lazy" decoding="async">
+							
+							<div class="eim-services-preview-overlay"></div>
 						</div>
 					</div>
 				</div>
@@ -844,126 +743,162 @@
 
 		<script>
 			document.addEventListener('DOMContentLoaded', function () {
-				const spans = document.querySelectorAll('.services-panel');
-				spans.forEach(span => {
-					span.addEventListener('mouseenter', () => {
-						spans.forEach(s => s.classList.remove('active'));
-						span.classList.add('active');
-					});
+				const serviceItems = document.querySelectorAll('.eim-service-item');
+				const previewImages = document.querySelectorAll('.eim-service-preview-img');
+
+				serviceItems.forEach(item => {
+					const activateItem = () => {
+						const targetIdx = item.getAttribute('data-service-index');
+						
+						serviceItems.forEach(i => i.classList.remove('active'));
+						item.classList.add('active');
+
+						previewImages.forEach(img => {
+							if (img.getAttribute('data-preview-index') === targetIdx) {
+								img.classList.add('active');
+							} else {
+								img.classList.remove('active');
+							}
+						});
+					};
+
+					item.addEventListener('mouseenter', activateItem);
+					item.addEventListener('click', activateItem);
 				});
 			});
 		</script>
 
-		<section id="networks" class="networks-dashboard-section py-5">
+		<!-- NATIONWIDE NETWORK OVERVIEW (100% Exact Content, Clean White Layout) -->
+		<section id="networks" class="eim-network-metrics-section">
 			<div class="container">
-				<!-- Centered Section Header -->
-				<div class="text-center mb-4" data-aos="fade-up">
-					<h2 class="main-title mb-0">Network Overview</h2>
+				<!-- Section Header -->
+				<div class="text-start mb-4 pb-2" data-aos="fade-up">
+					<h2 class="main-title mb-0">
+						<span class="title-dark">Network</span> <span class="title-green">Overview</span>
+					</h2>
 				</div>
 
-				<!-- Side by Side Layout: Left Map (Big) | Right Stats Box -->
-				<div class="row g-4 align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-					<!-- Left Side: Map Image (Full & Uncropped) -->
-					<div class="col-lg-8 d-flex">
-						<div class="network-map-container w-100 rounded-4 overflow-hidden shadow-sm border-0">
-							<img src="images/map-section.png?v=16.0" alt="Network Overview Map" class="rounded-4"
-								style="width: 100%; height: auto; display: block; image-rendering: -webkit-optimize-contrast;"
-								loading="lazy" decoding="async">
+				<!-- Main Metrics Overview Card (Exact Content from Graphic) -->
+				<div class="eim-network-main-card mb-4" data-aos="fade-up" data-aos-delay="100">
+					<div class="row align-items-center g-4">
+						<!-- Left: Network Title & Total Number -->
+						<div class="col-lg-5 col-12">
+							<div class="eim-network-summary-box">
+								<span class="eim-network-badge mb-2">NETWORK METRICS</span>
+								<h3 class="eim-network-card-title mb-1">Total Swap Stations</h3>
+								<p class="eim-network-card-subtitle mb-4">Priority swap-station sites planned across India</p>
+								
+								<div class="eim-network-total-display">
+									<span class="eim-network-total-label">NETWORK TOTAL</span>
+									<div class="d-flex align-items-baseline gap-2">
+										<span class="eim-network-total-number">55</span>
+										<span class="eim-network-total-unit">Sites</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Right: Status Breakdown (Existing, Upcoming, Planned) -->
+						<div class="col-lg-7 col-12">
+							<div class="d-flex flex-column gap-3">
+								<!-- Existing Stations -->
+								<div class="eim-network-status-row">
+									<div class="d-flex align-items-center gap-3">
+										<span class="eim-status-dot eim-dot-cyan"></span>
+										<span class="eim-status-name">Existing Stations</span>
+									</div>
+									<span class="eim-status-count">07</span>
+								</div>
+
+								<!-- Upcoming Stations -->
+								<div class="eim-network-status-row">
+									<div class="d-flex align-items-center gap-3">
+										<span class="eim-status-dot eim-dot-cyan"></span>
+										<span class="eim-status-name">Upcoming Stations</span>
+									</div>
+									<span class="eim-status-count">17</span>
+								</div>
+
+								<!-- Planned Stations -->
+								<div class="eim-network-status-row">
+									<div class="d-flex align-items-center gap-3">
+										<span class="eim-status-dot eim-dot-red"></span>
+										<span class="eim-status-name">Planned Stations</span>
+									</div>
+									<span class="eim-status-count eim-count-red">31</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 4 Zone Breakdown Cards (Exact Data from Graphic Callouts) -->
+				<div class="row g-3 g-lg-4" data-aos="fade-up" data-aos-delay="200">
+					<!-- North Zone -->
+					<div class="col-lg-3 col-md-6 col-12">
+						<div class="eim-zone-card">
+							<h4 class="eim-zone-title">NORTH ZONE</h4>
+							<ul class="eim-zone-list">
+								<li>
+									<span>Existing Swapstations</span>
+									<strong>5</strong>
+								</li>
+								<li>
+									<span>Upcoming Swapstations</span>
+									<strong>3</strong>
+								</li>
+								<li>
+									<span>Planned Swapstations</span>
+									<strong>8</strong>
+								</li>
+							</ul>
 						</div>
 					</div>
 
-					<!-- Right Side: Content / Stats Box -->
-					<div class="col-lg-4 d-flex">
-						<div class="network-stats-card p-3 rounded-4 w-100 d-flex flex-column justify-content-between gap-2 text-white"
-							style="background: linear-gradient(145deg, #01262D 0%, #001B1E 100%) !important; border: 1px solid rgba(56, 224, 207, 0.3); box-shadow: 0 12px 35px rgba(0,0,0,0.3); height: 100%;">
-							<!-- Top Title & Badge -->
-							<div>
-								<span class="badge rounded-pill px-3 py-2 mb-2"
-									style="background: rgba(56, 224, 207, 0.12); color: #38E0CF; border: 1px solid rgba(56, 224, 207, 0.3); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;">
-									Network Metrics
-								</span>
-								<h4 class="fw-bold text-white mb-1"
-									style="font-family: 'PP Neue Montreal', sans-serif;">Total Swap Stations</h4>
-								<p class="small mb-0" style="color: #94a3b8; font-size: 13.5px;">Priority swap-station
-									sites planned across India</p>
-							</div>
+					<!-- West Zone -->
+					<div class="col-lg-3 col-md-6 col-12">
+						<div class="eim-zone-card">
+							<h4 class="eim-zone-title">WEST ZONE</h4>
+							<ul class="eim-zone-list">
+								<li>
+									<span>Existing Swapstations</span>
+									<strong>3</strong>
+								</li>
+								<li>
+									<span>Upcoming Swapstations</span>
+									<strong>11</strong>
+								</li>
+								<li>
+									<span>Planned Swapstations</span>
+									<strong>13</strong>
+								</li>
+							</ul>
+						</div>
+					</div>
 
-							<!-- Big Stat Number Highlight -->
-							<div class="p-2 rounded-4 text-center text-md-start"
-								style="background: rgba(56, 224, 207, 0.05); border: 1px solid rgba(56, 224, 207, 0.2);">
-								<span class="text-uppercase tracking-wider small fw-bold d-block mb-1"
-									style="color: #94a3b8; font-size: 11px; letter-spacing: 0.1em;">NETWORK TOTAL</span>
-								<div
-									class="d-flex align-items-baseline gap-2 justify-content-center justify-content-md-start">
-									<span class="display-5 fw-bold"
-										style="color: #38E0CF; font-family: 'PP Neue Montreal', sans-serif; line-height: 1;">55</span>
-									<span class="fw-semibold text-white">Sites</span>
-								</div>
-							</div>
+					<!-- East Zone -->
+					<div class="col-lg-3 col-md-6 col-12">
+						<div class="eim-zone-card">
+							<h4 class="eim-zone-title">EAST ZONE</h4>
+							<ul class="eim-zone-list">
+								<li>
+									<span>Planned Swapstations</span>
+									<strong>10</strong>
+								</li>
+							</ul>
+						</div>
+					</div>
 
-							<!-- Breakdown Status List -->
-							<div class="network-breakdown-list d-flex flex-column gap-2">
-								<div class="d-flex align-items-center justify-content-between p-3 rounded-3"
-									style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
-									<div class="d-flex align-items-center gap-3">
-										<span class="rounded-circle"
-											style="width: 10px; height: 10px; background: #38E0CF; box-shadow: 0 0 10px rgba(56,224,207,0.5);"></span>
-										<span class="fw-medium text-white" style="font-size: 14.5px;">Existing
-											Stations</span>
-									</div>
-									<span class="fw-bold fs-5" style="color: #38E0CF;">07</span>
-								</div>
-
-								<div class="d-flex align-items-center justify-content-between p-3 rounded-3"
-									style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
-									<div class="d-flex align-items-center gap-3">
-										<span class="rounded-circle"
-											style="width: 10px; height: 10px; background: #38E0CF; box-shadow: 0 0 10px rgba(56,224,207,0.5);"></span>
-										<span class="fw-medium text-white" style="font-size: 14.5px;">Upcoming
-											Stations</span>
-									</div>
-									<span class="fw-bold fs-5" style="color: #38E0CF;">17</span>
-								</div>
-
-								<div class="d-flex align-items-center justify-content-between p-3 rounded-3"
-									style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
-									<div class="d-flex align-items-center gap-3">
-										<span class="rounded-circle"
-											style="width: 10px; height: 10px; background: #ef4444; box-shadow: 0 0 10px rgba(239,68,68,0.5);"></span>
-										<span class="fw-medium text-white" style="font-size: 14.5px;">Planned
-											Stations</span>
-									</div>
-									<span class="fw-bold fs-5" style="color: #ef4444;">31</span>
-								</div>
-							</div>
-
-							<!-- Map Legend Card -->
-							<div class="network-legend-card p-2 rounded-4"
-								style="background: rgba(56, 224, 207, 0.05); border: 1px solid rgba(56, 224, 207, 0.25);">
-								<div class="d-flex flex-column gap-2">
-									<div class="d-flex align-items-center gap-3 p-2 rounded-3"
-										style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);">
-										<div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-											style="width: 28px; height: 28px; background: #0d9488; color: #ffffff;">
-											<i class="bi bi-lightning-charge-fill" style="font-size: 12px;"></i>
-										</div>
-										<span class="small fw-semibold text-white"
-											style="font-size: 13px; line-height: 1.3;">EIM Existing / Upcoming
-											Swapstation Locations</span>
-									</div>
-
-									<div class="d-flex align-items-center gap-3 p-2 rounded-3"
-										style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);">
-										<div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-											style="width: 28px; height: 28px; background: #ef4444; color: #ffffff;">
-											<i class="bi bi-geo-alt-fill" style="font-size: 12px;"></i>
-										</div>
-										<span class="small fw-semibold text-white"
-											style="font-size: 13px; line-height: 1.3;">Planned Swapstation
-											Locations</span>
-									</div>
-								</div>
-							</div>
+					<!-- South Zone -->
+					<div class="col-lg-3 col-md-6 col-12">
+						<div class="eim-zone-card">
+							<h4 class="eim-zone-title">SOUTH ZONE</h4>
+							<ul class="eim-zone-list">
+								<li>
+									<span>Upcoming Swapstations</span>
+									<strong>2</strong>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -1205,93 +1140,95 @@
 		</section>
 
 		<!-- Interstitial CTA Banner 3 -->
-		<section class="landing-cta-banner py-3">
+		<section class="landing-cta-banner">
 			<div class="container">
 				<div class="cta-banner-inner d-flex flex-column flex-md-row align-items-center justify-content-between text-center text-md-start gap-3"
 					data-aos="fade-up">
-					<h4 class="cta-banner-text text-white mb-0 fw-semibold">
-						Tell us your fleet needs. EIM will help you go electric commercial vehicle.
-					</h4>
+					<div class="cta-banner-text-wrap">
+						<h4 class="cta-banner-title mb-1">
+							Tell us your fleet needs. EIM will help you go electric commercial vehicle.
+						</h4>
+						<p class="cta-banner-subtitle mb-0">
+							From automated battery swapping to dedicated charging corridors, discover how EIM simplifies heavy-duty fleet electrification.
+						</p>
+					</div>
 					<a href="#contact" class="cta-banner-btn flex-shrink-0">
-						<span>Get In Touch</span>
-						<i class="bi bi-arrow-right-circle-fill"></i>
+						<span>GET IN TOUCH</span>
+						<i class="bi bi-arrow-right"></i>
 					</a>
 				</div>
 			</div>
 		</section>
 
-		<section id="press" class="press-asymmetric-section py-5">
-			<div class="container">
+		<!-- NEWS SECTION (Full-Width Header & Full-Width Image Layout) -->
+		<section id="press" class="eim-news-section py-5 bg-white">
+			<div class="container text-start">
 				<!-- Section Title -->
-				<h2 class="main-title text-center mb-4" data-aos="fade-up">News</h2>
+				<h2 class="main-title mb-2" data-aos="fade-up">
+					<span class="title-dark">News</span>
+				</h2>
 
-				<!-- Full Width News Card with Bottom Hover Reveal -->
-				<div class="press-fullwidth-card" data-aos="fade-up" data-aos-delay="150">
-					<a href="documents/Press-Release.pdf" target="_blank" class="press-fullwidth-link">
-						<!-- Full Width Image -->
-						<img src="images/Press-Release-img.jpg" alt="HPCL Partnership Signing Ceremony" loading="lazy"
-							decoding="async">
+				<!-- Content / Headline under Heading -->
+				<p class="eim-news-lead-text mb-4" data-aos="fade-up" data-aos-delay="50">
+					Energy in Motion partners with HPCL to set-up charging and battery swapping infrastructure at retail outlets across India for deployment of Electric Heavy Commercial Vehicles
+				</p>
 
-						<!-- Bottom Content Overlay -->
-						<div class="press-fullwidth-overlay">
-							<div class="press-fullwidth-body">
-								<div class="press-fullwidth-badge">
-									<span class="press-badge-dot"></span>
-									<span>Press Release &bull; July 2024</span>
-								</div>
-								<h3 class="press-fullwidth-heading mb-0">
-									Energy in Motion partners with HPCL to set-up charging and battery swapping
-									infrastructure at retail outlets across India for deployment of Electric Heavy
-									Commercial Vehicles
-								</h3>
+				<!-- Full-Width Image (Uncropped, No Link) -->
+				<div class="eim-news-fullwidth-wrap w-100" data-aos="fade-up" data-aos-delay="100">
+					<img src="images/Press-Release-img.jpg" alt="HPCL Partnership Signing Ceremony"
+						class="eim-news-fullwidth-img" loading="lazy" decoding="async">
+				</div>
+			</div>
+		</section>
+
+		<!-- TESTIMONIALS SECTION (Clean Slider with Arrow Navigation CTA) -->
+		<section id="testimonials" class="eim-testimonials-showcase-section">
+			<div class="container">
+				<!-- Section Header with Title Left and Slider CTA Buttons Right -->
+				<div class="eim-testimonials-header-row mb-4 pb-2" data-aos="fade-up">
+					<div class="row align-items-end justify-content-between g-3">
+						<div class="col-md-8 col-12">
+							<h2 class="eim-testimonials-headline mb-0">
+								<span class="title-dark">Don't take our word for it!</span><br>
+								<span class="title-green">Hear it from our partners.</span>
+							</h2>
+						</div>
+						<div class="col-md-4 col-12 d-flex justify-content-md-end">
+							<div class="eim-testimonials-nav-group d-flex gap-2">
+								<button class="eim-testimonials-nav-btn" id="testimonialsPrev" aria-label="Previous Testimonial">
+									<i class="bi bi-arrow-left"></i>
+								</button>
+								<button class="eim-testimonials-nav-btn" id="testimonialsNext" aria-label="Next Testimonial">
+									<i class="bi bi-arrow-right"></i>
+								</button>
 							</div>
 						</div>
-					</a>
+					</div>
 				</div>
-			</div>
-		</section>
 
-		<section id="testimonials" class="testimonials-section-v2 py-5">
-			<div class="container">
-				<!-- Section Header -->
-				<h2 class="main-title text-center mb-4" data-aos="fade-up">Testimonials</h2>
-
-				<!-- Testimonials Swiper Slider -->
-				<div class="testimonials-swiper swiper" data-aos="fade-up" data-aos-delay="100">
+				<!-- Swiper Carousel (3 per view on desktop, 2 on tablet, 1 on mobile) -->
+				<div class="swiper eim-testimonials-swiper" data-aos="fade-up" data-aos-delay="100">
 					<div class="swiper-wrapper">
 
 						<!-- Slide 1: Vitthal Wable -->
 						<div class="swiper-slide">
-							<div class="testimonial-card-v2">
-								<div class="card-quote-header mb-3">
-									<div class="quote-mark-icon"><i class="bi bi-quote"></i></div>
-									<div class="rating-stars">
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
+							<div class="eim-testimonial-card">
+								<!-- Card Inner Content -->
+								<div class="eim-testimonial-card-inner">
+									<!-- Top Avatar -->
+									<div class="eim-testimonial-avatar-wrap mb-3">
+										<img src="images/vitthal-headshot.png" alt="Vitthal Wable" class="eim-testimonial-avatar-thumb" loading="lazy" decoding="async">
 									</div>
-								</div>
 
-								<p class="testimonial-body-text">
-									As one of the early users of <strong>EIM vehicles at JNPT Port at Navi
-										Mumbai</strong>, I’m amazed at the way EIM has created the charging infra in the
-									JNPT eco-system comprising of multiple Swapping-cum-Charging stations - in terms of
-									speed & scale. Looking at current oil prices, I feel lucky <strong>I switched to EV
-										early</strong>.
-								</p>
+									<!-- Quote Text -->
+									<p class="eim-testimonial-quote">
+										"As one of the early users of EIM vehicles at JNPT Port at Navi Mumbai, I’m amazed at the way EIM has created the charging infra in the JNPT eco-system comprising of multiple Swapping-cum-Charging stations - in terms of speed & scale. Looking at current oil prices, I feel lucky I switched to EV early."
+									</p>
 
-								<div class="testimonial-profile-footer mt-4">
-									<div class="avatar-ring-wrap">
-										<img src="images/vitthal.png" alt="Vitthal Wable" loading="lazy"
-											decoding="async">
-									</div>
-									<div class="profile-details">
-										<h4 class="profile-name">Vitthal Wable</h4>
-										<span class="profile-role">Director, Radiance Green Mobility Pvt. Ltd.</span>
-										<span class="profile-company">Jyothi Transport & Freight Services Pvt.
-											Ltd.</span>
+									<!-- Author & Company Footer -->
+									<div class="eim-testimonial-author-footer mt-auto">
+										<h4 class="eim-testimonial-author-name">Vitthal Wable</h4>
+										<p class="eim-testimonial-author-role">Director, Radiance Green Mobility Pvt. Ltd.<br><span>Jyothi Transport & Freight Services Pvt. Ltd.</span></p>
 									</div>
 								</div>
 							</div>
@@ -1299,38 +1236,23 @@
 
 						<!-- Slide 2: Mr. Janardhan Matre -->
 						<div class="swiper-slide">
-							<div class="testimonial-card-v2">
-								<div class="card-quote-header mb-3">
-									<div class="quote-mark-icon"><i class="bi bi-quote"></i></div>
-									<div class="rating-stars">
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
+							<div class="eim-testimonial-card">
+								<!-- Card Inner Content -->
+								<div class="eim-testimonial-card-inner">
+									<!-- Top Avatar -->
+									<div class="eim-testimonial-avatar-wrap mb-3">
+										<img src="images/janardhan-headshot.png" alt="Mr. Janardhan Matre" class="eim-testimonial-avatar-thumb" loading="lazy" decoding="async">
 									</div>
-								</div>
 
-								<p class="testimonial-body-text">
-									Our transition from <strong>ICE to EIM EVs</strong> has been a well-calculated
-									strategic move, executed with remarkable efficiency. What truly differentiates EIM
-									is not just the product, but the strength of their <strong>aftersales
-										ecosystem</strong>. Their team has consistently ensured <strong>high fleet
-										uptime</strong>, <strong>swift issue resolution</strong>, and a
-									<strong>proactive approach to maintenance</strong>. EIM has proven to be a
-									<strong>dependable long-term partner</strong> in our journey towards sustainable
-									mobility.
-								</p>
+									<!-- Quote Text -->
+									<p class="eim-testimonial-quote">
+										"Our transition from ICE to EIM EVs has been a well-calculated strategic move, executed with remarkable efficiency. What truly differentiates EIM is not just the product, but the strength of their aftersales ecosystem. Their team has consistently ensured high fleet uptime, swift issue resolution, and a proactive approach to maintenance."
+									</p>
 
-								<div class="testimonial-profile-footer mt-4">
-									<div class="avatar-ring-wrap">
-										<img src="images/JANARDHAN.png" alt="Mr. Janardhan Matre" loading="lazy"
-											decoding="async">
-									</div>
-									<div class="profile-details">
-										<h4 class="profile-name">Mr. Janardhan Matre</h4>
-										<span class="profile-role">Managing Director</span>
-										<span class="profile-company">JIVI ENTERPRISES</span>
+									<!-- Author & Company Footer -->
+									<div class="eim-testimonial-author-footer mt-auto">
+										<h4 class="eim-testimonial-author-name">Mr. Janardhan Matre</h4>
+										<p class="eim-testimonial-author-role">Managing Director<br><span>JIVI ENTERPRISES</span></p>
 									</div>
 								</div>
 							</div>
@@ -1338,37 +1260,23 @@
 
 						<!-- Slide 3: Gurjeet Singh Bhatia -->
 						<div class="swiper-slide">
-							<div class="testimonial-card-v2">
-								<div class="card-quote-header mb-3">
-									<div class="quote-mark-icon"><i class="bi bi-quote"></i></div>
-									<div class="rating-stars">
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
+							<div class="eim-testimonial-card">
+								<!-- Card Inner Content -->
+								<div class="eim-testimonial-card-inner">
+									<!-- Top Avatar -->
+									<div class="eim-testimonial-avatar-wrap mb-3">
+										<img src="images/gurjeet-headshot.png" alt="Gurjeet Singh Bhatia" class="eim-testimonial-avatar-thumb" loading="lazy" decoding="async">
 									</div>
-								</div>
 
-								<p class="testimonial-body-text">
-									By deploying <strong>EIM vehicles in NCR region</strong>, not only do I feel proud
-									to be contributing to a <strong>Greener Environment</strong>, but I also feel richer
-									each time my vehicle enters into Delhi, as <strong>my EV trucks are exempted from
-										paying Rs 4000/- NGT Tax per trip</strong> imposed by Delhi Govt for Diesel
-									trucks.
-								</p>
+									<!-- Quote Text -->
+									<p class="eim-testimonial-quote">
+										"By deploying EIM vehicles in NCR region, not only do I feel proud to be contributing to a Greener Environment, but I also feel richer each time my vehicle enters into Delhi, as my EV trucks are exempted from paying Rs 4000/- NGT Tax per trip imposed by Delhi Govt for Diesel trucks."
+									</p>
 
-								<div class="testimonial-profile-footer mt-4">
-									<div class="avatar-ring-wrap">
-										<img src="images/gurjeet.png" alt="Gurjeet Singh Bhatia" loading="lazy"
-											decoding="async">
-									</div>
-									<div class="profile-details">
-										<h4 class="profile-name">Gurjeet Singh Bhatia</h4>
-										<span class="profile-role">AVP - Transport Operations - Delhi International
-											Cargo Terminal Private Limited.</span>
-										<span class="profile-company">(J M Baxi Ports & Logistics Private
-											Limited)</span>
+									<!-- Author & Company Footer -->
+									<div class="eim-testimonial-author-footer mt-auto">
+										<h4 class="eim-testimonial-author-name">Gurjeet Singh Bhatia</h4>
+										<p class="eim-testimonial-author-role">AVP - Transport Operations<br><span>Delhi International Cargo Terminal (J M Baxi Group)</span></p>
 									</div>
 								</div>
 							</div>
@@ -1376,239 +1284,253 @@
 
 						<!-- Slide 4: Mr. Ajit Kumar Singh -->
 						<div class="swiper-slide">
-							<div class="testimonial-card-v2">
-								<div class="card-quote-header mb-3">
-									<div class="quote-mark-icon"><i class="bi bi-quote"></i></div>
-									<div class="rating-stars">
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
-										<i class="bi bi-star-fill"></i>
+							<div class="eim-testimonial-card">
+								<!-- Card Inner Content -->
+								<div class="eim-testimonial-card-inner">
+									<!-- Top Avatar -->
+									<div class="eim-testimonial-avatar-wrap mb-3">
+										<img src="images/ajit-headshot.png" alt="Mr. Ajit Kumar Singh" class="eim-testimonial-avatar-thumb" loading="lazy" decoding="async">
 									</div>
-								</div>
 
-								<p class="testimonial-body-text">
-									Choosing <strong>Energy In Motion Ltd.</strong> for our transition from <strong>ICE
-										to EV</strong> has proven to be the right decision. Beyond delivering reliable
-									electric vehicles, EIM's <strong>Aftersales team</strong> has demonstrated
-									exceptional ownership, providing timely field support, fast issue resolution, and
-									continuous technical assistance. Their dedication has enabled us to maintain
-									<strong>high fleet uptime</strong> while confidently embracing a <strong>cleaner and
-										more sustainable future</strong>.
-								</p>
+									<!-- Quote Text -->
+									<p class="eim-testimonial-quote">
+										"Choosing Energy In Motion Ltd. for our transition from ICE to EV has proven to be the right decision. Beyond delivering reliable electric vehicles, EIM's Aftersales team has demonstrated exceptional ownership, providing timely field support, fast issue resolution, and continuous technical assistance."
+									</p>
 
-								<div class="testimonial-profile-footer mt-4">
-									<div class="avatar-ring-wrap">
-										<img src="images/Ajit-Kumar.png" alt="Mr. Ajit Kumar Singh" loading="lazy"
-											decoding="async">
-									</div>
-									<div class="profile-details">
-										<h4 class="profile-name">Mr. Ajit Kumar Singh</h4>
-										<span class="profile-role">CFS Head, Mumbai Container Freight Station</span>
-										<span class="profile-company">J M Baxi Container Holdings Pvt Ltd.</span>
+									<!-- Author & Company Footer -->
+									<div class="eim-testimonial-author-footer mt-auto">
+										<h4 class="eim-testimonial-author-name">Mr. Ajit Kumar Singh</h4>
+										<p class="eim-testimonial-author-role">CFS Head, Mumbai Container Freight Station<br><span>J M Baxi Container Holdings Pvt Ltd.</span></p>
 									</div>
 								</div>
 							</div>
 						</div>
 
 					</div>
+
 					<!-- Swiper Pagination -->
-					<div class="swiper-pagination testimonials-swiper-pagination position-relative mt-4"></div>
-				</div>
-			</div>
-		</section>
-
-		<section id="events" class="event-section-v5 py-5">
-			<div class="container">
-				<!-- Section Header -->
-				<h2 class="main-title text-center mb-4" data-aos="fade-up">Events</h2>
-
-				<!-- Swiper Container showing 2 cards per view -->
-				<div class="milestones-swiper swiper" data-aos="fade-up" data-aos-delay="100">
-					<div class="swiper-wrapper">
-
-						<!-- Event 1: August 2024 -->
-						<div class="swiper-slide">
-							<div class="milestone-image-card">
-								<img src="images/15-aug.jpeg" alt="1st EV Fast Charger in JNPT" loading="lazy"
-									decoding="async">
-								<div class="card-overlay-gradient"></div>
-
-								<div class="card-base-content">
-									<span class="card-date-badge">15th August 2024</span>
-									<h3 class="card-milestone-title">1st EV Fast Charger in JNPT</h3>
-								</div>
-
-								<div class="card-hover-details">
-									<p class="card-milestone-desc">Inauguration of India's first high-capacity EV Fast
-										Charging infrastructure within the Jawaharlal Nehru Port (JNPT) premises to
-										support heavy-duty fleet operations.</p>
-									<div class="card-meta-info">
-										<span><i class="bi bi-geo-alt-fill me-1"></i> Location: Jawaharlal Nehru Port,
-											Mumbai</span>
-										<span><i class="bi bi-person-fill me-1"></i> Inaugurated By: Shri Unmesh Wagh
-											(Chairman, JNPA)</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Event 5: July 2025 -->
-						<div class="swiper-slide">
-							<div class="milestone-image-card">
-								<img src="images/award-4.jpeg" alt="ARAI CMVR Homologation" loading="lazy"
-									decoding="async">
-								<div class="card-overlay-gradient"></div>
-
-								<div class="card-base-content">
-									<span class="card-date-badge">July 2025</span>
-									<h3 class="card-milestone-title">ARAI CMVR Homologation</h3>
-								</div>
-
-								<div class="card-hover-details">
-									<p class="card-milestone-desc">Energy In Motion Limited has secured CMVR
-										homologation certification from ARAI for India’s first heavy-duty,
-										battery-swappable 55T electric tractor-achieved in a record 7 months.</p>
-									<div class="card-meta-info">
-										<span><i class="bi bi-geo-alt-fill me-1"></i> Location: ARAI, Pune</span>
-										<span><i class="bi bi-person-fill me-1"></i> Certificate Awarded By: Mr. Regi
-											Mathai (Chairman, ARAI)</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Event 6: August 2025 -->
-						<div class="swiper-slide">
-							<div class="milestone-image-card">
-								<img src="images/new-people-img.jpg" alt="First EV Truck Handover to MICT"
-									loading="lazy" decoding="async">
-								<div class="card-overlay-gradient"></div>
-
-								<div class="card-base-content">
-									<span class="card-date-badge">1st August 2025</span>
-									<h3 class="card-milestone-title">First EV Truck Handover to MICT (Mumbai
-										International Cargo Terminal)</h3>
-								</div>
-
-								<div class="card-hover-details">
-									<p class="card-milestone-desc">Handover of the first EV truck to MICT (Mumbai
-										International Cargo Terminal).</p>
-									<div class="card-meta-info">
-										<span><i class="bi bi-geo-alt-fill me-1"></i> Location: MICT (Mumbai
-											International Cargo Terminal), Mumbai</span>
-										<span><i class="bi bi-person-fill me-1"></i> Handed Over By: Narendra Murkumbi
-											(Managing Director, Energy in Motion)</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Event 2: September 2025 -->
-						<div class="swiper-slide">
-							<div class="milestone-image-card">
-								<img src="images/25-sep.JPG" alt="India’s First Fleet of EV Trucks Flagged Off"
-									loading="lazy" decoding="async">
-								<div class="card-overlay-gradient"></div>
-
-								<div class="card-base-content">
-									<span class="card-date-badge">25th September 2025</span>
-									<h3 class="card-milestone-title">India’s First Fleet of EV Trucks Flagged Off</h3>
-								</div>
-
-								<div class="card-hover-details">
-									<p class="card-milestone-desc">Flagging off of India’s First Fleet of EV Trucks with
-										Swappable Batteries at JNPA, enabling zero-emission container logistics.</p>
-									<div class="card-meta-info">
-										<span><i class="bi bi-geo-alt-fill me-1"></i> Location: Jawaharlal Nehru Port
-											Authority (JNPA)</span>
-										<span><i class="bi bi-person-fill me-1"></i> Flagged Off By: Shri Sarbananda
-											Sonowal (Hon'ble Union Minister)</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Event 3: October 2025 -->
-						<div class="swiper-slide">
-							<div class="milestone-image-card">
-								<img src="images/8-oct.JPG" alt="India’s 1st Public Heavy Duty Swapping Station"
-									loading="lazy" decoding="async">
-								<div class="card-overlay-gradient"></div>
-
-								<div class="card-base-content">
-									<span class="card-date-badge">8th October 2025</span>
-									<h3 class="card-milestone-title">India’s 1st Public Heavy Duty Swapping Station</h3>
-								</div>
-
-								<div class="card-hover-details">
-									<p class="card-milestone-desc">Inauguration of India’s 1st Public Heavy Duty
-										Commercial E-Vehicle Battery Swapping Cum Charging Station, and Flagging Off of
-										the EIM-Foton ASHWA Battery Swappable Heavy-Duty E-Tractor.</p>
-									<div class="card-meta-info">
-										<span><i class="bi bi-person-fill me-1"></i> Inaugurated By: Shri Nitin Gadkari
-											(Hon'ble Union Minister of Road Transport & Highways)</span>
-										<span><i class="bi bi-award-fill me-1"></i> Flagged Off By: Shri H. D.
-											Kumaraswamy (Hon’ble Union Minister of Heavy Industries)</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Event 4: May 2026 -->
-						<div class="swiper-slide">
-							<div class="milestone-image-card">
-								<img src="images/2-may.JPG" alt="India's Largest Battery Swapping & Charging Station"
-									loading="lazy" decoding="async">
-								<div class="card-overlay-gradient"></div>
-
-								<div class="card-base-content">
-									<span class="card-date-badge">2nd May 2026</span>
-									<h3 class="card-milestone-title">India's Largest Battery Swapping & Charging Station
-									</h3>
-								</div>
-
-								<div class="card-hover-details">
-									<p class="card-milestone-desc">Inauguration of India's largest battery swapping and
-										charging station terminal, enhancing green freight transit speed and
-										infrastructure capacities.</p>
-									<div class="card-meta-info">
-										<span><i class="bi bi-geo-alt-fill me-1"></i> Location: Jawaharlal Nehru Port,
-											Mumbai</span>
-										<span><i class="bi bi-person-fill me-1"></i> Inaugurated By: Shri Gaurav Dayal,
-											IAS (Chairperson, JNPA)</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-					<!-- Swiper Pagination -->
-					<div class="swiper-pagination milestones-swiper-pagination position-relative mt-4"></div>
+					<div class="swiper-pagination eim-testimonials-pagination mt-4 position-relative"></div>
 				</div>
 			</div>
 		</section>
 
 		<script>
 			document.addEventListener('DOMContentLoaded', function () {
-				if (typeof Swiper !== 'undefined') {
-					new Swiper('.milestones-swiper', {
+				if (typeof Swiper !== 'undefined' && document.querySelector('.eim-testimonials-swiper')) {
+					new Swiper('.eim-testimonials-swiper', {
 						slidesPerView: 1,
 						spaceBetween: 24,
-						loop: false,
-						pagination: {
-							el: '.milestones-swiper-pagination',
-							clickable: true,
+						loop: true,
+						speed: 600,
+						autoplay: {
+							delay: 4500,
+							disableOnInteraction: false,
+							pauseOnMouseEnter: true,
 						},
 						navigation: {
-							nextEl: '.milestones-swiper-next',
-							prevEl: '.milestones-swiper-prev',
+							prevEl: '#testimonialsPrev',
+							nextEl: '#testimonialsNext',
+						},
+						pagination: {
+							el: '.eim-testimonials-pagination',
+							clickable: true,
 						},
 						breakpoints: {
 							768: {
 								slidesPerView: 2,
 								spaceBetween: 24,
+							},
+							1024: {
+								slidesPerView: 3,
+								spaceBetween: 28,
+							}
+						}
+					});
+				}
+			});
+		</script>
+
+		<!-- EVENTS & MILESTONES SHOWCASE SECTION (Matching Reference Layout) -->
+		<section id="events" class="eim-events-showcase-section">
+			<div class="container">
+				<!-- Header Row: Title Left & Slider CTA Buttons Right -->
+				<div class="eim-events-header-row mb-4 pb-2" data-aos="fade-up">
+					<div class="row align-items-end justify-content-between g-3">
+						<div class="col-md-8 col-12">
+							<h2 class="eim-events-headline mb-0">
+								<span class="title-dark">Milestones &</span> <span class="title-green">Events</span>
+							</h2>
+						</div>
+						<div class="col-md-4 col-12 d-flex justify-content-md-end">
+							<div class="eim-events-nav-group d-flex gap-2">
+								<button class="eim-events-nav-btn" id="eventsPrev" aria-label="Previous Event">
+									<i class="bi bi-arrow-left"></i>
+								</button>
+								<button class="eim-events-nav-btn" id="eventsNext" aria-label="Next Event">
+									<i class="bi bi-arrow-right"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Swiper Carousel (2 per view on desktop, 1 on mobile) -->
+				<div class="swiper eim-events-swiper" data-aos="fade-up" data-aos-delay="100">
+					<div class="swiper-wrapper">
+
+						<!-- Event 1: August 2024 -->
+						<div class="swiper-slide">
+							<div class="eim-event-card">
+								<img src="images/15-aug.jpeg" alt="1st EV Fast Charger in JNPT" class="eim-event-bg-img" loading="lazy" decoding="async">
+								<div class="eim-event-gradient-overlay"></div>
+
+								<!-- Bottom Details -->
+								<div class="eim-event-bottom-bar">
+									<span class="eim-event-date-pill">15th August 2024 · JNPT, Mumbai</span>
+									<h3 class="eim-event-title-bottom">1st EV Fast Charger in JNPT</h3>
+									<p class="eim-event-desc">
+										Inauguration of India's first high-capacity EV Fast Charging infrastructure within Jawaharlal Nehru Port premises to power heavy-duty fleet operations.
+									</p>
+									<div class="eim-event-meta-tag">
+										<span><i class="bi bi-person-fill"></i> Inaugurated by: Shri Unmesh Wagh (Chairman, JNPA)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Event 2: July 2025 -->
+						<div class="swiper-slide">
+							<div class="eim-event-card">
+								<img src="images/award-4.jpeg" alt="ARAI CMVR Homologation" class="eim-event-bg-img" loading="lazy" decoding="async">
+								<div class="eim-event-gradient-overlay"></div>
+
+								<!-- Bottom Details -->
+								<div class="eim-event-bottom-bar">
+									<span class="eim-event-date-pill">July 2025 · ARAI, Pune</span>
+									<h3 class="eim-event-title-bottom">ARAI CMVR Homologation</h3>
+									<p class="eim-event-desc">
+										Energy In Motion secured CMVR homologation certification from ARAI for India’s first heavy-duty, battery-swappable 55T electric tractor in record 7 months.
+									</p>
+									<div class="eim-event-meta-tag">
+										<span><i class="bi bi-award-fill"></i> Awarded by: Mr. Regi Mathai (Chairman, ARAI)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Event 3: August 2025 -->
+						<div class="swiper-slide">
+							<div class="eim-event-card">
+								<img src="images/new-people-img.jpg" alt="First EV Truck Handover to MICT" class="eim-event-bg-img" loading="lazy" decoding="async">
+								<div class="eim-event-gradient-overlay"></div>
+
+								<!-- Bottom Details -->
+								<div class="eim-event-bottom-bar">
+									<span class="eim-event-date-pill">1st August 2025 · MICT, Mumbai</span>
+									<h3 class="eim-event-title-bottom">First EV Truck Handover to MICT</h3>
+									<p class="eim-event-desc">
+										Commercial fleet handover of heavy electric tractors to Mumbai International Cargo Terminal for port container transportation.
+									</p>
+									<div class="eim-event-meta-tag">
+										<span><i class="bi bi-person-fill"></i> Handed over by: Narendra Murkumbi (MD, Energy in Motion)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Event 4: September 2025 -->
+						<div class="swiper-slide">
+							<div class="eim-event-card">
+								<img src="images/25-sep.JPG" alt="India’s First Fleet of EV Trucks Flagged Off" class="eim-event-bg-img" loading="lazy" decoding="async">
+								<div class="eim-event-gradient-overlay"></div>
+
+								<!-- Bottom Details -->
+								<div class="eim-event-bottom-bar">
+									<span class="eim-event-date-pill">25th September 2025 · JNPA</span>
+									<h3 class="eim-event-title-bottom">India’s First Fleet of EV Trucks Flagged Off</h3>
+									<p class="eim-event-desc">
+										Flagging off of India’s First Fleet of EV Trucks with Swappable Batteries at JNPA, enabling zero-emission container freight transport.
+									</p>
+									<div class="eim-event-meta-tag">
+										<span><i class="bi bi-person-fill"></i> Flagged off by: Shri Sarbananda Sonowal (Hon'ble Union Minister)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Event 5: October 2025 -->
+						<div class="swiper-slide">
+							<div class="eim-event-card">
+								<img src="images/8-oct.JPG" alt="India’s 1st Public Heavy Duty Swapping Station" class="eim-event-bg-img" loading="lazy" decoding="async">
+								<div class="eim-event-gradient-overlay"></div>
+
+								<!-- Bottom Details -->
+								<div class="eim-event-bottom-bar">
+									<span class="eim-event-date-pill">8th October 2025 · Highway Corridor</span>
+									<h3 class="eim-event-title-bottom">India’s 1st Public Heavy Duty Swapping Station</h3>
+									<p class="eim-event-desc">
+										Inauguration of India’s 1st Public Heavy Duty Battery Swapping Station and Flagging Off of the EIM-Foton ASHWA Heavy-Duty E-Tractor.
+									</p>
+									<div class="eim-event-meta-tag">
+										<span><i class="bi bi-person-fill"></i> Inaugurated by: Shri Nitin Gadkari (Hon'ble Union Minister)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Event 6: May 2026 -->
+						<div class="swiper-slide">
+							<div class="eim-event-card">
+								<img src="images/2-may.JPG" alt="India's Largest Battery Swapping & Charging Station" class="eim-event-bg-img" loading="lazy" decoding="async">
+								<div class="eim-event-gradient-overlay"></div>
+
+								<!-- Bottom Details -->
+								<div class="eim-event-bottom-bar">
+									<span class="eim-event-date-pill">2nd May 2026 · JNPT, Mumbai</span>
+									<h3 class="eim-event-title-bottom">India's Largest Battery Swapping & Charging Station</h3>
+									<p class="eim-event-desc">
+										Inauguration of India's largest heavy-duty commercial battery swapping and charging terminal, maximizing fleet transit speed.
+									</p>
+									<div class="eim-event-meta-tag">
+										<span><i class="bi bi-person-fill"></i> Inaugurated by: Shri Gaurav Dayal, IAS (Chairperson, JNPA)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<!-- Swiper Pagination -->
+					<div class="swiper-pagination eim-events-pagination mt-4 position-relative"></div>
+				</div>
+			</div>
+		</section>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				if (typeof Swiper !== 'undefined' && document.querySelector('.eim-events-swiper')) {
+					new Swiper('.eim-events-swiper', {
+						slidesPerView: 1,
+						spaceBetween: 24,
+						loop: true,
+						speed: 650,
+						autoplay: {
+							delay: 4500,
+							disableOnInteraction: false,
+							pauseOnMouseEnter: true,
+						},
+						navigation: {
+							prevEl: '#eventsPrev',
+							nextEl: '#eventsNext',
+						},
+						pagination: {
+							el: '.eim-events-pagination',
+							clickable: true,
+						},
+						breakpoints: {
+							768: {
+								slidesPerView: 2,
+								spaceBetween: 28,
 							}
 						}
 					});
@@ -1632,135 +1554,170 @@
 			</div>
 		</section>
 
-		<section id="awards" class="awards-section-v2 py-5">
-			<div class="container">
-				<!-- Executive Header -->
-				<div class="text-center mb-5" data-aos="fade-up">
-					<h2 class="main-title text-white mb-2">Awards & Recognition</h2>
-					<p class="section-subtitle-text text-white-50 mx-auto"
-						style="max-width: 680px; font-size: 1.05rem;">
+		<!-- AWARDS & RECOGNITION SECTION (Clean Light Background & Modern 3-Column Grid) -->
+		<section id="awards" class="eim-awards-section py-5 bg-white">
+			<div class="container text-start">
+				<!-- Section Header -->
+				<div class="text-start mb-4 pb-2" data-aos="fade-up">
+					<h2 class="main-title mb-2">
+						<span class="title-dark">Awards &</span> <span class="title-green">Recognition</span>
+					</h2>
+					<p class="eim-awards-lead-text mb-0">
 						Acknowledged by government bodies, mobility associations, and global OEM partners for pioneering
 						green energy transition in commercial freight.
 					</p>
 				</div>
 
-				<!-- Awards Grid / Swiper Carousel -->
-				<div class="awards-swiper swiper" data-aos="fade-up" data-aos-delay="150">
-					<div class="swiper-wrapper">
-
-						<!-- Award 1: Modinomics Award -->
-						<div class="swiper-slide">
-							<div class="award-card-v2 h-100">
-								<div class="award-img-box">
-									<img src="images/1778053049503.jpg" alt="Viksit Bharat Ambassador of Change Award"
-										loading="lazy" decoding="async">
+				<!-- 3-Column Grid Showcase -->
+				<div class="row g-4" data-aos="fade-up" data-aos-delay="100">
+					<!-- Award 1: Modinomics Award -->
+					<div class="col-lg-4 col-md-6 col-12 d-flex">
+						<div class="eim-award-card w-100">
+							<div class="eim-award-img-box">
+								<img src="images/1778053049503.jpg" alt="Viksit Bharat Ambassador of Change Award"
+									class="eim-award-img" loading="lazy" decoding="async">
+							</div>
+							<div class="eim-award-body">
+								<h4 class="eim-award-title">Viksit Bharat 'Ambassador of Change' Award</h4>
+								<div class="eim-award-org">
+									<i class="bi bi-building"></i> Organised by Ease of Doing Business
 								</div>
-								<div class="award-body">
-									<h4 class="award-title">Viksit Bharat 'Ambassador of Change' Award</h4>
-									<p class="award-org"><i class="bi bi-building me-1"></i> Organised by Ease of Doing
-										Business</p>
-									<div class="award-quote-box">
-										<i class="bi bi-quote quote-icon"></i>
-										<p class="award-desc">
-											At #CF2026, EIM was honoured by <strong>Smt. Meenakshi Lekhi</strong>
-											(Former Minister of State, GoI) with the MODINOMICS 3.0 Edition Award under
-											‘Jury Choice for Climate Action’ (Future in Mobility category) for its role
-											in advancing next-gen mobility.
-										</p>
-									</div>
-								</div>
+								<p class="eim-award-desc">
+									At #CF2026, EIM was honoured by <strong>Smt. Meenakshi Lekhi</strong>
+									(Former Minister of State, GoI) with the MODINOMICS 3.0 Edition Award under
+									‘Jury Choice for Climate Action’ (Future in Mobility category) for its role
+									in advancing next-gen mobility.
+								</p>
 							</div>
 						</div>
-
-						<!-- Award 2: SAEINDIA Recognition -->
-						<div class="swiper-slide">
-							<div class="award-card-v2 h-100">
-								<div class="award-img-box">
-									<img src="images/award-3.jpeg" alt="SAEINDIA Recognition" loading="lazy"
-										decoding="async">
-								</div>
-								<div class="award-body">
-									<h4 class="award-title">SAEINDIA Recognition</h4>
-									<p class="award-org"><i class="bi bi-globe2 me-1"></i> SAE International (Est. 1905,
-										USA)</p>
-									<div class="award-quote-box">
-										<i class="bi bi-quote quote-icon"></i>
-										<p class="award-desc">
-											SAE International, a premier global body representing mobility engineers
-											worldwide, felicitated Energy in Motion (EIM) with a memento in recognition
-											of its valuable support and engineering contributions.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Award 3: Foton Award -->
-						<div class="swiper-slide">
-							<div class="award-card-v2 h-100">
-								<div class="award-img-box">
-									<img src="images/foton.jpg" alt="Foton Pioneer in New Energy Promotion Award"
-										loading="lazy" decoding="async">
-								</div>
-								<div class="award-body">
-									<h4 class="award-title">Foton 'The Pioneer in New Energy Promotion' Award</h4>
-									<p class="award-org"><i class="bi bi-diagram-3-fill me-1"></i> Global Partner's
-										Conference 2026</p>
-									<div class="award-quote-box">
-										<i class="bi bi-quote quote-icon"></i>
-										<p class="award-desc">
-											At the Global Partner's Conference 2026, Foton awarded 'The Pioneer in New
-											Energy Promotion Award' to Energy in Motion Limited for innovation,
-											sustainability, and shaping the future of new energy mobility in India.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-
 					</div>
-					<!-- Swiper Pagination -->
-					<div class="swiper-pagination awards-swiper-pagination position-relative mt-4"></div>
+
+					<!-- Award 2: SAEINDIA Recognition -->
+					<div class="col-lg-4 col-md-6 col-12 d-flex">
+						<div class="eim-award-card w-100">
+							<div class="eim-award-img-box">
+								<img src="images/award-3.jpeg" alt="SAEINDIA Recognition"
+									class="eim-award-img" loading="lazy" decoding="async">
+							</div>
+							<div class="eim-award-body">
+								<h4 class="eim-award-title">SAEINDIA Recognition</h4>
+								<div class="eim-award-org">
+									<i class="bi bi-globe2"></i> SAE International (Est. 1905, USA)
+								</div>
+								<p class="eim-award-desc">
+									SAE International, a premier global body representing mobility engineers
+									worldwide, felicitated Energy in Motion (EIM) with a memento in recognition
+									of its valuable support and engineering contributions.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Award 3: Foton Award -->
+					<div class="col-lg-4 col-md-6 col-12 d-flex">
+						<div class="eim-award-card w-100">
+							<div class="eim-award-img-box">
+								<img src="images/foton.jpg" alt="Foton Pioneer in New Energy Promotion Award"
+									class="eim-award-img" loading="lazy" decoding="async">
+							</div>
+							<div class="eim-award-body">
+								<h4 class="eim-award-title">Foton 'The Pioneer in New Energy Promotion' Award</h4>
+								<div class="eim-award-org">
+									<i class="bi bi-diagram-3-fill"></i> Global Partner's Conference 2026
+								</div>
+								<p class="eim-award-desc">
+									At the Global Partner's Conference 2026, Foton awarded 'The Pioneer in New
+									Energy Promotion Award' to Energy in Motion Limited for innovation,
+									sustainability, and shaping the future of new energy mobility in India.
+								</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- BOTTOM CONTACT FORM SECTION (Centered Title Top + Centered Form Card Below) -->
-		<section id="contact" class="contactus section py-5">
-			<div class="container">
-				<!-- Centered Main Section Title on Top -->
-				<h2 class="main-title text-center mb-4" data-aos="fade-up">
-					Looking For Electric Heavy-Duty Vehicles?<br class="d-none d-md-block">
-					<span style="color: #009e8e;">Talk To EIM.</span>
-				</h2>
+		<!-- BOTTOM CONTACT & FLEET INQUIRY (Shaded Truck Background) -->
+		<section id="contact" class="eim-contact-section py-5">
+			<div class="container text-start">
+				<div class="row g-4 g-lg-5 align-items-center" data-aos="fade-up">
+					<!-- Left Column: Contact Value Proposition & Direct Channel -->
+					<div class="col-lg-6 col-12 text-start">
+						<span class="eim-contact-eyebrow">
+							<i class="bi bi-lightning-charge-fill me-1"></i> Commercial EV Mobility
+						</span>
+						<h2 class="main-title text-white mb-3">
+							<span class="text-white">Looking For Electric Heavy-Duty Vehicles?</span><br class="d-none d-md-block">
+							<span class="title-green">Talk To EIM.</span>
+						</h2>
+						<p class="eim-contact-lead mb-0">
+							Accelerate your fleet's clean energy transition with India’s pioneering heavy commercial EV mobility ecosystem. Connect directly with our vehicle deployment team to plan your route electrification.
+						</p>
 
-				<!-- Centered Form Card Directly Below Title -->
-				<div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
-					<div class="col-lg-6 col-md-8 col-12">
-						<div class="ev-hero-form-card mx-auto" style="max-width: 580px;">
-							<form class="ev-hero-form" action="contact-mailto.php" method="post"
+						<!-- Key Value Highlights -->
+						<div class="eim-contact-pillars-list">
+							<div class="eim-contact-pillar-item">
+								<i class="bi bi-truck-front-fill"></i>
+								<span>55-Ton Battery Swappable Electric Commercial Trucks</span>
+							</div>
+							<div class="eim-contact-pillar-item">
+								<i class="bi bi-ev-station-fill"></i>
+								<span>Turnkey Automated Battery Swapping & Charging Stations</span>
+							</div>
+							<div class="eim-contact-pillar-item">
+								<i class="bi bi-tools"></i>
+								<span>Dedicated 24/7 Aftersales Support & High Fleet Uptime</span>
+							</div>
+						</div>
+
+						<!-- Direct Email Box -->
+						<div class="eim-contact-direct-box">
+							<div class="d-flex align-items-center gap-3">
+								<div class="eim-contact-email-icon">
+									<i class="bi bi-envelope-fill"></i>
+								</div>
+								<div>
+									<span class="eim-contact-email-sub">Direct Inquiries</span>
+									<a href="mailto:powerup@energyinmotion.in" class="eim-contact-email-val">
+										powerup@energyinmotion.in
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right Column: Precision Lead Capture Form Console -->
+					<div class="col-lg-6 col-12 d-flex flex-column">
+						<div class="eim-contact-form-card">
+							<h3 class="eim-form-card-title">Send Us An Inquiry</h3>
+							<p class="eim-form-card-subtitle">
+								Fill in your fleet requirement and our mobility team will reach out within 24 hours.
+							</p>
+
+							<form class="eim-console-form flex-grow-1 d-flex flex-column justify-content-between" action="contact-mailto.php" method="post"
 								id="ev-truck-footer-form">
 								<div class="form-group">
-									<label for="footer-frmname">Full Name*</label>
-									<input type="text" id="footer-frmname" name="frmname" class="ev-form-control"
+									<label for="footer-frmname"><i class="bi bi-person me-1 text-green"></i> Full Name*</label>
+									<input type="text" id="footer-frmname" name="frmname" class="eim-console-input"
 										placeholder="e.g. Rajesh Kumar" required>
 								</div>
 
 								<div class="form-group">
-									<label for="footer-frmemail">Work Email*</label>
-									<input type="email" id="footer-frmemail" name="frmemail" class="ev-form-control"
+									<label for="footer-frmemail"><i class="bi bi-envelope me-1 text-green"></i> Work Email*</label>
+									<input type="email" id="footer-frmemail" name="frmemail" class="eim-console-input"
 										placeholder="name@company.com" required>
 								</div>
 
 								<div class="form-group">
-									<label for="footer-frmcontact">Mobile Number*</label>
-									<input type="tel" id="footer-frmcontact" name="frmcontact" class="ev-form-control"
+									<label for="footer-frmcontact"><i class="bi bi-telephone me-1 text-green"></i> Mobile Number*</label>
+									<input type="tel" id="footer-frmcontact" name="frmcontact" class="eim-console-input"
 										placeholder="+91 98765 43210" required>
 								</div>
 
 								<div class="form-group">
-									<label for="footer-frmdes">Payload / Fleet Requirement*</label>
-									<textarea id="footer-frmdes" name="frmdes" rows="2" class="ev-form-control"
+									<label for="footer-frmdes"><i class="bi bi-truck me-1 text-green"></i> Payload / Fleet Requirement*</label>
+									<textarea id="footer-frmdes" name="frmdes" rows="3" class="eim-console-input"
 										placeholder="e.g. 55-Ton Heavy Commercial Truck, 10 Fleet Units..."
 										required></textarea>
 								</div>
@@ -1772,10 +1729,13 @@
 									name="js_Blank">
 								<input type="hidden" name="js_Email" value="frmemail,E-mail">
 
-								<button type="submit" class="ev-btn-primary mt-2">
-									<span>Submit</span>
-									<i class="bi bi-arrow-right-circle-fill"></i>
+								<button type="submit" class="ev-btn-primary mt-2 w-100 justify-content-center">
+									<span>Submit Requirement</span>
+									<i class="bi bi-arrow-right-circle-fill ms-2"></i>
 								</button>
+								<p class="eim-form-privacy-note">
+									<i class="bi bi-shield-check text-green"></i> Your information is secure. We never share your data.
+								</p>
 							</form>
 						</div>
 					</div>
