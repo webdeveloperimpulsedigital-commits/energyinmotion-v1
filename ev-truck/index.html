@@ -27,11 +27,11 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/aos.css" rel="stylesheet">
 	<link href="css/fancybox.min.css" rel="stylesheet">
-	<link href="css/easy-responsive-tabs.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-	<link href="css/main.css?v=101.0" rel="stylesheet">
-	<link href="css/ev-truck.css?v=101.0" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<link href="css/main.css?v=20260818.2" rel="stylesheet">
+	<link href="css/ev-truck.css?v=20260818.2" rel="stylesheet">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
 			w[l] = w[l] || []; w[l].push({
@@ -214,37 +214,45 @@
 		</section>
 
 		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				if (typeof Swiper !== 'undefined') {
-					new Swiper('.eim-offerings-swiper', {
-						slidesPerView: 1,
-						spaceBetween: 16,
-						loop: true,
-						speed: 550,
-						grabCursor: true,
-						touchRatio: 1.2,
-						autoplay: {
-							delay: 4500,
-							disableOnInteraction: false,
-							pauseOnMouseEnter: true,
-						},
-						navigation: {
-							prevEl: '.offerings-prev-btn',
-							nextEl: '.offerings-next-btn',
-						},
-						pagination: {
-							el: '.eim-offerings-pagination',
-							clickable: true,
-						},
-						breakpoints: {
-							768: {
-								slidesPerView: 2,
-								spaceBetween: 28,
+			function initOfferingsSwiper() {
+				if (typeof Swiper !== 'undefined' && document.querySelector('.eim-offerings-swiper')) {
+					if (!window.eimOfferingsSwiperInstance) {
+						window.eimOfferingsSwiperInstance = new Swiper('.eim-offerings-swiper', {
+							slidesPerView: 1,
+							spaceBetween: 16,
+							loop: true,
+							speed: 550,
+							grabCursor: true,
+							touchRatio: 1.2,
+							autoplay: {
+								delay: 4500,
+								disableOnInteraction: false,
+								pauseOnMouseEnter: true,
+							},
+							navigation: {
+								prevEl: '.offerings-prev-btn',
+								nextEl: '.offerings-next-btn',
+							},
+							pagination: {
+								el: '.eim-offerings-pagination',
+								clickable: true,
+							},
+							breakpoints: {
+								768: {
+									slidesPerView: 2,
+									spaceBetween: 28,
+								}
 							}
-						}
-					});
+						});
+					}
 				}
-			});
+			}
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', initOfferingsSwiper);
+			} else {
+				initOfferingsSwiper();
+			}
+			window.addEventListener('load', initOfferingsSwiper);
 		</script>
 
 		<!-- SECTION: WHY CHOOSE EIM (WITH STICKY SCROLLING IMAGE ANIMATION) -->
@@ -1857,8 +1865,8 @@
 		<script src="js/jquery.fancybox.min.js"></script>
 		<script src="js/easyResponsiveTabs.js"></script>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-		<script src="js/main.js?v=6.0"></script>
+		<script src="js/main.js?v=20260818.2"></script>
+		<script src="js/ev-truck.js?v=20260818.2"></script>
 
 	</main>
 </body>

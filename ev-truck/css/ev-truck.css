@@ -532,7 +532,10 @@ select.ev-form-control {
    OFFERINGS MULTI-CARD CAROUSEL SHOWCASE (Responsive & Touch Optimized)
    ========================================================================== */
 .eim-offerings-section {
+  position: relative;
+  z-index: 10;
   padding: 45px 0 20px 0 !important;
+  background-color: #ffffff !important;
   background: #ffffff !important;
 }
 
@@ -3057,6 +3060,9 @@ h2.main-title {
    AFTER-SALES SERVICE - INTERACTIVE HOVER-PREVIEW SHOWCASE
    ========================================================================== */
 .eim-services-interactive-section {
+  position: relative;
+  z-index: 10;
+  background-color: #ffffff !important;
   background: #ffffff !important;
   padding: 55px 0 !important;
 }
