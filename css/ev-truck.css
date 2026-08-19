@@ -1498,8 +1498,27 @@ p {
 }
 
 /* --------------------------------------------------------------------------
-   17. Responsive Breakpoints & Instant Mobile Scroll Rendering
+   17. Responsive Breakpoints & Complete Mobile Optimization
    -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .eim-hero-section {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  
+  .eim-brand-tagline, .eim-brand-divider {
+    display: none;
+  }
+  
+  .eim-lead-form-card {
+    margin-top: 30px;
+  }
+  
+  .eim-section-title {
+    font-size: 2.1rem;
+  }
+}
+
 @media (max-width: 767.98px) {
   /* Prevent any scroll delay or blank spaces on mobile devices */
   [data-aos] {
@@ -1509,50 +1528,395 @@ p {
     animation: none !important;
     visibility: visible !important;
   }
-}
 
-@media (max-width: 991.98px) {
-  .eim-hero-section {
-    padding-top: 110px;
-    padding-bottom: 60px;
+  /* Header */
+  .eim-landing-header {
+    padding: 10px 0;
   }
   
-  .eim-brand-tagline, .eim-brand-divider {
-    display: none;
+  .eim-landing-header.scrolled {
+    padding: 8px 0;
   }
-  
-  .eim-lead-form-card {
-    margin-top: 40px;
-  }
-  
-  .eim-section-title {
-    font-size: 2.2rem;
-  }
-}
 
-@media (max-width: 575.98px) {
-  .eim-btn-nav span {
+  .eim-brand-logo {
+    height: 28px;
+  }
+
+  .eim-btn-nav {
+    padding: 8px 14px;
     font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    border-radius: 6px;
+    gap: 4px;
   }
-  
+
+  /* Section Spacings & Typography */
+  .eim-hero-section {
+    padding-top: 78px;
+    padding-bottom: 35px;
+    min-height: auto;
+  }
+
   .eim-hero-title {
-    font-size: 2.2rem;
+    font-size: 1.85rem;
+    line-height: 1.18;
+    margin-bottom: 0.85rem;
   }
-  
+
+  .eim-hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+
   .eim-hero-audience-card {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 1.2rem;
+    gap: 8px;
+  }
+
+  .eim-hero-content-col .eim-btn-teal {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 0.95rem;
+  }
+
+  .eim-lead-form-card {
+    margin-top: 24px;
+    padding: 22px 16px;
+    border-radius: 18px;
+  }
+
+  .eim-lead-form-title {
+    font-size: 1.28rem;
+  }
+
+  .eim-form-input, .eim-form-textarea {
+    padding: 10px 12px 10px 38px;
+    font-size: 0.88rem;
+  }
+
+  .eim-interest-pills-group {
     gap: 6px;
   }
-  
-  .eim-proof-banner {
-    flex-direction: column;
-    text-align: center;
+
+  .eim-interest-pill-label {
+    padding: 6px 11px;
+    font-size: 0.76rem;
   }
-  
-  .eim-footer-bottom {
+
+  /* Section 2: Proof Strip */
+  .eim-proof-strip-section {
+    padding: 35px 0;
+  }
+
+  .eim-proof-strip-intro {
+    margin-bottom: 1.2rem;
+  }
+
+  .eim-proof-strip-heading {
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+  }
+
+  .eim-metric-card {
+    padding: 16px 12px;
+    border-radius: 14px;
+  }
+
+  .eim-metric-value {
+    font-size: 1.35rem !important;
+    line-height: 1.15;
+    margin-bottom: 5px;
+    word-break: normal;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .eim-metric-desc {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  /* Section 3: Problem */
+  .eim-problem-section {
+    padding: 50px 0;
+  }
+
+  .eim-section-title {
+    font-size: 1.65rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .eim-section-lead {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 1.4rem;
+  }
+
+  .eim-problem-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .eim-problem-question {
+    font-size: 1.12rem;
+    margin-bottom: 14px;
+  }
+
+  .eim-problem-solution-box {
+    padding: 13px 14px;
+  }
+
+  .eim-problem-solution-text {
+    font-size: 0.88rem;
+    line-height: 1.48;
+  }
+
+  /* Section 4: Maitryi Model */
+  .eim-maitryi-section {
+    padding: 50px 0;
+  }
+
+  .eim-maitryi-card {
+    border-radius: 16px;
+  }
+
+  .eim-maitryi-img-wrap {
+    height: 155px;
+  }
+
+  .eim-maitryi-body {
+    padding: 18px 16px;
+  }
+
+  .eim-maitryi-title {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+
+  .eim-maitryi-desc {
+    font-size: 0.88rem;
+  }
+
+  /* Section 5: Uptime */
+  .eim-uptime-section {
+    padding: 50px 0;
+  }
+
+  .eim-uptime-visual-card {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+
+  .eim-time-compare-row {
+    gap: 12px;
+    margin: 18px 0;
+  }
+
+  .eim-time-bar-item {
+    padding: 14px 12px;
+  }
+
+  .eim-time-bar-title {
+    font-size: 0.82rem;
+  }
+
+  .eim-time-bar-val {
+    font-size: 0.95rem;
+  }
+
+  .eim-uptime-section .eim-btn-teal {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Section 6: Where EIM Fits */
+  .eim-fits-section {
+    padding: 50px 0;
+  }
+
+  .eim-fit-card {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .eim-fit-icon-wrap {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .eim-fit-title {
+    font-size: 1.12rem;
+    margin-bottom: 6px;
+  }
+
+  .eim-fit-desc {
+    font-size: 0.86rem;
+  }
+
+  /* Section 7: Proof In Motion */
+  .eim-proof-section {
+    padding: 50px 0;
+  }
+
+  .eim-proof-card {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .eim-proof-title {
+    font-size: 1.18rem;
+    margin-bottom: 8px;
+  }
+
+  .eim-proof-desc {
+    font-size: 0.86rem;
+  }
+
+  .eim-proof-banner {
+    padding: 22px 16px;
+    border-radius: 16px;
+    margin-top: 25px;
     flex-direction: column;
     text-align: center;
+    gap: 14px;
+  }
+
+  .eim-proof-banner .eim-btn-teal {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Section 8: Support After Deployment */
+  .eim-support-section {
+    padding: 50px 0;
+  }
+
+  .eim-support-pillar-item {
+    padding: 13px 14px;
+    gap: 12px;
+  }
+
+  .eim-support-pillar-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.05rem;
+  }
+
+  .eim-support-pillar-title {
+    font-size: 0.9rem;
+  }
+
+  /* Section 9: Customer Proof Slider */
+  .eim-testimonials-section {
+    padding: 50px 0;
+  }
+
+  .eim-testimonial-card {
+    padding: 22px 16px;
+    border-radius: 18px;
+  }
+
+  .eim-testimonial-quote {
+    font-size: 0.9rem;
+    line-height: 1.58;
+    margin-bottom: 18px;
+  }
+
+  .eim-testimonial-author {
+    padding-top: 14px;
+    gap: 12px;
+  }
+
+  .eim-author-avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .eim-author-name {
+    font-size: 0.92rem;
+  }
+
+  .eim-author-role {
+    font-size: 0.76rem;
+  }
+
+  /* Section 10: Final Conversion */
+  .eim-conversion-section {
+    padding: 50px 0;
+  }
+
+  .eim-conversion-box {
+    padding: 22px 14px;
+    border-radius: 18px;
+  }
+
+  .eim-conversion-box .eim-btn-teal {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .eim-conversion-box .eim-lead-form-card {
+    padding: 18px 12px;
+    margin-top: 18px;
+  }
+
+  /* Footer */
+  .eim-footer {
+    padding: 35px 0 20px;
+  }
+
+  .eim-footer-logo {
+    height: 26px;
+  }
+
+  .eim-footer-tagline {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .eim-footer-company-name {
+    font-size: 0.95rem;
+  }
+
+  .eim-footer-address {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .eim-footer-email-link {
+    font-size: 0.9rem;
+  }
+
+  .eim-footer-bottom {
+    margin-top: 22px;
+    padding-top: 16px;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .eim-btn-nav {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+  }
+
+  .eim-hero-title {
+    font-size: 1.7rem;
+  }
+
+  .eim-metric-value {
+    font-size: 1.25rem !important;
   }
 }
 
