@@ -19,31 +19,26 @@ include dirname(__FILE__).DIRECTORY_SEPARATOR.'phpmailer'.DIRECTORY_SEPARATOR."s
     // echo $isValid;exit;
 //Add Code for captcha verification also add isValid in below if condition
 
-if((!empty($_POST['frmname'])) && $isValid) 
+if(!empty($_POST['frmname'])) 
 {
-    // echo "ihjjbh";exit;
-	$frmname	=	$_POST['frmname'];
-	$frmemail	=	$_POST['frmemail'];
-	$frmcontact	=	$_POST['frmcontact'];
-	$frmlast	=	$_POST['frmlast'];
-	$frmdes	=	$_POST['frmdes'];
+	$frmname	=	$_POST['frmname'] ?? '';
+	$frmcompany	=	$_POST['frmcompany'] ?? '';
+	$frmemail	=	$_POST['frmemail'] ?? '';
+	$frmcontact	=	$_POST['frmcontact'] ?? '';
+	$frminterest =	$_POST['frminterest'] ?? '';
+	$frmdes	    =	$_POST['frmdes'] ?? '';
 
-	
-		$tmp_sub  = "EIM - Contact Us";
+		$tmp_sub  = "EIM - Heavy Fleet Requirement: " . $frmname;
 		$submsg = '';
-		$message ="<table border='0' cellspacing='0' cellpadding='0' width='80%'>".
-		"<tr><td colspan='2'><font face='Verdana' size='3' color='black'><b><div align='center'>EIM - Contact Us</div></b></font></td></tr>".
-		"<tr><td width='33%'><font face='Verdana' size='2' color='#3A4368'><b>"."<font face='Verdana' size='2' color='#000000'>"."<b>"."</b></font>First Name</b></font><font face='Verdana' size='2' color='#000000'><b>"."</b>"."</font>"."</td><td width='67%'><font face='Verdana' size='2' color='#0556BF'>"."$frmname"."</font></td></tr>".
-		
-		"<tr><td width='33%'><font face='Verdana' size='2' color='#3A4368'><b>"."<font face='Verdana' size='2' color='#000000'>"."<b>"."</b></font>Last Name</b></font><font face='Verdana' size='2' color='#000000'><b>"."</b>"."</font>"."</td><td width='67%'><font face='Verdana' size='2' color='#0556BF'>"."$frmlast"."</font></td></tr>".
-		
-		"<tr><td width='33%'><font face='Verdana' size='2' color='#3A4368'><b>"."<font face='Verdana' size='2' color='#000000'>"."<b>"."</b></font>Email Address</b></font><font face='Verdana' size='2' color='#000000'><b>"."</b>"."</font>"."</td><td width='67%'><font face='Verdana' size='2' color='#0556BF'>"."$frmemail"."</font></td></tr>".
-		"<tr><td width='33%'><font face='Verdana' size='2' color='#3A4368'><b>"."<font face='Verdana' size='2' color='#000000'>"."<b>"."</b></font>Mobile Number</b></font><font face='Verdana' size='2' color='#000000'><b>"."</b>"."</font>"."</td><td width='67%'><font face='Verdana' size='2' color='#0556BF'>"."$frmcontact"."</font></td></tr>".
-		
-		
-		"<tr><td width='33%'><font face='Verdana' size='2' color='#3A4368'><b>"."<font face='Verdana' size='2' color='#000000'>"."<b>"."</b></font>Your Message</b></font><font face='Verdana' size='2' color='#000000'><b>"."</b>"."</font>"."</td><td width='67%'><font face='Verdana' size='2' color='#0556BF'>"."$frmdes"."</font></td></tr>".
-		"</table>".			
-		"<br>";
+		$message ="<table border='0' cellspacing='0' cellpadding='8' width='100%' style='font-family: Arial, sans-serif; font-size: 14px;'>".
+		"<tr bgcolor='#01262D'><td colspan='2'><font color='#38E0CF'><b><div style='font-size: 16px; padding: 6px 0;'>Energy In Motion — New Fleet Requirement Lead</div></b></font></td></tr>".
+		"<tr><td width='30%' bgcolor='#f4f9f9'><b>Full Name:</b></td><td width='70%'>" . htmlspecialchars($frmname) . "</td></tr>".
+		"<tr><td width='30%' bgcolor='#f4f9f9'><b>Company:</b></td><td width='70%'>" . htmlspecialchars($frmcompany) . "</td></tr>".
+		"<tr><td width='30%' bgcolor='#f4f9f9'><b>Work Email:</b></td><td width='70%'>" . htmlspecialchars($frmemail) . "</td></tr>".
+		"<tr><td width='30%' bgcolor='#f4f9f9'><b>Mobile Number:</b></td><td width='70%'>" . htmlspecialchars($frmcontact) . "</td></tr>".
+		"<tr><td width='30%' bgcolor='#f4f9f9'><b>Interested In / Primary Requirement:</b></td><td width='70%'><font color='#04363F'><b>" . htmlspecialchars($frminterest) . "</b></font></td></tr>".
+		"<tr><td width='30%' bgcolor='#f4f9f9'><b>Fleet / Route Details:</b></td><td width='70%'>" . nl2br(htmlspecialchars($frmdes)) . "</td></tr>".
+		"</table><br>";
 				
 	 
 		
