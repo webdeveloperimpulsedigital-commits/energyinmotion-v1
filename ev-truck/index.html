@@ -1034,10 +1034,13 @@
   <script>
     if (typeof AOS !== 'undefined') {
       AOS.init({
-        duration: 750,
+        duration: 450,
         easing: 'ease-out-cubic',
         once: true,
-        offset: 50
+        offset: 20,
+        disable: function () {
+          return window.innerWidth < 768;
+        }
       });
     }
   </script>
