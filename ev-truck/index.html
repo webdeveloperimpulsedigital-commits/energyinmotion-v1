@@ -27,7 +27,7 @@
   <link href="css/fancybox.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link href="css/ev-truck.css?v=20260819.20" rel="stylesheet">
+  <link href="css/ev-truck.css?v=20260819.25" rel="stylesheet">
 
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
@@ -75,7 +75,7 @@
   <main class="main">
 
     <!-- ========================================================================
-         SECTION 1: HERO
+         SECTION 1: HERO (Clean Editorial Layout Inspired by Stable.auto)
          ======================================================================== -->
     <section id="hero" class="eim-hero-section">
       <div class="eim-hero-glow-orb eim-hero-glow-orb-1"></div>
@@ -97,13 +97,6 @@
             <div class="eim-hero-audience-card">
               <i class="bi bi-shield-check"></i>
               <span>For fleet owners, transporters, ports, terminals and enterprise logistics teams.</span>
-            </div>
-
-            <div class="d-flex flex-wrap align-items-center gap-3">
-              <a href="#hero-form" class="eim-btn-teal">
-                <span>Discuss Your Fleet Requirement</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
             </div>
           </div>
 
@@ -148,7 +141,7 @@
                     <label class="eim-form-label" for="hero-frmcontact">Mobile Number <span class="req">*</span></label>
                     <div class="eim-input-wrapper">
                       <i class="bi bi-telephone eim-input-icon"></i>
-                      <input type="tel" id="hero-frmcontact" name="frmcontact" class="eim-form-input" placeholder="+91 98765 43210" required>
+                      <input type="tel" id="hero-frmcontact" name="frmcontact" class="eim-form-input" placeholder="+91 98765 43210" pattern="[0-9+\s-]{8,15}" required>
                     </div>
                   </div>
                 </div>
@@ -187,11 +180,13 @@
                 <!-- Tell us about your fleet, route or requirement (Optional) -->
                 <div class="eim-form-group">
                   <label class="eim-form-label" for="hero-frmdes">Tell us about your fleet, route or requirement</label>
-                  <textarea id="hero-frmdes" name="frmdes" class="eim-form-textarea" rows="2" placeholder="Optional details..."></textarea>
+                  <div class="eim-input-wrapper">
+                    <textarea id="hero-frmdes" name="frmdes" class="eim-form-textarea" rows="2" placeholder="Optional details..."></textarea>
+                  </div>
                 </div>
 
                 <!-- Button: Discuss My Requirement -->
-                <button type="submit" class="eim-btn-teal eim-form-submit-btn">
+                <button type="submit" class="eim-btn-teal eim-form-submit-btn w-100 justify-content-center py-3">
                   <span>Discuss My Requirement</span>
                   <i class="bi bi-arrow-right"></i>
                 </button>
