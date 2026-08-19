@@ -1302,18 +1302,18 @@ p {
    14. Section 10: Final Conversion Section
    -------------------------------------------------------------------------- */
 .eim-conversion-section {
-  padding: 120px 0;
-  background: linear-gradient(180deg, #FFFFFF 0%, var(--eim-bg-alt) 100%);
+  padding: 110px 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--eim-bg-subtle) 100%);
   position: relative;
   overflow: hidden;
 }
 
-.eim-conversion-box {
+.eim-conversion-section .eim-lead-form-card {
   background: #FFFFFF;
   border: 1px solid var(--eim-border-medium);
   border-radius: var(--eim-radius-xl);
-  padding: clamp(32px, 5vw, 65px);
-  box-shadow: 0 25px 60px rgba(0, 27, 30, 0.08);
+  padding: clamp(26px, 3.5vw, 42px);
+  box-shadow: 0 20px 50px rgba(0, 27, 30, 0.08);
 }
 
 /* --------------------------------------------------------------------------

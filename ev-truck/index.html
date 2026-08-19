@@ -811,127 +811,120 @@
          ======================================================================== -->
     <section id="contact-final" class="eim-conversion-section">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xl-9 col-lg-10" data-aos="fade-up">
-            <div class="eim-conversion-box">
-              <div class="text-center mb-4">
-                <h2 class="eim-section-title text-white mb-3">
-                  Where does your <span class="gradient-title-text">freight move?</span>
-                </h2>
-                <p class="eim-section-lead text-white-50 mx-auto" style="max-width: 650px;">
-                  Every fleet, route and operating environment is different.
-                </p>
-                <p class="eim-section-lead text-white-50 mx-auto" style="max-width: 720px; font-size: 1rem;">
-                  Tell the EIM team what you operate, where your vehicles run and what you are trying to electrify. The conversation can then start with your actual requirement rather than a generic EV pitch.
-                </p>
-                <div class="mt-4">
-                  <a href="#footer-lead-form" class="eim-btn-teal">
-                    <span>Discuss Your Fleet Requirement</span>
-                    <i class="bi bi-arrow-down-short"></i>
-                  </a>
-                </div>
-              </div>
+        <div class="row g-5 align-items-center justify-content-between">
+          <!-- Left Info Column -->
+          <div class="col-lg-5" data-aos="fade-right">
+            <h2 class="eim-section-title mb-3">
+              Where does your <br><span class="gradient-title-text">freight move?</span>
+            </h2>
+            <p class="eim-section-lead mb-3" style="font-weight: 600; color: var(--eim-text-title);">
+              Every fleet, route and operating environment is different.
+            </p>
+            <p class="eim-section-lead mb-4" style="color: var(--eim-text-body); font-size: 1.02rem; line-height: 1.65;">
+              Tell the EIM team what you operate, where your vehicles run and what you are trying to electrify. The conversation can then start with your actual requirement rather than a generic EV pitch.
+            </p>
+          </div>
 
-              <!-- Embedded Lead Form Card -->
-              <div id="footer-lead-form" class="eim-lead-form-card mx-auto mt-5" style="max-width: 620px;">
-                <h3 class="eim-lead-form-title mb-3 text-center">
-                  Discuss Your Fleet Requirement
-                </h3>
+          <!-- Right Form Column: Lead Form -->
+          <div class="col-lg-7" data-aos="fade-left">
+            <div id="footer-lead-form" class="eim-lead-form-card">
+              <h3 class="eim-lead-form-title mb-3 text-center">
+                Discuss Your Fleet Requirement
+              </h3>
 
-                <form action="contact-mailto.php" method="POST" class="eim-lead-form">
-                  <input type="hidden" name="action" value="lead_submission">
-                  <input type="hidden" name="source" value="Footer Final Lead Form">
+              <form action="contact-mailto.php" method="POST" class="eim-lead-form">
+                <input type="hidden" name="action" value="lead_submission">
+                <input type="hidden" name="source" value="Footer Final Lead Form">
 
-                  <div class="row g-3">
-                    <!-- Full Name -->
-                    <div class="col-md-6">
-                      <label class="eim-form-label">Full Name <span class="required">*</span></label>
-                      <div class="eim-input-wrap">
-                        <i class="bi bi-person eim-input-icon"></i>
-                        <input type="text" name="frmname" class="eim-form-input" placeholder="Rajesh Kumar" required>
-                      </div>
-                    </div>
-
-                    <!-- Company -->
-                    <div class="col-md-6">
-                      <label class="eim-form-label">Company <span class="required">*</span></label>
-                      <div class="eim-input-wrap">
-                        <i class="bi bi-building eim-input-icon"></i>
-                        <input type="text" name="frmcompany" class="eim-form-input" placeholder="Company Name" required>
-                      </div>
-                    </div>
-
-                    <!-- Work Email -->
-                    <div class="col-md-6">
-                      <label class="eim-form-label">Work Email <span class="required">*</span></label>
-                      <div class="eim-input-wrap">
-                        <i class="bi bi-envelope eim-input-icon"></i>
-                        <input type="email" name="frmemail" class="eim-form-input" placeholder="name@company.com" required>
-                      </div>
-                    </div>
-
-                    <!-- Mobile Number -->
-                    <div class="col-md-6">
-                      <label class="eim-form-label">Mobile Number <span class="required">*</span></label>
-                      <div class="eim-input-wrap">
-                        <i class="bi bi-telephone eim-input-icon"></i>
-                        <input type="tel" name="frmcontact" class="eim-form-input" placeholder="+91 98765 43210" pattern="[0-9+\s-]{8,15}" required>
-                      </div>
-                    </div>
-
-                    <!-- Interests Multi-selector -->
-                    <div class="col-12">
-                      <label class="eim-form-label">I am interested in: <span class="required">*</span></label>
-                      <div class="eim-interest-pills-group">
-                        <label class="eim-interest-pill">
-                          <input type="checkbox" name="interest_opt[]" value="Electric Heavy-Duty Trucks" checked>
-                          <span class="eim-interest-pill-label">Electric Heavy-Duty Trucks</span>
-                        </label>
-                        <label class="eim-interest-pill">
-                          <input type="checkbox" name="interest_opt[]" value="Fleet Electrification">
-                          <span class="eim-interest-pill-label">Fleet Electrification</span>
-                        </label>
-                        <label class="eim-interest-pill">
-                          <input type="checkbox" name="interest_opt[]" value="Battery Swapping">
-                          <span class="eim-interest-pill-label">Battery Swapping</span>
-                        </label>
-                        <label class="eim-interest-pill">
-                          <input type="checkbox" name="interest_opt[]" value="Charging Infrastructure">
-                          <span class="eim-interest-pill-label">Charging Infrastructure</span>
-                        </label>
-                        <label class="eim-interest-pill">
-                          <input type="checkbox" name="interest_opt[]" value="Fleet / Infrastructure Partnership">
-                          <span class="eim-interest-pill-label">Fleet / Infrastructure Partnership</span>
-                        </label>
-                        <label class="eim-interest-pill">
-                          <input type="checkbox" name="interest_opt[]" value="Other">
-                          <span class="eim-interest-pill-label">Other</span>
-                        </label>
-                      </div>
-                    </div>
-
-                    <!-- Tell us about your requirement -->
-                    <div class="col-12">
-                      <label class="eim-form-label">Tell us about your requirement</label>
-                      <div class="eim-input-wrap">
-                        <i class="bi bi-chat-left-text eim-input-icon text-top"></i>
-                        <textarea name="frmdes" class="eim-form-textarea" rows="2" placeholder="Route details, estimated payload, current fleet size, or specific commercial goals..."></textarea>
-                      </div>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="col-12 mt-3">
-                      <button type="submit" class="eim-btn-teal w-100 justify-content-center py-3">
-                        <span>Submit Requirement</span>
-                        <i class="bi bi-arrow-right"></i>
-                      </button>
-                      <p class="eim-form-disclaimer text-center mt-2 mb-0">
-                        By submitting this form, you consent to Energy In Motion contacting you regarding your enquiry.
-                      </p>
+                <div class="row g-3">
+                  <!-- Full Name -->
+                  <div class="col-md-6">
+                    <label class="eim-form-label">Full Name <span class="required">*</span></label>
+                    <div class="eim-input-wrap">
+                      <i class="bi bi-person eim-input-icon"></i>
+                      <input type="text" name="frmname" class="eim-form-input" placeholder="Rajesh Kumar" required>
                     </div>
                   </div>
-                </form>
-              </div>
+
+                  <!-- Company -->
+                  <div class="col-md-6">
+                    <label class="eim-form-label">Company <span class="required">*</span></label>
+                    <div class="eim-input-wrap">
+                      <i class="bi bi-building eim-input-icon"></i>
+                      <input type="text" name="frmcompany" class="eim-form-input" placeholder="Company Name" required>
+                    </div>
+                  </div>
+
+                  <!-- Work Email -->
+                  <div class="col-md-6">
+                    <label class="eim-form-label">Work Email <span class="required">*</span></label>
+                    <div class="eim-input-wrap">
+                      <i class="bi bi-envelope eim-input-icon"></i>
+                      <input type="email" name="frmemail" class="eim-form-input" placeholder="name@company.com" required>
+                    </div>
+                  </div>
+
+                  <!-- Mobile Number -->
+                  <div class="col-md-6">
+                    <label class="eim-form-label">Mobile Number <span class="required">*</span></label>
+                    <div class="eim-input-wrap">
+                      <i class="bi bi-telephone eim-input-icon"></i>
+                      <input type="tel" name="frmcontact" class="eim-form-input" placeholder="+91 98765 43210" pattern="[0-9+\s-]{8,15}" required>
+                    </div>
+                  </div>
+
+                  <!-- Interests Multi-selector -->
+                  <div class="col-12">
+                    <label class="eim-form-label">I am interested in: <span class="required">*</span></label>
+                    <div class="eim-interest-pills-group">
+                      <label class="eim-interest-pill">
+                        <input type="checkbox" name="interest_opt[]" value="Electric Heavy-Duty Trucks" checked>
+                        <span class="eim-interest-pill-label">Electric Heavy-Duty Trucks</span>
+                      </label>
+                      <label class="eim-interest-pill">
+                        <input type="checkbox" name="interest_opt[]" value="Fleet Electrification">
+                        <span class="eim-interest-pill-label">Fleet Electrification</span>
+                      </label>
+                      <label class="eim-interest-pill">
+                        <input type="checkbox" name="interest_opt[]" value="Battery Swapping">
+                        <span class="eim-interest-pill-label">Battery Swapping</span>
+                      </label>
+                      <label class="eim-interest-pill">
+                        <input type="checkbox" name="interest_opt[]" value="Charging Infrastructure">
+                        <span class="eim-interest-pill-label">Charging Infrastructure</span>
+                      </label>
+                      <label class="eim-interest-pill">
+                        <input type="checkbox" name="interest_opt[]" value="Fleet / Infrastructure Partnership">
+                        <span class="eim-interest-pill-label">Fleet / Infrastructure Partnership</span>
+                      </label>
+                      <label class="eim-interest-pill">
+                        <input type="checkbox" name="interest_opt[]" value="Other">
+                        <span class="eim-interest-pill-label">Other</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Tell us about your requirement -->
+                  <div class="col-12">
+                    <label class="eim-form-label">Tell us about your requirement</label>
+                    <div class="eim-input-wrap">
+                      <i class="bi bi-chat-left-text eim-input-icon text-top"></i>
+                      <textarea name="frmdes" class="eim-form-textarea" rows="2" placeholder="Route details, estimated payload, current fleet size, or specific commercial goals..."></textarea>
+                    </div>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div class="col-12 mt-2">
+                    <button type="submit" class="eim-btn-teal w-100 justify-content-center py-3">
+                      <span>Discuss Your Fleet Requirement</span>
+                      <i class="bi bi-arrow-right"></i>
+                    </button>
+                    <p class="eim-form-disclaimer text-center mt-2 mb-0">
+                      By submitting this form, you consent to Energy In Motion contacting you regarding your enquiry.
+                    </p>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
