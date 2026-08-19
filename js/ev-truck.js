@@ -165,11 +165,11 @@ function initTestimonialsSlider() {
 
   new Swiper('.eim-testimonials-swiper', {
     slidesPerView: 1,
-    spaceBetween: 24,
+    spaceBetween: 20,
     loop: true,
-    speed: 650,
+    speed: 600,
     autoplay: {
-      delay: 5500,
+      delay: 5000,
       disableOnInteraction: false,
       pauseOnMouseEnter: true
     },
@@ -182,13 +182,17 @@ function initTestimonialsSlider() {
       prevEl: '.eim-swiper-prev',
     },
     breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 16,
+      },
       768: {
-        slidesPerView: 1.4,
+        slidesPerView: 2,
         spaceBetween: 24,
       },
-      992: {
+      1200: {
         slidesPerView: 2,
-        spaceBetween: 32,
+        spaceBetween: 30,
       }
     }
   });

@@ -1375,6 +1375,16 @@ p {
   padding: 6px 0;
 }
 
+.text-md-end .eim-footer-email-link {
+  justify-content: flex-end;
+}
+
+@media (max-width: 767.98px) {
+  .text-md-end .eim-footer-email-link {
+    justify-content: flex-start;
+  }
+}
+
 .eim-footer-email-link i {
   color: var(--eim-teal-main);
   font-size: 1.15rem;
