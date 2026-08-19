@@ -814,17 +814,38 @@ p {
   box-shadow: 0 18px 40px rgba(0, 27, 30, 0.1);
 }
 
-.eim-problem-card-num {
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--eim-teal-main);
-  margin-bottom: 12px;
+.eim-problem-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.eim-problem-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: var(--eim-teal-light);
+  border: 1px solid var(--eim-teal-border);
+  border-radius: var(--eim-radius-pill);
+  color: var(--eim-teal-dark);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
+.eim-problem-step-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #BED8D5;
+  line-height: 1;
+  font-family: monospace, sans-serif;
+}
+
 .eim-problem-question {
-  font-size: 1.28rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--eim-text-title);
   margin-bottom: 22px;
@@ -839,18 +860,20 @@ p {
   border-radius: var(--eim-radius-md);
 }
 
-.eim-problem-solution-label {
-  font-size: 0.76rem;
+.eim-solution-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--eim-teal-dark);
-  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   margin-bottom: 6px;
 }
 
 .eim-problem-solution-text {
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   color: var(--eim-text-title);
   line-height: 1.55;
   margin-bottom: 0;
@@ -903,19 +926,21 @@ p {
   transform: scale(1.06);
 }
 
-.eim-maitryi-badge {
+.eim-maitryi-tag {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  padding: 5px 12px;
-  background: rgba(255, 255, 255, 0.92);
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 27, 30, 0.8);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 27, 30, 0.12);
+  -webkit-backdrop-filter: blur(8px);
+  color: #38E0CF;
+  padding: 4px 10px;
   border-radius: var(--eim-radius-pill);
-  color: var(--eim-teal-dark);
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  border: 1px solid rgba(56, 224, 207, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 
 .eim-maitryi-body {
@@ -954,22 +979,78 @@ p {
   background: #FFFFFF;
   border: 1px solid var(--eim-border-light);
   border-radius: var(--eim-radius-xl);
-  padding: clamp(26px, 4vw, 44px);
+  padding: clamp(24px, 3.5vw, 38px);
   box-shadow: 0 20px 45px rgba(0, 27, 30, 0.08);
+}
+
+.eim-uptime-highlight-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 18px;
+  background: var(--eim-teal-light);
+  border: 1px solid var(--eim-teal-border);
+  border-left: 4px solid var(--eim-teal-main);
+  border-radius: var(--eim-radius-md);
+  box-shadow: 0 4px 14px rgba(13, 168, 151, 0.08);
+}
+
+.eim-swap-steps-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F4F8F7;
+  padding: 16px 18px;
+  border-radius: var(--eim-radius-md);
+  border: 1px solid #D8E7E5;
+}
+
+.eim-swap-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.eim-swap-step-time {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--eim-teal-dark);
+  font-family: monospace, sans-serif;
+  background: #FFFFFF;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--eim-teal-border);
+  margin-bottom: 4px;
+}
+
+.eim-swap-step-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--eim-text-title);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.eim-swap-step-connector {
+  flex-grow: 1;
+  height: 2px;
+  background: linear-gradient(90deg, #38E0CF, #0DA897);
+  margin: 0 8px;
+  opacity: 0.6;
 }
 
 .eim-time-compare-row {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin: 30px 0;
+  gap: 16px;
+  margin: 24px 0;
 }
 
 .eim-time-bar-item {
   background: #F8FBFA;
   border: 1px solid #E2EEEB;
   border-radius: var(--eim-radius-md);
-  padding: 20px 22px;
+  padding: 16px 18px;
 }
 
 .eim-time-bar-item.eim-highlight {
@@ -986,13 +1067,13 @@ p {
 }
 
 .eim-time-bar-title {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--eim-text-title);
 }
 
 .eim-time-bar-val {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 800;
 }
 
@@ -1042,11 +1123,18 @@ p {
   flex-direction: column;
 }
 
+.eim-fit-card.has-bg-image {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--eim-shadow-card);
+}
+
 .eim-fit-card:hover {
   border-color: var(--eim-teal-main);
-  background: #FFFFFF;
-  transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(0, 27, 30, 0.09);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 27, 30, 0.12);
 }
 
 .eim-fit-icon-wrap {
@@ -1091,12 +1179,16 @@ p {
   background: #FFFFFF;
   border: 1px solid var(--eim-border-light);
   border-radius: var(--eim-radius-lg);
-  padding: 34px 30px;
   position: relative;
   transition: var(--eim-transition);
   display: flex;
   flex-direction: column;
   box-shadow: var(--eim-shadow-card);
+}
+
+.eim-proof-card.with-photo-card {
+  padding: 0;
+  overflow: hidden;
 }
 
 .eim-proof-card:hover {
@@ -1105,23 +1197,61 @@ p {
   box-shadow: 0 20px 45px rgba(0, 27, 30, 0.1);
 }
 
+.eim-proof-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  background: #001B1E;
+  overflow: hidden;
+}
+
+.eim-proof-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.eim-proof-card:hover .eim-proof-photo {
+  transform: scale(1.06);
+}
+
 .eim-proof-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 27, 30, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: var(--eim-radius-pill);
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--eim-teal-dark);
-  margin-bottom: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+
+.eim-proof-tag.bg-teal-accent {
+  background: rgba(13, 168, 151, 0.9);
+  color: #FFFFFF;
+  border-color: rgba(56, 224, 207, 0.5);
+}
+
+.eim-proof-body {
+  padding: 26px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .eim-proof-title {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--eim-text-title);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .eim-proof-desc {
@@ -1148,10 +1278,6 @@ p {
   color: #FFFFFF !important;
 }
 
-.eim-proof-banner p {
-  color: #B9D4D2 !important;
-}
-
 /* --------------------------------------------------------------------------
    12. Section 8: Support After Deployment (24x7 Fleet Assurance)
    -------------------------------------------------------------------------- */
@@ -1161,11 +1287,48 @@ p {
   position: relative;
 }
 
+.eim-support-visual-showcase {
+  position: relative;
+  border-radius: var(--eim-radius-lg);
+  overflow: hidden;
+}
+
+.eim-support-team-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--eim-radius-lg);
+  display: block;
+}
+
+.eim-support-team-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 27, 30, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: var(--eim-radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid rgba(13, 168, 151, 0.4);
+}
+
+.eim-support-subtext {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--eim-text-muted);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
 .eim-support-pillar-item {
   background: var(--eim-bg-subtle);
   border: 1px solid var(--eim-border-light);
   border-radius: var(--eim-radius-md);
-  padding: 20px 22px;
+  padding: 18px 20px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -1193,7 +1356,7 @@ p {
 }
 
 .eim-support-pillar-title {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--eim-text-title);
   margin-bottom: 0;
