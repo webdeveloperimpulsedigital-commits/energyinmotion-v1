@@ -1317,20 +1317,21 @@ p {
 }
 
 /* --------------------------------------------------------------------------
-   15. Footer (Official Corporate Info)
+   15. Footer (Official Corporate Info - Centered)
    -------------------------------------------------------------------------- */
 .eim-footer {
   background: var(--eim-dark-900);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 60px 0 30px;
+  padding: 65px 0 30px;
   color: #A3BFBD;
   font-size: 0.95rem;
+  text-align: center;
 }
 
 .eim-footer-logo {
   height: 38px;
   width: auto;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
   display: block;
   filter: none;
 }
@@ -1357,32 +1358,31 @@ p {
   line-height: 1.65;
   font-size: 0.95rem;
   margin-bottom: 18px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .eim-footer-email-wrap {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .eim-footer-email-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   color: #FFFFFF;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
   transition: var(--eim-transition);
-  padding: 6px 0;
-}
-
-.text-md-end .eim-footer-email-link {
-  justify-content: flex-end;
-}
-
-@media (max-width: 767.98px) {
-  .text-md-end .eim-footer-email-link {
-    justify-content: flex-start;
-  }
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .eim-footer-email-link i {
@@ -1392,18 +1392,19 @@ p {
 
 .eim-footer-email-link:hover {
   color: #38E0CF;
-  transform: translateX(3px);
+  background: rgba(13, 168, 151, 0.12);
+  border-color: var(--eim-teal-main);
+  transform: translateY(-2px);
 }
 
 .eim-footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 25px;
+  padding-top: 24px;
   margin-top: 35px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 15px;
+  text-align: center;
   color: #7E9E9C;
 }
 
