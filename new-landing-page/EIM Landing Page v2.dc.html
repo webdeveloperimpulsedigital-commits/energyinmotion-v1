@@ -616,17 +616,9 @@
 </div>
 </div>
 
-<!-- Swiper Controls: Pagination + Nav Buttons -->
+<!-- Swiper Controls: Centered Pagination Dots -->
 <div class="eim-testimonials-controls">
 <div class="swiper-pagination eim-testimonials-pagination"></div>
-<div class="eim-testimonials-nav">
-<button type="button" class="eim-testimonials-prev" aria-label="Previous Testimonial">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-</button>
-<button type="button" class="eim-testimonials-next" aria-label="Next Testimonial">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-</div>
 </div>
 </div>
 </div>
@@ -971,8 +963,6 @@ class Component extends DCLogic {
     if (!container) return;
     const wrapper = container.querySelector('.swiper-wrapper');
     const slides = Array.from(container.querySelectorAll('.swiper-slide'));
-    const prevBtn = document.querySelector('.eim-testimonials-prev');
-    const nextBtn = document.querySelector('.eim-testimonials-next');
     const pagEl = document.querySelector('.eim-testimonials-pagination');
     if (!wrapper || !slides.length) return;
 
@@ -985,7 +975,6 @@ class Component extends DCLogic {
           speed: 600,
           autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
           pagination: { el: '.eim-testimonials-pagination', clickable: true },
-          navigation: { nextEl: '.eim-testimonials-next', prevEl: '.eim-testimonials-prev' },
           breakpoints: {
             640: { slidesPerView: 1.15, spaceBetween: 18 },
             768: { slidesPerView: 2, spaceBetween: 20 },
@@ -1056,9 +1045,6 @@ class Component extends DCLogic {
       else curIndex = idx;
       updateSlider();
     };
-
-    if (prevBtn) prevBtn.addEventListener('click', () => { goTo(curIndex - 1); restartAutoplay(); });
-    if (nextBtn) nextBtn.addEventListener('click', () => { goTo(curIndex + 1); restartAutoplay(); });
 
     let touchStartX = 0;
     container.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });

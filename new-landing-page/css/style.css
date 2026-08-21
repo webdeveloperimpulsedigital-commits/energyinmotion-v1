@@ -1927,12 +1927,11 @@ form button[type="submit"]:hover {
   margin-top: 5px;
 }
 
-/* Slider Controls */
+/* Slider Controls: Centered Pagination Indicator */
 .eim-testimonials-controls {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 18px !important;
   margin-top: 28px !important;
   position: relative !important;
   width: 100% !important;
@@ -1942,7 +1941,7 @@ form button[type="submit"]:hover {
   position: relative !important;
   bottom: 0 !important;
   width: auto !important;
-  margin: 0 !important;
+  margin: 0 auto !important;
   display: inline-flex !important;
   gap: 8px !important;
   align-items: center !important;
@@ -1970,50 +1969,6 @@ form button[type="submit"]:hover {
   background: var(--eim-accent) !important;
   opacity: 1 !important;
   border-radius: 6px !important;
-}
-
-.eim-testimonials-prev,
-.eim-testimonials-next {
-  appearance: none !important;
-  -webkit-appearance: none !important;
-  width: 44px !important;
-  height: 44px !important;
-  border-radius: 50% !important;
-  background: #01262D !important;
-  border: 1px solid rgba(255, 255, 255, 0.16) !important;
-  color: #ffffff !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  cursor: pointer !important;
-  transition: all 0.25s ease !important;
-  padding: 0 !important;
-  box-shadow: 0 6px 18px rgba(1, 38, 45, 0.18) !important;
-  outline: none !important;
-  flex: none !important;
-}
-
-.eim-testimonials-prev:hover,
-.eim-testimonials-next:hover {
-  background: var(--eim-accent) !important;
-  color: #01262D !important;
-  border-color: var(--eim-accent) !important;
-  transform: scale(1.08) !important;
-}
-
-.eim-testimonials-prev svg,
-.eim-testimonials-next svg {
-  width: 20px !important;
-  height: 20px !important;
-  stroke: currentColor !important;
-  stroke-width: 2.5 !important;
-}
-
-.eim-testimonials-prev.swiper-button-disabled,
-.eim-testimonials-next.swiper-button-disabled {
-  opacity: 0.35 !important;
-  cursor: not-allowed !important;
-  pointer-events: none !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -2689,12 +2644,6 @@ form button[type="submit"]:hover {
   .eim-testimonials-controls {
     margin-top: 16px !important;
     padding: 0 !important;
-  }
-
-  .eim-testimonials-prev,
-  .eim-testimonials-next {
-    width: 38px !important;
-    height: 38px !important;
   }
 
   /* Footer */
