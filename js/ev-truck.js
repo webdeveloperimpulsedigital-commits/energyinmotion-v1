@@ -9,7 +9,43 @@ document.addEventListener('DOMContentLoaded', function () {
   initFormHandlers();
   initModals();
   initTestimonialsSlider();
+  initCoverflowSlider();
 });
+
+/**
+ * 7. 3D Curved Coverflow Carousel (Apple TV / Lucid style)
+ */
+function initCoverflowSlider() {
+  const container = document.querySelector('.eim-coverflow-slider');
+  if (!container || typeof Swiper === 'undefined') return;
+
+  new Swiper('.eim-coverflow-slider', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    initialSlide: 1,
+    speed: 600,
+    coverflowEffect: {
+      rotate: 18,
+      stretch: 0,
+      depth: 200,
+      modifier: 1,
+      slideShadows: false,
+    },
+    navigation: {
+      prevEl: '.eim-coverflow-prev',
+      nextEl: '.eim-coverflow-next',
+    },
+    pagination: {
+      el: '.eim-coverflow-pagination',
+      clickable: true,
+    },
+    keyboard: {
+      enabled: true,
+    },
+  });
+}
 
 /**
  * 1. Header scroll effect

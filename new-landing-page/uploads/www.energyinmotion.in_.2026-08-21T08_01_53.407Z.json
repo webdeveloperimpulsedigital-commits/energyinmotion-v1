@@ -1,0 +1,256 @@
+{
+  "data": {
+    "branding": {
+      "colorScheme": "light",
+      "fonts": [
+        {
+          "family": "PP Neue Montreal",
+          "role": "body"
+        }
+      ],
+      "colors": {
+        "primary": "#38E0CF",
+        "secondary": "#01262D",
+        "accent": "#38E0CF",
+        "background": "#FFFFFF",
+        "textPrimary": "#01262D",
+        "link": "#0B4A75"
+      },
+      "typography": {
+        "fontFamilies": {
+          "primary": "PP Neue Montreal",
+          "heading": "PP Neue Montreal"
+        },
+        "fontStacks": {
+          "heading": [
+            "PP Neue Montreal",
+            "sans-serif"
+          ],
+          "body": [
+            "PP Neue Montreal",
+            "sans-serif"
+          ],
+          "paragraph": [
+            "PP Neue Montreal",
+            "sans-serif"
+          ]
+        },
+        "fontSizes": {
+          "h1": "18px",
+          "h2": "40px",
+          "body": "20px"
+        }
+      },
+      "spacing": {
+        "baseUnit": 4,
+        "borderRadius": "16px"
+      },
+      "components": {
+        "input": {
+          "background": "#FAFBFB",
+          "textColor": "#01262D",
+          "borderColor": "#EBEEEE",
+          "borderRadius": "12px",
+          "borderRadiusCorners": {
+            "topLeft": "12px",
+            "topRight": "12px",
+            "bottomRight": "12px",
+            "bottomLeft": "12px"
+          },
+          "shadow": "none"
+        },
+        "buttonPrimary": {
+          "background": "#38E0CF",
+          "textColor": "#FFFFFF",
+          "borderRadius": "8px",
+          "borderRadiusCorners": {
+            "topLeft": "8px",
+            "topRight": "8px",
+            "bottomRight": "8px",
+            "bottomLeft": "8px"
+          },
+          "shadow": "rgba(73, 193, 172, 0.25) 0px 6px 20px 0px"
+        },
+        "buttonSecondary": {
+          "background": "#01262D",
+          "textColor": "#FFFFFF",
+          "borderRadius": "100px",
+          "borderRadiusCorners": {
+            "topLeft": "100px",
+            "topRight": "100px",
+            "bottomRight": "100px",
+            "bottomLeft": "100px"
+          },
+          "shadow": "rgba(1, 38, 45, 0.15) 0px 8px 20px 0px"
+        }
+      },
+      "images": {
+        "logo": "https://www.energyinmotion.in/images/logo-eim.svg",
+        "favicon": "https://www.energyinmotion.in/images/favicon.png",
+        "ogImage": "https://www.energyinmotion.in/images/og-img.jpg",
+        "logoHref": "index.html",
+        "logoAlt": "EIM"
+      },
+      "__llm_logo_reasoning": {
+        "selectedIndex": 1,
+        "reasoning": "Selected #1 because it is visible, medium-sized, located in the header, and matches the brand name 'EIM'.",
+        "confidence": 0.9,
+        "source": "llm"
+      },
+      "__llm_button_reasoning": {
+        "primary": {
+          "index": 0,
+          "text": "Read Full Release",
+          "reasoning": "Button #0 has a vibrant brand color (#38E0CF) and action-oriented text ('Read Full Release'), making it the primary CTA."
+        },
+        "secondary": {
+          "index": 3,
+          "text": "August 2024",
+          "reasoning": "Button #3 has a different background color (#01262D) and is distinct from the primary button, making it suitable as a secondary option."
+        },
+        "confidence": 0.95
+      },
+      "personality": {
+        "tone": "modern",
+        "energy": "medium",
+        "targetAudience": "unknown"
+      },
+      "designSystem": {
+        "framework": "custom",
+        "componentLibrary": ""
+      },
+      "confidence": {
+        "buttons": 0.95,
+        "colors": 0.9,
+        "overall": 0.925
+      },
+      "__llm_metadata": {
+        "logoSelection": {
+          "llmCalled": true,
+          "llmSucceeded": true,
+          "finalSource": "llm",
+          "rawLogoSelection": {
+            "selectedLogoIndex": 1,
+            "selectedLogoReasoning": "Selected #1 because it is visible, medium-sized, located in the header, and matches the brand name 'EIM'.",
+            "confidence": 0.9
+          }
+        },
+        "buttonClassification": {
+          "llmCalled": true,
+          "llmSucceeded": true
+        }
+      },
+      "brandName": "EIM",
+      "logo": "https://www.energyinmotion.in/images/logo-eim.svg"
+    },
+    "metadata": {
+      "language": "en",
+      "og:description": "We aim to convert heavy commercial transport to zero-carbon at a competitive cost using the best EV technologies available.",
+      "og:type": "website",
+      "ogTitle": "EIM Drive Energize Charge",
+      "title": "EIM",
+      "ogDescription": "We aim to convert heavy commercial transport to zero-carbon at a competitive cost using the best EV technologies available.",
+      "viewport": "width=device-width, initial-scale=1.0",
+      "description": "",
+      "ogImage": "https://www.energyinmotion.in/images/og-img.jpg",
+      "keywords": "",
+      "og:title": "EIM Drive Energize Charge",
+      "og:image": "https://www.energyinmotion.in/images/og-img.jpg",
+      "favicon": "https://www.energyinmotion.in/images/favicon.png",
+      "scrapeId": "01a02357-3d42-77b9-9a0a-a352127b9cbb",
+      "sourceURL": "https://www.energyinmotion.in/",
+      "url": "https://www.energyinmotion.in/",
+      "statusCode": 200,
+      "contentType": "text/html",
+      "timezone": "America/New_York",
+      "proxyUsed": "basic",
+      "indexId": "c0cb423a-eb8b-474c-8035-50ba5f66dea0",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  },
+  "scrape_id": "01a02357-3d42-77b9-9a0a-a352127b9cbb",
+  "id": "C3l-gmrAwipOp2WV7hRYp",
+  "startedAt": "2026-08-21T08:01:53.407Z",
+  "endedAt": "2026-08-21T08:02:11.363Z",
+  "endpoint": "scrape",
+  "formState": {
+    "parseFile": null,
+    "parseFileMeta": null,
+    "extractSetupCompleted": false,
+    "urls": [],
+    "extractSchema": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "company_mission": {
+          "type": "string"
+        },
+        "supports_sso": {
+          "type": "boolean"
+        },
+        "is_open_source": {
+          "type": "boolean"
+        },
+        "is_in_yc": {
+          "type": "boolean"
+        }
+      }
+    },
+    "extractPrompt": "Extract the company details, following the schema.",
+    "enableWebSearch": false,
+    "constrainUrls": false,
+    "options": {
+      "onlyMainContent": true,
+      "parsePDF": true,
+      "excludeTags": [],
+      "includeTags": [],
+      "waitFor": "",
+      "timeout": "",
+      "maxAge": "2 days",
+      "ignoreSitemap": false,
+      "crawlEntireDomain": false,
+      "sitemap": "include",
+      "limit": "10",
+      "maxDepth": "",
+      "excludePaths": [],
+      "includePaths": [],
+      "includeSubdomains": false,
+      "search": "",
+      "scrapeContentFromSearchResults": true,
+      "timeBasedSearch": "",
+      "location": "",
+      "includeDomains": [],
+      "excludeDomains": [],
+      "prompt": ""
+    },
+    "formats": [
+      "branding"
+    ],
+    "sources": [
+      "web"
+    ],
+    "categories": [],
+    "jsonSchema": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "company_name": {
+          "type": "string"
+        },
+        "company_description": {
+          "type": "string"
+        }
+      }
+    },
+    "jsonPrompt": "",
+    "questionPrompt": "",
+    "highlightsQuery": "",
+    "agent": {},
+    "url": "www.energyinmotion.in/",
+    "endpoint": "scrape"
+  },
+  "status": "success",
+  "version": "iEhb8Nu_0Sc0-yzUBbYDo",
+  "isPreview": false
+}

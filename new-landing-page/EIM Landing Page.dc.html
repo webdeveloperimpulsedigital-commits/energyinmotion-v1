@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--eim-accent:#38E0CF}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:#01262D;font-family:'Switzer','Helvetica Neue',Helvetica,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+a{color:#0B4A75;text-decoration:none}
+a:hover{color:#01262D}
+input,select,textarea,button{font-family:inherit}
+@keyframes eimUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes eimFade{from{opacity:0}to{opacity:1}}
+@keyframes eimZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+@keyframes eimSeg{0%{opacity:.16}12%{opacity:1}78%{opacity:1}100%{opacity:.16}}
+@keyframes eimSweep{0%{transform:translateX(-100%)}100%{transform:translateX(320%)}}
+</style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid #E4EAEA">
+<div style="max-width:1360px;margin:0 auto;padding:13px clamp(18px,5vw,64px);display:flex;align-items:center;justify-content:space-between;gap:20px">
+<div style="display:flex;align-items:center;gap:16px;min-width:0">
+<img src="https://www.energyinmotion.in/images/logo-eim.svg" alt="Energy In Motion logo" style="height:38px;width:auto;display:block">
+<span style="width:1px;height:26px;background:#E4EAEA;display:block"></span>
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#4A6B70;white-space:nowrap">Heavy Mobility Reimagined</span>
+</div>
+<a href="#enquiry" style="flex:none;background:var(--eim-accent,#38E0CF);color:#01262D;font-size:14px;font-weight:600;letter-spacing:-.005em;padding:12px 20px;border-radius:8px;box-shadow:rgba(73,193,172,.28) 0 6px 20px 0;white-space:nowrap">Discuss Your Fleet Requirement</a>
+</div>
+</header>
+
+<section id="hero" style="position:relative;background:#01262D;color:#fff;overflow:hidden;padding:clamp(52px,6vw,96px) clamp(18px,5vw,64px) clamp(72px,8vw,116px)">
+<div style="position:absolute;inset:0;background-image:url('https://www.energyinmotion.in/images/25-sep.JPG');background-size:cover;background-position:58% 42%;opacity:.5;animation:eimZoom 2.4s cubic-bezier(.16,.84,.28,1) both"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(102deg,#01262D 0%,rgba(1,38,45,.95) 34%,rgba(1,38,45,.62) 68%,rgba(1,38,45,.82) 100%)"></div>
+<div style="position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:clamp(78px,9vw,148px) 100%"></div>
+<div style="position:absolute;top:-180px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(56,224,207,.22) 0%,rgba(56,224,207,0) 66%)"></div>
+<div style="position:relative;z-index:2;max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:clamp(36px,5vw,80px);align-items:center">
+
+<div style="animation:eimUp .9s cubic-bezier(.16,.84,.28,1) both">
+<div style="display:flex;align-items:center;gap:11px;margin-bottom:26px">
+<span style="width:26px;height:2px;background:var(--eim-accent,#38E0CF);display:block"></span>
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--eim-accent,#38E0CF);white-space:nowrap">Heavy Mobility Reimagined</span>
+</div>
+<h1 style="margin:0 0 26px;font-size:clamp(38px,5.4vw,76px);line-height:.98;letter-spacing:-.035em;font-weight:500;max-width:15ch;text-wrap:balance">Electric Heavy-Duty Trucks. Built Around Uptime.</h1>
+<p style="margin:0 0 22px;font-size:clamp(17px,1.35vw,20px);line-height:1.55;color:rgba(255,255,255,.78);max-width:56ch;text-wrap:pretty">Move heavy freight towards electric with a 55T e-tractor, Battery-as-a-Service, fast battery swapping and charging infrastructure designed around real fleet operations.</p>
+<p style="margin:0 0 34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.56);max-width:52ch">For fleet owners, transporters, ports, terminals and enterprise logistics teams.</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+<a href="#enquiry" style="background:var(--eim-accent,#38E0CF);color:#01262D;font-size:15.5px;font-weight:600;padding:16px 28px;border-radius:8px;box-shadow:rgba(73,193,172,.3) 0 8px 26px 0">Discuss Your Fleet Requirement</a>
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.42)">ARAI-homologated 55T&nbsp;&nbsp;/&nbsp;&nbsp;7-minute swap</span>
+</div>
+</div>
+
+<div id="enquiry" style="scroll-margin-top:96px;animation:eimUp 1s .12s cubic-bezier(.16,.84,.28,1) both">
+<div style="background:#fff;border:1px solid rgba(255,255,255,.4);border-radius:16px;padding:clamp(22px,2.6vw,32px);box-shadow:0 34px 80px rgba(1,20,24,.42);color:#01262D">
+<sc-if value="{{ heroForm }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:20px">
+<h2 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-.02em">Tell us about your requirement</h2>
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8AA2A6">Step 1 / 1</span>
+</div>
+<form onSubmit="{{ onHero }}" style="display:grid;gap:13px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:13px">
+<label style="display:block">
+<span style="display:block;font-size:12px;font-weight:500;letter-spacing:.02em;color:#4A6B70;margin-bottom:6px">Full Name<span style="color:var(--eim-accent,#38E0CF)">*</span></span>
+<input type="text" name="name" required="required" style="width:100%;background:#FAFBFB;border:1px solid #EBEEEE;border-radius:12px;padding:12px 13px;font-size:15px;color:#01262D;outline:none" style-focus="border-color:var(--eim-accent,#38E0CF);background:#fff">
+</label>
+<label style="display:block">
+<span style="display:block;font-size:12px;font-weight:500;letter-spacing:.02em;color:#4A6B70;margin-bottom:6px">Company<span style="color:var(--eim-accent,#38E0CF)">*</span></span>
+<input type="text" name="company" required="required" style="width:100%;background:#FAFBFB;border:1px solid #EBEEEE;border-radius:12px;padding:12px 13px;font-size:15px;color:#01262D;outline:none" style-focus="border-color:var(--eim-accent,#38E0CF);background:#fff">
+</label>
+<label style="display:block">
+<span style="display:block;font-size:12px;font-weight:500;letter-spacing:.02em;color:#4A6B70;margin-bottom:6px">Work Email<span style="color:var(--eim-accent,#38E0CF)">*</span></span>
+<input type="email" name="email" required="required" style="width:100%;background:#FAFBFB;border:1px solid #EBEEEE;border-radius:12px;padding:12px 13px;font-size:15px;color:#01262D;outline:none" style-focus="border-color:var(--eim-accent,#38E0CF);background:#fff">
+</label>
+<label style="display:block">
+<span style="display:block;font-size:12px;font-weight:500;letter-spacing:.02em;color:#4A6B70;margin-bottom:6px">Mobile Number<span style="color:var(--eim-accent,#38E0CF)">*</span></span>
+<input type="tel" name="mobile" required="required" style="width:100%;background:#FAFBFB;border:1px solid #EBEEEE;border-radius:12px;padding:12px 13px;font-size:15px;color:#01262D;outline:none" style-focus="border-color:var(--eim-accent,#38E0CF);background:#fff">
+</label>
+</div>
+<label style="display:block">
+<span style="display:block;font-size:12px;font-weight:500;letter-spacing:.02em;color:#4A6B70;margin-bottom:6px">I am interested in:<span style="color:var(--eim-accent,#38E0CF)">*</span></span>
+<select name="interest" required="required" style="width:100%;background:#FAFBFB;border:1px solid #EBEEEE;border-radius:12px;padding:12px 13px;font-size:15px;color:#01262D;outline:none;appearance:none" style-focus="border-color:var(--eim-accent,#38E0CF);background:#fff">
+<option value="">Select an option</option>
+<option>Electric Heavy-Duty Trucks</option>
+<option>Fleet Electrification</option>
+<option>Battery Swapping</option>
+<option>Charging Infrastructure</option>
+<option>Fleet / Infrastructure Partnership</option>
+<option>Other</option>
+</select>
+</label>
+<label style="display:block">
+<span style="display:block;font-size:12px;font-weight:500;letter-spacing:.02em;color:#4A6B70;margin-bottom:6px">Tell us about your fleet, route or requirement</span>
+<textarea name="details" rows="3" placeholder="Optional" style="width:100%;background:#FAFBFB;border:1px solid #EBEEEE;border-radius:12px;padding:12px 13px;font-size:15px;color:#01262D;outline:none;resize:vertical;min-height:82px" style-focus="border-color:var(--eim-accent,#38E0CF);background:#fff"></textarea>
+</label>
+<button type="submit" style="margin-top:3px;width:100%;background:var(--eim-accent,#38E0CF);color:#01262D;border:none;border-radius:8px;padding:15px;font-size:15.5px;font-weight:600;cursor:pointer;box-shadow:rgba(73,193,172,.25) 0 6px 20px 0" style-hover="background:#01262D;color:#fff">Discuss My Requirement</button>
+<p style="margin:2px 0 0;font-size:11.5px;line-height:1.5;color:#8AA2A6">By submitting this form, you consent to Energy In Motion contacting you regarding your enquiry. <a href="#" style="color:#4A6B70;text-decoration:underline;text-decoration-color:#CFDADB">Privacy Policy</a></p>
+</form>
+</sc-if>
+<sc-if value="{{ heroSent }}">
+<div style="padding:16px 4px 8px">
+<div style="width:36px;height:36px;border-radius:50%;background:var(--eim-accent,#38E0CF);display:flex;align-items:center;justify-content:center;color:#01262D;font-size:18px;font-weight:600;margin-bottom:22px">&#10003;</div>
+<h2 style="margin:0 0 14px;font-size:clamp(23px,2.2vw,30px);line-height:1.14;letter-spacing:-.025em;font-weight:500">Thank you. We&rsquo;ve received your requirement.</h2>
+<p style="margin:0 0 26px;font-size:15.5px;line-height:1.6;color:#4A6B70;max-width:46ch">The EIM team will review the details you have shared and get in touch to understand your fleet, route and operating requirements better.</p>
+<div style="padding-top:20px;border-top:1px solid #E4EAEA">
+<div style="font-size:15px;font-weight:600;letter-spacing:-.01em">Energy In Motion</div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#8AA2A6;margin-top:6px">Heavy Mobility Reimagined</div>
+</div>
+</div>
+</sc-if>
+</div>
+</div>
+</div>
+</section>
+
+<section data-reveal="1" style="background:#fff;border-bottom:1px solid #E4EAEA;padding:clamp(44px,4.6vw,64px) clamp(18px,5vw,64px)">
+<div style="max-width:1360px;margin:0 auto">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#4A6B70;margin-bottom:30px">Built for heavy freight. Already in operation.</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#E4EAEA">
+<div style="background:#fff;padding:6px 26px 4px 0">
+<div style="font-size:clamp(38px,4.2vw,58px);line-height:1;letter-spacing:-.04em;font-weight:500;font-variant-numeric:tabular-nums">55T</div>
+<p style="margin:14px 0 0;font-size:14.5px;line-height:1.5;color:#4A6B70;max-width:26ch">ARAI-homologated battery-swappable electric tractor</p>
+</div>
+<div style="background:#fff;padding:6px 26px 4px clamp(0px,2vw,28px)">
+<div style="font-size:clamp(38px,4.2vw,58px);line-height:1;letter-spacing:-.04em;font-weight:500;color:#01262D">7 <span style="font-size:.42em;letter-spacing:-.01em;color:#4A6B70;font-weight:500">Minutes</span></div>
+<p style="margin:14px 0 0;font-size:14.5px;line-height:1.5;color:#4A6B70;max-width:26ch">Battery swapping for compatible EIM heavy commercial vehicles</p>
+</div>
+<div style="background:#fff;padding:6px 26px 4px clamp(0px,2vw,28px)">
+<div style="font-size:clamp(38px,4.2vw,58px);line-height:1;letter-spacing:-.04em;font-weight:500">7 <span style="font-size:.42em;letter-spacing:-.01em;color:#4A6B70;font-weight:500">Operational Stations</span></div>
+<p style="margin:14px 0 0;font-size:14.5px;line-height:1.5;color:#4A6B70;max-width:26ch">Swap-and-charge infrastructure across key freight locations</p>
+</div>
+<div style="background:#fff;padding:6px 0 4px clamp(0px,2vw,28px)">
+<div style="font-size:clamp(28px,2.7vw,38px);line-height:1.05;letter-spacing:-.03em;font-weight:500">HPCL<br>Partnership</div>
+<p style="margin:14px 0 0;font-size:14.5px;line-height:1.5;color:#4A6B70;max-width:26ch">Expansion planned across major Indian freight corridors</p>
+</div>
+</div>
+</div>
+</section>
+
+<section data-reveal="1" style="background:#fff;padding:clamp(72px,8vw,128px) clamp(18px,5vw,64px)">
+<div style="max-width:1360px;margin:0 auto">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:clamp(28px,4vw,64px);align-items:end;margin-bottom:clamp(40px,5vw,72px)">
+<h2 style="margin:0;font-size:clamp(30px,3.5vw,52px);line-height:1.04;letter-spacing:-.032em;font-weight:500;max-width:22ch;text-wrap:balance">Going electric is one decision. Keeping freight moving is the bigger one.</h2>
+<div>
+<p style="margin:0 0 10px;font-size:17px;line-height:1.6;color:#4A6B70;max-width:48ch">For a heavy-duty fleet, the transition cannot be judged on the vehicle alone.</p>
+<p style="margin:0;font-size:17px;line-height:1.6;color:#01262D;font-weight:500;max-width:48ch">The real questions are operational:</p>
+</div>
+</div>
+
+<div style="border-top:1px solid #E4EAEA">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,3vw,48px);padding:clamp(26px,3vw,40px) 0;border-bottom:1px solid #E4EAEA;align-items:start">
+<div style="display:flex;gap:18px">
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;color:var(--eim-accent,#38E0CF);padding-top:6px">01</span>
+<h3 style="margin:0;font-size:clamp(20px,1.9vw,27px);line-height:1.2;letter-spacing:-.022em;font-weight:500;max-width:22ch">How much capital gets locked into the vehicle?</h3>
+</div>
+<div style="background:#F4F7F7;border-radius:16px;padding:22px 24px">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#4A6B70;margin-bottom:10px">EIM approach</div>
+<p style="margin:0;font-size:15.5px;line-height:1.58;color:#01262D">Battery-as-a-Service separates battery ownership from the vehicle, reducing the upfront acquisition burden.</p>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,3vw,48px);padding:clamp(26px,3vw,40px) 0;border-bottom:1px solid #E4EAEA;align-items:start">
+<div style="display:flex;gap:18px">
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;color:var(--eim-accent,#38E0CF);padding-top:6px">02</span>
+<h3 style="margin:0;font-size:clamp(20px,1.9vw,27px);line-height:1.2;letter-spacing:-.022em;font-weight:500;max-width:22ch">How much time does the truck lose while recharging?</h3>
+</div>
+<div style="background:#F4F7F7;border-radius:16px;padding:22px 24px">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#4A6B70;margin-bottom:10px">EIM approach</div>
+<p style="margin:0;font-size:15.5px;line-height:1.58;color:#01262D">Automated battery swapping gets compatible vehicles back on the road in minutes.</p>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(20px,3vw,48px);padding:clamp(26px,3vw,40px) 0;border-bottom:1px solid #E4EAEA;align-items:start">
+<div style="display:flex;gap:18px">
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;color:var(--eim-accent,#38E0CF);padding-top:6px">03</span>
+<h3 style="margin:0;font-size:clamp(20px,1.9vw,27px);line-height:1.2;letter-spacing:-.022em;font-weight:500;max-width:22ch">Can the truck operate reliably on the routes that matter?</h3>
+</div>
+<div style="background:#F4F7F7;border-radius:16px;padding:22px 24px">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#4A6B70;margin-bottom:10px">EIM approach</div>
+<p style="margin:0;font-size:15.5px;line-height:1.58;color:#01262D">Swap-and-charge infrastructure, intelligent energy management and a growing freight-corridor network are designed around fleet uptime.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section data-reveal="1" style="background:#01262D;color:#fff;padding:clamp(72px,8vw,128px) clamp(18px,5vw,64px);position:relative;overflow:hidden">
+<div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,rgba(56,224,207,0),var(--eim-accent,#38E0CF),rgba(56,224,207,0))"></div>
+<div style="max-width:1360px;margin:0 auto">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:clamp(28px,4vw,64px);align-items:end;margin-bottom:clamp(44px,5vw,76px)">
+<div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--eim-accent,#38E0CF);margin-bottom:20px">The Maitryi Model</div>
+<h2 style="margin:0;font-size:clamp(30px,3.5vw,52px);line-height:1.04;letter-spacing:-.032em;font-weight:500;max-width:20ch;text-wrap:balance">One operating model for the electric freight transition.</h2>
+</div>
+<p style="margin:0;font-size:17px;line-height:1.6;color:rgba(255,255,255,.7);max-width:50ch">EIM&rsquo;s Maitryi model brings together the parts that fleet electrification depends on, so operators do not have to solve each one separately.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);border-radius:16px;overflow:hidden">
+<div style="background:#01262D;padding:clamp(26px,2.6vw,36px)" style-hover="background:#032F38">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;color:var(--eim-accent,#38E0CF);margin-bottom:26px">01</div>
+<h3 style="margin:0 0 12px;font-size:19px;line-height:1.25;letter-spacing:-.018em;font-weight:600">Electric Heavy-Duty Tractor</h3>
+<p style="margin:0;font-size:15px;line-height:1.55;color:rgba(255,255,255,.62)">A 55T electric tractor built for heavy commercial freight applications.</p>
+</div>
+<div style="background:#01262D;padding:clamp(26px,2.6vw,36px)" style-hover="background:#032F38">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;color:var(--eim-accent,#38E0CF);margin-bottom:26px">02</div>
+<h3 style="margin:0 0 12px;font-size:19px;line-height:1.25;letter-spacing:-.018em;font-weight:600">Battery-as-a-Service</h3>
+<p style="margin:0;font-size:15px;line-height:1.55;color:rgba(255,255,255,.62)">Separate battery ownership from vehicle ownership and reduce the capital tied up in adopting electric.</p>
+</div>
+<div style="background:#01262D;padding:clamp(26px,2.6vw,36px)" style-hover="background:#032F38">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;color:var(--eim-accent,#38E0CF);margin-bottom:26px">03</div>
+<h3 style="margin:0 0 12px;font-size:19px;line-height:1.25;letter-spacing:-.018em;font-weight:600">Swapping + Charging</h3>
+<p style="margin:0;font-size:15px;line-height:1.55;color:rgba(255,255,255,.62)">Access battery swapping and charging infrastructure designed around commercial vehicle operations.</p>
+</div>
+<div style="background:#01262D;padding:clamp(26px,2.6vw,36px)" style-hover="background:#032F38">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;color:var(--eim-accent,#38E0CF);margin-bottom:26px">04</div>
+<h3 style="margin:0 0 12px;font-size:19px;line-height:1.25;letter-spacing:-.018em;font-weight:600">Intelligent Energy Management</h3>
+<p style="margin:0;font-size:15px;line-height:1.55;color:rgba(255,255,255,.62)">Coordinate charging, battery availability and fleet deployment around operational requirements.</p>
+</div>
+<div style="background:#01262D;padding:clamp(26px,2.6vw,36px)" style-hover="background:#032F38">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;color:var(--eim-accent,#38E0CF);margin-bottom:26px">05</div>
+<h3 style="margin:0 0 12px;font-size:19px;line-height:1.25;letter-spacing:-.018em;font-weight:600">Renewable Energy</h3>
+<p style="margin:0;font-size:15px;line-height:1.55;color:rgba(255,255,255,.62)">Increase the use of renewable power as freight operations move towards electric.</p>
+</div>
+<div style="background:#01262D;padding:clamp(26px,2.6vw,36px)" style-hover="background:#032F38">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;color:var(--eim-accent,#38E0CF);margin-bottom:26px">06</div>
+<h3 style="margin:0 0 12px;font-size:19px;line-height:1.25;letter-spacing:-.018em;font-weight:600">After-Sales Support</h3>
+<p style="margin:0;font-size:15px;line-height:1.55;color:rgba(255,255,255,.62)">Dedicated service support to help keep vehicles operating after deployment.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section data-reveal="1" style="background:#fff;padding:clamp(72px,8vw,128px) clamp(18px,5vw,64px)">
+<div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:clamp(32px,4.5vw,72px);align-items:center">
+<div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#4A6B70;margin-bottom:20px">The Uptime Advantage</div>
+<h2 style="margin:0 0 26px;font-size:clamp(30px,3.5vw,52px);line-height:1.04;letter-spacing:-.032em;font-weight:500;max-width:18ch">In freight, seven minutes matters.</h2>
+<p style="margin:0 0 16px;font-size:18px;line-height:1.55;color:#01262D;font-weight:500">A truck creates value when it is moving.</p>
+<p style="margin:0 0 16px;font-size:16.5px;line-height:1.62;color:#4A6B70;max-width:54ch">Long charging stops can reduce vehicle utilisation and complicate fleet schedules. EIM&rsquo;s battery-swapping model allows a compatible commercial vehicle to exchange a depleted battery for a charged one in 7 minutes.</p>
+<p style="margin:0 0 30px;font-size:16.5px;line-height:1.62;color:#4A6B70;max-width:54ch">That means electrification can be planned around the operating day instead of asking the operating day to work around charging.</p>
+<p style="margin:0 0 32px;padding-left:18px;border-left:2px solid var(--eim-accent,#38E0CF);font-size:19px;line-height:1.4;letter-spacing:-.015em;font-weight:500">Less waiting. More time on the road.</p>
+<a href="#enquiry" style="display:inline-block;background:#01262D;color:#fff;font-size:15px;font-weight:600;padding:15px 26px;border-radius:100px;box-shadow:rgba(1,38,45,.15) 0 8px 20px 0" style-hover="background:var(--eim-accent,#38E0CF);color:#01262D">Discuss Battery Swapping for My Fleet</a>
+</div>
+<div>
+<div style="position:relative;border-radius:16px;overflow:hidden;background:#01262D;aspect-ratio:4/3;min-height:320px">
+<img src="https://www.energyinmotion.in/images/8-oct.JPG" alt="EIM battery swapping and charging station" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,38,45,.1) 0%,rgba(1,38,45,.35) 52%,rgba(1,38,45,.94) 100%)"></div>
+<div style="position:absolute;left:0;right:0;bottom:0;padding:clamp(20px,2.4vw,30px);color:#fff">
+<div style="display:flex;align-items:baseline;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:12px">
+<span>Battery swap cycle</span><span>00:00 &rarr; 00:07</span>
+</div>
+<div style="display:flex;gap:5px;margin-bottom:14px">
+<span style="flex:1;height:8px;border-radius:2px;background:var(--eim-accent,#38E0CF);animation:eimSeg 5.6s linear 0s infinite"></span>
+<span style="flex:1;height:8px;border-radius:2px;background:var(--eim-accent,#38E0CF);animation:eimSeg 5.6s linear .5s infinite"></span>
+<span style="flex:1;height:8px;border-radius:2px;background:var(--eim-accent,#38E0CF);animation:eimSeg 5.6s linear 1s infinite"></span>
+<span style="flex:1;height:8px;border-radius:2px;background:var(--eim-accent,#38E0CF);animation:eimSeg 5.6s linear 1.5s infinite"></span>
+<span style="flex:1;height:8px;border-radius:2px;background:var(--eim-accent,#38E0CF);animation:eimSeg 5.6s linear 2s infinite"></span>
+<span style="flex:1;height:8px;border-radius:2px;background:var(--eim-accent,#38E0CF);animation:eimSeg 5.6s linear 2.5s infinite"></span>
+<span style="flex:1;height:8px;border-radius:2px;background:var(--eim-accent,#38E0CF);animation:eimSeg 5.6s linear 3s infinite"></span>
+</div>
+<div style="display:flex;align-items:flex-end;gap:12px">
+<span style="font-size:clamp(40px,4.4vw,62px);line-height:.9;letter-spacing:-.04em;font-weight:500;font-variant-numeric:tabular-nums">7</span>
+<span style="font-size:15px;line-height:1.3;color:rgba(255,255,255,.72);padding-bottom:6px">minutes to a charged battery</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section data-reveal="1" style="background:#F4F7F7;padding:clamp(72px,8vw,128px) clamp(18px,5vw,64px)">
+<div style="max-width:1360px;margin:0 auto">
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:clamp(36px,4vw,58px)">
+<h2 style="margin:0;font-size:clamp(30px,3.5vw,52px);line-height:1.04;letter-spacing:-.032em;font-weight:500;max-width:24ch">Built for the way heavy freight actually moves.</h2>
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#4A6B70">Where EIM fits</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px">
+<div style="grid-column:span 1;background:#fff;border:1px solid #E4EAEA;border-radius:16px;overflow:hidden" style-hover="border-color:var(--eim-accent,#38E0CF)">
+<img src="https://www.energyinmotion.in/images/shareholder-2.JPG" alt="Port and container logistics" loading="lazy" decoding="async" style="display:block;width:100%;height:190px;object-fit:cover">
+<div style="padding:24px 26px 28px">
+<h3 style="margin:0 0 10px;font-size:19px;line-height:1.25;letter-spacing:-.018em;font-weight:600">Ports &amp; Container Logistics</h3>
+<p style="margin:0;font-size:15px;line-height:1.55;color:#4A6B70">High-frequency movement between terminals, container freight stations and nearby logistics hubs.</p>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E4EAEA;border-radius:16px;overflow:hidden" style-hover="border-color:var(--eim-accent,#38E0CF)">
+<img src="https://www.energyinmotion.in/images/e-tractors.jpg" alt="Transport and logistics fleets" loading="lazy" decoding="async" style="display:block;width:100%;height:190px;object-fit:cover">
+<div style="padding:24px 26px 28px">
+<h3 style="margin:0 0 10px;font-size:19px;line-height:1.25;letter-spacing:-.018em;font-weight:600">Transport &amp; Logistics Fleets</h3>
+<p style="margin:0;font-size:15px;line-height:1.55;color:#4A6B70">Fleet operators looking to transition suitable routes from diesel to electric.</p>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E4EAEA;border-radius:16px;overflow:hidden" style-hover="border-color:var(--eim-accent,#38E0CF)">
+<img src="https://www.energyinmotion.in/images/timeline-2-may.jpg" alt="Industrial logistics" loading="lazy" decoding="async" style="display:block;width:100%;height:190px;object-fit:cover">
+<div style="padding:24px 26px 28px">
+<h3 style="margin:0 0 10px;font-size:19px;line-height:1.25;letter-spacing:-.018em;font-weight:600">Industrial Logistics</h3>
+<p style="margin:0;font-size:15px;line-height:1.55;color:#4A6B70">Heavy-duty freight requirements across cement, steel, mining and other industrial operations.</p>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E4EAEA;border-radius:16px;padding:28px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:230px" style-hover="border-color:var(--eim-accent,#38E0CF)">
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;color:var(--eim-accent,#38E0CF)">04</span>
+<div>
+<h3 style="margin:0 0 10px;font-size:19px;line-height:1.25;letter-spacing:-.018em;font-weight:600">Regional &amp; Middle-Mile Freight</h3>
+<p style="margin:0;font-size:15px;line-height:1.55;color:#4A6B70">Predictable routes where vehicles, energy infrastructure and fleet schedules can be planned together.</p>
+</div>
+</div>
+<div style="background:#01262D;color:#fff;border:1px solid #01262D;border-radius:16px;padding:28px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:230px">
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;color:var(--eim-accent,#38E0CF)">05</span>
+<div>
+<h3 style="margin:0 0 10px;font-size:19px;line-height:1.25;letter-spacing:-.018em;font-weight:600">Long-Haul Freight Corridors</h3>
+<p style="margin:0;font-size:15px;line-height:1.55;color:rgba(255,255,255,.66)">Electric freight supported by the continued expansion of EIM&rsquo;s swap-and-charge network across major routes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section data-reveal="1" style="background:#01262D;color:#fff;padding:clamp(72px,8vw,128px) clamp(18px,5vw,64px)">
+<div style="max-width:1360px;margin:0 auto">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:clamp(28px,4vw,64px);align-items:end;margin-bottom:clamp(40px,4.5vw,68px)">
+<div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--eim-accent,#38E0CF);margin-bottom:20px">Proof in Motion</div>
+<h2 style="margin:0;font-size:clamp(30px,3.5vw,52px);line-height:1.04;letter-spacing:-.032em;font-weight:500;max-width:20ch">This is not a future-only proposition.</h2>
+</div>
+<p style="margin:0;font-size:17px;line-height:1.6;color:rgba(255,255,255,.7);max-width:52ch">EIM is already building and operating heavy commercial EV infrastructure in India, with 7 operational swap-and-charge stations supporting its growing network.</p>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-bottom:22px">
+<div style="border:1px solid rgba(255,255,255,.16);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.03)">
+<img src="https://www.energyinmotion.in/images/timeline-25-sep.jpg" alt="JNPA fleet flag-off" loading="lazy" decoding="async" style="display:block;width:100%;height:176px;object-fit:cover">
+<div style="padding:22px 24px 26px">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px">
+<h3 style="margin:0;font-size:18px;letter-spacing:-.018em;font-weight:600">JNPA</h3>
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:var(--eim-accent,#38E0CF)">SEP 2025</span>
+</div>
+<p style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.66)">India&rsquo;s first fleet of heavy electric trucks with swappable batteries was flagged off at Jawaharlal Nehru Port Authority in September 2025.</p>
+</div>
+</div>
+<div style="border:1px solid rgba(255,255,255,.16);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.03)">
+<img src="https://www.energyinmotion.in/images/timeline-8-oct.jpg" alt="DICT swapping and charging facility" loading="lazy" decoding="async" style="display:block;width:100%;height:176px;object-fit:cover">
+<div style="padding:22px 24px 26px">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px">
+<h3 style="margin:0;font-size:18px;letter-spacing:-.018em;font-weight:600">DICT, Delhi-NCR</h3>
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:var(--eim-accent,#38E0CF)">OCT 2025</span>
+</div>
+<p style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.66)">A public heavy-duty commercial EV battery swapping-cum-charging facility was inaugurated in October 2025.</p>
+</div>
+</div>
+<div style="border:1px solid rgba(255,255,255,.16);border-radius:16px;background:rgba(255,255,255,.03);padding:26px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:20px">
+<div style="font-size:clamp(44px,4.6vw,64px);line-height:.9;letter-spacing:-.04em;font-weight:500;color:var(--eim-accent,#38E0CF);font-variant-numeric:tabular-nums">7</div>
+<div>
+<h3 style="margin:0 0 10px;font-size:18px;line-height:1.25;letter-spacing:-.018em;font-weight:600">7 Operational Swap-and-Charge Stations</h3>
+<p style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.66)">EIM&rsquo;s network now includes seven operational stations across key freight locations, supporting commercial EV movement and battery-swapping operations.</p>
+</div>
+</div>
+<div style="border:1px solid rgba(56,224,207,.42);border-radius:16px;background:rgba(56,224,207,.07);padding:26px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:20px">
+<span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--eim-accent,#38E0CF)">Corridor expansion</span>
+<div>
+<h3 style="margin:0 0 10px;font-size:18px;line-height:1.25;letter-spacing:-.018em;font-weight:600">HPCL Partnership</h3>
+<p style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.74)">EIM and HPCL are working towards swap-and-charge hubs at select HPCL retail outlets, beginning with key freight corridors including Mumbai-Pune, Delhi-Jaipur and Chennai-Bengaluru.</p>
+</div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(24px,3vw,48px);align-items:center;border-top:1px solid rgba(255,255,255,.14);padding-top:clamp(32px,3.5vw,52px)">
+<div>
+<p style="margin:0 0 24px;font-size:clamp(21px,2.2vw,30px);line-height:1.2;letter-spacing:-.024em;font-weight:500;max-width:20ch">The network is being built where freight moves.</p>
+<a href="#final" style="display:inline-block;background:var(--eim-accent,#38E0CF);color:#01262D;font-size:15px;font-weight:600;padding:15px 26px;border-radius:8px;box-shadow:rgba(73,193,172,.25) 0 6px 20px 0" style-hover="background:#fff">Explore Whether EIM Fits My Routes</a>
+</div>
+<div style="border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px;background:rgba(255,255,255,.03)">
+<img src="https://www.energyinmotion.in/images/map-section.png?v=16.0" alt="EIM swap-and-charge network across India" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;max-height:340px;object-fit:contain;margin:0 auto">
+</div>
+</div>
+</div>
+</section>
+
+<section data-reveal="1" style="background:#fff;padding:clamp(72px,8vw,128px) clamp(18px,5vw,64px)">
+<div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:clamp(32px,4.5vw,72px);align-items:start">
+<div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#4A6B70;margin-bottom:20px">Support After Deployment</div>
+<h2 style="margin:0 0 22px;font-size:clamp(28px,3.2vw,46px);line-height:1.06;letter-spacing:-.03em;font-weight:500;max-width:22ch;text-wrap:balance">The vehicle matters. What happens after deployment matters just as much.</h2>
+<p style="margin:0 0 26px;font-size:17px;line-height:1.6;color:#4A6B70;max-width:46ch">EIM&rsquo;s support model is built around keeping fleet operations running.</p>
+<p style="margin:0;padding-top:24px;border-top:1px solid #E4EAEA;font-size:16.5px;line-height:1.6;color:#01262D;max-width:48ch">For fleet operators making a major technology transition, the relationship does not end when the truck is delivered.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:#E4EAEA;border:1px solid #E4EAEA;border-radius:16px;overflow:hidden">
+<div style="background:#fff;padding:22px 22px;display:flex;gap:13px;align-items:flex-start"><span style="flex:none;width:7px;height:7px;background:var(--eim-accent,#38E0CF);margin-top:7px"></span><span style="font-size:15.5px;line-height:1.45;font-weight:500">24x7 after-sales support</span></div>
+<div style="background:#fff;padding:22px 22px;display:flex;gap:13px;align-items:flex-start"><span style="flex:none;width:7px;height:7px;background:var(--eim-accent,#38E0CF);margin-top:7px"></span><span style="font-size:15.5px;line-height:1.45;font-weight:500">Mobile service vans</span></div>
+<div style="background:#fff;padding:22px 22px;display:flex;gap:13px;align-items:flex-start"><span style="flex:none;width:7px;height:7px;background:var(--eim-accent,#38E0CF);margin-top:7px"></span><span style="font-size:15.5px;line-height:1.45;font-weight:500">Equipped service facilities</span></div>
+<div style="background:#fff;padding:22px 22px;display:flex;gap:13px;align-items:flex-start"><span style="flex:none;width:7px;height:7px;background:var(--eim-accent,#38E0CF);margin-top:7px"></span><span style="font-size:15.5px;line-height:1.45;font-weight:500">Field technical support</span></div>
+<div style="background:#fff;padding:22px 22px;display:flex;gap:13px;align-items:flex-start"><span style="flex:none;width:7px;height:7px;background:var(--eim-accent,#38E0CF);margin-top:7px"></span><span style="font-size:15.5px;line-height:1.45;font-weight:500">Maintenance and issue resolution</span></div>
+<div style="background:#fff;padding:22px 22px;display:flex;gap:13px;align-items:flex-start"><span style="flex:none;width:7px;height:7px;background:var(--eim-accent,#38E0CF);margin-top:7px"></span><span style="font-size:15.5px;line-height:1.45;font-weight:500">Support across operational locations</span></div>
+</div>
+</div>
+</section>
+
+<section data-reveal="1" style="background:#F4F7F7;padding:clamp(72px,8vw,120px) clamp(18px,5vw,64px)">
+<div style="max-width:1360px;margin:0 auto">
+<h2 style="margin:0 0 clamp(36px,4vw,58px);font-size:clamp(26px,2.9vw,42px);line-height:1.08;letter-spacing:-.03em;font-weight:500;max-width:24ch">What operators say after making the switch.</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px">
+<figure style="margin:0;background:#fff;border:1px solid #E4EAEA;border-radius:16px;padding:clamp(26px,3vw,38px);display:flex;flex-direction:column;justify-content:space-between;gap:30px">
+<blockquote style="margin:0;font-size:clamp(19px,1.7vw,24px);line-height:1.4;letter-spacing:-.018em;font-weight:500;text-wrap:pretty">&ldquo;Their team has consistently ensured high fleet uptime, swift issue resolution, and a proactive approach to maintenance.&rdquo;</blockquote>
+<figcaption style="display:flex;align-items:center;gap:15px;padding-top:22px;border-top:1px solid #E4EAEA">
+<img src="https://www.energyinmotion.in/images/JANARDHAN.png" alt="Mr. Janardhan Matre" loading="lazy" decoding="async" style="width:52px;height:52px;border-radius:50%;object-fit:cover;background:#E4EAEA;flex:none">
+<div>
+<div style="font-size:15.5px;font-weight:600;letter-spacing:-.01em">Mr. Janardhan Matre</div>
+<div style="font-size:13.5px;color:#4A6B70;margin-top:3px">Managing Director</div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8AA2A6;margin-top:5px">JIVI Enterprises</div>
+</div>
+</figcaption>
+</figure>
+<figure style="margin:0;background:#01262D;color:#fff;border:1px solid #01262D;border-radius:16px;padding:clamp(26px,3vw,38px);display:flex;flex-direction:column;justify-content:space-between;gap:30px">
+<blockquote style="margin:0;font-size:clamp(24px,2.6vw,38px);line-height:1.22;letter-spacing:-.028em;font-weight:500">&ldquo;I feel lucky I switched to EV early.&rdquo;</blockquote>
+<figcaption style="display:flex;align-items:center;gap:15px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16)">
+<img src="https://www.energyinmotion.in/images/vitthal.png" alt="Vitthal Wable" loading="lazy" decoding="async" style="width:52px;height:52px;border-radius:50%;object-fit:cover;background:rgba(255,255,255,.12);flex:none">
+<div>
+<div style="font-size:15.5px;font-weight:600;letter-spacing:-.01em">Vitthal Wable</div>
+<div style="font-size:13.5px;color:rgba(255,255,255,.66);margin-top:3px">Director</div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--eim-accent,#38E0CF);margin-top:5px">Radiance Green Mobility Pvt. Ltd. / Jyothi Transport &amp; Freight Services Pvt. Ltd.</div>
+</div>
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="final" data-reveal="1" style="scroll-margin-top:80px;position:relative;background:#01262D;color:#fff;overflow:hidden;padding:clamp(72px,8vw,124px) clamp(18px,5vw,64px)">
+<div style="position:absolute;inset:0;background-image:url('https://www.energyinmotion.in/images/2-may.JPG');background-size:cover;background-position:50% 60%;opacity:.34"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(96deg,#01262D 0%,rgba(1,38,45,.94) 42%,rgba(1,38,45,.7) 100%)"></div>
+<div style="position:relative;z-index:2;max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:clamp(32px,4.5vw,72px);align-items:center">
+<div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--eim-accent,#38E0CF);margin-bottom:20px">Start the conversation</div>
+<h2 style="margin:0 0 24px;font-size:clamp(32px,3.8vw,58px);line-height:1.02;letter-spacing:-.035em;font-weight:500;max-width:16ch">Where does your freight move?</h2>
+<p style="margin:0 0 16px;font-size:18px;line-height:1.55;color:rgba(255,255,255,.82);max-width:50ch">Every fleet, route and operating environment is different.</p>
+<p style="margin:0 0 32px;font-size:16.5px;line-height:1.62;color:rgba(255,255,255,.68);max-width:52ch">Tell the EIM team what you operate, where your vehicles run and what you are trying to electrify. The conversation can then start with your actual requirement rather than a generic EV pitch.</p>
+<a href="#enquiry" style="display:inline-block;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);font-size:15px;font-weight:600;padding:14px 26px;border-radius:100px" style-hover="border-color:var(--eim-accent,#38E0CF);color:var(--eim-accent,#38E0CF)">Discuss Your Fleet Requirement</a>
+</div>
+<div style="background:#fff;border-radius:16px;padding:clamp(22px,2.6vw,32px);box-shadow:0 34px 80px rgba(1,20,24,.4);color:#01262D">
+<sc-if value="{{ finalForm }}" hint-placeholder-val="{{ true }}">
+<h3 style="margin:0 0 20px;font-size:20px;font-weight:600;letter-spacing:-.02em">Tell us about your requirement</h3>
+<form onSubmit="{{ onFinal }}" style="display:grid;gap:13px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:13px">
+<label style="display:block">
+<span style="display:block;font-size:12px;font-weight:500;letter-spacing:.02em;color:#4A6B70;margin-bottom:6px">Full Name<span style="color:var(--eim-accent,#38E0CF)">*</span></span>
+<input type="text" name="name2" required="required" style="width:100%;background:#FAFBFB;border:1px solid #EBEEEE;border-radius:12px;padding:12px 13px;font-size:15px;color:#01262D;outline:none" style-focus="border-color:var(--eim-accent,#38E0CF);background:#fff">
+</label>
+<label style="display:block">
+<span style="display:block;font-size:12px;font-weight:500;letter-spacing:.02em;color:#4A6B70;margin-bottom:6px">Company<span style="color:var(--eim-accent,#38E0CF)">*</span></span>
+<input type="text" name="company2" required="required" style="width:100%;background:#FAFBFB;border:1px solid #EBEEEE;border-radius:12px;padding:12px 13px;font-size:15px;color:#01262D;outline:none" style-focus="border-color:var(--eim-accent,#38E0CF);background:#fff">
+</label>
+<label style="display:block">
+<span style="display:block;font-size:12px;font-weight:500;letter-spacing:.02em;color:#4A6B70;margin-bottom:6px">Work Email<span style="color:var(--eim-accent,#38E0CF)">*</span></span>
+<input type="email" name="email2" required="required" style="width:100%;background:#FAFBFB;border:1px solid #EBEEEE;border-radius:12px;padding:12px 13px;font-size:15px;color:#01262D;outline:none" style-focus="border-color:var(--eim-accent,#38E0CF);background:#fff">
+</label>
+<label style="display:block">
+<span style="display:block;font-size:12px;font-weight:500;letter-spacing:.02em;color:#4A6B70;margin-bottom:6px">Mobile Number<span style="color:var(--eim-accent,#38E0CF)">*</span></span>
+<input type="tel" name="mobile2" required="required" style="width:100%;background:#FAFBFB;border:1px solid #EBEEEE;border-radius:12px;padding:12px 13px;font-size:15px;color:#01262D;outline:none" style-focus="border-color:var(--eim-accent,#38E0CF);background:#fff">
+</label>
+</div>
+<label style="display:block">
+<span style="display:block;font-size:12px;font-weight:500;letter-spacing:.02em;color:#4A6B70;margin-bottom:6px">Primary Requirement:<span style="color:var(--eim-accent,#38E0CF)">*</span></span>
+<select name="requirement" required="required" style="width:100%;background:#FAFBFB;border:1px solid #EBEEEE;border-radius:12px;padding:12px 13px;font-size:15px;color:#01262D;outline:none;appearance:none" style-focus="border-color:var(--eim-accent,#38E0CF);background:#fff">
+<option value="">Select an option</option>
+<option>Electric Heavy-Duty Trucks</option>
+<option>Fleet Electrification</option>
+<option>Battery Swapping</option>
+<option>Charging Infrastructure</option>
+<option>Fleet / Infrastructure Partnership</option>
+<option>Other</option>
+</select>
+</label>
+<label style="display:block">
+<span style="display:block;font-size:12px;font-weight:500;letter-spacing:.02em;color:#4A6B70;margin-bottom:6px">Fleet / Route Details</span>
+<textarea name="details2" rows="3" placeholder="Optional" style="width:100%;background:#FAFBFB;border:1px solid #EBEEEE;border-radius:12px;padding:12px 13px;font-size:15px;color:#01262D;outline:none;resize:vertical;min-height:82px" style-focus="border-color:var(--eim-accent,#38E0CF);background:#fff"></textarea>
+</label>
+<button type="submit" style="margin-top:3px;width:100%;background:var(--eim-accent,#38E0CF);color:#01262D;border:none;border-radius:8px;padding:15px;font-size:15.5px;font-weight:600;cursor:pointer;box-shadow:rgba(73,193,172,.25) 0 6px 20px 0" style-hover="background:#01262D;color:#fff">Discuss My Requirement</button>
+<p style="margin:2px 0 0;font-size:11.5px;line-height:1.5;color:#8AA2A6">By submitting this form, you consent to Energy In Motion contacting you regarding your enquiry. <a href="#" style="color:#4A6B70;text-decoration:underline;text-decoration-color:#CFDADB">Privacy Policy</a></p>
+</form>
+</sc-if>
+<sc-if value="{{ finalSent }}">
+<div style="padding:16px 4px 8px">
+<div style="width:36px;height:36px;border-radius:50%;background:var(--eim-accent,#38E0CF);display:flex;align-items:center;justify-content:center;color:#01262D;font-size:18px;font-weight:600;margin-bottom:22px">&#10003;</div>
+<h3 style="margin:0 0 14px;font-size:clamp(23px,2.2vw,30px);line-height:1.14;letter-spacing:-.025em;font-weight:500">Thank you. We&rsquo;ve received your requirement.</h3>
+<p style="margin:0 0 26px;font-size:15.5px;line-height:1.6;color:#4A6B70;max-width:46ch">The EIM team will review the details you have shared and get in touch to understand your fleet, route and operating requirements better.</p>
+<div style="padding-top:20px;border-top:1px solid #E4EAEA">
+<div style="font-size:15px;font-weight:600;letter-spacing:-.01em">Energy In Motion</div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#8AA2A6;margin-top:6px">Heavy Mobility Reimagined</div>
+</div>
+</div>
+</sc-if>
+</div>
+</div>
+</section>
+
+<footer style="background:#011A1F;color:rgba(255,255,255,.72);padding:clamp(52px,6vw,84px) clamp(18px,5vw,64px) 36px">
+<div style="max-width:1360px;margin:0 auto">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(28px,4vw,64px);padding-bottom:clamp(32px,4vw,52px);border-bottom:1px solid rgba(255,255,255,.12)">
+<div>
+<img src="https://www.energyinmotion.in/images/energy-in-motion.svg" alt="Energy In Motion" loading="lazy" style="width:min(230px,100%);height:auto;display:block;margin-bottom:22px">
+<div style="font-size:16px;font-weight:600;color:#fff;letter-spacing:-.012em">Energy In Motion Limited</div>
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--eim-accent,#38E0CF);margin-top:8px">Heavy Mobility Reimagined</div>
+</div>
+<div style="font-size:14.5px;line-height:1.65">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:12px">Registered office</div>
+1A, 1st Floor, Kohinoor Square,<br>Dadar (W), Mumbai 400028, Maharashtra, India
+</div>
+<div style="font-size:14.5px;line-height:1.65">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:12px">Contact</div>
+<a href="mailto:powerup@energyinmotion.in" style="color:#fff;text-decoration:underline;text-decoration-color:rgba(56,224,207,.5)">powerup@energyinmotion.in</a>
+<div style="margin-top:14px;display:flex;gap:10px;align-items:center">
+<a href="#" style="color:rgba(255,255,255,.72)">Privacy Policy</a>
+<span style="color:rgba(255,255,255,.3)">|</span>
+<a href="#" style="color:rgba(255,255,255,.72)">Terms</a>
+</div>
+</div>
+</div>
+<div style="padding-top:22px;font-size:12.5px;color:rgba(255,255,255,.4)">&copy; 2026 Energy In Motion Limited. All rights reserved.</div>
+</div>
+</footer>
+
+<sc-if value="{{ sticky }}" hint-placeholder-val="{{ true }}">
+<div id="eim-sticky" style="position:fixed;right:clamp(14px,3vw,32px);bottom:clamp(14px,3vw,28px);z-index:70;opacity:0;transform:translateY(14px);transition:opacity .35s ease,transform .35s ease;pointer-events:none">
+<a href="#enquiry" style="display:flex;align-items:center;gap:12px;background:#01262D;color:#fff;border:1px solid rgba(56,224,207,.5);border-radius:100px;padding:13px 22px;font-size:14.5px;font-weight:600;box-shadow:0 14px 40px rgba(1,20,24,.35)" style-hover="background:var(--eim-accent,#38E0CF);color:#01262D">
+<span style="width:8px;height:8px;border-radius:50%;background:var(--eim-accent,#38E0CF);display:block"></span>Discuss Your Fleet Requirement</a>
+</div>
+</sc-if>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#38E0CF&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#38E0CF&quot;,&quot;#00C2B2&quot;,&quot;#7BE3A6&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;stickyCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conversion&quot;},&quot;previewThankYou&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conversion&quot;}}">
+class Component extends DCLogic {
+  state = { heroSent: false, finalSent: false };
+
+  componentDidMount() {
+    this.applyAccent();
+    this.reveal();
+    this.onScroll = () => {
+      const el = document.getElementById('eim-sticky');
+      if (!el) return;
+      const past = window.scrollY > window.innerHeight * 0.85;
+      el.style.opacity = past ? '1' : '0';
+      el.style.transform = past ? 'none' : 'translateY(14px)';
+      el.style.pointerEvents = past ? 'auto' : 'none';
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+
+  componentDidUpdate() { this.applyAccent(); }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    if (this.io) this.io.disconnect();
+  }
+
+  applyAccent() {
+    const a = this.props.accentColor;
+    if (a) document.documentElement.style.setProperty('--eim-accent', a);
+  }
+
+  reveal() {
+    if (!('IntersectionObserver' in window)) return;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity .8s cubic-bezier(.16,.84,.28,1), transform .8s cubic-bezier(.16,.84,.28,1)';
+    });
+    this.io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          this.io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+    els.forEach(el => this.io.observe(el));
+  }
+
+  submit(which) {
+    return e => {
+      e.preventDefault();
+      this.setState({ [which]: true });
+    };
+  }
+
+  renderVals() {
+    const preview = !!this.props.previewThankYou;
+    const heroSent = preview || this.state.heroSent;
+    const finalSent = preview || this.state.finalSent;
+    return {
+      heroSent, finalSent,
+      heroForm: !heroSent,
+      finalForm: !finalSent,
+      onHero: this.submit('heroSent'),
+      onFinal: this.submit('finalSent'),
+      sticky: this.props.stickyCta ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,2443 @@
+/* ==========================================================================
+   ENERGY IN MOTION - MASTER STYLESHEET
+   Clean, Modular, Best-Practice CSS Architecture
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  --eim-accent: #38E0CF;
+  --eim-accent-glow: rgba(56, 224, 207, 0.28);
+  --eim-accent-soft: rgba(56, 224, 207, 0.08);
+  --eim-accent-border: rgba(56, 224, 207, 0.4);
+  --eim-dark: #01262D;
+  --eim-darker: #011A1F;
+  --eim-darkest: #00161A;
+  --eim-light: #F4F7F7;
+  --eim-light-alt: #FAFBFB;
+  --eim-border-dark: rgba(255, 255, 255, 0.14);
+  --eim-border-dark-soft: rgba(255, 255, 255, 0.08);
+  --eim-border-light: #E4EAEA;
+  --eim-border-input: #EBEEEE;
+  --eim-border-divider: #DCE4E4;
+  --eim-text-dark: #01262D;
+  --eim-text-muted: #4A6B70;
+  --eim-text-subtle: #8AA2A6;
+  --eim-text-light: rgba(255, 255, 255, 0.84);
+  --eim-text-faded: rgba(255, 255, 255, 0.65);
+  --eim-text-dim: rgba(255, 255, 255, 0.42);
+  --eim-font-sans: 'Switzer', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --eim-font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Global Styles
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--eim-dark);
+  color: var(--eim-dark);
+  font-family: var(--eim-font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+a {
+  color: #0B4A75;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+  color: var(--eim-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: 15px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Keyframe Animations
+   -------------------------------------------------------------------------- */
+@keyframes eimRise {
+  from { transform: translateY(112%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes eimUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes eimFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes eimZoom {
+  from { transform: scale(1.12); }
+  to { transform: scale(1); }
+}
+
+@keyframes eimBar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes eimMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes eimSweep {
+  0% { transform: translateY(-120%); }
+  100% { transform: translateY(520%); }
+}
+
+@keyframes eimPulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.86); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes eimSeg {
+  0% { opacity: 0.14; }
+  10% { opacity: 1; }
+  86% { opacity: 1; }
+  100% { opacity: 0.14; }
+}
+
+@keyframes eimScanX {
+  0% { transform: translateX(-30%); }
+  100% { transform: translateX(430%); }
+}
+
+@keyframes eimDrift {
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -14px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* --------------------------------------------------------------------------
+   4. Progress Bar & Header
+   -------------------------------------------------------------------------- */
+.eim-progress-bar,
+#eim-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: var(--eim-accent);
+  z-index: 90;
+}
+
+.eim-header,
+header {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: var(--eim-darker);
+  border-bottom: 1px solid var(--eim-border-dark);
+  width: 100%;
+}
+
+.eim-header-inner,
+header > div {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px clamp(16px, 4vw, 56px);
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  width: 100% !important;
+}
+
+.eim-header-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex: 0 0 auto !important;
+  min-width: 0;
+}
+
+.eim-header-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+
+.eim-header-logo,
+header img {
+  height: 36px !important;
+  width: auto !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  max-height: 38px;
+  flex: 0 0 auto !important;
+}
+
+.eim-header-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--eim-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--eim-text-light);
+  white-space: nowrap;
+}
+
+.eim-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--eim-accent);
+  animation: eimPulse 2.4s ease-in-out infinite;
+  display: block;
+}
+
+.eim-header-cta,
+header a[data-cta] {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  max-width: fit-content !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--eim-accent) !important;
+  color: var(--eim-dark) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 10px 16px !important;
+  border-radius: 8px !important;
+  white-space: nowrap !important;
+  box-shadow: 0 6px 22px 0 var(--eim-accent-glow) !important;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease !important;
+  text-decoration: none !important;
+}
+
+.eim-header-cta:hover,
+header a[data-cta]:hover {
+  background: #ffffff !important;
+  color: var(--eim-dark) !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Hero Section
+   -------------------------------------------------------------------------- */
+.eim-hero-section {
+  position: relative;
+  background: var(--eim-dark);
+  color: #ffffff;
+  overflow: hidden;
+  padding: clamp(36px, 5vw, 76px) clamp(16px, 4vw, 56px) 0;
+}
+
+.eim-hero-bg {
+  position: absolute;
+  top: -6%;
+  left: 0;
+  right: 0;
+  height: 112%;
+  background-image: url('../assets/overview-3.jpg');
+  background-size: cover;
+  background-position: 62% 48%;
+  opacity: 0.48;
+  animation: eimZoom 3s cubic-bezier(0.16, 0.84, 0.28, 1) both;
+  will-change: transform;
+}
+
+.eim-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(104deg, #01262D 0%, rgba(1,38,45,0.96) 30%, rgba(1,38,45,0.6) 64%, rgba(1,26,31,0.9) 100%);
+}
+
+.eim-hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: clamp(70px, 8vw, 132px) clamp(70px, 8vw, 132px);
+}
+
+.eim-hero-light-beam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 38%;
+  width: 1px;
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.eim-hero-light-beam span {
+  display: block;
+  width: 1px;
+  height: 34%;
+  background: linear-gradient(180deg, rgba(56,224,207,0), var(--eim-accent), rgba(56,224,207,0));
+  animation: eimSweep 7s linear infinite;
+}
+
+.eim-hero-glow {
+  position: absolute;
+  top: -220px;
+  right: -160px;
+  width: 640px;
+  height: 640px;
+  background: radial-gradient(circle, rgba(56,224,207,0.2) 0%, rgba(56,224,207,0) 64%);
+  animation: eimDrift 14s ease-in-out infinite;
+}
+
+.eim-hero-grid {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: clamp(24px, 4.5vw, 72px);
+  align-items: center;
+}
+
+.eim-hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: clamp(16px, 2.2vw, 28px);
+  animation: eimFade 1s 0.1s both;
+}
+
+.eim-hero-tag-line {
+  width: 30px;
+  height: 1px;
+  background: var(--eim-accent);
+  display: block;
+}
+
+.eim-hero-tag-text {
+  font-family: var(--eim-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--eim-accent);
+  white-space: nowrap;
+}
+
+.eim-hero-title,
+h1 {
+  margin: 0 0 clamp(16px, 2.2vw, 26px);
+  font-size: clamp(34px, 5.2vw, 76px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+  max-width: 100%;
+  word-break: normal;
+  overflow: visible;
+}
+
+.eim-word-wrap {
+  display: inline-block;
+  overflow: visible;
+  padding-bottom: 0.05em;
+  margin-bottom: -0.05em;
+  vertical-align: baseline;
+}
+
+.eim-word-anim {
+  display: inline-block;
+}
+
+.eim-hero-lead {
+  margin: 0 0 18px;
+  font-size: clamp(16px, 1.25vw, 19.5px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 54ch;
+  animation: eimUp 1s 0.58s cubic-bezier(0.16, 0.84, 0.28, 1) both;
+  text-wrap: pretty;
+}
+
+.eim-hero-sub {
+  margin: 0 0 clamp(22px, 2.8vw, 32px);
+  padding-top: 16px;
+  border-top: 1px solid var(--eim-border-dark);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--eim-text-subtle);
+  max-width: 52ch;
+  animation: eimUp 1s 0.66s cubic-bezier(0.16, 0.84, 0.28, 1) both;
+}
+
+.eim-hero-cta-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  animation: eimUp 1s 0.74s cubic-bezier(0.16, 0.84, 0.28, 1) both;
+}
+
+.eim-btn-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--eim-accent);
+  color: var(--eim-dark);
+  font-size: 15.5px;
+  font-weight: 600;
+  padding: 16px 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px 0 var(--eim-accent-glow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.eim-btn-hero:hover {
+  background: #ffffff;
+  color: var(--eim-dark);
+  box-shadow: 0 14px 40px 0 rgba(56, 224, 207, 0.5);
+  transform: translateY(-2px);
+}
+
+.eim-cta-subtext {
+  font-family: var(--eim-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   6. Form Card Component (Hero & Final Section)
+   -------------------------------------------------------------------------- */
+.eim-form-wrap {
+  scroll-margin-top: 88px;
+  animation: eimUp 1.1s 0.3s cubic-bezier(0.16, 0.84, 0.28, 1) both;
+}
+
+.eim-form-card,
+#eim-formcard {
+  position: relative;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: clamp(22px, 2.4vw, 30px);
+  box-shadow: 0 40px 90px rgba(0, 10, 13, 0.5);
+  color: var(--eim-dark);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.eim-form-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 22px;
+  right: 22px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--eim-accent), rgba(56, 224, 207, 0));
+}
+
+.eim-form-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.eim-form-title {
+  margin: 0;
+  font-size: 19.5px;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+}
+
+.eim-form-badge {
+  font-family: var(--eim-font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--eim-text-subtle);
+  white-space: nowrap;
+}
+
+.eim-form-body {
+  display: grid;
+  gap: 12px;
+}
+
+.eim-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
+  gap: 12px;
+}
+
+.eim-form-label {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.eim-form-label-text {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--eim-text-muted);
+  margin-bottom: 6px;
+}
+
+.eim-form-req {
+  color: var(--eim-accent);
+}
+
+.eim-form-input,
+.eim-form-select,
+.eim-form-textarea,
+form input,
+form select,
+form textarea {
+  width: 100%;
+  background: var(--eim-light-alt);
+  border: 1px solid var(--eim-border-input);
+  border-radius: 12px;
+  padding: 12px 13px;
+  font-size: 15px;
+  color: var(--eim-dark);
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eim-form-select {
+  appearance: none;
+}
+
+.eim-form-textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.eim-form-input:focus,
+.eim-form-select:focus,
+.eim-form-textarea:focus,
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: var(--eim-accent);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(56, 224, 207, 0.16);
+}
+
+.eim-form-submit,
+form button[type="submit"] {
+  margin-top: 4px;
+  width: 100%;
+  background: var(--eim-dark);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 15.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eim-form-submit:hover,
+form button[type="submit"]:hover {
+  background: var(--eim-accent);
+  color: var(--eim-dark);
+  transform: translateY(-1px);
+}
+
+.eim-form-submit-accent {
+  background: var(--eim-accent);
+  color: var(--eim-dark);
+}
+
+.eim-form-submit-accent:hover {
+  background: var(--eim-dark);
+  color: #ffffff;
+}
+
+.eim-form-disclaimer {
+  margin: 2px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--eim-text-subtle);
+}
+
+.eim-form-disclaimer a {
+  color: var(--eim-text-muted);
+  text-decoration: underline;
+  text-decoration-color: #CFDADB;
+}
+
+/* Thank You Message State */
+.eim-thank-you {
+  padding: 14px 4px 6px;
+  animation: eimUp 0.7s both;
+}
+
+.eim-check-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--eim-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--eim-dark);
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.eim-thank-title {
+  margin: 0 0 13px;
+  font-size: clamp(22px, 2.1vw, 29px);
+  line-height: 1.14;
+  letter-spacing: -0.028em;
+  font-weight: 500;
+}
+
+.eim-thank-desc {
+  margin: 0 0 24px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--eim-text-muted);
+  max-width: 46ch;
+}
+
+.eim-thank-footer {
+  padding-top: 18px;
+  border-top: 1px solid var(--eim-border-light);
+}
+
+.eim-thank-brand {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.eim-thank-sub {
+  font-family: var(--eim-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--eim-text-subtle);
+  margin-top: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Key Stats Bar (Hero Bottom)
+   -------------------------------------------------------------------------- */
+.eim-stats-bar {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: clamp(24px, 4vw, 56px) auto 0;
+  border-top: 1px solid var(--eim-border-dark);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  animation: eimFade 1.2s 0.9s both;
+}
+
+.eim-stats-bar-item {
+  padding: 22px 24px 24px;
+}
+
+.eim-stats-bar-item:first-child {
+  padding-left: 0;
+}
+
+.eim-stats-bar-item:not(:first-child) {
+  border-left: 1px solid var(--eim-border-dark);
+}
+
+.eim-stats-label {
+  font-family: var(--eim-font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--eim-text-dim);
+  margin-bottom: 10px;
+}
+
+.eim-stats-val {
+  font-size: clamp(24px, 2.3vw, 32px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.eim-stats-val-accent {
+  color: var(--eim-accent);
+}
+
+/* --------------------------------------------------------------------------
+   8. Marquee Strip
+   -------------------------------------------------------------------------- */
+.eim-marquee-wrap {
+  background: var(--eim-darker);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  padding: 13px 0;
+}
+
+.eim-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: eimMarquee 34s linear infinite;
+  font-family: var(--eim-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.eim-marquee-group {
+  display: flex;
+  gap: 44px;
+  padding-right: 44px;
+}
+
+.eim-marquee-sep {
+  color: var(--eim-accent);
+}
+
+/* --------------------------------------------------------------------------
+   9. Overview 4-Stat Grid Section
+   -------------------------------------------------------------------------- */
+.eim-overview-section {
+  background: #ffffff;
+  padding: clamp(52px, 5.5vw, 82px) clamp(16px, 4vw, 56px);
+}
+
+.eim-overview-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.eim-section-title-sm {
+  margin: 0 0 30px;
+  font-size: clamp(21px, 2.1vw, 30px);
+  line-height: 1.14;
+  letter-spacing: -0.032em;
+  font-weight: 500;
+  max-width: 28ch;
+}
+
+.eim-overview-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 215px), 1fr));
+  gap: 1px;
+  background: var(--eim-border-light);
+}
+
+.eim-overview-card {
+  background: #ffffff;
+  padding: 8px 26px 6px clamp(0px, 2vw, 28px);
+  position: relative;
+}
+
+.eim-overview-card:first-child {
+  padding-left: 0;
+}
+
+.eim-overview-card:last-child {
+  padding-right: 0;
+}
+
+.eim-overview-val {
+  font-size: clamp(40px, 4.4vw, 60px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.eim-overview-val-break {
+  font-size: clamp(27px, 2.7vw, 37px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.eim-overview-unit {
+  font-size: 0.4em;
+  letter-spacing: -0.01em;
+  color: var(--eim-text-muted);
+}
+
+.eim-overview-unit-sm {
+  font-size: 0.34em;
+  letter-spacing: -0.005em;
+}
+
+.eim-overview-accent-line {
+  height: 2px;
+  background: var(--eim-accent);
+  width: 38px;
+  margin: 16px 0 14px;
+  transform-origin: 0 50%;
+}
+
+.eim-overview-desc {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--eim-text-muted);
+  max-width: 26ch;
+}
+
+/* --------------------------------------------------------------------------
+   10. Section Headers & Reusable Split Grid
+   -------------------------------------------------------------------------- */
+.eim-split-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: clamp(24px, 4vw, 60px);
+  align-items: end;
+  margin-bottom: clamp(30px, 4vw, 58px);
+}
+
+.eim-section-tag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.eim-section-num {
+  font-family: var(--eim-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  color: var(--eim-accent);
+}
+
+.eim-section-line {
+  width: 32px;
+  height: 1px;
+  background: #C7D3D4;
+  display: block;
+}
+
+.eim-section-line-dark {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.eim-section-title {
+  margin: 0 0 16px;
+  font-size: clamp(28px, 3.2vw, 48px);
+  line-height: 1.02;
+  letter-spacing: -0.038em;
+  font-weight: 500;
+}
+
+.eim-section-lead {
+  margin: 0;
+  font-size: clamp(17.5px, 1.7vw, 24px);
+  line-height: 1.34;
+  letter-spacing: -0.018em;
+  font-weight: 400;
+  color: var(--eim-dark);
+  max-width: 30ch;
+  text-wrap: pretty;
+}
+
+.eim-section-lead-light {
+  color: var(--eim-text-light);
+}
+
+.eim-section-sublead {
+  margin: 0 0 8px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--eim-text-muted);
+  max-width: 48ch;
+}
+
+.eim-section-body {
+  margin: 0;
+  font-size: 16.5px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   11. Section 01: The Business Problem & Accordion
+   -------------------------------------------------------------------------- */
+.eim-problem-section {
+  background: var(--eim-light);
+  padding: clamp(66px, 7.5vw, 120px) clamp(16px, 4vw, 56px);
+}
+
+.eim-problem-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.eim-accordion {
+  border-top: 1px solid var(--eim-border-divider);
+}
+
+.eim-acc-row {
+  border-bottom: 1px solid var(--eim-border-divider);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.eim-acc-row:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.eim-acc-header {
+  display: flex;
+  gap: clamp(14px, 2vw, 30px);
+  align-items: baseline;
+  padding: clamp(20px, 2.4vw, 30px) clamp(6px, 1.4vw, 20px);
+}
+
+.eim-acc-num {
+  font-family: var(--eim-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--eim-accent);
+  flex: none;
+  padding-top: 6px;
+}
+
+.eim-acc-title {
+  margin: 0;
+  flex: 1;
+  font-size: clamp(19px, 2vw, 29px);
+  line-height: 1.18;
+  letter-spacing: -0.026em;
+  font-weight: 500;
+  max-width: 34ch;
+}
+
+.eim-acc-plus {
+  flex: none;
+  margin-left: auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #C7D3D4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  line-height: 1;
+  color: var(--eim-text-muted);
+  transition: transform 0.35s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.eim-acc-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.16, 0.84, 0.28, 1);
+}
+
+.eim-acc-content {
+  padding: 0 clamp(6px, 1.4vw, 20px) clamp(24px, 2.6vw, 34px) calc(clamp(14px, 2vw, 30px) + 26px);
+}
+
+.eim-acc-badge {
+  font-family: var(--eim-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--eim-accent);
+  margin-bottom: 10px;
+}
+
+.eim-acc-desc {
+  margin: 0;
+  font-size: clamp(15.5px, 1.35vw, 19px);
+  line-height: 1.55;
+  color: var(--eim-dark);
+  max-width: 58ch;
+}
+
+/* --------------------------------------------------------------------------
+   12. Section 02: The Maitryi Model & Pillars
+   -------------------------------------------------------------------------- */
+.eim-maitryi-section {
+  position: relative;
+  background: var(--eim-dark);
+  color: #ffffff;
+  padding: clamp(66px, 7.5vw, 124px) clamp(16px, 4vw, 56px);
+  overflow: hidden;
+}
+
+.eim-spotlight-beam {
+  position: absolute;
+  width: 760px;
+  height: 760px;
+  left: 0;
+  top: 0;
+  margin: -380px 0 0 -380px;
+  background: radial-gradient(circle, rgba(56,224,207,0.13) 0%, rgba(56,224,207,0) 62%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.eim-drift-glow {
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  width: 960px;
+  height: 620px;
+  margin-left: -480px;
+  background: radial-gradient(ellipse at center, rgba(56,224,207,0.13) 0%, rgba(56,224,207,0) 66%);
+  pointer-events: none;
+  animation: eimDrift 16s ease-in-out infinite;
+}
+
+.eim-maitryi-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.eim-maitryi-stage {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--eim-darkest);
+  box-shadow: 0 46px 110px rgba(0, 10, 13, 0.6);
+}
+
+.eim-stage-clip {
+  overflow: hidden;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.6s cubic-bezier(0.16, 0.84, 0.28, 1);
+}
+
+.eim-stage-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1.06);
+  transition: transform 2.4s cubic-bezier(0.16, 0.84, 0.28, 1);
+}
+
+.eim-stage-scan {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 16%;
+  background: linear-gradient(90deg, rgba(56,224,207,0), rgba(56,224,207,0.14), rgba(56,224,207,0));
+  animation: eimScanX 11s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  pointer-events: none;
+}
+
+.eim-stage-corner {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(56, 224, 207, 0.7);
+  pointer-events: none;
+}
+
+.eim-corner-tl { top: 14px; left: 14px; border-right: none; border-bottom: none; }
+.eim-corner-tr { top: 14px; right: 14px; border-left: none; border-bottom: none; }
+.eim-corner-bl { bottom: 14px; left: 14px; border-right: none; border-top: none; }
+.eim-corner-br { bottom: 14px; right: 14px; border-left: none; border-top: none; }
+
+.eim-stage-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  background: linear-gradient(180deg, rgba(0,22,26,0), rgba(0,22,26,0.86));
+  pointer-events: none;
+}
+
+.eim-stage-label {
+  font-family: var(--eim-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.eim-stage-caption {
+  font-family: var(--eim-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--eim-accent);
+}
+
+.eim-pillars-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 255px), 1fr));
+  gap: 12px;
+}
+
+.eim-pillar-card {
+  position: relative;
+  border: 1px solid var(--eim-border-dark);
+  border-radius: 14px;
+  padding: 24px 20px 26px;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+  cursor: default;
+  transition: border-color 0.45s ease, background 0.45s ease, transform 0.45s cubic-bezier(0.16, 0.84, 0.28, 1);
+}
+
+.eim-pillar-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--eim-accent);
+}
+
+.eim-pillar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(24px, 2.6vw, 38px);
+}
+
+.eim-pillar-num {
+  font-family: var(--eim-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  color: var(--eim-accent);
+}
+
+.eim-pillar-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--eim-accent);
+  display: block;
+}
+
+.eim-pillar-title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.eim-pillar-desc {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.eim-section-cta-wrap {
+  margin-top: clamp(26px, 3vw, 42px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.eim-btn-primary {
+  display: inline-block;
+  background: var(--eim-accent);
+  color: var(--eim-dark);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px 27px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px 0 var(--eim-accent-glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.eim-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px 0 rgba(56, 224, 207, 0.45);
+  background: #ffffff;
+  color: var(--eim-dark);
+}
+
+.eim-section-cta-note {
+  font-family: var(--eim-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   13. Section 03: The Uptime Advantage & Battery Swap Visualizer
+   -------------------------------------------------------------------------- */
+.eim-uptime-section {
+  position: relative;
+  background: var(--eim-darker);
+  color: #ffffff;
+  padding: clamp(66px, 7.5vw, 120px) clamp(16px, 4vw, 56px);
+  overflow: hidden;
+}
+
+.eim-uptime-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/overview-1.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.28;
+}
+
+.eim-uptime-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(1,26,31,0.96), rgba(1,26,31,0.8) 40%, rgba(1,26,31,0.97));
+}
+
+.eim-uptime-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.eim-uptime-lead {
+  margin: 26px 0 15px;
+  font-size: 17.5px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.eim-uptime-text {
+  margin: 0 0 15px;
+  font-size: 16px;
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.68);
+  max-width: 54ch;
+}
+
+.eim-uptime-quote {
+  margin: 0 0 30px;
+  padding-left: 18px;
+  border-left: 2px solid var(--eim-accent);
+  font-size: 19px;
+  line-height: 1.4;
+  letter-spacing: -0.018em;
+  font-weight: 500;
+}
+
+.eim-swap-card {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  padding: clamp(20px, 2.4vw, 30px);
+  background: var(--eim-dark);
+}
+
+.eim-swap-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-family: var(--eim-font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+}
+
+.eim-swap-clock-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.eim-swap-clock {
+  font-family: var(--eim-font-mono);
+  font-size: clamp(46px, 5.6vw, 84px);
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  color: var(--eim-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.eim-swap-clock-unit {
+  font-size: 14px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.6);
+  padding-bottom: 8px;
+  max-width: 14ch;
+}
+
+.eim-swap-meter {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.eim-swap-seg {
+  flex: 1;
+  height: 9px;
+  border-radius: 2px;
+  background: var(--eim-accent);
+  opacity: 0.16;
+  transition: opacity 0.3s ease;
+}
+
+.eim-swap-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--eim-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.34);
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--eim-border-dark);
+}
+
+.eim-swap-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding-top: 22px;
+}
+
+.eim-comp-label {
+  font-family: var(--eim-font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--eim-text-dim);
+  margin-bottom: 10px;
+}
+
+.eim-comp-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.eim-comp-fill {
+  display: block;
+  height: 100%;
+  background: var(--eim-accent);
+}
+
+.eim-comp-fill-dim {
+  display: block;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.eim-comp-sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.62);
+  margin-top: 9px;
+}
+
+/* --------------------------------------------------------------------------
+   14. Section 04: Where EIM Fits & Horizontal Card Slider
+   -------------------------------------------------------------------------- */
+.eim-where-section {
+  background: #ffffff;
+  padding: clamp(66px, 7.5vw, 120px) 0;
+}
+
+.eim-where-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 56px);
+}
+
+.eim-where-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: clamp(30px, 3.6vw, 50px);
+}
+
+.eim-where-header-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.eim-scroll-hint {
+  font-family: var(--eim-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--eim-text-muted);
+}
+
+.eim-rail-slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px clamp(16px, 4vw, 56px) 22px;
+  scrollbar-width: thin;
+}
+
+.eim-rail-card {
+  flex: none;
+  width: clamp(280px, 29vw, 392px);
+  scroll-snap-align: start;
+  border: 1px solid var(--eim-border-light);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  transition: border-color 0.3s ease, transform 0.4s cubic-bezier(0.16, 0.84, 0.28, 1);
+}
+
+.eim-rail-card:hover {
+  border-color: var(--eim-accent);
+  transform: translateY(-4px);
+}
+
+.eim-rail-card-img {
+  overflow: hidden;
+  height: 210px;
+}
+
+.eim-rail-card-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.16, 0.84, 0.28, 1);
+}
+
+.eim-rail-card:hover .eim-rail-card-img img {
+  transform: scale(1.07);
+}
+
+.eim-rail-card-body {
+  padding: 22px 24px 26px;
+}
+
+.eim-rail-num {
+  font-family: var(--eim-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--eim-accent);
+  margin-bottom: 12px;
+}
+
+.eim-rail-title {
+  margin: 0 0 9px;
+  font-size: 18.5px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.eim-rail-desc {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--eim-text-muted);
+}
+
+.eim-rail-card-alt {
+  background: var(--eim-light);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 340px;
+}
+
+.eim-rail-card-dark {
+  background: var(--eim-dark);
+  color: #ffffff;
+  border-color: var(--eim-dark);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 340px;
+}
+
+.eim-rail-card-dark .eim-rail-desc {
+  color: rgba(255, 255, 255, 0.64);
+}
+
+/* --------------------------------------------------------------------------
+   15. Section 05: Proof in Motion & Milestone Timeline
+   -------------------------------------------------------------------------- */
+.eim-proof-section {
+  background: var(--eim-dark);
+  color: #ffffff;
+  padding: clamp(66px, 7.5vw, 120px) clamp(16px, 4vw, 56px);
+}
+
+.eim-proof-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.eim-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.eim-proof-card {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.3s ease;
+}
+
+.eim-proof-card:hover {
+  border-color: rgba(56, 224, 207, 0.55);
+}
+
+.eim-proof-card-img {
+  overflow: hidden;
+  height: 180px;
+}
+
+.eim-proof-card-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.16, 0.84, 0.28, 1);
+}
+
+.eim-proof-card:hover .eim-proof-card-img img {
+  transform: scale(1.06);
+}
+
+.eim-proof-card-body {
+  padding: 20px 22px 24px;
+}
+
+.eim-proof-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.eim-proof-card-title {
+  margin: 0;
+  font-size: 17.5px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.eim-proof-card-date {
+  font-family: var(--eim-font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  color: var(--eim-accent);
+}
+
+.eim-proof-card-desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.eim-proof-card-meta {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--eim-accent);
+}
+
+.eim-proof-card-meta strong {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.eim-proof-stat-card {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.eim-proof-stat-val {
+  font-size: clamp(42px, 4.4vw, 62px);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+  color: var(--eim-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.eim-proof-corridor-card {
+  border: 1px solid var(--eim-accent-border);
+  border-radius: 18px;
+  background: var(--eim-accent-soft);
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.eim-corridor-tag {
+  font-family: var(--eim-font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--eim-accent);
+}
+
+.eim-map-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(24px, 3vw, 48px);
+  align-items: center;
+  border-top: 1px solid var(--eim-border-dark);
+  padding-top: clamp(28px, 3.4vw, 50px);
+}
+
+.eim-map-title {
+  margin: 0 0 22px;
+  font-size: clamp(21px, 2.2vw, 31px);
+  line-height: 1.18;
+  letter-spacing: -0.028em;
+  font-weight: 500;
+  max-width: 20ch;
+}
+
+.eim-map-frame {
+  position: relative;
+  border: 1px solid var(--eim-border-dark);
+  border-radius: 18px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.eim-map-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 330px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.eim-map-scan {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 22%;
+  background: linear-gradient(90deg, rgba(56,224,207,0), rgba(56,224,207,0.16), rgba(56,224,207,0));
+  animation: eimScanX 9s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   16. Section 06: Support After Deployment
+   -------------------------------------------------------------------------- */
+.eim-support-section {
+  background: #ffffff;
+  padding: clamp(66px, 7.5vw, 120px) clamp(16px, 4vw, 56px);
+}
+
+.eim-support-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.eim-support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 1px;
+  background: var(--eim-border-light);
+  border: 1px solid var(--eim-border-light);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.eim-support-item {
+  background: #ffffff;
+  padding: 21px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.eim-support-dot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  background: var(--eim-accent);
+  margin-top: 7px;
+}
+
+.eim-support-text {
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   17. Section 07: Customer Proof & Quotes
+   -------------------------------------------------------------------------- */
+.eim-customer-section {
+  background: var(--eim-light);
+  padding: clamp(60px, 7vw, 110px) clamp(16px, 4vw, 56px);
+}
+
+.eim-customer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.eim-quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 16px;
+}
+
+.eim-quote-card {
+  margin: 0;
+  background: #ffffff;
+  color: var(--eim-dark);
+  border: 1px solid var(--eim-border-light);
+  border-radius: 18px;
+  padding: clamp(24px, 2.8vw, 36px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  cursor: default;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, transform 0.35s cubic-bezier(0.16, 0.84, 0.28, 1), box-shadow 0.35s ease;
+}
+
+.eim-quote-card .eim-quote-text {
+  color: var(--eim-dark);
+  transition: color 0.35s ease;
+}
+
+.eim-quote-card .eim-quote-author {
+  border-top: 1px solid var(--eim-border-light);
+  transition: border-color 0.35s ease;
+}
+
+.eim-quote-card .eim-quote-name {
+  color: var(--eim-dark);
+  transition: color 0.35s ease;
+}
+
+.eim-quote-card .eim-quote-role {
+  color: var(--eim-text-muted);
+  transition: color 0.35s ease;
+}
+
+.eim-quote-card .eim-quote-company {
+  color: var(--eim-text-subtle);
+  transition: color 0.35s ease;
+}
+
+/* Hover State: Dark Background & White Text */
+.eim-quote-card:hover {
+  background: var(--eim-dark);
+  color: #ffffff;
+  border-color: var(--eim-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(0, 10, 13, 0.4);
+}
+
+.eim-quote-card:hover .eim-quote-text {
+  color: #ffffff;
+}
+
+.eim-quote-card:hover .eim-quote-author {
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+.eim-quote-card:hover .eim-quote-name {
+  color: #ffffff;
+}
+
+.eim-quote-card:hover .eim-quote-role {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.eim-quote-card:hover .eim-quote-company {
+  color: var(--eim-accent);
+}
+
+.eim-quote-card:hover .eim-quote-avatar {
+  border-color: var(--eim-accent);
+}
+
+.eim-quote-text {
+  margin: 0;
+  font-size: clamp(17px, 1.4vw, 21px);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  text-wrap: pretty;
+}
+
+.eim-quote-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--eim-border-light);
+}
+
+.eim-quote-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  background: var(--eim-border-light);
+  border: 2px solid transparent;
+  flex: none;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.eim-quote-name {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.eim-quote-role {
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.eim-quote-company {
+  font-family: var(--eim-font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* --------------------------------------------------------------------------
+   18. Final CTA Section
+   -------------------------------------------------------------------------- */
+.eim-final-section {
+  position: relative;
+  background: var(--eim-dark);
+  color: #ffffff;
+  overflow: hidden;
+  padding: clamp(66px, 7.5vw, 116px) clamp(16px, 4vw, 56px);
+  scroll-margin-top: 76px;
+}
+
+.eim-final-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/road.png');
+  background-size: cover;
+  background-position: 50% 58%;
+  opacity: 0.3;
+}
+
+.eim-final-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(96deg, #01262D 0%, rgba(1,38,45,0.95) 40%, rgba(1,26,31,0.72) 100%);
+}
+
+.eim-final-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: clamp(70px, 8vw, 132px) 100%;
+}
+
+.eim-final-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.eim-final-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: clamp(26px, 4.5vw, 72px);
+  align-items: center;
+}
+
+.eim-final-tag {
+  font-family: var(--eim-font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--eim-accent);
+  margin-bottom: 18px;
+}
+
+.eim-final-title {
+  margin: 0 0 22px;
+  font-size: clamp(32px, 3.9vw, 60px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  max-width: 15ch;
+}
+
+.eim-final-lead {
+  margin: 0 0 15px;
+  font-size: 17.5px;
+  line-height: 1.5;
+  color: var(--eim-text-light);
+  max-width: 50ch;
+}
+
+.eim-final-desc {
+  margin: 0 0 28px;
+  font-size: 16px;
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.66);
+  max-width: 52ch;
+}
+
+.eim-btn-outline {
+  display: inline-block;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 26px;
+  border-radius: 100px;
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.eim-btn-outline:hover {
+  border-color: var(--eim-accent);
+  color: var(--eim-accent);
+}
+
+/* --------------------------------------------------------------------------
+   19. Footer
+   -------------------------------------------------------------------------- */
+.eim-footer {
+  background: var(--eim-darker);
+  color: rgba(255, 255, 255, 0.7);
+  padding: clamp(48px, 5.5vw, 80px) clamp(16px, 4vw, 56px) 34px;
+}
+
+.eim-footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.eim-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: clamp(24px, 4vw, 60px);
+  padding-bottom: clamp(28px, 3.6vw, 50px);
+  border-bottom: 1px solid var(--eim-border-dark);
+}
+
+.eim-footer-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.eim-footer-tagline {
+  font-family: var(--eim-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--eim-accent);
+}
+
+.eim-footer-col {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.eim-footer-col-title {
+  font-family: var(--eim-font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 12px;
+}
+
+.eim-footer-link {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: rgba(56, 224, 207, 0.5);
+}
+
+.eim-footer-nav {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.eim-footer-nav a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.eim-footer-nav a:hover {
+  color: #ffffff;
+}
+
+.eim-footer-sep {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.eim-footer-bottom {
+  padding-top: 20px;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   20. Sticky Bottom Bar Component (Mobile Floating CTA)
+   -------------------------------------------------------------------------- */
+.eim-sticky-wrap,
+#eim-sticky {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(12px, 2.4vw, 26px);
+  transform: translate(-50%, 20px);
+  z-index: 85;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 0.84, 0.28, 1);
+  pointer-events: none;
+  max-width: calc(100% - 24px);
+}
+
+.eim-sticky-pill {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--eim-darker);
+  border: 1px solid rgba(56, 224, 207, 0.5);
+  border-radius: 100px;
+  padding: 9px 10px 9px 20px;
+  box-shadow: 0 18px 50px rgba(0, 10, 13, 0.5);
+}
+
+.eim-sticky-info {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--eim-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--eim-text-light);
+  white-space: nowrap;
+}
+
+.eim-sticky-btn {
+  background: var(--eim-accent);
+  color: var(--eim-dark);
+  border-radius: 100px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.eim-sticky-btn:hover {
+  background: #ffffff;
+  color: var(--eim-dark);
+}
+
+/* --------------------------------------------------------------------------
+   21. Responsive System Breakpoints
+   -------------------------------------------------------------------------- */
+
+/* TABLETS (< 992px) */
+@media (max-width: 991px) {
+  .eim-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .eim-hero-title,
+  h1 {
+    font-size: clamp(32px, 5.8vw, 52px) !important;
+    line-height: 1.08 !important;
+    max-width: 100% !important;
+  }
+
+  .eim-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .eim-pillars-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+/* SMARTPHONES (< 768px) */
+@media (max-width: 768px) {
+  /* Header Mobile */
+  .eim-header-inner,
+  header > div {
+    padding: 10px 14px !important;
+    gap: 10px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .eim-header-left {
+    display: flex !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+  }
+
+  .eim-header-badge {
+    display: none !important;
+  }
+
+  .eim-header-logo,
+  header img {
+    height: 30px !important;
+    max-height: 30px !important;
+    width: auto !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex: 0 0 auto !important;
+  }
+
+  .eim-header-cta,
+  header a[data-cta] {
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: fit-content !important;
+    white-space: nowrap !important;
+  }
+
+  /* Hero Section */
+  .eim-hero-section,
+  section:first-of-type {
+    padding-top: 24px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .eim-hero-title,
+  h1 {
+    font-size: clamp(26px, 7.4vw, 36px) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.028em !important;
+    margin-bottom: 14px !important;
+    max-width: 100% !important;
+    word-break: normal !important;
+    overflow: visible !important;
+  }
+
+  .eim-word-wrap {
+    display: inline !important;
+    overflow: visible !important;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    white-space: normal !important;
+  }
+
+  .eim-word-anim {
+    display: inline !important;
+  }
+
+  .eim-hero-lead {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .eim-hero-sub {
+    font-size: 13px !important;
+    padding-top: 12px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .eim-hero-cta-wrap {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .eim-btn-hero,
+  .eim-hero-cta-wrap a[data-cta] {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+    display: inline-flex !important;
+  }
+
+  /* Form */
+  .eim-form-card,
+  #eim-formcard {
+    padding: 18px 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .eim-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .eim-form-input,
+  .eim-form-select,
+  .eim-form-textarea {
+    padding: 12px 13px !important;
+    border-radius: 10px !important;
+    font-size: 16px !important;
+  }
+
+  .eim-form-submit {
+    padding: 14px !important;
+    font-size: 15.5px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Key Stats Bar */
+  .eim-stats-bar {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+    margin-top: 22px !important;
+  }
+
+  .eim-stats-bar-item {
+    padding: 14px 10px !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .eim-stats-bar-item:nth-child(odd) {
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .eim-stats-bar-item:nth-last-child(-n+2) {
+    border-bottom: none !important;
+  }
+
+  /* Section Padding */
+  section {
+    padding: clamp(44px, 6vw, 76px) 16px !important;
+  }
+
+  /* Overview 4-Card Stats */
+  .eim-overview-stats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1px !important;
+  }
+
+  .eim-overview-card {
+    padding: 14px 10px !important;
+  }
+
+  /* Accordion */
+  .eim-acc-title {
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+  }
+
+  .eim-acc-plus {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 15px !important;
+  }
+
+  /* Maitryi Pillars */
+  .eim-pillars-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .eim-pillar-card {
+    padding: 15px 14px 16px !important;
+    border-radius: 12px !important;
+  }
+
+  .eim-pillar-top {
+    margin-bottom: 10px !important;
+  }
+
+  /* Uptime Section */
+  .eim-swap-clock {
+    font-size: 40px !important;
+  }
+
+  /* Rail Horizontal Slider */
+  .eim-rail-slider {
+    padding: 4px 16px 16px !important;
+    gap: 12px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .eim-rail-card {
+    width: 82vw !important;
+    max-width: 290px !important;
+    min-height: auto !important;
+  }
+
+  .eim-rail-card-img {
+    height: 155px !important;
+  }
+
+  /* Proof Grid & Support Grid */
+  .eim-proof-grid,
+  .eim-support-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .eim-support-item {
+    padding: 13px !important;
+  }
+
+  /* Testimonials */
+  .eim-quotes-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .eim-quote-card,
+  .eim-quote-card-dark {
+    padding: 18px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .eim-quote-text {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Footer */
+  .eim-footer {
+    padding: 36px 16px 85px !important;
+  }
+
+  .eim-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+}
+
+/* SMALL PHONES (< 480px) */
+@media (max-width: 480px) {
+  .eim-overview-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  .eim-hero-title,
+  h1 {
+    font-size: 26px !important;
+    line-height: 1.15 !important;
+  }
+
+  .eim-sticky-wrap,
+  #eim-sticky {
+    bottom: max(10px, env(safe-area-inset-bottom, 10px)) !important;
+    width: calc(100% - 16px) !important;
+    max-width: calc(100% - 16px) !important;
+  }
+
+  .eim-sticky-pill {
+    padding: 6px 6px 6px 12px !important;
+    gap: 6px !important;
+    justify-content: space-between !important;
+  }
+
+  .eim-sticky-info {
+    font-size: 9px !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .eim-sticky-btn {
+    padding: 8px 12px !important;
+    font-size: 11.5px !important;
+    width: auto !important;
+  }
+}

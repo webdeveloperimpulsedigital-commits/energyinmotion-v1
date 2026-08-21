@@ -407,7 +407,7 @@ p {
 }
 
 /* --------------------------------------------------------------------------
-   4. Section 1: Hero Section (Stable.auto Inspired Cinematic Split)
+   4. Section 1: Hero Section (Clean Crisp Editorial Split)
    -------------------------------------------------------------------------- */
 .eim-hero-section {
   position: relative;
@@ -420,10 +420,6 @@ p {
               radial-gradient(circle at 10% 85%, rgba(0, 67, 77, 0.05) 0%, transparent 45%),
               linear-gradient(180deg, #FFFFFF 0%, #F6FAFE 100%);
   overflow: hidden;
-}
-
-.eim-hero-bg-media {
-  display: none;
 }
 
 .eim-hero-glow-orb {
@@ -482,6 +478,86 @@ p {
   50% { transform: scale(1.3); opacity: 0.7; }
 }
 
+.eim-hero-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--eim-text-title);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.eim-hero-section .gradient-title-text {
+  background: linear-gradient(135deg, #00B085 0%, #00434D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--eim-teal-main);
+  display: inline;
+}
+
+.eim-hero-desc {
+  font-size: clamp(1.02rem, 1.25vw, 1.15rem);
+  color: var(--eim-text-body);
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+  max-width: 540px;
+}
+
+/* 3 Key Metric Highlight Cards */
+.eim-hero-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 1.5rem 0 1.5rem;
+}
+
+.eim-hero-highlight-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #FFFFFF;
+  border: 1px solid #E2EBE9;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 27, 30, 0.04);
+  transition: all 0.25s ease;
+}
+
+.eim-hero-highlight-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--eim-teal-main);
+  box-shadow: 0 6px 18px rgba(0, 176, 133, 0.12);
+}
+
+.eim-hero-highlight-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #E8F7F3;
+  color: var(--eim-teal-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.eim-hero-highlight-title {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--eim-text-title);
+  line-height: 1.2;
+}
+
+.eim-hero-highlight-sub {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--eim-text-muted);
+  line-height: 1.2;
+}
+
 .eim-hero-audience-card {
   display: inline-flex;
   align-items: center;
@@ -506,33 +582,27 @@ p {
   font-weight: 600;
 }
 
-/* Quick Highlight Badges in Hero Left Column */
-.eim-hero-pills-row {
+.eim-form-trust {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 1.5rem;
-}
-
-.eim-hero-badge-pill {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: var(--eim-radius-pill);
-  background: #FFFFFF;
-  border: 1px solid var(--eim-border-medium);
-  color: var(--eim-text-title);
-  font-size: 0.84rem;
-  font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0, 27, 30, 0.04);
-  transition: var(--eim-transition);
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  color: var(--eim-text-muted);
+  font-weight: 500;
+  margin-top: 12px;
+  text-align: center;
 }
 
-.eim-hero-badge-pill:hover {
-  border-color: var(--eim-teal-main);
-  background: var(--eim-teal-light);
-  transform: translateY(-2px);
+.eim-form-trust i {
+  color: var(--eim-teal-main);
+}
+
+@media (max-width: 576px) {
+  .eim-hero-highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 }
 
 /* Hero Right Showcase Container */
