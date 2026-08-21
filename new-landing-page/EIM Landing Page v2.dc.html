@@ -43,7 +43,12 @@
 <span class="eim-hero-tag-text">Heavy Mobility Reimagined</span>
 </div>
 <h1 class="eim-hero-title">
-<span class="eim-word-wrap"><span class="eim-word-anim" style="animation:eimRise 1.05s .1s cubic-bezier(.16,.9,.24,1) both">Electric&nbsp;</span></span><span class="eim-word-wrap"><span class="eim-word-anim" style="animation:eimRise 1.05s .18s cubic-bezier(.16,.9,.24,1) both">Heavy-Duty&nbsp;</span></span><span class="eim-word-wrap"><span class="eim-word-anim" style="animation:eimRise 1.05s .26s cubic-bezier(.16,.9,.24,1) both">Trucks.&nbsp;</span></span><span class="eim-word-wrap"><span class="eim-word-anim" style="animation:eimRise 1.05s .34s cubic-bezier(.16,.9,.24,1) both">Built&nbsp;</span></span><span class="eim-word-wrap"><span class="eim-word-anim" style="animation:eimRise 1.05s .42s cubic-bezier(.16,.9,.24,1) both">Around&nbsp;</span></span><span class="eim-word-wrap"><span class="eim-word-anim" style="color:var(--eim-accent);animation:eimRise 1.05s .5s cubic-bezier(.16,.9,.24,1) both">Uptime.</span></span>
+<span class="eim-word-wrap"><span class="eim-word-anim" style="animation:eimRise 1.05s .1s cubic-bezier(.16,.9,.24,1) both">Electric</span></span>
+<span class="eim-word-wrap"><span class="eim-word-anim" style="animation:eimRise 1.05s .18s cubic-bezier(.16,.9,.24,1) both">Heavy-Duty</span></span>
+<span class="eim-word-wrap"><span class="eim-word-anim" style="animation:eimRise 1.05s .26s cubic-bezier(.16,.9,.24,1) both">Trucks.</span></span>
+<span class="eim-word-wrap"><span class="eim-word-anim" style="animation:eimRise 1.05s .34s cubic-bezier(.16,.9,.24,1) both">Built</span></span>
+<span class="eim-word-wrap"><span class="eim-word-anim" style="animation:eimRise 1.05s .42s cubic-bezier(.16,.9,.24,1) both">Around</span></span>
+<span class="eim-word-wrap"><span class="eim-word-anim eim-hero-title-accent" style="color:var(--eim-accent);animation:eimRise 1.05s .5s cubic-bezier(.16,.9,.24,1) both">Uptime.</span></span>
 </h1>
 <p class="eim-hero-lead">Move heavy freight towards electric with a 55T e-tractor, Battery-as-a-Service, fast battery swapping and charging infrastructure designed around real fleet operations.</p>
 <p class="eim-hero-sub">For fleet owners, transporters, ports, terminals and enterprise logistics teams.</p>
@@ -57,12 +62,11 @@
 <div id="enquiry" class="eim-form-wrap">
 <div id="eim-formcard" class="eim-form-card">
 <span class="eim-form-accent-bar"></span>
-<sc-if value="{{ heroForm }}" hint-placeholder-val="{{ true }}">
 <div class="eim-form-header">
 <h2 class="eim-form-title">Tell us about your requirement</h2>
 <span class="eim-form-badge">60 seconds</span>
 </div>
-<form onSubmit="{{ onHero }}" action="contact-mailto.php" method="POST" class="eim-form-body">
+<form action="contact-mailto.php" method="POST" class="eim-form-body">
 <input type="hidden" name="which" value="Hero Form">
 <div class="eim-form-grid">
 <label class="eim-form-label"><span class="eim-form-label-text">Full Name<span class="eim-form-req">*</span></span><input type="text" name="name" required="required" class="eim-form-input"></label>
@@ -82,20 +86,8 @@
 </select></label>
 <label class="eim-form-label"><span class="eim-form-label-text">Tell us about your fleet, route or requirement</span><textarea name="details" rows="2" placeholder="Optional" class="eim-form-textarea"></textarea></label>
 <button type="submit" class="eim-form-submit">Discuss My Requirement</button>
-<p class="eim-form-disclaimer">By submitting this form, you consent to Energy In Motion contacting you regarding your enquiry. <a href="#">Privacy Policy</a></p>
+<p class="eim-form-disclaimer">By submitting this form, you consent to Energy In Motion contacting you regarding your enquiry.</p>
 </form>
-</sc-if>
-<sc-if value="{{ heroSent }}">
-<div class="eim-thank-you">
-<div class="eim-check-circle">&#10003;</div>
-<h2 class="eim-thank-title">Thank you. We&rsquo;ve received your requirement.</h2>
-<p class="eim-thank-desc">The EIM team will review the details you have shared and get in touch to understand your fleet, route and operating requirements better.</p>
-<div class="eim-thank-footer">
-<div class="eim-thank-brand">Energy In Motion</div>
-<div class="eim-thank-sub">Heavy Mobility Reimagined</div>
-</div>
-</div>
-</sc-if>
 </div>
 </div>
 </div>
@@ -235,7 +227,7 @@
 
 <div data-stage="1" class="eim-maitryi-stage">
 <div data-stage-clip="1" class="eim-stage-clip">
-<img data-maitryi-img="1" src="assets/maitryi-model.webp" alt="Maitryi business model: fleet owners and transporters, e-tractor ownership without battery pack, battery pack ownership, charging and swapping infrastructure, end-to-end supply of green energy" class="eim-stage-img">
+<img data-maitryi-img="1" src="assets/Maitryi-Model.jpg" alt="Maitryi business model: fleet owners and transporters, e-tractor ownership without battery pack, battery pack ownership, charging and swapping infrastructure, end-to-end supply of green energy" class="eim-stage-img">
 </div>
 <span class="eim-stage-scan"></span>
 <span class="eim-stage-corner eim-corner-tl"></span>
@@ -551,10 +543,13 @@
 <!-- SECTION 07: CUSTOMER PROOF -->
 <section data-reveal="1" class="eim-customer-section">
 <div class="eim-customer-container">
-<div style="margin-bottom:clamp(30px,3.6vw,52px)">
+<div class="eim-customer-header-wrap">
+<div>
 <div class="eim-section-tag"><span class="eim-section-num">07</span><span class="eim-section-line"></span></div>
 <h2 class="eim-section-title">Customer Proof</h2>
 <p class="eim-section-lead">What operators say after making the switch.</p>
+</div>
+<span class="eim-scroll-hint eim-quotes-scroll-hint">&rarr;&nbsp; scroll</span>
 </div>
 <div class="eim-quotes-grid">
 <!-- Testimonial 1: Vitthal Wable -->
@@ -628,9 +623,8 @@
 </div>
 <div class="eim-form-card">
 <span class="eim-form-accent-bar"></span>
-<sc-if value="{{ finalForm }}" hint-placeholder-val="{{ true }}">
 <h3 class="eim-form-title" style="margin-bottom:18px">Tell us about your requirement</h3>
-<form onSubmit="{{ onFinal }}" action="contact-mailto.php" method="POST" class="eim-form-body">
+<form action="contact-mailto.php" method="POST" class="eim-form-body">
 <input type="hidden" name="which" value="Final CTA Form">
 <div class="eim-form-grid">
 <label class="eim-form-label"><span class="eim-form-label-text">Full Name<span class="eim-form-req">*</span></span><input type="text" name="name2" required="required" class="eim-form-input"></label>
@@ -650,20 +644,8 @@
 </select></label>
 <label class="eim-form-label"><span class="eim-form-label-text">Fleet / Route Details</span><textarea name="details2" rows="2" placeholder="Optional" class="eim-form-textarea"></textarea></label>
 <button type="submit" class="eim-form-submit eim-form-submit-accent">Discuss My Requirement</button>
-<p class="eim-form-disclaimer">By submitting this form, you consent to Energy In Motion contacting you regarding your enquiry. <a href="#">Privacy Policy</a></p>
+<p class="eim-form-disclaimer">By submitting this form, you consent to Energy In Motion contacting you regarding your enquiry.</p>
 </form>
-</sc-if>
-<sc-if value="{{ finalSent }}">
-<div class="eim-thank-you">
-<div class="eim-check-circle">&#10003;</div>
-<h3 class="eim-thank-title">Thank you. We&rsquo;ve received your requirement.</h3>
-<p class="eim-thank-desc">The EIM team will review the details you have shared and get in touch to understand your fleet, route and operating requirements better.</p>
-<div class="eim-thank-footer">
-<div class="eim-thank-brand">Energy In Motion</div>
-<div class="eim-thank-sub">Heavy Mobility Reimagined</div>
-</div>
-</div>
-</sc-if>
 </div>
 </div>
 </div>
@@ -684,24 +666,19 @@
 <div class="eim-footer-col">
 <div class="eim-footer-col-title">Contact</div>
 <a href="mailto:powerup@energyinmotion.in" class="eim-footer-link">powerup@energyinmotion.in</a>
-<div class="eim-footer-nav">
-<a href="#">Privacy Policy</a><span class="eim-footer-sep">|</span><a href="#">Terms</a>
-</div>
 </div>
 </div>
 <div class="eim-footer-bottom">&copy; 2026 Energy In Motion Limited. All rights reserved.</div>
 </div>
 </footer>
 
-<!-- FLOATING STICKY BOTTOM BAR (MOBILE) -->
-<sc-if value="{{ sticky }}" hint-placeholder-val="{{ true }}">
+<!-- FLOATING STICKY BOTTOM BAR (MOBILE & DESKTOP) -->
 <div id="eim-sticky" class="eim-sticky-wrap">
 <div class="eim-sticky-pill">
 <span class="eim-sticky-info"><span class="eim-badge-dot"></span>55T &middot; 7-min swap</span>
 <a href="#enquiry" data-cta="1" class="eim-sticky-btn">Discuss Your Fleet Requirement</a>
 </div>
 </div>
-</sc-if>
 
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#38E0CF&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#38E0CF&quot;,&quot;#00C2B2&quot;,&quot;#7BE3A6&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;stickyCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conversion&quot;},&quot;previewThankYou&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conversion&quot;}}">
@@ -769,8 +746,9 @@ class Component extends DCLogic {
         const target = parseFloat(el.getAttribute('data-count'));
         const suffix = el.getAttribute('data-suffix') || '';
         const pad = parseInt(el.getAttribute('data-pad') || '0', 10);
-        const dur = 1100, t0 = performance.now();
+        const dur = 1200, t0 = performance.now();
         const fmt = v => (pad ? String(v).padStart(pad, '0') : String(v)) + suffix;
+        el.textContent = fmt(0);
         const step = now => {
           const p = Math.min(1, (now - t0) / dur);
           const eased = 1 - Math.pow(1 - p, 3);
@@ -779,7 +757,7 @@ class Component extends DCLogic {
         };
         requestAnimationFrame(step);
       });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.15 });
     els.forEach(el => this.io2.observe(el));
   }
 
@@ -788,8 +766,8 @@ class Component extends DCLogic {
     const rows = Array.from(document.querySelectorAll('[data-acc-row]'));
     const open = idx => {
       rows.forEach((r, i) => {
-        const panel = r.querySelector('[data-acc-panel]');
-        const plus = r.querySelector('[data-acc-plus]');
+        const panel = r.querySelector('[data-acc-panel]') || r.querySelector('.eim-acc-panel');
+        const plus = r.querySelector('[data-acc-plus]') || r.querySelector('.eim-acc-plus');
         const on = i === idx;
         if (panel) panel.style.maxHeight = on ? panel.scrollHeight + 40 + 'px' : '0px';
         if (plus) {
@@ -802,14 +780,14 @@ class Component extends DCLogic {
       this.openRow = idx;
     };
     rows.forEach((r, i) => r.addEventListener('click', () => open(this.openRow === i ? -1 : i)));
-    setTimeout(() => open(0), 500);
+    setTimeout(() => open(0), 300);
   }
 
   /* cursor spotlight on the Maitryi section */
   spotlight() {
-    const sec = document.querySelector('[data-spotlight]');
+    const sec = document.querySelector('[data-spotlight]') || document.getElementById('maitryi');
     if (!sec) return;
-    const spot = sec.querySelector('[data-spot]');
+    const spot = sec.querySelector('[data-spot]') || sec.querySelector('.eim-spotlight-beam');
     if (!spot) return;
     sec.addEventListener('mousemove', e => {
       const r = sec.getBoundingClientRect();
@@ -879,14 +857,15 @@ class Component extends DCLogic {
     });
   }
 
-  /* 7-minute swap visualizer */
+  /* 7-minute swap visualizer (Fast Demo Cycle) */
   swapCycle() {
     const clock = document.querySelector('[data-swap-clock]');
     const state = document.querySelector('[data-swap-state]');
     const segs = Array.from(document.querySelectorAll('[data-swap-seg]'));
     if (!clock) return;
-    let t = 7 * 60;
     const dur = 7 * 60;
+    let t = dur;
+    let pause = 0;
     const render = () => {
       const m = Math.floor(t / 60);
       const s = t % 60;
@@ -895,37 +874,60 @@ class Component extends DCLogic {
       const activeSeg = Math.min(6, Math.floor(prog * 7));
       segs.forEach((seg, i) => {
         seg.style.opacity = i <= activeSeg ? '1' : '.16';
+        seg.style.background = i <= activeSeg ? 'var(--eim-accent,#38E0CF)' : 'rgba(255,255,255,.2)';
       });
-      if (state) state.textContent = t === 0 ? 'Ready / Dispatched' : 'Swapping in progress';
+      if (state) state.textContent = t <= 0 ? 'Ready / Dispatched' : 'Swapping in progress';
     };
     render();
     this.swapTimer = setInterval(() => {
-      t = t <= 0 ? dur : t - 1;
-      render();
-    }, 1000);
+      if (pause > 0) {
+        pause--;
+        if (pause === 0) { t = dur; render(); }
+        return;
+      }
+      t -= 3;
+      if (t <= 0) {
+        t = 0;
+        render();
+        pause = 35;
+      } else {
+        render();
+      }
+    }, 45);
   }
 
   /* scroll progress + sticky pill + parallax */
   scrollFx() {
-    const bar = document.getElementById('eim-progress');
-    const sticky = document.getElementById('eim-sticky');
-    const heroImg = document.getElementById('eim-hero-img');
-    this.onScroll = () => {
-      const st = window.scrollY || window.pageYOffset;
-      const h = document.documentElement.scrollHeight - window.innerHeight;
-      if (bar && h > 0) bar.style.transform = 'scaleX(' + Math.min(1, st / h) + ')';
+    const update = () => {
+      const bar = document.getElementById('eim-progress');
+      const sticky = document.getElementById('eim-sticky') || document.querySelector('.eim-sticky-wrap');
+      const heroImg = document.getElementById('eim-hero-img');
+      const st = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || window.scrollY || 0;
+      const docH = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, 1);
+      const winH = window.innerHeight || document.documentElement.clientHeight || 1;
+      const h = docH - winH;
+
+      if (bar && h > 0) bar.style.transform = 'scaleX(' + Math.min(1, Math.max(0, st / h)) + ')';
       if (sticky) {
-        const show = st > 520 && (h - st > 400);
-        sticky.style.opacity = show ? '1' : '0';
-        sticky.style.transform = show ? 'translate(-50%, 0)' : 'translate(-50%, 20px)';
-        sticky.style.pointerEvents = show ? 'auto' : 'none';
+        const show = st > 80;
+        if (show) {
+          sticky.classList.add('is-visible');
+        } else {
+          sticky.classList.remove('is-visible');
+        }
       }
       if (heroImg && st < 900) {
         heroImg.style.transform = 'translate3d(0,' + (st * 0.22) + 'px,0)';
       }
     };
-    window.addEventListener('scroll', this.onScroll, { passive: true });
-    this.onScroll();
+
+    this.onScroll = update;
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    document.addEventListener('scroll', update, { passive: true });
+    setTimeout(update, 100);
+    setTimeout(update, 400);
+    update();
   }
 
   /* CTA flash effect on focus */

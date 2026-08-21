@@ -366,20 +366,23 @@ header a[data-cta]:hover {
 .eim-hero-title,
 h1 {
   margin: 0 0 clamp(16px, 2.2vw, 26px);
-  font-size: clamp(34px, 5.2vw, 76px);
-  line-height: 1.05;
+  font-size: clamp(28px, 4.8vw, 72px);
+  line-height: 1.08;
   letter-spacing: -0.035em;
   font-weight: 500;
   max-width: 100%;
   word-break: normal;
-  overflow: visible;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.eim-hero-title-accent {
+  color: var(--eim-accent);
+  display: inline-block;
 }
 
 .eim-word-wrap {
   display: inline-block;
-  overflow: visible;
-  padding-bottom: 0.05em;
-  margin-bottom: -0.05em;
   vertical-align: baseline;
 }
 
@@ -389,12 +392,13 @@ h1 {
 
 .eim-hero-lead {
   margin: 0 0 18px;
-  font-size: clamp(16px, 1.25vw, 19.5px);
+  font-size: clamp(15px, 1.2vw, 19px);
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.82);
   max-width: 54ch;
   animation: eimUp 1s 0.58s cubic-bezier(0.16, 0.84, 0.28, 1) both;
   text-wrap: pretty;
+  overflow-wrap: break-word;
 }
 
 .eim-hero-sub {
@@ -406,6 +410,7 @@ h1 {
   color: var(--eim-text-subtle);
   max-width: 52ch;
   animation: eimUp 1s 0.66s cubic-bezier(0.16, 0.84, 0.28, 1) both;
+  overflow-wrap: break-word;
 }
 
 .eim-hero-cta-wrap {
@@ -1019,10 +1024,12 @@ form button[type="submit"]:hover {
   left: 0;
   top: 0;
   margin: -380px 0 0 -380px;
-  background: radial-gradient(circle, rgba(56,224,207,0.13) 0%, rgba(56,224,207,0) 62%);
+  background: radial-gradient(circle, rgba(56,224,207,0.22) 0%, rgba(56,224,207,0.08) 40%, rgba(56,224,207,0) 70%);
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+  mix-blend-mode: screen;
 }
 
 .eim-drift-glow {
@@ -1050,20 +1057,26 @@ form button[type="submit"]:hover {
   overflow: hidden;
   background: var(--eim-darkest);
   box-shadow: 0 46px 110px rgba(0, 10, 13, 0.6);
+  width: 100%;
 }
 
 .eim-stage-clip {
   overflow: hidden;
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 1.6s cubic-bezier(0.16, 0.84, 0.28, 1);
+  clip-path: inset(0 0 0 0) !important;
+  width: 100%;
+  padding: 0;
+  display: block;
 }
 
 .eim-stage-img {
   display: block;
   width: 100%;
   height: auto;
-  transform: scale(1.06);
-  transition: transform 2.4s cubic-bezier(0.16, 0.84, 0.28, 1);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transform: none;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .eim-stage-scan {
@@ -1758,6 +1771,18 @@ form button[type="submit"]:hover {
   margin: 0 auto;
 }
 
+.eim-customer-header-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: clamp(30px, 3.6vw, 52px);
+}
+
+.eim-quotes-scroll-hint {
+  display: none;
+}
+
 .eim-quotes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
@@ -2067,19 +2092,29 @@ form button[type="submit"]:hover {
 }
 
 /* --------------------------------------------------------------------------
-   20. Sticky Bottom Bar Component (Mobile Floating CTA)
+   20. Sticky Bottom Bar Component (Mobile & Desktop Floating CTA)
    -------------------------------------------------------------------------- */
 .eim-sticky-wrap,
 #eim-sticky {
-  position: fixed;
-  left: 50%;
-  bottom: clamp(12px, 2.4vw, 26px);
+  position: fixed !important;
+  left: 50% !important;
+  bottom: clamp(14px, 2.6vw, 28px) !important;
   transform: translate(-50%, 20px);
-  z-index: 85;
+  z-index: 99999 !important;
   opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 0.84, 0.28, 1);
+  visibility: hidden;
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 0.84, 0.28, 1), visibility 0.35s ease;
   pointer-events: none;
-  max-width: calc(100% - 24px);
+  max-width: calc(100% - 24px) !important;
+  box-sizing: border-box !important;
+}
+
+.eim-sticky-wrap.is-visible,
+#eim-sticky.is-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translate(-50%, 0) !important;
+  pointer-events: auto !important;
 }
 
 .eim-sticky-pill {
@@ -2198,25 +2233,38 @@ form button[type="submit"]:hover {
   /* Hero Section */
   .eim-hero-section,
   section:first-of-type {
-    padding-top: 24px !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-top: 20px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .eim-hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 24px !important;
+    box-sizing: border-box !important;
   }
 
   .eim-hero-title,
   h1 {
-    font-size: clamp(26px, 7.4vw, 36px) !important;
-    line-height: 1.12 !important;
-    letter-spacing: -0.028em !important;
+    font-size: clamp(24px, 6.6vw, 34px) !important;
+    line-height: 1.14 !important;
+    letter-spacing: -0.025em !important;
     margin-bottom: 14px !important;
     max-width: 100% !important;
     word-break: normal !important;
-    overflow: visible !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
   }
 
   .eim-word-wrap {
     display: inline !important;
-    overflow: visible !important;
     width: auto !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -2227,22 +2275,31 @@ form button[type="submit"]:hover {
     display: inline !important;
   }
 
+  .eim-hero-title-accent {
+    display: inline !important;
+  }
+
   .eim-hero-lead {
-    font-size: 15px !important;
+    font-size: 14.5px !important;
     line-height: 1.5 !important;
     margin-bottom: 14px !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
   }
 
   .eim-hero-sub {
     font-size: 13px !important;
     padding-top: 12px !important;
     margin-bottom: 20px !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
   }
 
   .eim-hero-cta-wrap {
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 10px !important;
+    width: 100% !important;
   }
 
   .eim-btn-hero,
@@ -2253,18 +2310,53 @@ form button[type="submit"]:hover {
     padding: 14px 20px !important;
     font-size: 15px !important;
     display: inline-flex !important;
+    box-sizing: border-box !important;
   }
 
-  /* Form */
+  /* Form Container */
+  .eim-form-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .eim-form-card,
   #eim-formcard {
+    width: 100% !important;
+    max-width: 100% !important;
     padding: 18px 14px !important;
     border-radius: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .eim-form-header {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    margin-bottom: 14px !important;
+    width: 100% !important;
+  }
+
+  .eim-form-title {
+    font-size: 18.5px !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  .eim-form-badge {
+    font-size: 9.5px !important;
+    letter-spacing: 0.1em !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
   }
 
   .eim-form-grid {
     grid-template-columns: 1fr !important;
     gap: 10px !important;
+    width: 100% !important;
   }
 
   .eim-form-input,
@@ -2273,12 +2365,16 @@ form button[type="submit"]:hover {
     padding: 12px 13px !important;
     border-radius: 10px !important;
     font-size: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .eim-form-submit {
     padding: 14px !important;
     font-size: 15.5px !important;
     border-radius: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* Key Stats Bar */
@@ -2377,21 +2473,75 @@ form button[type="submit"]:hover {
     padding: 13px !important;
   }
 
-  /* Testimonials */
+  /* Testimonials Slider on Mobile */
+  .eim-customer-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .eim-customer-container {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .eim-customer-header-wrap {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    gap: 12px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .eim-quotes-scroll-hint {
+    display: inline-block !important;
+    font-family: var(--eim-font-mono);
+    font-size: 10.5px !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase !important;
+    color: var(--eim-text-muted) !important;
+  }
+
   .eim-quotes-grid {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: row !important;
     gap: 14px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 6px 16px 22px !important;
+    margin: 0 !important;
+    scrollbar-width: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .eim-quotes-grid::-webkit-scrollbar {
+    display: none !important;
   }
 
   .eim-quote-card,
   .eim-quote-card-dark {
-    padding: 18px 14px !important;
-    border-radius: 14px !important;
+    flex: 0 0 84vw !important;
+    width: 84vw !important;
+    max-width: 320px !important;
+    min-width: 270px !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+    padding: 22px 18px !important;
+    border-radius: 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+    box-sizing: border-box !important;
   }
 
   .eim-quote-text {
-    font-size: 16px !important;
-    line-height: 1.4 !important;
+    font-size: 15px !important;
+    line-height: 1.45 !important;
   }
 
   /* Footer */

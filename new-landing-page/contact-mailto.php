@@ -175,8 +175,9 @@ $is_ajax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HT
 if ($is_ajax) {
     header('Content-Type: application/json');
     echo json_encode([
-        'status'  => 'success',
-        'message' => 'Thank you. We have received your requirement.'
+        'status'   => 'success',
+        'message'  => 'Thank you. We have received your requirement.',
+        'redirect' => 'thank-you.html'
     ]);
     exit;
 } else {

@@ -4,116 +4,192 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Thank You | Energy In Motion</title>
-<link rel="icon" type="image/png" href="../images/favicon.png">
+<meta name="description" content="Thank you for submitting your fleet requirement. The Energy In Motion team will get in touch shortly.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
+<!-- Google Fonts / Fontshare -->
 <link rel="preconnect" href="https://api.fontshare.com">
-<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/style.css">
+
 <style>
-  body {
-    background: #01262D;
-    color: #ffffff;
+  .eim-ty-page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0;
+    background: var(--eim-dark);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
   }
-  .thank-wrap {
+
+  .eim-ty-main {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(40px, 6vw, 80px) 20px;
-  }
-  .thank-card {
-    background: #ffffff;
-    color: #01262D;
-    border-radius: 20px;
-    padding: clamp(32px, 4vw, 56px);
-    max-width: 560px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 30px 80px rgba(0, 10, 13, 0.6);
+    padding: clamp(50px, 8vw, 100px) 16px;
     position: relative;
-    overflow: hidden;
+    z-index: 2;
   }
-  .thank-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #38E0CF;
+
+  .eim-ty-card {
+    max-width: 680px;
+    width: 100%;
+    background: rgba(1, 38, 45, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(56, 224, 207, 0.35);
+    border-radius: 24px;
+    padding: clamp(36px, 5vw, 60px) clamp(24px, 4vw, 48px);
+    text-align: center;
+    box-shadow: 0 30px 80px rgba(0, 10, 13, 0.6), 0 0 40px rgba(56, 224, 207, 0.15);
+    position: relative;
+    animation: eimUp 0.9s cubic-bezier(0.16, 0.84, 0.28, 1) both;
   }
-  .thank-icon {
-    width: 60px;
-    height: 60px;
-    background: #38E0CF;
+
+  .eim-ty-icon-wrap {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 24px;
     border-radius: 50%;
+    background: rgba(56, 224, 207, 0.12);
+    border: 1px solid var(--eim-accent);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
-    color: #01262D;
-    font-weight: 700;
-    margin: 0 auto 24px;
+    color: var(--eim-accent);
+    font-size: 32px;
+    box-shadow: 0 0 30px rgba(56, 224, 207, 0.35);
   }
-  .thank-title {
-    font-size: clamp(24px, 3vw, 34px);
-    font-weight: 600;
+
+  .eim-ty-title {
+    font-size: clamp(28px, 4vw, 40px);
     line-height: 1.15;
+    font-weight: 500;
     margin: 0 0 16px;
     letter-spacing: -0.03em;
   }
-  .thank-desc {
-    font-size: 16px;
+
+  .eim-ty-desc {
+    font-size: clamp(15.5px, 1.3vw, 18px);
     line-height: 1.6;
-    color: #4A6B70;
-    margin: 0 0 32px;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 auto 32px;
+    max-width: 48ch;
   }
-  .btn-back {
-    display: inline-block;
-    background: #01262D;
-    color: #ffffff;
+
+  .eim-ty-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--eim-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--eim-accent);
+    background: rgba(56, 224, 207, 0.08);
+    padding: 7px 16px;
+    border-radius: 100px;
+    border: 1px solid rgba(56, 224, 207, 0.25);
+    margin-bottom: 24px;
+  }
+
+  .eim-ty-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  .eim-ty-btn-primary {
+    background: var(--eim-accent);
+    color: var(--eim-dark);
     font-weight: 600;
     padding: 14px 28px;
     border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.25s, color 0.25s;
+    font-size: 15px;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 8px 24px var(--eim-accent-glow);
   }
-  .btn-back:hover {
-    background: #38E0CF;
-    color: #01262D;
+
+  .eim-ty-btn-primary:hover {
+    background: #ffffff;
+    color: var(--eim-dark);
+    transform: translateY(-2px);
+  }
+
+  .eim-ty-btn-outline {
+    background: transparent;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+  }
+
+  .eim-ty-btn-outline:hover {
+    border-color: var(--eim-accent);
+    color: var(--eim-accent);
+    background: rgba(56, 224, 207, 0.05);
   }
 </style>
 </head>
-<body>
+<body class="eim-ty-page">
+
+<!-- HEADER -->
 <header class="eim-header">
-  <div class="eim-header-inner">
-    <div class="eim-header-left">
-      <a href="index.html" class="eim-header-logo-link">
-        <img src="../images/logo-eim.svg" alt="Energy In Motion" class="eim-header-logo">
-      </a>
-    </div>
-    <a href="index.html" class="eim-header-cta">Back to Home</a>
-  </div>
+<div class="eim-header-inner">
+<div class="eim-header-left">
+<a href="index.html" class="eim-header-logo-link"><img src="assets/logo-eim.svg" alt="Energy In Motion logo" class="eim-header-logo"></a>
+<span class="eim-header-badge"><span class="eim-badge-dot"></span>7 stations operational</span>
+</div>
+<a href="index.html" class="eim-header-cta">Back to Home</a>
+</div>
 </header>
 
-<main class="thank-wrap">
-  <div class="thank-card">
-    <div class="thank-icon">&#10003;</div>
-    <h1 class="thank-title">Thank you. We&rsquo;ve received your requirement.</h1>
-    <p class="thank-desc">The Energy In Motion team will review the details you shared and get in touch to understand your fleet, route and operating requirements better.</p>
-    <a href="index.html" class="btn-back">Back to Landing Page &rarr;</a>
+<!-- MAIN CONTENT -->
+<main class="eim-ty-main">
+  <div class="eim-ty-card">
+    <div class="eim-ty-badge"><span class="eim-badge-dot"></span>Requirement Received</div>
+    <div class="eim-ty-icon-wrap">&#10003;</div>
+    <h1 class="eim-ty-title">Thank you. We&rsquo;ve received your requirement.</h1>
+    <p class="eim-ty-desc">The EIM team will review the details you have shared and get in touch to understand your fleet, route and operating requirements better.</p>
+    
+    <div class="eim-ty-actions">
+      <a href="index.html" class="eim-ty-btn-primary">Return to Homepage</a>
+      <a href="mailto:powerup@energyinmotion.in" class="eim-ty-btn-outline">Email Fleet Team</a>
+    </div>
   </div>
 </main>
 
-<footer class="eim-footer" style="padding-top: 30px; padding-bottom: 30px;">
-  <div class="eim-footer-container" style="text-align: center;">
-    <div class="eim-footer-bottom">&copy; 2026 Energy In Motion Limited. All rights reserved.</div>
-  </div>
+<!-- FOOTER -->
+<footer class="eim-footer">
+<div class="eim-footer-container">
+<div class="eim-footer-grid">
+<div>
+<img src="assets/logo-eim.svg" alt="Energy In Motion" loading="lazy" class="eim-footer-logo">
+<div class="eim-footer-tagline">Heavy Mobility Reimagined</div>
+</div>
+<div class="eim-footer-col">
+<div class="eim-footer-col-title">Registered office</div>
+1A, 1st Floor, Kohinoor Square,<br>Dadar (W), Mumbai 400028, Maharashtra, India
+</div>
+<div class="eim-footer-col">
+<div class="eim-footer-col-title">Contact</div>
+<a href="mailto:powerup@energyinmotion.in" class="eim-footer-link">powerup@energyinmotion.in</a>
+</div>
+</div>
+<div class="eim-footer-bottom">&copy; 2026 Energy In Motion Limited. All rights reserved.</div>
+</div>
 </footer>
+
 </body>
 </html>
