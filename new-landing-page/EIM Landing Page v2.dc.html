@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <link rel="stylesheet" href="css/style.css">
 </helmet>
 
@@ -227,7 +228,11 @@
 
 <div data-stage="1" class="eim-maitryi-stage">
 <div data-stage-clip="1" class="eim-stage-clip">
-<img data-maitryi-img="1" src="assets/Maitryi-Model.jpg" alt="Maitryi business model: fleet owners and transporters, e-tractor ownership without battery pack, battery pack ownership, charging and swapping infrastructure, end-to-end supply of green energy" class="eim-stage-img">
+<picture>
+<source srcset="assets/maitryi-model.webp" type="image/webp">
+<source srcset="assets/Maitryi-Model-HD.png" type="image/png">
+<img data-maitryi-img="1" src="assets/Maitryi-Model.jpg" alt="Maitryi business model: fleet owners and transporters, e-tractor ownership without battery pack, battery pack ownership, charging and swapping infrastructure, end-to-end supply of green energy" class="eim-stage-img" loading="eager" decoding="async">
+</picture>
 </div>
 <span class="eim-stage-scan"></span>
 <span class="eim-stage-corner eim-corner-tl"></span>
@@ -549,10 +554,13 @@
 <h2 class="eim-section-title">Customer Proof</h2>
 <p class="eim-section-lead">What operators say after making the switch.</p>
 </div>
-<span class="eim-scroll-hint eim-quotes-scroll-hint">&rarr;&nbsp; scroll</span>
 </div>
-<div class="eim-quotes-grid">
-<!-- Testimonial 1: Vitthal Wable -->
+
+<!-- Swiper Testimonials Slider -->
+<div class="swiper eim-testimonials-swiper">
+<div class="swiper-wrapper">
+<!-- Slide 1: Vitthal Wable -->
+<div class="swiper-slide">
 <figure class="eim-quote-card">
 <blockquote class="eim-quote-text">&ldquo;As one of the early users of EIM vehicles at JNPT Port, I&rsquo;m amazed at the way EIM has created the charging infra in terms of speed &amp; scale. Looking at current oil prices, I feel lucky I switched to EV early.&rdquo;</blockquote>
 <figcaption class="eim-quote-author">
@@ -564,8 +572,10 @@
 </div>
 </figcaption>
 </figure>
+</div>
 
-<!-- Testimonial 2: Mr. Janardhan Matre -->
+<!-- Slide 2: Mr. Janardhan Matre -->
+<div class="swiper-slide">
 <figure class="eim-quote-card">
 <blockquote class="eim-quote-text">&ldquo;Our transition from ICE to EIM EVs has been a well-calculated strategic move. What truly differentiates EIM is the strength of their aftersales ecosystem. Their team has consistently ensured high fleet uptime and swift issue resolution.&rdquo;</blockquote>
 <figcaption class="eim-quote-author">
@@ -577,8 +587,10 @@
 </div>
 </figcaption>
 </figure>
+</div>
 
-<!-- Testimonial 3: Gurjeet Singh Bhatia -->
+<!-- Slide 3: Gurjeet Singh Bhatia -->
+<div class="swiper-slide">
 <figure class="eim-quote-card">
 <blockquote class="eim-quote-text">&ldquo;By deploying EIM vehicles in the NCR region, not only do I feel proud contributing to a Greener Environment, but our EV trucks are also exempted from the Rs 4,000 NGT Tax per trip imposed on Diesel trucks.&rdquo;</blockquote>
 <figcaption class="eim-quote-author">
@@ -590,8 +602,10 @@
 </div>
 </figcaption>
 </figure>
+</div>
 
-<!-- Testimonial 4: Mr. Ajit Kumar Singh -->
+<!-- Slide 4: Mr. Ajit Kumar Singh -->
+<div class="swiper-slide">
 <figure class="eim-quote-card">
 <blockquote class="eim-quote-text">&ldquo;Choosing Energy In Motion for our transition has proven to be the right decision. EIM's Aftersales team has demonstrated exceptional ownership, enabling us to maintain high fleet uptime while embracing a sustainable future.&rdquo;</blockquote>
 <figcaption class="eim-quote-author">
@@ -603,6 +617,21 @@
 </div>
 </figcaption>
 </figure>
+</div>
+</div>
+
+<!-- Swiper Controls: Pagination + Nav Buttons -->
+<div class="eim-testimonials-controls">
+<div class="swiper-pagination eim-testimonials-pagination"></div>
+<div class="eim-testimonials-nav">
+<button type="button" class="eim-testimonials-prev" aria-label="Previous Testimonial">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<button type="button" class="eim-testimonials-next" aria-label="Next Testimonial">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -695,6 +724,7 @@ class Component extends DCLogic {
     this.swapCycle();
     this.scrollFx();
     this.ctaFlash();
+    this.testimonialsSlider();
   }
 
   componentDidUpdate() { this.applyAccent(); }
@@ -948,6 +978,37 @@ class Component extends DCLogic {
         }
       });
     });
+  }
+
+  /* Testimonials Swiper Slider */
+  testimonialsSlider() {
+    if (typeof Swiper !== 'undefined' && document.querySelector('.eim-testimonials-swiper')) {
+      new Swiper('.eim-testimonials-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: true,
+        speed: 600,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        pagination: {
+          el: '.eim-testimonials-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.eim-testimonials-next',
+          prevEl: '.eim-testimonials-prev',
+        },
+        breakpoints: {
+          640: { slidesPerView: 1.15, spaceBetween: 18 },
+          768: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 2, spaceBetween: 24 },
+          1280: { slidesPerView: 2, spaceBetween: 28 }
+        }
+      });
+    }
   }
 
   /* Form Submission handler */

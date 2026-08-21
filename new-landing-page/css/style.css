@@ -1759,7 +1759,7 @@ form button[type="submit"]:hover {
 }
 
 /* --------------------------------------------------------------------------
-   17. Section 07: Customer Proof & Quotes
+   17. Section 07: Customer Proof & Testimonials Slider
    -------------------------------------------------------------------------- */
 .eim-customer-section {
   background: var(--eim-light);
@@ -1776,21 +1776,34 @@ form button[type="submit"]:hover {
   align-items: baseline;
   justify-content: space-between;
   gap: 18px;
-  margin-bottom: clamp(30px, 3.6vw, 52px);
+  margin-bottom: clamp(24px, 3.2vw, 44px);
 }
 
 .eim-quotes-scroll-hint {
   display: none;
 }
 
-.eim-quotes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  gap: 16px;
+.eim-testimonials-swiper {
+  width: 100%;
+  padding-bottom: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.eim-testimonials-swiper .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.eim-testimonials-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+  box-sizing: border-box;
 }
 
 .eim-quote-card {
   margin: 0;
+  width: 100%;
   background: #ffffff;
   color: var(--eim-dark);
   border: 1px solid var(--eim-border-light);
@@ -1801,6 +1814,7 @@ form button[type="submit"]:hover {
   justify-content: space-between;
   gap: 28px;
   cursor: default;
+  box-sizing: border-box;
   transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, transform 0.35s cubic-bezier(0.16, 0.84, 0.28, 1), box-shadow 0.35s ease;
 }
 
@@ -1908,6 +1922,81 @@ form button[type="submit"]:hover {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   margin-top: 5px;
+}
+
+/* Slider Controls */
+.eim-testimonials-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  position: relative;
+}
+
+.eim-testimonials-pagination.swiper-pagination {
+  position: relative !important;
+  bottom: 0 !important;
+  width: auto !important;
+  margin: 0 !important;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.eim-testimonials-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 !important;
+  background: #01262D;
+  opacity: 0.22;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.eim-testimonials-pagination .swiper-pagination-bullet-active {
+  width: 28px;
+  background: var(--eim-accent);
+  opacity: 1;
+  border-radius: 6px;
+}
+
+.eim-testimonials-nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.eim-testimonials-prev,
+.eim-testimonials-next {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--eim-border-light);
+  color: var(--eim-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.eim-testimonials-prev:hover,
+.eim-testimonials-next:hover {
+  background: var(--eim-dark);
+  color: #ffffff;
+  border-color: var(--eim-dark);
+  transform: translateY(-2px);
+}
+
+.eim-testimonials-prev.swiper-button-disabled,
+.eim-testimonials-next.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -2425,6 +2514,61 @@ form button[type="submit"]:hover {
     font-size: 15px !important;
   }
 
+  /* Maitryi Stage & Mobile Image Fix */
+  .eim-maitryi-stage {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    background: #011a1f !important;
+    box-shadow: 0 16px 40px rgba(0, 10, 13, 0.4) !important;
+    width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+
+  .eim-stage-clip {
+    clip-path: none !important;
+    width: 100% !important;
+    display: block !important;
+    overflow: hidden !important;
+  }
+
+  .eim-stage-img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: crisp-edges !important;
+  }
+
+  .eim-stage-scan {
+    display: none !important;
+  }
+
+  .eim-stage-corner {
+    display: none !important;
+  }
+
+  .eim-stage-footer {
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 14px !important;
+    background: rgba(0, 22, 26, 0.92) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .eim-stage-label,
+  .eim-stage-caption {
+    font-size: 9.5px !important;
+  }
+
   /* Maitryi Pillars */
   .eim-pillars-grid {
     grid-template-columns: 1fr !important;
@@ -2475,8 +2619,8 @@ form button[type="submit"]:hover {
 
   /* Testimonials Slider on Mobile */
   .eim-customer-section {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
     overflow: hidden !important;
   }
 
@@ -2486,8 +2630,7 @@ form button[type="submit"]:hover {
   }
 
   .eim-customer-header-wrap {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding: 0 !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: baseline !important;
@@ -2496,52 +2639,45 @@ form button[type="submit"]:hover {
   }
 
   .eim-quotes-scroll-hint {
-    display: inline-block !important;
-    font-family: var(--eim-font-mono);
-    font-size: 10.5px !important;
-    letter-spacing: 0.16em !important;
-    text-transform: uppercase !important;
-    color: var(--eim-text-muted) !important;
-  }
-
-  .eim-quotes-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 14px !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch !important;
-    padding: 6px 16px 22px !important;
-    margin: 0 !important;
-    scrollbar-width: none !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  .eim-quotes-grid::-webkit-scrollbar {
     display: none !important;
+  }
+
+  .eim-testimonials-swiper {
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .eim-testimonials-swiper .swiper-slide {
+    width: 100% !important;
   }
 
   .eim-quote-card,
   .eim-quote-card-dark {
-    flex: 0 0 84vw !important;
-    width: 84vw !important;
-    max-width: 320px !important;
-    min-width: 270px !important;
-    scroll-snap-align: start !important;
+    width: 100% !important;
     margin: 0 !important;
     padding: 22px 18px !important;
     border-radius: 16px !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    gap: 20px !important;
+    gap: 18px !important;
     box-sizing: border-box !important;
   }
 
   .eim-quote-text {
     font-size: 15px !important;
     line-height: 1.45 !important;
+  }
+
+  .eim-testimonials-controls {
+    margin-top: 16px !important;
+    padding: 0 !important;
+  }
+
+  .eim-testimonials-prev,
+  .eim-testimonials-next {
+    width: 38px !important;
+    height: 38px !important;
   }
 
   /* Footer */
