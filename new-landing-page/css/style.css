@@ -1058,25 +1058,28 @@ form button[type="submit"]:hover {
   background: var(--eim-darkest);
   box-shadow: 0 46px 110px rgba(0, 10, 13, 0.6);
   width: 100%;
+  display: block;
 }
 
 .eim-stage-clip {
   overflow: hidden;
-  clip-path: inset(0 0 0 0) !important;
+  clip-path: none !important;
   width: 100%;
   padding: 0;
   display: block;
+  position: relative;
 }
 
 .eim-stage-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  transform: none;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  transform: none !important;
   opacity: 1 !important;
   visibility: visible !important;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .eim-stage-scan {
@@ -1926,77 +1929,91 @@ form button[type="submit"]:hover {
 
 /* Slider Controls */
 .eim-testimonials-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 24px;
-  position: relative;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 18px !important;
+  margin-top: 28px !important;
+  position: relative !important;
+  width: 100% !important;
 }
 
-.eim-testimonials-pagination.swiper-pagination {
+.eim-testimonials-pagination {
   position: relative !important;
   bottom: 0 !important;
   width: auto !important;
   margin: 0 !important;
-  display: flex;
-  gap: 8px;
-  align-items: center;
+  display: inline-flex !important;
+  gap: 8px !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-.eim-testimonials-pagination .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
+.eim-testimonials-pagination .swiper-pagination-bullet,
+.eim-testimonials-pagination .eim-bullet {
+  width: 10px !important;
+  height: 10px !important;
   margin: 0 !important;
-  background: #01262D;
-  opacity: 0.22;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  background: #01262D !important;
+  opacity: 0.25 !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  border: none !important;
+  padding: 0 !important;
 }
 
-.eim-testimonials-pagination .swiper-pagination-bullet-active {
-  width: 28px;
-  background: var(--eim-accent);
-  opacity: 1;
-  border-radius: 6px;
-}
-
-.eim-testimonials-nav {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+.eim-testimonials-pagination .swiper-pagination-bullet-active,
+.eim-testimonials-pagination .eim-bullet.is-active {
+  width: 28px !important;
+  background: var(--eim-accent) !important;
+  opacity: 1 !important;
+  border-radius: 6px !important;
 }
 
 .eim-testimonials-prev,
 .eim-testimonials-next {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 1px solid var(--eim-border-light);
-  color: var(--eim-dark);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  padding: 0;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background: #01262D !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  padding: 0 !important;
+  box-shadow: 0 6px 18px rgba(1, 38, 45, 0.18) !important;
+  outline: none !important;
+  flex: none !important;
 }
 
 .eim-testimonials-prev:hover,
 .eim-testimonials-next:hover {
-  background: var(--eim-dark);
-  color: #ffffff;
-  border-color: var(--eim-dark);
-  transform: translateY(-2px);
+  background: var(--eim-accent) !important;
+  color: #01262D !important;
+  border-color: var(--eim-accent) !important;
+  transform: scale(1.08) !important;
+}
+
+.eim-testimonials-prev svg,
+.eim-testimonials-next svg {
+  width: 20px !important;
+  height: 20px !important;
+  stroke: currentColor !important;
+  stroke-width: 2.5 !important;
 }
 
 .eim-testimonials-prev.swiper-button-disabled,
 .eim-testimonials-next.swiper-button-disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-  pointer-events: none;
+  opacity: 0.35 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
 }
 
 /* --------------------------------------------------------------------------

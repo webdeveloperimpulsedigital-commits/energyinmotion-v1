@@ -249,11 +249,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div data-stage="1" class="eim-maitryi-stage">
 <div data-stage-clip="1" class="eim-stage-clip">
-<picture>
-<source srcset="assets/maitryi-model.webp" type="image/webp">
-<source srcset="assets/Maitryi-Model-HD.png" type="image/png">
 <img data-maitryi-img="1" src="assets/Maitryi-Model.jpg" alt="Maitryi business model: fleet owners and transporters, e-tractor ownership without battery pack, battery pack ownership, charging and swapping infrastructure, end-to-end supply of green energy" class="eim-stage-img" loading="eager" decoding="async">
-</picture>
 </div>
 <span class="eim-stage-scan"></span>
 <span class="eim-stage-corner eim-corner-tl"></span>
@@ -846,7 +842,7 @@ class Component extends DCLogic {
     sec.addEventListener('mouseleave', () => { spot.style.opacity = '0'; });
   }
 
-  /* Maitryi stage: wipe reveal + auto-cycling pillars synced to the stage caption */
+  /* Maitryi stage: auto-cycling pillars synced to the stage caption */
   maitryi() {
     const stage = document.querySelector('[data-stage]');
     const pillars = Array.from(document.querySelectorAll('[data-pillar]'));
@@ -855,21 +851,10 @@ class Component extends DCLogic {
     const img = stage.querySelector('[data-maitryi-img]');
     const cap = document.querySelector('[data-stage-caption]');
     const dwell = 3400;
-    let i = 0, paused = false, visible = true;
+    let i = 0, paused = false;
 
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(es => {
-        es.forEach(e => {
-          if (e.isIntersecting) {
-            if (clip) clip.style.clipPath = 'inset(0 0% 0 0)';
-            if (img) img.style.transform = 'scale(1)';
-            visible = true;
-          } else {
-            visible = false;
-          }
-        });
-      }, { threshold: 0.25 }).observe(stage);
-    }
+    if (clip) { clip.style.clipPath = 'none'; clip.style.opacity = '1'; }
+    if (img) { img.style.opacity = '1'; img.style.visibility = 'visible'; img.style.transform = 'none'; }
 
     const setPillar = idx => {
       pillars.forEach((p, k) => {
@@ -1281,45 +1266,128 @@ class Component extends DCLogic {
       });
     });
 
-    // 9. Testimonials Swiper Slider
-    if (typeof Swiper !== 'undefined' && document.querySelector('.eim-testimonials-swiper')) {
-      new Swiper('.eim-testimonials-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 16,
-        loop: true,
-        speed: 600,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-        pagination: {
-          el: '.eim-testimonials-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.eim-testimonials-next',
-          prevEl: '.eim-testimonials-prev',
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 1.15,
-            spaceBetween: 18,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 2,
-            spaceBetween: 24,
-          },
-          1280: {
-            slidesPerView: 2,
-            spaceBetween: 28,
+    // 9. Testimonials Slider (Dual-Mode: Swiper + Standalone Touch Engine)
+    var container = document.querySelector('.eim-testimonials-swiper');
+    if (container) {
+      var wrapper = container.querySelector('.swiper-wrapper');
+      var slides = Array.from(container.querySelectorAll('.swiper-slide'));
+      var prevBtn = document.querySelector('.eim-testimonials-prev');
+      var nextBtn = document.querySelector('.eim-testimonials-next');
+      var pagEl = document.querySelector('.eim-testimonials-pagination');
+
+      if (wrapper && slides.length) {
+        if (typeof Swiper !== 'undefined') {
+          try {
+            new Swiper('.eim-testimonials-swiper', {
+              slidesPerView: 1,
+              spaceBetween: 16,
+              loop: true,
+              speed: 600,
+              autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
+              pagination: { el: '.eim-testimonials-pagination', clickable: true },
+              navigation: { nextEl: '.eim-testimonials-next', prevEl: '.eim-testimonials-prev' },
+              breakpoints: {
+                640: { slidesPerView: 1.15, spaceBetween: 18 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 2, spaceBetween: 24 }
+              }
+            });
+            return;
+          } catch(e) {
+            console.warn('Swiper fallback:', e);
           }
         }
-      });
+
+        // Standalone touch & arrow carousel engine
+        var curIndex = 0;
+        var autoplayTimer = null;
+        var totalSlides = slides.length;
+
+        function getPerView() {
+          return window.innerWidth >= 768 ? 2 : 1;
+        }
+        function getMaxIndex() {
+          return Math.max(0, totalSlides - getPerView());
+        }
+
+        if (pagEl) {
+          pagEl.innerHTML = '';
+          for (var b = 0; b < totalSlides; b++) {
+            (function(idx) {
+              var bullet = document.createElement('span');
+              bullet.className = 'eim-bullet' + (idx === 0 ? ' is-active' : '');
+              bullet.style.cssText = 'width: 10px; height: 10px; border-radius: 5px; background: #01262D; opacity: 0.25; cursor: pointer; display: inline-block; transition: all 0.3s ease;';
+              if (idx === 0) { bullet.style.width = '28px'; bullet.style.background = 'var(--eim-accent,#38E0CF)'; bullet.style.opacity = '1'; }
+              bullet.addEventListener('click', function() { goTo(idx); restartAutoplay(); });
+              pagEl.appendChild(bullet);
+            })(b);
+          }
+        }
+
+        function updateSlider() {
+          var perView = getPerView();
+          wrapper.style.display = 'flex';
+          wrapper.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+          wrapper.style.width = '100%';
+
+          slides.forEach(function(s) {
+            s.style.flex = '0 0 ' + (perView === 1 ? '100%' : 'calc(50% - 10px)');
+            s.style.width = perView === 1 ? '100%' : 'calc(50% - 10px)';
+            s.style.boxSizing = 'border-box';
+            s.style.marginRight = perView === 2 ? '20px' : '0px';
+          });
+
+          wrapper.style.transform = 'translate3d(-' + (curIndex * (perView === 1 ? 100 : 50)) + '%, 0, 0)';
+
+          if (pagEl) {
+            var bullets = Array.from(pagEl.querySelectorAll('.eim-bullet'));
+            bullets.forEach(function(bt, idx) {
+              if (idx === curIndex) {
+                bt.style.width = '28px';
+                bt.style.background = 'var(--eim-accent,#38E0CF)';
+                bt.style.opacity = '1';
+              } else {
+                bt.style.width = '10px';
+                bt.style.background = '#01262D';
+                bt.style.opacity = '0.25';
+              }
+            });
+          }
+        }
+
+        function goTo(idx) {
+          var max = getMaxIndex();
+          if (idx < 0) curIndex = max;
+          else if (idx > max) curIndex = 0;
+          else curIndex = idx;
+          updateSlider();
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', function() { goTo(curIndex - 1); restartAutoplay(); });
+        if (nextBtn) nextBtn.addEventListener('click', function() { goTo(curIndex + 1); restartAutoplay(); });
+
+        var touchStartX = 0;
+        container.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        container.addEventListener('touchend', function(e) {
+          var diff = touchStartX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) {
+            if (diff > 0) goTo(curIndex + 1);
+            else goTo(curIndex - 1);
+            restartAutoplay();
+          }
+        }, { passive: true });
+
+        function startAutoplay() { stopAutoplay(); autoplayTimer = setInterval(function() { goTo(curIndex + 1); }, 5000); }
+        function stopAutoplay() { if (autoplayTimer) clearInterval(autoplayTimer); }
+        function restartAutoplay() { stopAutoplay(); startAutoplay(); }
+
+        container.addEventListener('mouseenter', stopAutoplay);
+        container.addEventListener('mouseleave', startAutoplay);
+        window.addEventListener('resize', updateSlider);
+
+        updateSlider();
+        startAutoplay();
+      }
     }
   }
 
