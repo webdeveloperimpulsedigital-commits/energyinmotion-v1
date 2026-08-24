@@ -180,7 +180,7 @@ header {
 header > div {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 12px clamp(16px, 4vw, 56px);
+  padding: 10px clamp(16px, 4vw, 56px);
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
@@ -206,13 +206,15 @@ header > div {
 
 .eim-header-logo,
 header img {
-  height: 36px !important;
+  height: 72px !important;
   width: auto !important;
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
-  max-height: 38px;
+  max-height: 76px;
   flex: 0 0 auto !important;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
 .eim-header-badge {
@@ -1421,7 +1423,7 @@ form button[type="submit"]:hover {
 .eim-where-header {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 18px;
   margin-bottom: clamp(30px, 3.6vw, 50px);
@@ -1429,7 +1431,92 @@ form button[type="submit"]:hover {
 
 .eim-where-header-left {
   flex: 1;
-  min-width: 300px;
+  min-width: 260px;
+}
+
+.eim-where-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.eim-where-cta {
+  display: none;
+}
+
+.eim-where-nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.eim-where-prev,
+.eim-where-next {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  border: none;
+  outline: none;
+}
+
+.eim-where-prev {
+  background: #ffffff;
+  color: var(--eim-dark);
+  box-shadow: 0 0 0 1.5px rgba(0,0,0,0.12);
+}
+
+.eim-where-next {
+  background: var(--eim-accent);
+  color: var(--eim-dark);
+  box-shadow: 0 8px 24px 0 var(--eim-accent-glow);
+}
+
+.eim-where-prev:hover {
+  background: var(--eim-accent);
+  color: var(--eim-dark);
+  box-shadow: 0 8px 24px 0 var(--eim-accent-glow);
+  transform: scale(1.08);
+}
+
+.eim-where-next:hover {
+  background: #ffffff;
+  color: var(--eim-dark);
+  box-shadow: 0 0 0 1.5px rgba(0,0,0,0.12);
+  transform: scale(1.08);
+}
+
+/* Swiper override for where section */
+.eim-where-swiper {
+  padding: 4px clamp(16px, 4vw, 56px) 16px !important;
+  overflow: hidden;
+}
+
+.eim-where-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.eim-where-swiper .swiper-slide {
+  width: clamp(280px, 29vw, 392px);
+  height: auto;
+  display: flex;
+}
+
+.eim-where-swiper .eim-rail-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.eim-where-swiper .eim-rail-card-body {
+  flex: 1;
 }
 
 .eim-scroll-hint {
@@ -1634,11 +1721,12 @@ form button[type="submit"]:hover {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.03);
-  padding: 24px 22px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 18px;
+  justify-content: flex-start;
+  gap: 0;
+  overflow: hidden;
 }
 
 .eim-proof-stat-val {
@@ -1654,11 +1742,39 @@ form button[type="submit"]:hover {
   border: 1px solid var(--eim-accent-border);
   border-radius: 18px;
   background: var(--eim-accent-soft);
-  padding: 24px 22px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 18px;
+  justify-content: flex-start;
+  gap: 0;
+  overflow: hidden;
+}
+
+.eim-proof-corridor-img {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.eim-proof-corridor-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 0.84, 0.28, 1);
+}
+
+.eim-proof-corridor-card:hover .eim-proof-corridor-img img {
+  transform: scale(1.05);
+}
+
+.eim-proof-corridor-body {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .eim-corridor-tag {
@@ -1776,9 +1892,10 @@ form button[type="submit"]:hover {
 
 .eim-customer-header-wrap {
   display: flex;
-  align-items: baseline;
+  flex-wrap: wrap;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: 18px;
+  gap: 16px;
   margin-bottom: clamp(24px, 3.2vw, 44px);
 }
 
@@ -2093,10 +2210,12 @@ form button[type="submit"]:hover {
 }
 
 .eim-footer-logo {
-  height: 44px;
+  height: 90px;
   width: auto;
   display: block;
   margin-bottom: 14px;
+  border-radius: 10px;
+  object-fit: contain;
 }
 
 .eim-footer-tagline {
@@ -2251,7 +2370,7 @@ form button[type="submit"]:hover {
   /* Header Mobile */
   .eim-header-inner,
   header > div {
-    padding: 10px 14px !important;
+    padding: 8px 14px !important;
     gap: 10px !important;
     display: flex !important;
     flex-direction: row !important;
@@ -2271,13 +2390,15 @@ form button[type="submit"]:hover {
 
   .eim-header-logo,
   header img {
-    height: 30px !important;
-    max-height: 30px !important;
+    height: 56px !important;
+    max-height: 60px !important;
     width: auto !important;
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
     flex: 0 0 auto !important;
+    border-radius: 6px !important;
+    object-fit: contain !important;
   }
 
   .eim-header-cta,
@@ -2692,4 +2813,86 @@ form button[type="submit"]:hover {
     font-size: 11.5px !important;
     width: auto !important;
   }
+}
+
+/* Proof stat card image */
+.eim-proof-stat-card {
+  overflow: hidden !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.eim-proof-stat-img {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.eim-proof-stat-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 0.84, 0.28, 1);
+}
+
+.eim-proof-stat-card:hover .eim-proof-stat-img img {
+  transform: scale(1.05);
+}
+
+.eim-proof-stat-card > div:not(.eim-proof-stat-img) {
+  padding: 20px 22px 24px;
+}
+
+/* Customer Proof section nav buttons */
+.eim-quotes-prev,
+.eim-quotes-next {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  border: none;
+  outline: none;
+}
+
+.eim-quotes-prev {
+  background: #ffffff;
+  color: var(--eim-dark);
+  box-shadow: 0 0 0 1.5px rgba(0,0,0,0.12);
+}
+
+.eim-quotes-next {
+  background: var(--eim-accent);
+  color: var(--eim-dark);
+  box-shadow: 0 8px 24px 0 var(--eim-accent-glow);
+}
+
+.eim-quotes-prev:hover {
+  background: var(--eim-accent);
+  box-shadow: 0 8px 24px 0 var(--eim-accent-glow);
+  transform: scale(1.08);
+}
+
+.eim-quotes-next:hover {
+  background: #ffffff;
+  box-shadow: 0 0 0 1.5px rgba(0,0,0,0.12);
+  transform: scale(1.08);
+}
+
+.eim-quotes-cta {
+  font-size: 14px !important;
+  padding: 13px 22px !important;
+  white-space: nowrap;
+}
+
+/* Footer email hover — brand color */
+.eim-footer-link:hover {
+  color: var(--eim-accent) !important;
 }
