@@ -49,7 +49,7 @@
           <a href="#" class="eim-header-logo-link"><img src="assets/eim-new-logo.png" alt="Energy In Motion logo"
               class="eim-header-logo" style="height:72px;width:auto;display:block;object-fit:contain;"></a>
         </div>
-        <a href="#final" data-cta="1" class="eim-header-cta" style="display:inline-block;background:#38E0CF;color:#01262D;font-size:15px;font-weight:600;padding:13px 24px;border-radius:8px;text-decoration:none;white-space:nowrap;">Discuss Requirement</a>
+        <a href="#final" data-cta="1" class="eim-header-cta" style="display:inline-block;background:#38E0CF;color:#01262D;font-size:15px;font-weight:600;padding:13px 24px;border-radius:8px;text-decoration:none;white-space:nowrap;">Discuss Your Fleet Requirement</a>
       </div>
     </header>
 
@@ -1248,10 +1248,10 @@ class Component extends DCLogic {
             var show = st > 80;
             if (show) {
               sticky.classList.add('is-visible');
-              sticky.style.cssText = 'display: block !important; opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; pointer-events: auto !important; position: fixed !important; left: 50% !important; bottom: 20px !important; z-index: 999999 !important; max-width: calc(100% - 24px) !important;';
+              sticky.style.cssText = 'display: block !important; opacity: 1 !important; visibility: visible !important; transform: translate(-50%, 0) !important; pointer-events: auto !important; position: fixed !important; left: 50% !important; bottom: 20px !important; z-index: 999999 !important; width: -moz-fit-content !important; width: fit-content !important; max-width: calc(100% - 24px) !important;';
             } else {
               sticky.classList.remove('is-visible');
-              sticky.style.cssText = 'display: block !important; opacity: 0 !important; visibility: hidden !important; transform: translate(-50%, 20px) !important; pointer-events: none !important; position: fixed !important; left: 50% !important; bottom: 20px !important; z-index: 999999 !important; max-width: calc(100% - 24px) !important;';
+              sticky.style.cssText = 'display: block !important; opacity: 0 !important; visibility: hidden !important; transform: translate(-50%, 20px) !important; pointer-events: none !important; position: fixed !important; left: 50% !important; bottom: 20px !important; z-index: 999999 !important; width: -moz-fit-content !important; width: fit-content !important; max-width: calc(100% - 24px) !important;';
             }
           }
           if (heroImg && st < 900) {
