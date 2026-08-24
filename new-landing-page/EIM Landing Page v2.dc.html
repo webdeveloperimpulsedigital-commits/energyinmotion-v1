@@ -228,7 +228,11 @@
 
 <div data-stage="1" class="eim-maitryi-stage">
 <div data-stage-clip="1" class="eim-stage-clip">
-<img data-maitryi-img="1" src="assets/Maitryi-Model.jpg" alt="Maitryi business model: fleet owners and transporters, e-tractor ownership without battery pack, battery pack ownership, charging and swapping infrastructure, end-to-end supply of green energy" class="eim-stage-img" loading="eager" decoding="async">
+<picture>
+<source srcset="assets/maitryi-model.webp" type="image/webp">
+<source srcset="assets/Maitryi-Model-HD.png" type="image/png">
+<img data-maitryi-img="1" src="assets/Maitryi-Model.jpg" alt="Maitryi business model: fleet owners and transporters, e-tractor ownership without battery pack, battery pack ownership, charging and swapping infrastructure, end-to-end supply of green energy" class="eim-stage-img" loading="eager" decoding="async" onerror="this.onerror=null;this.src='assets/Maitryi-Model.png';">
+</picture>
 </div>
 <span class="eim-stage-scan"></span>
 <span class="eim-stage-corner eim-corner-tl"></span>
@@ -496,7 +500,6 @@
 
 <!-- Partnership Card -->
 <div class="eim-proof-corridor-card">
-<span class="eim-corridor-tag">Corridor expansion</span>
 <div>
 <h3 class="eim-proof-card-title" style="margin-bottom:9px;font-size:17.5px;line-height:1.25">HPCL Partnership</h3>
 <p class="eim-proof-card-desc" style="color:rgba(255,255,255,.74)">EIM and HPCL are deploying swap-and-charge hubs at select HPCL retail outlets, connecting freight corridors including Mumbai-Pune, Delhi-Jaipur and Chennai-Bengaluru.</p>
@@ -854,7 +857,7 @@ class Component extends DCLogic {
     setPillar(0);
 
     this.maitryiTimer = setInterval(() => {
-      if (paused || !visible) return;
+      if (paused) return;
       setPillar((i + 1) % pillars.length);
     }, dwell);
 

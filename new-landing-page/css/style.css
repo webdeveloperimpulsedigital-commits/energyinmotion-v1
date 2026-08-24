@@ -1503,9 +1503,9 @@ form button[type="submit"]:hover {
 }
 
 .eim-where-swiper .swiper-slide {
-  width: clamp(280px, 29vw, 392px);
   height: auto;
   display: flex;
+  box-sizing: border-box;
 }
 
 .eim-where-swiper .eim-rail-card {
@@ -2723,6 +2723,44 @@ form button[type="submit"]:hover {
     padding: 13px !important;
   }
 
+  /* Where EIM Fits Slider on Mobile */
+  .eim-where-section {
+    padding: 44px 0 !important;
+    overflow: hidden !important;
+  }
+
+  .eim-where-container {
+    padding: 0 16px !important;
+  }
+
+  .eim-where-header {
+    margin-bottom: 20px !important;
+  }
+
+  .eim-where-swiper {
+    padding: 4px 16px 16px !important;
+    overflow: hidden !important;
+  }
+
+  .eim-where-swiper .swiper-slide {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .eim-where-swiper .eim-rail-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 16px !important;
+  }
+
+  .eim-where-swiper .eim-rail-card-img {
+    height: 190px !important;
+  }
+
+  .eim-where-swiper .eim-rail-card-body {
+    padding: 18px 16px 20px !important;
+  }
+
   /* Testimonials Slider on Mobile */
   .eim-customer-section {
     padding-left: 16px !important;
@@ -2754,7 +2792,9 @@ form button[type="submit"]:hover {
   }
 
   .eim-testimonials-swiper .swiper-slide {
-    width: 100% !important;
+    height: auto;
+    display: flex;
+    box-sizing: border-box;
   }
 
   .eim-quote-card,

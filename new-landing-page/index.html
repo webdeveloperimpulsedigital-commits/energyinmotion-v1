@@ -286,9 +286,14 @@
 
         <div data-stage="1" class="eim-maitryi-stage">
           <div data-stage-clip="1" class="eim-stage-clip">
-            <img data-maitryi-img="1" src="assets/Maitryi-Model.jpg"
-              alt="Maitryi business model: fleet owners and transporters, e-tractor ownership without battery pack, battery pack ownership, charging and swapping infrastructure, end-to-end supply of green energy"
-              class="eim-stage-img" loading="eager" decoding="async">
+            <picture>
+              <source srcset="assets/maitryi-model.webp" type="image/webp">
+              <source srcset="assets/Maitryi-Model-HD.png" type="image/png">
+              <img data-maitryi-img="1" src="assets/Maitryi-Model.jpg"
+                alt="Maitryi business model: fleet owners and transporters, e-tractor ownership without battery pack, battery pack ownership, charging and swapping infrastructure, end-to-end supply of green energy"
+                class="eim-stage-img" loading="eager" decoding="async"
+                onerror="this.onerror=null;this.src='assets/Maitryi-Model.png';">
+            </picture>
           </div>
           <span class="eim-stage-scan"></span>
           <span class="eim-stage-corner eim-corner-tl"></span>
@@ -596,7 +601,6 @@
               <img src="assets/Press-Release-img.jpg" alt="HPCL Partnership Press Release" loading="lazy" decoding="async">
             </div>
             <div class="eim-proof-corridor-body">
-              <span class="eim-corridor-tag">Corridor expansion</span>
               <div>
                 <h3 class="eim-proof-card-title" style="margin-bottom:9px;font-size:17.5px;line-height:1.25">HPCL
                   Partnership</h3>
@@ -997,7 +1001,7 @@ class Component extends DCLogic {
     setPillar(0);
 
     this.maitryiTimer = setInterval(() => {
-      if (paused || !visible) return;
+      if (paused) return;
       setPillar((i + 1) % pillars.length);
     }, dwell);
 
@@ -1209,9 +1213,15 @@ class Component extends DCLogic {
           var ease = 'opacity .85s cubic-bezier(.16,.84,.28,1), transform .85s cubic-bezier(.16,.84,.28,1)';
           var secs = Array.from(document.querySelectorAll('[data-reveal]'));
           secs.forEach(function (el) {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(22px)';
-            el.style.transition = ease;
+            var r = el.getBoundingClientRect();
+            if (r.top < window.innerHeight && r.bottom > 0) {
+              el.style.opacity = '1';
+              el.style.transform = 'none';
+            } else {
+              el.style.opacity = '0';
+              el.style.transform = 'translateY(22px)';
+              el.style.transition = ease;
+            }
           });
           var revealObserver = new IntersectionObserver(function (entries) {
             entries.forEach(function (e) {
@@ -1227,8 +1237,21 @@ class Component extends DCLogic {
               });
               revealObserver.unobserve(e.target);
             });
-          }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+          }, { rootMargin: '0px 0px 50px 0px', threshold: 0.01 });
           secs.forEach(function (el) { revealObserver.observe(el); });
+
+          setTimeout(function () {
+            secs.forEach(function (el) {
+              el.style.opacity = '1';
+              el.style.transform = 'none';
+            });
+          }, 1200);
+        } else {
+          var secs = Array.from(document.querySelectorAll('[data-reveal]'));
+          secs.forEach(function (el) {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          });
         }
 
         // 4. Scroll Progress & Sticky Bar
@@ -1388,124 +1411,54 @@ class Component extends DCLogic {
           });
         });
 
-        // 9. Testimonials Slider (Dual-Mode: Swiper + Standalone Touch Engine)
-        var container = document.querySelector('.eim-testimonials-swiper');
-        if (container) {
-          var wrapper = container.querySelector('.swiper-wrapper');
-          var slides = Array.from(container.querySelectorAll('.swiper-slide'));
-          var pagEl = document.querySelector('.eim-testimonials-pagination');
-
-          if (wrapper && slides.length) {
-            if (typeof Swiper !== 'undefined') {
-              try {
-                new Swiper('.eim-testimonials-swiper', {
-                  slidesPerView: 1,
-                  spaceBetween: 16,
-                  loop: true,
-                  speed: 600,
-                  autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
-                  navigation: {
-                    prevEl: '#quoteSwipePrev',
-                    nextEl: '#quoteSwipeNext'
-                  },
-                  breakpoints: {
-                    640: { slidesPerView: 1.15, spaceBetween: 18 },
-                    768: { slidesPerView: 2, spaceBetween: 20 },
-                    1024: { slidesPerView: 2, spaceBetween: 24 }
-                  }
-                });
-                return;
-              } catch (e) {
-                console.warn('Swiper fallback:', e);
+        // 9. Testimonials Slider
+        var tContainer = document.querySelector('.eim-testimonials-swiper');
+        if (tContainer && typeof Swiper !== 'undefined') {
+          try {
+            new Swiper('.eim-testimonials-swiper', {
+              slidesPerView: 1,
+              spaceBetween: 16,
+              loop: true,
+              speed: 600,
+              autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
+              navigation: {
+                prevEl: '#quoteSwipePrev',
+                nextEl: '#quoteSwipeNext'
+              },
+              breakpoints: {
+                640: { slidesPerView: 1.15, spaceBetween: 18 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 2, spaceBetween: 24 }
               }
-            }
+            });
+          } catch (e) {
+            console.warn('Testimonials Swiper error:', e);
+          }
+        }
 
-            // Standalone touch & pagination carousel engine
-            var curIndex = 0;
-            var autoplayTimer = null;
-            var totalSlides = slides.length;
-
-            function getPerView() {
-              return window.innerWidth >= 768 ? 2 : 1;
-            }
-            function getMaxIndex() {
-              return Math.max(0, totalSlides - getPerView());
-            }
-
-            if (pagEl) {
-              pagEl.innerHTML = '';
-              for (var b = 0; b < totalSlides; b++) {
-                (function (idx) {
-                  var bullet = document.createElement('span');
-                  bullet.className = 'eim-bullet' + (idx === 0 ? ' is-active' : '');
-                  bullet.style.cssText = 'width: 10px; height: 10px; border-radius: 5px; background: #01262D; opacity: 0.25; cursor: pointer; display: inline-block; transition: all 0.3s ease;';
-                  if (idx === 0) { bullet.style.width = '28px'; bullet.style.background = 'var(--eim-accent,#38E0CF)'; bullet.style.opacity = '1'; }
-                  bullet.addEventListener('click', function () { goTo(idx); restartAutoplay(); });
-                  pagEl.appendChild(bullet);
-                })(b);
+        // 10. Where EIM Fits Slider
+        var wContainer = document.querySelector('.eim-where-swiper');
+        if (wContainer && typeof Swiper !== 'undefined') {
+          try {
+            new Swiper('.eim-where-swiper', {
+              slidesPerView: 1,
+              spaceBetween: 16,
+              loop: false,
+              speed: 550,
+              centeredSlides: false,
+              autoplay: { delay: 4500, disableOnInteraction: true, pauseOnMouseEnter: true },
+              navigation: {
+                prevEl: '#whereSwipePrev',
+                nextEl: '#whereSwipeNext'
+              },
+              breakpoints: {
+                640:  { slidesPerView: 2,    spaceBetween: 20 },
+                1024: { slidesPerView: 3,    spaceBetween: 24 },
+                1280: { slidesPerView: 3.2,  spaceBetween: 24 }
               }
-            }
-
-            function updateSlider() {
-              var perView = getPerView();
-              wrapper.style.display = 'flex';
-              wrapper.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
-              wrapper.style.width = '100%';
-
-              slides.forEach(function (s) {
-                s.style.flex = '0 0 ' + (perView === 1 ? '100%' : 'calc(50% - 10px)');
-                s.style.width = perView === 1 ? '100%' : 'calc(50% - 10px)';
-                s.style.boxSizing = 'border-box';
-                s.style.marginRight = perView === 2 ? '20px' : '0px';
-              });
-
-              wrapper.style.transform = 'translate3d(-' + (curIndex * (perView === 1 ? 100 : 50)) + '%, 0, 0)';
-
-              if (pagEl) {
-                var bullets = Array.from(pagEl.querySelectorAll('.eim-bullet'));
-                bullets.forEach(function (bt, idx) {
-                  if (idx === curIndex) {
-                    bt.style.width = '28px';
-                    bt.style.background = 'var(--eim-accent,#38E0CF)';
-                    bt.style.opacity = '1';
-                  } else {
-                    bt.style.width = '10px';
-                    bt.style.background = '#01262D';
-                    bt.style.opacity = '0.25';
-                  }
-                });
-              }
-            }
-
-            function goTo(idx) {
-              var max = getMaxIndex();
-              if (idx < 0) curIndex = max;
-              else if (idx > max) curIndex = 0;
-              else curIndex = idx;
-              updateSlider();
-            }
-
-            var touchStartX = 0;
-            container.addEventListener('touchstart', function (e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-            container.addEventListener('touchend', function (e) {
-              var diff = touchStartX - e.changedTouches[0].screenX;
-              if (Math.abs(diff) > 40) {
-                if (diff > 0) goTo(curIndex + 1);
-                else goTo(curIndex - 1);
-                restartAutoplay();
-              }
-            }, { passive: true });
-
-            function startAutoplay() { stopAutoplay(); autoplayTimer = setInterval(function () { goTo(curIndex + 1); }, 5000); }
-            function stopAutoplay() { if (autoplayTimer) clearInterval(autoplayTimer); }
-            function restartAutoplay() { stopAutoplay(); startAutoplay(); }
-
-            container.addEventListener('mouseenter', stopAutoplay);
-            container.addEventListener('mouseleave', startAutoplay);
-            window.addEventListener('resize', updateSlider);
-
-            updateSlider();
-            startAutoplay();
+            });
+          } catch (e) {
+            console.warn('Where Swiper error:', e);
           }
         }
       }
@@ -1514,37 +1467,6 @@ class Component extends DCLogic {
         document.addEventListener('DOMContentLoaded', initPage);
       } else {
         initPage();
-      }
-    })();
-  </script>
-
-  <!-- WHERE EIM FITS SWIPER INIT -->
-  <script>
-    (function () {
-      function initWhereSwiper() {
-        if (typeof Swiper === 'undefined') return;
-        var whereSwiper = new Swiper('.eim-where-swiper', {
-          slidesPerView: 1.15,
-          spaceBetween: 14,
-          loop: false,
-          speed: 550,
-          autoplay: { delay: 4000, disableOnInteraction: true, pauseOnMouseEnter: true },
-          navigation: {
-            prevEl: '#whereSwipePrev',
-            nextEl: '#whereSwipeNext'
-          },
-          breakpoints: {
-            480:  { slidesPerView: 1.4,  spaceBetween: 16 },
-            640:  { slidesPerView: 2,    spaceBetween: 18 },
-            1024: { slidesPerView: 3,    spaceBetween: 22 },
-            1280: { slidesPerView: 3.2,  spaceBetween: 24 }
-          }
-        });
-      }
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initWhereSwiper);
-      } else {
-        initWhereSwiper();
       }
     })();
   </script>
