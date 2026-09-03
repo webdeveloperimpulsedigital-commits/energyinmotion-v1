@@ -28,7 +28,7 @@
 	<link href="css/easy-responsive-tabs.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-	<link href="css/main.css?v=34.0" rel="stylesheet">
+	<link href="css/main.css?v=35.0" rel="stylesheet">
 	<!-- Google Tag Manager -->
 	<script>(function (w, d, s, l, i) {
 			w[l] = w[l] || []; w[l].push({
@@ -941,36 +941,89 @@
 				<!-- Section Title -->
 				<h2 class="main-title text-center mb35 transform-none" data-aos="fade-up">News</h2>
 
-				<div class="press-asymmetric-container">
+				<!-- News Swiper Slider -->
+				<div class="news-swiper swiper" data-aos="fade-up" data-aos-delay="200">
+					<div class="swiper-wrapper">
 
-					<!-- Left Column: Large Widescreen Photo Frame -->
-					<div class="press-asymmetric-image-wrapper" data-aos="fade-right">
-						<a href="documents/Press-Release.pdf" target="_blank" class="press-image-link">
-							<img src="images/Press-Release-img.jpg" alt="HPCL Partnership Signing Ceremony"
-								loading="lazy" decoding="async">
-							<div class="press-image-glow-overlay"></div>
-						</a>
-					</div>
+						<!-- Slide 1: Strategic MoU with Oil Field Warehouse & Radiance Green Mobility -->
+						<div class="swiper-slide">
+							<div class="press-asymmetric-container">
+								<!-- Left Column: Large Widescreen Photo Frame -->
+								<div class="press-asymmetric-image-wrapper">
+									<a href="documents/MoU-with-OWS-and-Radiance.pdf"
+										target="_blank" class="press-image-link" aria-label="Read Press Release on Strategic MoU">
+										<img src="images/MoU-with-Oil-Field.png"
+											alt="Energy In Motion Strategic MoU with Oil Field Warehouse and Radiance Green Mobility"
+											loading="lazy" decoding="async">
+										<div class="press-image-glow-overlay"></div>
+									</a>
+								</div>
 
-					<!-- Right Column: Overlapping Frosted Glass Card -->
-					<div class="press-asymmetric-content-card" data-aos="fade-left" data-aos-delay="200">
-						<h3 class="press-asymmetric-heading">
-							Energy in Motion partners with HPCL to set-up charging and battery swapping infrastructure
-							at retail outlets across India for deployment of Electric Heavy Commercial Vehicles
-						</h3>
+								<!-- Right Column: Overlapping Frosted Glass Card -->
+								<div class="press-asymmetric-content-card">
+									<h3 class="press-asymmetric-heading">
+										Energy In Motion Limited Signs a Strategic MoU with Oil Field Warehouse &amp; Services Limited and Radiance Green Mobility Pvt Ltd for Deployment of 500 Electric Heavy Commercial Vehicles
+									</h3>
 
-						<div class="press-asymmetric-action">
-							<a href="documents/Press-Release.pdf" target="_blank" class="press-asymmetric-btn">
-								<span>Read Full Release</span>
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2.5"
-										stroke-linecap="round" stroke-linejoin="round" />
-								</svg>
-							</a>
+									<div class="press-asymmetric-action">
+										<a href="documents/MoU-with-OWS-and-Radiance.pdf"
+											target="_blank" class="press-asymmetric-btn">
+											<span>Read Full Release</span>
+											<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2.5"
+													stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
 						</div>
+
+						<!-- Slide 2: HPCL Partnership -->
+						<div class="swiper-slide">
+							<div class="press-asymmetric-container">
+								<!-- Left Column: Large Widescreen Photo Frame -->
+								<div class="press-asymmetric-image-wrapper">
+									<a href="documents/Press-Release.pdf" target="_blank" class="press-image-link" aria-label="Read Press Release on HPCL Partnership">
+										<img src="images/Press-Release-img.jpg" alt="HPCL Partnership Signing Ceremony"
+											loading="lazy" decoding="async">
+										<div class="press-image-glow-overlay"></div>
+									</a>
+								</div>
+
+								<!-- Right Column: Overlapping Frosted Glass Card -->
+								<div class="press-asymmetric-content-card">
+									<h3 class="press-asymmetric-heading">
+										Energy in Motion partners with HPCL to set-up charging and battery swapping infrastructure
+										at retail outlets across India for deployment of Electric Heavy Commercial Vehicles
+									</h3>
+
+									<div class="press-asymmetric-action">
+										<a href="documents/Press-Release.pdf" target="_blank" class="press-asymmetric-btn">
+											<span>Read Full Release</span>
+											<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2.5"
+													stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
 					</div>
 
+					<!-- Slider Navigation Controls -->
+					<div class="press-swiper-controls d-flex align-items-center justify-content-center mt-4">
+						<button class="press-swiper-arrow press-swiper-prev" aria-label="Previous News" type="button">
+							<i class="bi bi-chevron-left"></i>
+						</button>
+						<button class="press-swiper-arrow press-swiper-next" aria-label="Next News" type="button">
+							<i class="bi bi-chevron-right"></i>
+						</button>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -1983,7 +2036,7 @@
 		<script src="js/easyResponsiveTabs.js"></script>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-		<script src="js/main.js?v=6.0"></script>
+		<script src="js/main.js?v=7.0"></script>
 
 
 	</main>

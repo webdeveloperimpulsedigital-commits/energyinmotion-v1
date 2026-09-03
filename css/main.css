@@ -6898,6 +6898,64 @@ html:not(.no-js) [data-aos^=fade][data-aos^=fade-out].aos-animate {
   }
 }
 
+/* News Swiper Slider Styles */
+.news-swiper {
+  width: 100%;
+  position: relative;
+  padding: 10px 0 20px;
+}
+
+.news-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.news-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.press-swiper-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 35px;
+  position: relative;
+  z-index: 10;
+}
+
+.press-swiper-arrow {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #01262d;
+  color: #ffffff;
+  border: 1.5px solid rgba(73, 193, 172, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 6px 16px rgba(0, 26, 29, 0.14);
+}
+
+.press-swiper-arrow:hover {
+  background: var(--accent-color);
+  color: #01262d;
+  border-color: var(--accent-color);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 22px rgba(73, 193, 172, 0.4);
+}
+
+.press-swiper-arrow:active {
+  transform: translateY(0) scale(0.98);
+}
+
+
 /* ==========================================================================
    Modern Facelift Styles - Energy In Motion
    ========================================================================== */

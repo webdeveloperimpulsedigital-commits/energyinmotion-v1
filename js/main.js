@@ -244,6 +244,25 @@ window.addEventListener('load', () => {
       });
     }
 
+    // Initialize Swiper for "News / Press"
+    if (document.querySelector('.news-swiper')) {
+      new Swiper('.news-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoHeight: false,
+        autoplay: {
+          delay: 6500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        navigation: {
+          nextEl: '.press-swiper-next',
+          prevEl: '.press-swiper-prev',
+        },
+      });
+    }
+
     // Initialize Swiper for "Testimonials"
     if (document.querySelector('.testimonials-swiper')) {
       new Swiper('.testimonials-swiper', {
