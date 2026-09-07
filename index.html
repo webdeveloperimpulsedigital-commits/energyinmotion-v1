@@ -26,11 +26,36 @@
 	<link rel="preload" href="fonts/PPNeueMontreal-Medium.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/PPNeueMontreal-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
-	<!-- Critical Core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/main.min.css?v=36.0" rel="stylesheet">
+	<!-- Critical Above-the-Fold Inline CSS for Instant Paint (FCP < 0.5s) -->
+	<style>
+		:root{--brand-black:#001B1E;--brand-dark-slate:#01262D;--brand-medium-aquamarine:#66CCC0;--brand-turquoise:#38E0CF;--brand-pale-turquoise:#B9EDEA;--brand-azure:#E7F1F1;--default-font:'PP Neue Montreal',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--background-color:var(--brand-black);--default-color:rgba(231,241,241,0.75);--heading-color:var(--brand-azure);--accent-color:var(--brand-turquoise);--surface-color:var(--brand-dark-slate)}
+		@font-face{font-family:'PP Neue Montreal';src:url('fonts/PPNeueMontreal-Regular.woff2') format('woff2');font-weight:normal;font-style:normal;font-display:swap}
+		@font-face{font-family:'PP Neue Montreal';src:url('fonts/PPNeueMontreal-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+		@font-face{font-family:'PP Neue Montreal';src:url('fonts/PPNeueMontreal-Bold.woff2') format('woff2');font-weight:bold;font-style:normal;font-display:swap}
+		*,*::before,*::after{box-sizing:border-box}
+		body{margin:0;padding:0;font-family:var(--default-font);background-color:#001B1E;color:#fff;overflow-x:hidden}
+		a{text-decoration:none;color:inherit}
+		.header{background:#01262D!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(73,193,172,0.12);color:#fff;z-index:997;position:fixed;top:0;left:0;right:0;width:100%;display:flex;flex-direction:column}
+		.header .topbar{height:34px;background:transparent;border-bottom:1px solid rgba(255,255,255,0.05);font-size:13px;color:rgba(255,255,255,0.7);display:flex;align-items:center;width:100%}
+		.topbar .contact-info{display:flex;align-items:center}
+		.topbar .contact-info a{color:rgba(255,255,255,0.7);font-size:12px}
+		.header .branding{min-height:48px;padding:8px 0;display:flex;align-items:center}
+		.header .logo img{height:28px;width:auto}
+		.navmenu{display:none}
+		@media (min-width:1200px){.navmenu{display:block}}
+		.mobile-nav-toggle{font-size:28px;cursor:pointer;color:#fff}
+		.hero{width:100%;position:relative;background:#000;overflow:hidden;height:calc(100vh - 82px);height:calc(100dvh - 82px);min-height:520px;max-height:680px;margin-top:82px}
+		@media (min-width:768px){.hero{height:728px;max-height:728px;margin-top:119px}}
+		.hero-video-bg{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:center bottom;z-index:1}
+		@media (max-width:767.98px){.hide-mob{display:none!important}.hide-desk{display:block!important}}
+		@media (min-width:768px){.hide-mob{display:block!important}.hide-desk{display:none!important}}
+	</style>
 
-	<!-- Deferred Non-Critical CSS (Eliminates Render-Blocking Warning) -->
+	<!-- Asynchronously Loaded Full Stylesheets (Zero Render-Blocking Overhead) -->
+	<link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="css/bootstrap.min.css"></noscript>
+	<link rel="preload" href="css/main.min.css?v=37.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="css/main.min.css?v=37.0"></noscript>
 	<link rel="preload" href="css/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript><link rel="stylesheet" href="css/aos.css"></noscript>
 	<link rel="preload" href="css/fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -129,25 +154,40 @@
 			</video>
 			<script>
 				(function () {
-					function initHeroVideo() {
+					var videoLoaded = false;
+					function loadHeroVideo() {
+						if (videoLoaded) return;
+						videoLoaded = true;
 						var isMobile = window.innerWidth <= 767;
 						if (isMobile) {
 							var mobVid = document.getElementById('hero-video-mobile');
 							if (mobVid && !mobVid.src) {
 								mobVid.src = "images/mobile.mp4";
+								mobVid.load();
+								mobVid.play().catch(function(){});
 							}
 						} else {
 							var deskVid = document.getElementById('hero-video-desktop');
 							if (deskVid && !deskVid.src) {
 								deskVid.src = "images/desktop.mp4";
+								deskVid.load();
+								deskVid.play().catch(function(){});
 							}
 						}
 					}
-					if (document.readyState === 'complete' || document.readyState === 'interactive') {
-						initHeroVideo();
+
+					// Smooth lazy playback after initial paint window
+					if ('requestIdleCallback' in window) {
+						requestIdleCallback(function() {
+							setTimeout(loadHeroVideo, 2000);
+						});
 					} else {
-						document.addEventListener('DOMContentLoaded', initHeroVideo);
+						setTimeout(loadHeroVideo, 2500);
 					}
+
+					['touchstart', 'scroll', 'mousemove', 'click'].forEach(function(ev) {
+						window.addEventListener(ev, loadHeroVideo, { once: true, passive: true });
+					});
 				})();
 			</script>
 			<div class="hero-bg"></div>
