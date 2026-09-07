@@ -17,9 +17,6 @@
 	<meta property="og:description"
 		content="We aim to convert heavy commercial transport to zero-carbon at a competitive cost using the best EV technologies available.">
 
-	<!-- Preload critical hero posters for instant Mobile & Desktop LCP -->
-	<link rel="preload" href="images/hero-mobile-poster.jpg" as="image" type="image/jpeg" media="(max-width: 767px)" fetchpriority="high">
-	<link rel="preload" href="images/hero-desktop-poster.jpg" as="image" type="image/jpeg" media="(min-width: 768px)" fetchpriority="high">
 
 	<!-- Preload critical fonts to avoid render-blocking latency and layout shifts -->
 	<link rel="preload" href="fonts/PPNeueMontreal-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -125,11 +122,11 @@
 	<main class="main">
 		<section id="hero" class="hero section dark-background">
 			<!-- Desktop Video -->
-			<video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="images/hero-desktop-poster.jpg" class="hero-video-bg hide-mob" id="hero-video-desktop">
+			<video autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video-bg hide-mob" id="hero-video-desktop">
 				<source src="images/desktop.mp4" type="video/mp4">
 			</video>
 			<!-- Mobile Video -->
-			<video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="images/hero-mobile-poster.jpg" class="hero-video-bg hide-desk" id="hero-video-mobile">
+			<video autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video-bg hide-desk" id="hero-video-mobile">
 				<source src="images/mobile.mp4" type="video/mp4">
 			</video>
 			<script>
