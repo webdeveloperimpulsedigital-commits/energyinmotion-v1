@@ -60,7 +60,7 @@ RewriteRule ^(.*)$ https://www.energyinmotion.in/$1 [L,R=301]
 
 <IfModule mod_headers.c>
     # Cache Control Header
-    <FilesMatch "\.(ico|jpe?g|png|gif|webp|svg|woff|woff2|css|js)$">
+    <FilesMatch "\.(ico|jpe?g|png|gif|webp|svg|woff|woff2|css|js|mp4|webm)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
 </IfModule>
