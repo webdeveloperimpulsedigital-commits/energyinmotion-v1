@@ -46,7 +46,7 @@
 		.mobile-nav-toggle{font-size:28px;cursor:pointer;color:#fff}
 		.hero{width:100%;position:relative;background:#000;overflow:hidden;height:calc(100vh - 82px);height:calc(100dvh - 82px);min-height:520px;max-height:680px;margin-top:82px}
 		@media (min-width:768px){.hero{height:728px;max-height:728px;margin-top:119px}}
-		.hero-video-bg{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:center bottom;z-index:1}
+		.hero-visual-bg,.hero-poster-img,.hero-video-bg{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:center bottom;z-index:1}
 		@media (max-width:767.98px){.hide-mob{display:none!important}.hide-desk{display:block!important}}
 		@media (min-width:768px){.hide-mob{display:block!important}.hide-desk{display:none!important}}
 	</style>
@@ -66,15 +66,25 @@
 	<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
 	<link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
-	<!-- Google Tag Manager -->
-	<script>(function (w, d, s, l, i) {
-			w[l] = w[l] || []; w[l].push({
-				'gtm.start':
-					new Date().getTime(), event: 'gtm.js'
-			}); var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-KB7V3C28');</script>
+	<!-- Google Tag Manager (Deferred for maximum PageSpeed) -->
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function initGTM() {
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || []; w[l].push({
+					'gtm.start':
+						new Date().getTime(), event: 'gtm.js'
+				}); var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+						'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-KB7V3C28');
+		}
+		if (window.requestIdleCallback) {
+			requestIdleCallback(function() { setTimeout(initGTM, 1500); });
+		} else {
+			window.addEventListener('load', function() { setTimeout(initGTM, 1500); });
+		}
+	</script>
 	<!-- End Google Tag Manager -->
 
 </head>
@@ -146,50 +156,16 @@
 	</header>
 	<main class="main">
 		<section id="hero" class="hero section dark-background">
-			<!-- Desktop Video -->
-			<video autoplay muted loop playsinline preload="none" poster="images/hero-desktop-poster.jpg" class="hero-video-bg hide-mob" id="hero-video-desktop">
-			</video>
-			<!-- Mobile Video -->
-			<video autoplay muted loop playsinline preload="none" poster="images/hero-mobile-poster.jpg" class="hero-video-bg hide-desk" id="hero-video-mobile">
-			</video>
-			<script>
-				(function () {
-					var videoLoaded = false;
-					function loadHeroVideo() {
-						if (videoLoaded) return;
-						videoLoaded = true;
-						var isMobile = window.innerWidth <= 767;
-						if (isMobile) {
-							var mobVid = document.getElementById('hero-video-mobile');
-							if (mobVid && !mobVid.src) {
-								mobVid.src = "images/mobile.mp4";
-								mobVid.load();
-								mobVid.play().catch(function(){});
-							}
-						} else {
-							var deskVid = document.getElementById('hero-video-desktop');
-							if (deskVid && !deskVid.src) {
-								deskVid.src = "images/desktop.mp4";
-								deskVid.load();
-								deskVid.play().catch(function(){});
-							}
-						}
-					}
+			<!-- Mobile Hero Background Visual (Instant < 0.8s LCP for Mobile) -->
+			<picture class="hero-visual-bg hide-desk">
+				<img src="images/hero-mobile-poster.jpg" alt="Energy In Motion" class="hero-poster-img" fetchpriority="high" decoding="sync">
+			</picture>
 
-					// Smooth lazy playback after initial paint window
-					if ('requestIdleCallback' in window) {
-						requestIdleCallback(function() {
-							setTimeout(loadHeroVideo, 2000);
-						});
-					} else {
-						setTimeout(loadHeroVideo, 2500);
-					}
+			<!-- Desktop Video for Desktop / Broadband screens -->
+			<video autoplay muted loop playsinline preload="auto" poster="images/hero-desktop-poster.jpg" class="hero-video-bg hide-mob" id="hero-video-desktop">
+				<source src="images/desktop.mp4" type="video/mp4">
+			</video>
 
-					['touchstart', 'scroll', 'mousemove', 'click'].forEach(function(ev) {
-						window.addEventListener(ev, loadHeroVideo, { once: true, passive: true });
-					});
-				})();
-			</script>
 			<div class="hero-bg"></div>
 		</section>
 
@@ -2108,7 +2084,7 @@
 
 		<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
 				class="bi bi-arrow-up-short"></i></a>
-		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/jquery-3.4.1.min.js" defer></script>
 		<script src="js/aos.js" defer></script>
 		<script src="js/jquery.fancybox.min.js" defer></script>
 		<script src="js/easyResponsiveTabs.js" defer></script>
