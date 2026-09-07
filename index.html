@@ -26,46 +26,14 @@
 	<link rel="preload" href="fonts/PPNeueMontreal-Medium.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/PPNeueMontreal-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
-	<!-- Critical Above-the-Fold Inline CSS for Instant Paint (FCP < 0.5s) -->
-	<style>
-		:root{--brand-black:#001B1E;--brand-dark-slate:#01262D;--brand-medium-aquamarine:#66CCC0;--brand-turquoise:#38E0CF;--brand-pale-turquoise:#B9EDEA;--brand-azure:#E7F1F1;--default-font:'PP Neue Montreal',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--background-color:var(--brand-black);--default-color:rgba(231,241,241,0.75);--heading-color:var(--brand-azure);--accent-color:var(--brand-turquoise);--surface-color:var(--brand-dark-slate)}
-		@font-face{font-family:'PP Neue Montreal';src:url('fonts/PPNeueMontreal-Regular.woff2') format('woff2');font-weight:normal;font-style:normal;font-display:swap}
-		@font-face{font-family:'PP Neue Montreal';src:url('fonts/PPNeueMontreal-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
-		@font-face{font-family:'PP Neue Montreal';src:url('fonts/PPNeueMontreal-Bold.woff2') format('woff2');font-weight:bold;font-style:normal;font-display:swap}
-		*,*::before,*::after{box-sizing:border-box}
-		body{margin:0;padding:0;font-family:var(--default-font);background-color:#001B1E;color:#fff;overflow-x:hidden}
-		a{text-decoration:none;color:inherit}
-		.header{background:#01262D!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(73,193,172,0.12);color:#fff;z-index:997;position:fixed;top:0;left:0;right:0;width:100%;display:flex;flex-direction:column}
-		.header .topbar{height:34px;background:transparent;border-bottom:1px solid rgba(255,255,255,0.05);font-size:13px;color:rgba(255,255,255,0.7);display:flex;align-items:center;width:100%}
-		.topbar .contact-info{display:flex;align-items:center}
-		.topbar .contact-info a{color:rgba(255,255,255,0.7);font-size:12px}
-		.header .branding{min-height:48px;padding:8px 0;display:flex;align-items:center}
-		.header .logo img{height:28px;width:auto}
-		.navmenu{display:none}
-		@media (min-width:1200px){.navmenu{display:block}}
-		.mobile-nav-toggle{font-size:28px;cursor:pointer;color:#fff}
-		.hero{width:100%;position:relative;background:#000;overflow:hidden;height:calc(100vh - 82px);height:calc(100dvh - 82px);min-height:520px;max-height:680px;margin-top:82px}
-		@media (min-width:768px){.hero{height:728px;max-height:728px;margin-top:119px}}
-		.hero-visual-bg,.hero-poster-img,.hero-video-bg{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:center bottom;z-index:1}
-		@media (max-width:767.98px){.hide-mob{display:none!important}.hide-desk{display:block!important}}
-		@media (min-width:768px){.hide-mob{display:block!important}.hide-desk{display:none!important}}
-	</style>
-
-	<!-- Asynchronously Loaded Full Stylesheets (Zero Render-Blocking Overhead) -->
-	<link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="css/bootstrap.min.css"></noscript>
-	<link rel="preload" href="css/main.min.css?v=37.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="css/main.min.css?v=37.0"></noscript>
-	<link rel="preload" href="css/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="css/aos.css"></noscript>
-	<link rel="preload" href="css/fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="css/fancybox.min.css"></noscript>
-	<link rel="preload" href="css/easy-responsive-tabs.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="css/easy-responsive-tabs.css"></noscript>
-	<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
-	<link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+	<!-- Core Stylesheets -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/aos.css" rel="stylesheet">
+	<link href="css/fancybox.min.css" rel="stylesheet">
+	<link href="css/easy-responsive-tabs.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+	<link href="css/main.css?v=40.0" rel="stylesheet">
 	<!-- Google Tag Manager (Deferred for maximum PageSpeed) -->
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -156,16 +124,39 @@
 	</header>
 	<main class="main">
 		<section id="hero" class="hero section dark-background">
-			<!-- Mobile Hero Background Visual (Instant < 0.8s LCP for Mobile) -->
-			<picture class="hero-visual-bg hide-desk">
-				<img src="images/hero-mobile-poster.jpg" alt="Energy In Motion" class="hero-poster-img" fetchpriority="high" decoding="sync">
-			</picture>
-
-			<!-- Desktop Video for Desktop / Broadband screens -->
-			<video autoplay muted loop playsinline preload="auto" poster="images/hero-desktop-poster.jpg" class="hero-video-bg hide-mob" id="hero-video-desktop">
+			<!-- Desktop Video -->
+			<video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="images/hero-desktop-poster.jpg" class="hero-video-bg hide-mob" id="hero-video-desktop">
 				<source src="images/desktop.mp4" type="video/mp4">
 			</video>
-
+			<!-- Mobile Video -->
+			<video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="images/hero-mobile-poster.jpg" class="hero-video-bg hide-desk" id="hero-video-mobile">
+				<source src="images/mobile.mp4" type="video/mp4">
+			</video>
+			<script>
+				(function () {
+					function startHeroVideos() {
+						var vids = document.querySelectorAll('.hero-video-bg');
+						vids.forEach(function (vid) {
+							if (vid) {
+								vid.muted = true;
+								var playPromise = vid.play();
+								if (playPromise !== undefined) {
+									playPromise.catch(function () {});
+								}
+							}
+						});
+					}
+					if (document.readyState === 'complete' || document.readyState === 'interactive') {
+						startHeroVideos();
+					} else {
+						document.addEventListener('DOMContentLoaded', startHeroVideos);
+					}
+					window.addEventListener('load', startHeroVideos);
+					['touchstart', 'scroll', 'click'].forEach(function (ev) {
+						window.addEventListener(ev, startHeroVideos, { once: true, passive: true });
+					});
+				})();
+			</script>
 			<div class="hero-bg"></div>
 		</section>
 
