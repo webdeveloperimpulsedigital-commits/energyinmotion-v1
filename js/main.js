@@ -436,3 +436,137 @@ function validate_form(form) {
 
   return isValid;
 }
+
+/* ==========================================================================
+   TALEGAON PLANT INAUGURATION — 3D SCROLL-DRIVEN ANIMATED GALLERY ENGINE
+   ========================================================================== */
+(function initTalegaonAnimatedGallery() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const section = document.getElementById("talegaon-inauguration");
+    const track = document.getElementById("talegaon-scroll-track");
+    const gallery3d = document.getElementById("talegaon-gallery-3d");
+    const col1 = document.getElementById("talegaon-col-1");
+    const col2 = document.getElementById("talegaon-col-2");
+    const col3 = document.getElementById("talegaon-col-3");
+    const openGalleryBtn = document.getElementById("talegaon-open-gallery");
+
+    if (!section || !track || !gallery3d) return;
+
+    // 1. Staggered Blur-Reveal for Header
+    const revealItems = section.querySelectorAll(".talegaon-blur-reveal");
+    if ("IntersectionObserver" in window) {
+      const revealObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            revealItems.forEach(function (el) { el.classList.add("is-visible"); });
+            revealObs.disconnect();
+          }
+        });
+      }, { threshold: 0.05 });
+      revealObs.observe(section.querySelector(".talegaon-header-wrap") || section);
+    } else {
+      revealItems.forEach(function (el) { el.classList.add("is-visible"); });
+    }
+
+    // 2. "View Event Gallery" button triggers Fancybox on first image
+    if (openGalleryBtn) {
+      openGalleryBtn.addEventListener("click", function () {
+        const firstCard = section.querySelector(".talegaon-gallery-card");
+        if (firstCard) firstCard.click();
+      });
+    }
+
+    // Respect reduced motion preference
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    // 3. Smooth 60fps Scroll-Driven 3D Perspective + Opposing Parallax Engine
+    function clamp(val, min, max) {
+      return Math.min(Math.max(val, min), max);
+    }
+
+    function mapRange(val, inMin, inMax, outMin, outMax) {
+      const t = clamp((val - inMin) / (inMax - inMin), 0, 1);
+      return outMin + t * (outMax - outMin);
+    }
+
+    let currentProgress = 0;
+    let targetProgress = 0;
+    let rafId = null;
+
+    function getTargetProgress() {
+      const rect = track.getBoundingClientRect();
+      const stickyEl = track.querySelector(".talegaon-scroll-sticky");
+      const stickyTop = stickyEl ? parseFloat(window.getComputedStyle(stickyEl).top) || 0 : 0;
+      const stickyHeight = stickyEl ? stickyEl.offsetHeight : window.innerHeight;
+      const scrollable = track.offsetHeight - stickyHeight;
+      if (scrollable <= 0) return 0;
+      const scrolled = stickyTop - rect.top;
+      return clamp(scrolled / scrollable, 0, 1);
+    }
+
+    function applyTransforms(p) {
+      if (window.innerWidth <= 767) {
+        gallery3d.style.transform = "";
+        if (col1) col1.style.transform = "";
+        if (col2) col2.style.transform = "";
+        if (col3) col3.style.transform = "";
+        return;
+      }
+
+      const isTablet = window.innerWidth <= 991;
+      const maxRotate = isTablet ? 14 : 22;
+      const maxScale = isTablet ? 1.02 : 1.03;
+
+      // Stage 1 (0 -> 0.22): Straighten the 3D tilt first while Row 1 stays locked at y = 0px
+      const rotateX = mapRange(p, 0, 0.22, maxRotate, 0);
+      const scale = mapRange(p, 0, 0.22, maxScale, 1);
+
+      // Dynamically measure each column overflow so EVERY photo scrolls completely into view
+      const stickyEl = track.querySelector(".talegaon-scroll-sticky");
+      const visibleH = stickyEl ? (stickyEl.clientHeight - 36) : (window.innerHeight - 156);
+
+      const overflow1 = col1 ? Math.max(0, col1.offsetHeight - visibleH) : 0;
+      const overflow2 = col2 ? Math.max(0, col2.offsetHeight - visibleH) : 0;
+      const overflow3 = col3 ? Math.max(0, col3.offsetHeight - visibleH) : 0;
+
+      // Stage 2 (0.28 -> 1.0): Begin scrolling columns ONLY after gallery is completely straight & Row 1 is fully seen
+      const y1 = mapRange(p, 0.28, 1, 0, -overflow1);
+      const y2 = mapRange(p, 0.28, 1, 0, -overflow2);
+      const y3 = mapRange(p, 0.28, 1, 0, -overflow3);
+
+      gallery3d.style.transform = "perspective(1000px) rotateX(" + rotateX.toFixed(2) + "deg) scale(" + scale.toFixed(4) + ")";
+      if (col1) col1.style.transform = "translate3d(0, " + y1.toFixed(1) + "px, 0)";
+      if (col2) col2.style.transform = "translate3d(0, " + y2.toFixed(1) + "px, 0)";
+      if (col3) col3.style.transform = "translate3d(0, " + y3.toFixed(1) + "px, 0)";
+    }
+
+    function tick() {
+      targetProgress = getTargetProgress();
+      const diff = targetProgress - currentProgress;
+      if (Math.abs(diff) > 0.0005) {
+        currentProgress += diff * 0.14;
+        applyTransforms(currentProgress);
+        rafId = requestAnimationFrame(tick);
+      } else {
+        currentProgress = targetProgress;
+        applyTransforms(currentProgress);
+        rafId = null;
+      }
+    }
+
+    function requestTick() {
+      if (!rafId) {
+        rafId = requestAnimationFrame(tick);
+      }
+    }
+
+    // Initial pose
+    currentProgress = getTargetProgress();
+    applyTransforms(currentProgress);
+
+    window.addEventListener("scroll", requestTick, { passive: true });
+    window.addEventListener("resize", requestTick, { passive: true });
+  });
+})();
