@@ -1,6 +1,11 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 
+// PHP 8+ compatibility shim for PHPMailer 6.0.x (FILTER_FLAG_HOST_REQUIRED was removed in PHP 8.0)
+if (!defined('FILTER_FLAG_HOST_REQUIRED')) {
+	define('FILTER_FLAG_HOST_REQUIRED', 0);
+}
+
 date_default_timezone_set('Etc/UTC');
 require 'autoload.php';
 
